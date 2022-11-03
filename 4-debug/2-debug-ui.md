@@ -12,7 +12,7 @@
 ## Live server 로 web UI 실행
 
 
-<u>설정화면의 레이아웃</u>d 절에서 argosx 플러그인의 setup.html을 Chrome 웹 브라우저로 실행해본 바 있습니다.
+<u>설정화면의 레이아웃</u> 절에서 argosx 플러그인의 setup.html을 Chrome 웹 브라우저로 실행해본 바 있습니다.
 
 다시한번 실행해봅시다.
 

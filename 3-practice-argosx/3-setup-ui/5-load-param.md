@@ -39,8 +39,8 @@ element와 javascript 객체간 값의 양방향 전달을 updateData( ) 함수�
 
 이러한 전달은 DOM API 혹은 jquery를 활용하여 직접 구현해도 됩니다. 하지만, dst_setup.js가 제공하는 ddx (dynamic data exchange) 함수들을 사용하면 좀 더 간결하게 전달을 구현할 수 있습니다.
 
+ddx 함수들 
 
-# 3.2.3 callback 함수 참조설명서
 |함수 signature|HTML element|data type|설명|
 |---|---|---|---|
 |ddx_edit(data, name, to_data)|```<input type='text'>```|string||
