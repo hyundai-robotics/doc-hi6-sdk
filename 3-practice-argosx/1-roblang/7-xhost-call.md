@@ -1,4 +1,4 @@
-# 3.7 xhost 모듈의 method 호출
+# 3.1.7 xhost 모듈의 method 호출
 
 xhost는 호스트(로봇제어기)의 기능을 호출하기 위한 다양한 method를 포함하는 모듈입니다.
 

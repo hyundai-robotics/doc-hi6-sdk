@@ -1,4 +1,4 @@
-# 3.8 xhost 모듈의 method 참조설명서
+# 3.1.8 xhost 모듈의 method 참조설명서
 
 <html>
 <body>
