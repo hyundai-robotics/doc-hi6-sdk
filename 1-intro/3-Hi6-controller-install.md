@@ -39,9 +39,11 @@
 
 - 실질적인 Hi6 TP 모델은 <U>TP630</U>이 타겟이기 때문에 커맨드를 통해 '-layout=k'를 입력해서 TP630으로 실행해야 올바르게 실행한 것 입니다. 
 
-<b>TP630</b>&nbsp;![](../_assets/image_81.png)  &nbsp;&nbsp; <b>TP600</b>&nbsp;![](../_assets/image_84.png)
+<b>TP630</b>&nbsp;![](../_assets/image_81.png)  
 
-    ### hrspace 연동이 필요한 경우 
+<b>TP600</b>&nbsp;![](../_assets/image_84.png)
+
+   ### hrspace 연동이 필요한 경우 
     1. https://www.hyundai-robotics.com/customer/customer4.html?p=3 에서 HRSpace를 받아 설치합니다. 
     2. workspace에서 마우스 오른쪽 클릭하여 "모델 불러오기..."로 로봇을 로딩합니다.
     3. robot에서 마우스 오른쪽 클릭하여 "로봇속성..."에서 제어기 연결을 "ENetHi6"를 선택합니다.
