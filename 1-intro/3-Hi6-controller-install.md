@@ -4,7 +4,7 @@
 <br></br>
 
 ## 1) 설치 
-다운받은 Hi6 controller zip을 해제한다.
+다운받은 Hi6 controller zip을 해제합니다.
 
 ### VRC 개발환경의 설치 
 1. D:\util\hi6_vrc\가 되도록 복사합니다.
@@ -13,11 +13,11 @@
 3. install 폴더의 System32와 SysWOW64 폴더의 내용을 C:\Windows\의 각 폴더로 복사합니다.
 
 ### Qt 라이브러리의 설치
-1.  C:\Qt\Qt5.7.1\5.7 경로를 생성한다.
-2. msvc2013 를 해당 경로 아래에 압축 해제한다.
+1.  C:\Qt\Qt5.7.1\5.7 경로를 생성합니다.
+2. msvc2013 를 해당 경로 아래에 압축 해제합니다.
 
 ### Python 설치 
-<u> 1.4 python3 개발환경 설치 </u>의 내용을 참조하세요.
+<u> 1.4 python3 개발환경 설치 </u>의 내용을 참조하시길 바랍니다.
 
 <span style = 'background-color:#ffdce0'> 주의: 반드시 인터넷이 연결 되어있는 상태에서 실행해야 설치를 성공할 수 있습니다.</span>
 
@@ -29,16 +29,17 @@
 
 
 ## 2) 실행
-1. Debug 폴더 안에 hi6_main.exe를 실행시킨다.
-2.  Debug 폴더 안에서 PowerShell를 실행하여 아래와 같은 명령어를 통해 TP를 실행시킨다. 
+1. Debug 폴더 안에 hi6_main.exe를 실행합니다.
+2.  Debug 폴더 안에서 PowerShell를 실행하여 아래와 같은 명령어를 통해 TP를 실행합니다. 
    ```
     ./hi6_tp -layout=k
    ```
 
-- hi6_tp를 바로 실행 시키면 <U>TP600</U>으로 실행하게 된다.
+- hi6_tp를 바로 실행 시키면 <U>TP600</U>으로 실행하게 됩니다.
 
-- 실질적인 Hi6 TP 모델은 <U>TP630</U>이 타겟이기 때문에 커맨드를 통해 '-layout=k'를 입력해서 TP630으로 실행해야 올바르게 실행한 것 이다. 
+- 실질적인 Hi6 TP 모델은 <U>TP630</U>이 타겟이기 때문에 커맨드를 통해 '-layout=k'를 입력해서 TP630으로 실행해야 올바르게 실행한 것 입니다. 
 
+<b>TP630</b>&nbsp;![](../_assets/image_81.png)  &nbsp;&nbsp; <b>TP600</b>&nbsp;![](../_assets/image_84.png)
 
     ### hrspace 연동이 필요한 경우 
     1. https://www.hyundai-robotics.com/customer/customer4.html?p=3 에서 HRSpace를 받아 설치합니다. 

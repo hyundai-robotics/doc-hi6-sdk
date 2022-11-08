@@ -139,7 +139,7 @@ signal value, 0 or 1.<br>
 <h2>io_set_out_bit(sigcode, val)</h2>
 
 <h3>Description:</h3>
-get user i/o input bit by sigcode.<br><br>
+get user i/o output bit by sigcode.<br><br>
 <h3>Args:</h3>
 <b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.do17)<br>
 <b>val</b>: int. value to set. (1 or 0)<br>
@@ -294,7 +294,7 @@ int. the result integer value of the expression.<br>
 <h2>exec_mode()</h2>
 
 <h3>Description:</h3>
-	
+check whether the mode is execute-mode or not.<br>
 <h3>Args:</h3>
 	
 <h3>Returns:</h3>
@@ -305,7 +305,8 @@ int. the result integer value of the expression.<br>
 
 <hr>
 <h2>cont_mode()</h2>
-<h3>Description:</h3>	
+<h3>Description:</h3>
+check whether the mode is continue-mode or not.<br>
 <h3>Args:</h3>
 	
 <h3>Returns:</h3>
@@ -393,7 +394,7 @@ serial port open<br>        Args:<br>        port (int): serial port number<br><
 	
 <h3>Returns:</h3>
 &nbsp&nbsp <b>0</b>: OK<br>
-&nbsp&nbsp <b>'<0'</b>: Not OK<br>
+&nbsp&nbsp <b>-1</b>: Not OK<br>
 
 <br>
 
@@ -429,20 +430,21 @@ serial communication send bytes type data<br>xhost dbg not supporteds<br>
 <h2>sci_recv_bytes(port, len)</h2>
 
 <h3>Description:</h3>
-serial communication recv bytes type data<br>xhost dbg not supported
+	serial communication recv bytes type data<br>xhost dbg not supported<br><br>
 <h3>Args:</h3>
-	
+<b>port (int)</b>: serial port number<br>
+<b>len (int)</b>: length of data<br>	
 <h3>Returns:</h3>
-	
+	recieved data (bytes)<br>
 <br>
 
 <hr>
 <h2>sci_clear_buf(port)</h2>
 
 <h3>Description:</h3>
-	
+	clear serial buffer<br><br>
 <h3>Args:</h3>
-	
+<b>port (int)</b>: serial port number<br>	
 <h3>Returns:</h3>
 	
 <br>

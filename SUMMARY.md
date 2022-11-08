@@ -28,6 +28,7 @@
     * [3.1.7 xhost 모듈의 method 호출](3-practice-argosx/1-roblang/7-xhost-call.md)
     * [3.1.8 xhost 모듈의 method 참조 설명서](3-practice-argosx/1-roblang/8-xhost-method.md)
     * [3.1.9 로봇언어 함수 blocking 문제 해결](3-practice-argosx/1-roblang/9-non-blocking.md)
+    * [3.1.10 로봇언어 명령입력 등록](3-practice-argosx/1-roblang/10-regi-cmds.md)
 
   * [3.2 실전 프로젝트 : ArgosX - callback](3-practice-argosx/2-callback/README.md)
     * [3.2.1 callback 함수 등록](3-practice-argosx/2-callback/1-register-callback.md)

@@ -65,13 +65,13 @@
       </td>
     </tr>
     <tr>
-      <td>on_stop(task_no)</td>
+      <td>on_stop(task_no:int)</td>
       <td>
        정지
       </td>
     </tr>
     <tr>
-      <td>on_restart(task_no)</td>
+      <td>on_restart(task_no:int)</td>
       <td>기동</td>
     </tr>
     <tr>
@@ -81,17 +81,17 @@
       </td>
     </tr>
      <tr>
-      <td>on_cur_job_selected_by_tp(task_no)</td>
+      <td>on_cur_job_selected_by_tp(task_no:int)</td>
       <td>TP에 의한 job program 선택</td>
     </tr>
     <tr>
-      <td>on_step_func_no_change_for_clear(task_no,..)</td>
+      <td>on_step_func_no_change_for_clear(task_no:int,..)</td>
       <td>
        프로그램 카운터 변경
       </td>
     </tr>
     <tr>
-      <td>on_job_end(task_no)</td>
+      <td>on_job_end(task_no:int)</td>
       <td> job end문 실행
       </td>
     </tr>
@@ -106,8 +106,8 @@
       </td>
     </tr>
     <tr>
-      <td>is_assigned_input(sigcode) /</br>
-      is_assigned_output(sigcode)</td>
+      <td>is_assigned_input(sigcode:int) /</br>
+      is_assigned_output(sigcode:int)</td>
       <td>sigcode가 할당된 입/출력 신호인지 여부 리턴</td>
     </tr>
     <tr>
