@@ -6,15 +6,19 @@ Atom이나 SublimeText 등 본인이 익숙한 다른 편집기를 사용해도 
 
 
 
-Code의 설치
-1) 아래 링크에 접속한 후 윈도우용 stable build 버전을 다운로드 합니다.</br>윈도우용  https://code.visualstudio.com/</br>
-![](../_assets/image_7.png)
+## Code의 설치
+1) 아래 링크에 접속한 후 윈도우용 stable build 버전을 다운로드 합니다. 
+
+    윈도우용  https://code.visualstudio.com/<br>
+    ![](../_assets/image_7.png)
 
 2) 다운로드된 설치파일을 실행하고 라이선스에 동의합니다.
-![](../_assets/image_8.png)
 
-3) 설치 경로 등을 기본값 그대로 하여 <다음> 버튼을 계속 누르다가, 추가 작업 선택 화면이 나오면 아래와 같이 체크하고 <다음> 버튼을 클릭합니다.<br>
-![](../_assets/image_9.png)
+    ![](../_assets/image_8.png)
+
+3) 설치 경로 등을 기본값 그대로 하여 <다음> 버튼을 계속 누르다가, 추가 작업 선택 화면이 나오면 아래와 같이 체크하고 <다음> 버튼을 클릭합니다.
+    
+    ![](../_assets/image_9.png)
 
 4) <설치> 버튼을 클릭합니다.
 
@@ -31,9 +35,9 @@ vscode 화면에서 가장 왼쪽에 아이콘들이 배치된 수직막대가 A
 
 
 
-같은 이름의 확장이 여러 개 있을 수도 있습니다. 저자의 이름을 확인하여 올바른 확장을 선택하십시오.
-Microsoft의 Python을 설치하면 Pylance 등 부가적인 확장들이 자동으로 추가 설치됩니다. Pylance는 우리가 사용해야 할 Pyright와 충돌합니다. Python을 제외한 부가 확장들은 모두 삭제하십시오.
-job 파일 편집 시, HR-BASIC이 아닌 HRScript로 인식되어야 합니다. hrbasic은 Disabled 시켜 두십시오.
+- 같은 이름의 확장이 여러 개 있을 수도 있습니다. 저자의 이름을 확인하여 올바른 확장을 선택하십시오.
+- Microsoft의 Python을 설치하면 Pylance 등 부가적인 확장들이 자동으로 추가 설치됩니다. Pylance는 우리가 사용해야 할 Pyright와 충돌합니다. Python을 제외한 부가 확장들은 모두 삭제하십시오.
+- job 파일 편집 시, HR-BASIC이 아닌 HRScript로 인식되어야 합니다. hrbasic은 Disabled 시켜 두십시오.
 
 ![](../_assets/image_11.png)
 

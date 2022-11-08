@@ -166,6 +166,7 @@ print('...server ended')
 ```
 
 위 내용을 복사하여 hello_world/ 폴더 아래에 argosx_stub.py 파일을 생성해놓고, 윈도우 PowerShell이나 명령 프롬프트에서  hello_world/ 폴더로 이동한 후 아래 명령으로 실행하십시오.
+
 ```
 python argosx_stub.py
 ```
@@ -177,6 +178,6 @@ python argosx_stub.py
 
 ![](../../_assets/image_24.png)
 
-출력은 하단의 TERMINAL 창으로 나옵니다. 우상단의 ![](../_assets/image_25.png) 버튼을 조작해 디버깅을 일시정지, 재실행, 정지할 수 있습니다.
+출력은 하단의 TERMINAL 창으로 나옵니다. 우상단의 ![](../../_assets/image_25.png) 버튼을 조작해 디버깅을 일시정지, 재실행, 정지할 수 있습니다.
 
 ![](../../_assets/image_26.png)

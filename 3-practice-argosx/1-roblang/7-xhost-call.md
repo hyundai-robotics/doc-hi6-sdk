@@ -10,9 +10,9 @@ xhost는 호스트(로봇제어기)의 기능을 호출하기 위한 다양한 m
 
 
 
-<<U>ArgosX와 interface plug-in의 사양</U>에서 에러 처리 관련 아래의 항목이 있었습니다.
+<U>ArgosX와 interface plug-in의 사양</U>에서 에러 처리 관련 아래의 항목이 있었습니다.
 
-ArgosX로부터 "fail"이 수신되면, 미리 설정해 둔 번호의 로봇제어기 범용 I/O 출력신호를 켠다.
+- ArgosX로부터 "fail"이 수신되면, 미리 설정해 둔 번호의 로봇제어기 범용 I/O 출력신호를 켠다.
 
 
 로봇제어기의 범용 I/O 출력신호는, 아래 method로 on/off 할 수 있습니다.
@@ -23,18 +23,17 @@ def io_set_out_bit(sigcode: int, val: int) -> int
 sigcode는 아래와 같이 io의 block 번호와 인덱스를 하나의 숫자로 합친 code입니다.
 
 sigcode = block번호 x 10000 + 인덱스
-
-
+<br></br>
 
 가령 fb3.do72의 sigcode는 아래와 같습니다.
 
 3 x 10000 + 72 = 30072
+<br></br>
 
 
 
 val는 ON일 때 1, OFF일 때 0입니다.
-
-
+<br></br>
 
 ArgosX 에러를 위한 출력신호 할당 번호를 sigcode_err라는 이름의 모듈 변수로 추가하고 default 값은 5 (즉, fb0.do5)로 설정합니다.
 
@@ -51,7 +50,7 @@ sigcode_err = 5
 ```
 
  res( ) 함수 내에서 수신된 msg 값을 "res fail"과 비교하고, 결과에 따라 출력신호를 내보냅니다.
-
+<br></br>
 
 
 roblang.py

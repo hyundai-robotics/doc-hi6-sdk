@@ -36,6 +36,7 @@ EZGIFCOM (https://ezgif.com/svg-to-png) : SVG 파일을 원하는 해상도의 P
 ![](../../_assets/lm_argosx.png) lm_argosx.png 의 예 (이 그림을 다운받아 사용해도 됩니다.)
 
 
+<br></br>
 
 이제 가상 메인보드과 가상 티치펜던트를 재실행 합니다.
 

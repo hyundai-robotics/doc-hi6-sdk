@@ -7,7 +7,7 @@ hello_world라는 이름의 이 app이 하는 일은, 히스토리 화면과 설
 
 
 
-hello_world 프로젝트 생성 - 폴더와 메타정보
-python 함수 hello( ) 구현
-python 함수에 매개변수 전달하고 리턴값 전달받기
-간단한 웹 기반 U/I 화면 만들기
+- hello_world 프로젝트 생성 - 폴더와 메타정보
+- python 함수 hello( ) 구현
+- python 함수에 매개변수 전달하고 리턴값 전달받기
+- 간단한 웹 기반 U/I 화면 만들기

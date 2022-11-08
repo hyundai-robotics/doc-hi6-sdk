@@ -5,8 +5,8 @@
 
 ui/ubar.js 파일에 아래와 같이 작성합니다. 버튼을 누를 때마다 티치펜던트는 "light_onoff"라는 HTTP post 메시지를 메인보드로 송신합니다. on인지 off인지는 onoff라는 속성을 가진 객체에 담아, post 메시지의 body에 실어 보냅니다.
 
-light-on일 때의 body : { onoff: true }
-light-off일 때의 body : { onoff: false }
+- light-on일 때의 body : { onoff: true }
+- light-off일 때의 body : { onoff: false }
 
 
 ui/ubar.js

@@ -113,11 +113,8 @@ function updateData(data, to_data)
 
 updateGuideBar( ) 함수는 입력 element에 커서가 위치했을 때, 안내 프레임에 어떤 메시지를 표시할 지를 setGuideBarMsg( ) 함수를 호출하여 지정합니다.
 
-
-
 __setGuideBarMsg(element의 id 혹은 name, 표시할 message)___
-
-
+<br></br>
 
 가령, 위의 예에서 sg('ip_addr', msg_ip_addr);는 name이 'ip_addr'인 input element에 커서가 위치했을 때, msg_ip_addr 문자열을 안내 프레임에 표시하라는 설정입니다.
 

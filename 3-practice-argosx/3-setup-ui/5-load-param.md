@@ -9,11 +9,9 @@
 
 
 이러한 전달을 수행하기 위해, javascript의 updateData( ) 함수와 python의 setup 모듈의 getter, putter 함수를 구현해야 합니다.
-</br>![](../../_assets/image_44.png)</br>
+<br></br>
 
-
-
-
+![](../../_assets/image_44.png)
 
 
 ## element ↔ javascript object
@@ -38,6 +36,7 @@ function updateData(data, to_data)
 element와 javascript 객체간 값의 양방향 전달을 updateData( ) 함수로 정의했습니다. 매개변수 data는 javascript 객체입니다. to_data는 전달방향을 나타내는 boolean 변수인데, true이면 element → data 방향, false이면 element ← data 방향입니다.
 
 이러한 전달은 DOM API 혹은 jquery를 활용하여 직접 구현해도 됩니다. 하지만, dst_setup.js가 제공하는 ddx (dynamic data exchange) 함수들을 사용하면 좀 더 간결하게 전달을 구현할 수 있습니다.
+<br></br>
 
 ddx 함수들 
 
@@ -79,11 +78,11 @@ function init()
 
 argosx를 비롯해 모든 플러그인은 /apps/ 밑에 배치됩니다. 그리고, 경로 마지막 이름은 "svr_"에 설정 그룹명을 붙인 형태입니다.
 
-</br>
+<br></br>
 
 **/apps/{app name}/svr_{setup group name}**
 
-</br>
+<br></br>
 플러그인은 1개 혹은 여러 개의 설정 화면을 가질 수 있는데, 한 화면의 데이터는 하나의 객체로 다루어지고 이를 설정 그룹(setup group)이라고 합니다. 각 설정 그룹에는 자유롭게 이름을 부여할 수가 있는데, 이것이 설정 그룹명입니다. 이 예제에서는 설정 그룹명을 'general'로 정했습니다.
 
 설정 그룹명에 접두어 "svr_" 대신, "get_"과 "put_"을 붙이면 각각이 getter와 putter 서비스 함수명이 됩니다. 또한, getter 함수명 끝에 '_def'를 붙이면 default값을 얻는 default getter 서비스 함수명이 됩니다.

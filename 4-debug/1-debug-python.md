@@ -15,7 +15,8 @@ xhost는 플러그인에서 Hi6 호스트의 기능을 호출할 때 사용되�
 
 
 하지만 vscode의 디버거로 플러그인을 실행할 때는 생성/주입된 실제 xhost 모듈이 없으므로 xhost 메소드 호출 시 실행에러가 나게 됩니다. 따라서, 디버깅용 대체 xhost를 사용해야 합니다. SDK의 common 폴더 안에는 대체 모듈인 xhost_dbg가 있으며, 이것은 이더넷을 통한 OpenAPI 호출을 통해 호스트의 동작을 수행해주는 일종의 proxy입니다.
-<br> ![](../_assets/image_64.png)
+
+ ![](../_assets/image_64.png)
 <br>
 
 
@@ -68,21 +69,18 @@ line 번호의 좌측을 마우스 클릭하여 breakpoint를 토글할 수 있�
 
 
 test.py
-<br>
+<br></br>
 ![](../_assets/image_65.png)
 
 
 
 test.py 창에서 F5키를 누르거나 Run - Start Debugging 메뉴를 클릭하면, python runtime으로 실행되면서 디버깅 모드로 실행됩니다.
-<br>
+<br></br>
 ![](../_assets/image_66.png)
 
 
-
-
-
 이전 절의 argosx 플러그인의 경우, 시험을 위해서는 argosx_stub 서버도 실행해야 합니다. 이렇게 2개의 python 프로그램을 실행해야 하는 경우에는 아래와 같이 Visual Studio Code를 2개를 열어 각각 디버거를 실행하면 됩니다.
-<br>
+<br></br>
 ![](../_assets/image_67.png)
 
 
@@ -92,7 +90,7 @@ test.py 창에서 F5키를 누르거나 Run - Start Debugging 메뉴를 클릭�
 breakpoint에 걸리면 좌측에 VARIABLES, WATCH, CALL STACK, BREAKPOINTS 창이 열립니다. 우상단의 조작 버튼 Continue (F5), Step Over (F10), Step Into (F11), Step Out (Shift+F11)으로 trace 할 수 있습니다. Restart (Ctrl+Shift+F5) 버튼을 클릭하면 처음부터 재실행하며, Stop (Shift+F5) 버튼을 클릭하면 디버깅이 중단됩니다.
 
 python 내장함수인 print( )문을 호출하면, 하단의 TERMINAL 창에 문자열이 출력되므로, 디버깅에 활용할 수 있습니다.
-<br>
+<br></br>
 ![](../_assets/image_68.png)
 
 
@@ -100,7 +98,7 @@ python 내장함수인 print( )문을 호출하면, 하단의 TERMINAL 창에 �
 
 
 test.py의 동작은 xhost_dbg에 의해 제어기 호스트와 연동되기 때문에 아래와 같이 실제 동작을 확인하면서 디버깅할 수 있습니다. 
-<br>
+<br></br>
 ![](../_assets/image_69.png)
 
 

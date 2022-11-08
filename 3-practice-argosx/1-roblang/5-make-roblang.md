@@ -3,7 +3,7 @@
 
 다음 구현할 사양은 init( ), req( ), res( ), close( ) 함수입니다.
 
-(ArgosX와 interface plug-in의 사양의 프로토콜과 로봇언어 function 부분을 참고하십시오.)
+(<u>ArgosX와 interface plug-in의 사양</u>의 프로토콜과 로봇언어 function 부분을 참고하십시오.)
 
 
 

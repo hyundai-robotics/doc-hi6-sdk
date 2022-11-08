@@ -7,6 +7,7 @@
 * 설정 내용은 argosx.json 파일에 json 파일 형식으로 저장된다.
 * 화면 전체를 default 값으로 만드는 F버튼 (Initialize All)을 제공한다.
 * 현재 선택한 항목만 default 값으로 만드는 F버튼 (Initialize One)을 제공한다.
+<br></br>
 
 ![](../../_assets/image_34.png)
 

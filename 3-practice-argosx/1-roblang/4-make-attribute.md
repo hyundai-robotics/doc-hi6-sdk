@@ -1,6 +1,6 @@
 # 3.1.4 ip_addr, port attribute 생성
 
-ArgosX와 interface plug-in의 사양을 보면 우선 ip_addr를 지정하는 문자열 속성(attribute)이 있습니다.
+<u>ArgosX와 interface plug-in의 사양</u>을 보면 우선 ip_addr를 지정하는 문자열 속성(attribute)이 있습니다.
 
 
 
