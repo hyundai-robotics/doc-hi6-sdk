@@ -173,7 +173,7 @@ str_table.json
         "IDS_NReq" : "요청 횟수",
         "IDS_NRes" : "응답 횟수",
         "IDS_Name" : "명칭",
-        "IDS_Value" : "값",
+        "IDS_Value" : "값"
     }
 ```
 

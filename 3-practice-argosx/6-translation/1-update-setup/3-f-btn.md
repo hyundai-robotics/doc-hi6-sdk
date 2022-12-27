@@ -21,6 +21,8 @@ str_table.json 파일에 각 lang_code 별로 F 버튼 번역을 위한 string d
 ## F버튼의 동작
 기존에 구현되어 있는 initButtonBar 함수 내에 정의한 btn_infos의 내용에서 label의 값을 string id 로 수정해줍니다.
 
+setup.js 
+
 ``` js
 ///@return		f-button infos array
 function initButtonBar()

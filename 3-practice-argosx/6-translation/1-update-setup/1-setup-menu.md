@@ -26,12 +26,32 @@
 
     각 langcode 별로 str 데이터의 id 와 string value 값의 멤버들을 가집니다.
 
-    menu에서 제목을 추가하기 위해여 "IDS_title"이라는 id를 가진 string data들을 각각 "en"과 "ko"에 형식에 맞춰 추가해줍니다.
+    menu에서 제목을 추가하기 위해여 "IDS_title"이라는 동일한 id를 가진 string data들을 각각 "en"과 "ko"에 형식에 맞춰 추가해줍니다.
 
 ## 메뉴의 주입
 메뉴에서 설정화면의 라벨을 확인하기 위해서 id를 추가해줍니다.
 
-1) menu.json
+1) info.json
+   
+    기존에 작성되어 있던 info.json의 내용을 변경해봅시다.
+    
+    생성한 str_table.json 파일을 "strs" id의 값으로 추가 해줍니다. 
+    
+    ``` json
+    {
+	    "author" : "BlueOcean Robot & Automation, Ltd.",
+	    "binding" : "plug-in",
+	    "cmds" : "cmds.json",
+	    "copyright" : "All right reserved",
+	    "description" : "ArgosX Vision System interface",
+	    "entry" : "main.py",
+	    "menu" : "ui/menu.json",
+	    "strs" : "ui/str_table.json",
+	    "startup" : "boot",
+	    "version" : "v0.9.0"
+    }
+    ```
+2) menu.json
     
     기존에 작성되어 있던 menu.json의 내용을 변경해봅시다.
 
@@ -46,7 +66,7 @@
     ```
     label의 값을 기존의 "ArgosX Vision System"이 아닌 "IDS_title"로 작성해 줍니다.
 
-2) 언어 선택
+1) 언어 선택
 
     가상 제어기 환경에서는 hi6tp_platform_cfg.json의 "lang_code" 내용을 변경해야 합니다.
 

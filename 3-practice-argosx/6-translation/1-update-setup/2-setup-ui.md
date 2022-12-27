@@ -129,8 +129,6 @@ def get_lang_code()->dict:
 
 callback 함수로 지정한 updateAllStrByLang는 updateElement 과 updateGuideBarMsg를 호출하는 함수 이며, 각각 lang_code에 따라서 각 element들과 guidebar의 메세지들을 번역하는 동작을 합니다.
 
-기존의 updateGuideBar 함수 대신 updateGuideBarMsg를 사용하게 됩니다.
-
 먼저 str_table.json에 번역이 필요한 element들과 guidebar 메세지들을 추가해줍니다.
 
 str_table.json
@@ -161,6 +159,8 @@ str_table.json
 ```
 
 다음으로, setup.js 에 하기 내용으로 수정해줍니다.
+
+기존의 updateGuideBar 함수를 삭제하고 대신, updateGuideBarMsg를 사용하게 됩니다.
 
 ```js
 ///@brief	update all string by language code

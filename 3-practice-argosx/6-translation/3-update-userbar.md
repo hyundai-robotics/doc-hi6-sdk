@@ -91,13 +91,13 @@ str_table.json
 ```json
 "en":
     {
-          "IDS_msg_lb_all" : "Initialize\nAll",
-          "IDS_msg_lb_one" : "Initialize\nOne"
+          "IDS_light_on" :"light on",
+          "IDS_light_off" : "light off"
     },    
 "ko": 
     {
-        "IDS_msg_lb_all" : "전체\n초기화",
-        "IDS_msg_lb_one" : "단일\n초기화"
+        "IDS_light_on" :"조명 ON",
+        "IDS_light_off" : "조명 OFF"
     }
 ```
 
