@@ -66,7 +66,7 @@
     ```
     label의 값을 기존의 "ArgosX Vision System"이 아닌 "IDS_title"로 작성해 줍니다.
 
-1) 언어 선택
+3) 언어 선택
 
     가상 제어기 환경에서는 hi6tp_platform_cfg.json의 "lang_code" 내용을 변경해야 합니다.
 
