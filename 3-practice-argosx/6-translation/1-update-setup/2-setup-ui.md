@@ -9,7 +9,7 @@ str_table.json과 lang.js를 아래와 같이 script로 추가해 줍니다.
 해당 파일들은 서로에게 종속성이 있기때문에 반드시 하기와 같은 순으로 작성해주어야 합니다.
 
 ```html
-    <script src="./str_table.json" type="application/json"></script>
+    <script src='./str_table.json' type='application/json'></script>
     <script src='../../_common/js/lang.js'></script>
     <script src='../../_common/js/dst_setup.js'></script>
 ```
@@ -40,7 +40,7 @@ setup.html
         <script src='../../_common/js/jquery-3.6.0.min.js'></script>
         <script src='../../_common/js/Parser.js'></script>
         <script src='../../_common/js/sigcode.js'></script>
-        <script src="./str_table.json" type="application/json"></script>
+        <script src='./str_table.json' type='application/json'></script>
         <script src='../../_common/js/lang.js'></script>
         <script src='../../_common/js/dst_setup.js'></script>
         <script src='./setup.js'></script>
@@ -154,8 +154,8 @@ str_table.json
         "IDS_Port" : "port 번호",
         "IDS_OUtSigcodeErr" : "실패 신호 출력 할당번호",
         "IDS_msg_ip_addr" : "ArgosX의 IP 주소값을 입력하세요.",
-	    "IDS_msg_port" : "ArgosX의 포트 번호를 입력하세요.",
-	    "IDS_msg_sigcode" :"할당할 신호의 번호를 입력하세요 [0~4096]."
+        "IDS_msg_port" : "ArgosX의 포트 번호를 입력하세요.",
+        "IDS_msg_sigcode" :"할당할 신호의 번호를 입력하세요 [0~4096]."
       }
 }
 ```

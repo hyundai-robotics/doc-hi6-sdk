@@ -1,5 +1,5 @@
 # 3.6.3 user-bar U/I 다국어화
-## 1. ubar layout에서의 변경
+## 1. user-bar layout에서의 변경
 
 User-bar U/I의 번역을 위해 먼저 ubar.html을 살펴봅시다.
 이전의 작업과 마찬가지로 str_table.json과 lang.js를 아래와 같이 script로 추가해 줍니다.
@@ -27,11 +27,11 @@ ubar.html
 	<button id='light-off' class='ubar-bt' onclick='light_onoff(false);'>light<br>off</button>
 ```
 
-기존에 'light<br>on' 라고 작성되어 있는 내용은 생략하셔도 무방합니다(추후에 번역된 내용들이 작성됩니다.)
+기존에 light on 이라고 작성되어 있는 내용은 생략하셔도 무방합니다(추후에 번역된 내용들이 작성됩니다.)
 
 위와 같은 내용들을 다 반영한 html 파일은 아래와 같이 작성됩니다.
 
-panel.html
+ubar.html
 
 ```html
 <!DOCTYPE html:5>
@@ -84,7 +84,7 @@ function init()
 
 
 ### 2) lang_code에 따른 번역 지정
-추가적으로 필요한 elements들에 대한 내용을 str_table.json에 작성해줍니다.
+추가적으로 필요한 elements들에 대한 내용을 str_table.json에 추가해줍니다.
 
 str_table.json
 
@@ -111,7 +111,7 @@ function updateAllStrByLang()
 
 }
 ```
-ubar의 경우 elemets들의 명칭만 변경해주면 되기 때문에 setElemByLang를 통해 string id를 지정해줍니다.
+ubar의 경우 elements들의 명칭만 변경해주면 되기 때문에 setElemByLang를 통해 string id를 지정해줍니다.
 
 가상 제어기와 TP를 재부팅한 뒤, 정상 동작이 된다면 아래와 같은 user-bar 화면을 확인하실 수 있습니다.
 

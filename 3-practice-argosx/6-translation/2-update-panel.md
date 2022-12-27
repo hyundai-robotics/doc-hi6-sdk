@@ -37,7 +37,7 @@ setup에서의 작업과 마찬가지로 str_table.json과 lang.js를 아래와 
 해당 파일들은 서로에게 종속성이 있기때문에 반드시 하기와 같은 순으로 작성해주어야 합니다.
 
 ```html
-    <script src="./str_table.json" type="application/json"></script>
+    <script src='./str_table.json' type='application/json'></script>
     <script src='../../_common/js/lang.js'></script>
 ```
 
@@ -92,7 +92,7 @@ setup에서의 작업과 마찬가지로 str_table.json과 lang.js를 아래와 
     <meta http-equiv=Content-Type content='text/html; charset=utf-8'>
         <link rel='stylesheet' href='../../_common/css/style.css' type=text/css rel=stylesheet>
         <script src='../../_common/js/jquery-3.6.0.min.js'></script>
-        <script src="./str_table.json" type="application/json"></script>
+        <script src='./str_table.json' type='application/json'></script>
         <script src='../../_common/js/lang.js'></script>
         <script src='./panel.js'></script>
         <script> 
@@ -154,7 +154,7 @@ setup.js에서와 동일하게 parseStrData, setLangcode를 추가하여 위와 
 
 
 ### 2) lang_code에 따른 번역 지정
-기존에 작성된 string data를 활용하는 부분은 그대로 두고, 추가적으로 필요한 elements들에 대한 내용을 str_table.json에 작성해줍니다.
+기존에 작성된 string data를 활용하는 부분은 그대로 두고, 추가적으로 필요한 elements들에 대한 내용을 str_table.json에 추가해줍니다.
 
 str_table.json
 
@@ -192,7 +192,7 @@ function updateAllStrByLang()
 	se('value', 'IDS_Value');
 }
 ```
-panel의 경우 elemets들의 명칭만 변경해주면 되기 때문에 setElemByLang를 통해 string id를 지정해줍니다.
+panel의 경우 elements들의 명칭만 변경해주면 되기 때문에 updateAllStrByLang내에서 setElemByLang를 통해 string id를 지정해줍니다.
 
 가상 제어기와 TP를 재부팅한 뒤, 정상 동작이 된다면 아래와 같은 모니터링 panel 화면을 확인하실 수 있습니다.
 

@@ -4,7 +4,7 @@
 다국어화의 리소스 등록을 위하여 string table을 등록해야합니다.
 이는 json 형태로 등록을 해야하며 하기의 형식으로 추가가 되어야합니다.
 
-1) argosx 프로젝트의 ui 폴더 내에 str_tabl.json 파일 추가
+1) argosx 프로젝트의 ui 폴더 내에 str_table.json 파일 추가
 
     ![](../../../_assets/image_85.png)
 
@@ -47,6 +47,7 @@
     label의 값을 기존의 "ArgosX Vision System"이 아닌 "IDS_title"로 작성해 줍니다.
 
 2) 언어 선택
+
     가상 제어기 환경에서는 hi6tp_platform_cfg.json의 "lang_code" 내용을 변경해야 합니다.
 
     ``` json

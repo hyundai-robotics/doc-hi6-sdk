@@ -56,7 +56,7 @@
     * [3.5.3 사용자 막대의 동작](3-practice-argosx/5-user-bar/3-usrbar-action.md)
     * [3.5.4 사용자 막대의 주입](3-practice-argosx/5-user-bar/4-inset-usrbar.md)
 
-  * [3.6.1 실전 프로젝트 : ArgosX - 다국어화](3-practice-argosx/6-translation/README.md)
+  * [3.6 실전 프로젝트 : ArgosX - 다국어화](3-practice-argosx/6-translation/README.md)
     * [3.6.1 설정 화면 U/I 다국어화](3-practice-argosx/6-translation/1-update-setup/README.md)
       * [3.6.1.1 설정화면 메뉴의 번역](3-practice-argosx/6-translation/1-update-setup/1-setup-menu.md)
       * [3.6.1.2 설정화면 U/I의 번역](3-practice-argosx/6-translation/1-update-setup/2-setup-ui.md)
