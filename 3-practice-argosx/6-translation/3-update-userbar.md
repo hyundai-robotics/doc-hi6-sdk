@@ -11,7 +11,7 @@ User-bar U/I의 번역을 위해 먼저 ubar.html을 살펴봅시다.
 ubar.html
 
 ```html
-     <script src="./str_table.json" type="application/json"></script>
+     <script src='./str_table.json' type='application/json'></script>
 	 <script src='../../_common/js/lang.js'></script>
 	 <script src='./ubar.js'></script>
 	 <script> 
@@ -46,7 +46,7 @@ ubar.html
     <title>ArgosX</title>
 	 <link rel='stylesheet' href='../../_common/css/style.css' type=text/css rel=stylesheet>
 	 <script src='../../_common/js/jquery-3.6.0.min.js'></script>
-	 <script src="./str_table.json" type="application/json"></script>
+	 <script src='./str_table.json' type='application/json'></script>
 	 <script src='../../_common/js/lang.js'></script>
 	 <script src='./ubar.js'></script>
 	 <script> 
