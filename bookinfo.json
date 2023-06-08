@@ -1,8 +1,8 @@
 {
-    "langCode": "ko",
+    "langCode": "en",
     "series": "Hyundai Robot Hi6 Controller",
     "title": "SDK Manual",
-    "publisher": "Hyundai Robotics",
+    "publisher": "HD Hyundai Robotics",
     "tocTitle": "Table of Contents",
     "tocTitleElements": "[ \"h1\", \"h2\" ]"
 }
