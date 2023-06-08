@@ -1,1 +1,1 @@
-﻿# 3. 실전 프로젝트 : ArgosX
+﻿# 3. Practical project : ArgosX

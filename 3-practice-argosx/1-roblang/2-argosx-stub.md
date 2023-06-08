@@ -1,8 +1,8 @@
 # 3.1.2 ArgosX stub
 
-ArgosX 비전 시스템은 실제로 존재하는 장치가 아닙니다. 따라서 우리가 인터페이스 플러그인을 시험하려면, ArgosX의 역할을 대신해줄 시험용 소프트웨어, 즉 stub가 필요합니다.
+The ArgosX vision system is not real. Therefore, if we want to test the interface plug-ins, we need the test software, namely the stub, to take ArgosX's place.
 
-아래 python code는 ArgosX stub입니다. 구현 내용을 이해할 필요는 없습니다.
+The Python code below is an ArgosX stub. You do not need to understand the details of its implementation.
 
 argosx_stub.py
 ``` python
@@ -165,19 +165,19 @@ close()
 print('...server ended')
 ```
 
-위 내용을 복사하여 hello_world/ 폴더 아래에 argosx_stub.py 파일을 생성해놓고, 윈도우 PowerShell이나 명령 프롬프트에서  hello_world/ 폴더로 이동한 후 아래 명령으로 실행하십시오.
+Copy the content above and create an argosx_stub.py file under the hello_world/ folder. Next, go to the hello_world/ folder using Windows PowerShell or Command Prompt, then execute it using the command below.
 
 ```
 python argosx_stub.py
 ```
 
-혹은,  vscode에 열어 놓고, F5키를 누르면 디버그 모드로 실행됩니다.
+Alternatively, if you open vscode and press F5, the execution will be performed in debug mode.
 
-- argosx/ 프로젝트를 열어 둔 vscode에서 열지 말고, vscode를 하나 더 실행하여 여십시오.
-- 처음에는 아래와 같이 debug configuration 리스트가 열릴 수도 있는데, Python File 항목을 선택하면 됩니다.
+- Rather than opening the argosx/ project in the opened vscode, you need to open the project by executing another vscode session.
+- While the debug configuration list may open initially, as shown below, you only need to select the Python File item.
 
 ![](../../_assets/image_24.png)
 
-출력은 하단의 TERMINAL 창으로 나옵니다. 우상단의 ![](../../_assets/image_25.png) 버튼을 조작해 디버깅을 일시정지, 재실행, 정지할 수 있습니다.
+The result will be printed on the TERMINAL window at the bottom. You can hold, resume, or stop debugging by operating the ![](../../_assets/image_25.png) button on the top right.
 
 ![](../../_assets/image_26.png)

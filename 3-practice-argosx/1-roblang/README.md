@@ -1,17 +1,17 @@
-# 3.1 실전 프로젝트 : ArgosX - 로봇언어
+# 3.1 Practical project: ArgosX - Robot language
 
 
-이제 좀 더 실제에 가까운 예제 프로젝트를 실습해봅시다.
+Now let's practice with a more realistic example project.
 
-로봇에 장착하는 ArgosX 라는 이름의 가상의 비전시스템을 위한 플러그인을 개발해보면서, app의 개발방법을 배워보도록 하겠습니다.
+We will learn how to develop an app by developing plug-ins for a virtual vision system named ArgosX to be installed in a robot.
 
 
-- ArgosX와 interface plug-in의 사양</br>
+- Specifications of ArgosX and interface plug-ins</br>
 - ArgosX stub</br>
-- argosx 프로젝트 생성</br>
-- ip_addr, port attribute 생성</br>
-- ArgosX의 로봇언어용 함수 생성</br>
-- ArgosX의 로봇언어용 함수 구현</br>
-- xhost 모듈의 method 호출</br>
-- xhost 모듈의 method 참조설명서</br>
-- 로봇언어 함수 blocking 문제 해결</br>
+- Creating an ArgosX project</br>
+- Creating ip_addr and port attributes</br>
+- Creating functions for the ArgosX robot language</br>
+- Implementing functions for the ArgosX robot language</br>
+- Calling the xhost module methods</br>
+- Manual for referring to the xhost module methods</br>
+- Solving the robot language function-blocking problem</br>

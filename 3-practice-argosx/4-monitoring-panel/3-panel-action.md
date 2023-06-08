@@ -1,15 +1,15 @@
-# 3.4.3 모니터링 panel의 동작
+# 3.4.3 Operating the monitoring panel
 
 
-python 코드에서 IP주소, port번호, 에러 할당입력 번호의 변수는 이미 존재합니다.
+The Python code already contains the variables for the IP address, port number, and error-assigned input number.
 
-요청 횟수, 응답 횟수를 관리해야 하므로 아래와 같이 n_req, n_res 변수를 추가해주고, get_general( ) 함수에서 함께 리턴되도록 연결해줍니다.
+Because it is necessary to manage the request count and response count, we need to add the n_req and n_res variables, as shown below, and connect them to ensure that they can be returned together in the get_general( ) function.
 
 
 
 setup.py
 ``` python 
-이전 생략...
+Previous steps skipped...
  
  
 def get_general() -> dict:
@@ -30,7 +30,7 @@ def get_general() -> dict:
    return ret
  
  
-생략...
+skipped...
  
  
 gen_def = get_general_def()
@@ -41,13 +41,13 @@ n_req = 0   # request count
 n_res = 0   # response count
 ```
 
-로봇언어 명령문의 구현에 n_req와 n_res의 count-up 동작을 추가해줍니다.
+Add the count-up operations of n_requ and n_res to the implementation of the robot language commands.
 
 
 
 roblang.py
 ```python 
-이전 생략...
+Previous steps skipped...
  
  
 def req(work_no: int) -> int:
@@ -63,11 +63,11 @@ def req(work_no: int) -> int:
          -1    no socket. init() should be called.
    """
    msg = "req " + str(work_no)
-   setup.n_req += 1                           # <---------- 추가
+   setup.n_req += 1                           # <---------- add
    return comm.send_msg(msg)
  
  
-생략...
+Skipped...
  
  
 def _res_cont(addr_on_timeout: int_or_str) -> str:
@@ -87,12 +87,12 @@ def _res_cont(addr_on_timeout: int_or_str) -> str:
          xhost.req_to_continue()
       else:
          msg = get_base_shift_array_from_res(msg)
-         setup.n_res += 1                    # <---------- 추가
+         setup.n_res += 1                    # <---------- add
    xhost.io_set_out_bit(setup.sigcode_err, val)
    return msg
 ```
 
-ui/panel.js 파일에 아래와 같이 작성합니다. 500msec마다 updateData( ) 함수가 호출되어, main보드로부터 general 데이터를 모두 가져온 후, display( ) 함수를 통해 html 화면에 주입하는 동작입니다.
+Write the following content into the ui/panel.js file. The content is about calling the updateData( ) function every 500 msec, getting all the general data from the main board, and injecting them into the html screen through the display( ) function.
 
 
 
@@ -146,9 +146,9 @@ function display(data)
 }
 ```
 
-가상 제어기를 재실행한 후, 다시 VS Code의 Go Live를 실행합니다. 이제 아래와 같이 웹 브라우저 화면에 값이 출력되는 것을 볼 수 있습니다.
+Run the virtual controller again, then execute Go Live on vscode again. Now, you can see the value printed on the web browser's screen as follows.
 
-ArgosX stub를 실행하고 가상 티치펜던트로 job 프로그램을 실행해, 요청과 응답을 수행해봅시다. n.request와 n.response 값이 증가하면 정상입니다.
+Let's execute requests and responses by executing an ArgosX stub and running the job program with the virtual teach pendant. If the n.request and n.response values increase, it means the operation is normal.
 <br></br>
 ![](../../_assets/image_53.png)
 

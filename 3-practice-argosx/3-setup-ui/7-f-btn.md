@@ -1,14 +1,14 @@
-# 3.3.7 F버튼 동작 - default 값으로 초기화
+# 3.3.7 Operating the F buttons - Initializing to default values
 
 
 
-<U>ArgosX의 설정화면 사용자 인터페이스의 사양</U>에서 계획한 대로, 화면의 설정을 default 값으로 만드는 F버튼들을 구현해봅시다.
+As described in <U>3.3.1 Specifications of the user interface of the ArgosX setup screen </U>,  implement the F buttons used for initializing the settings of the screen to default values.
 
-setup.js에 아래와 같이 InitButtonBar( ) 함수를 추가합니다.
+Add the InitButtonBar( ) function to setup.js as follows.
 
 setup.js
 ``` js
-...이전 생략
+...Previous steps skipped
  
  
 function init()
@@ -38,14 +38,14 @@ function initButtonBar()
 }
  
  
-..이후 생략
+..Subsequent steps skipped
 ```
 
-InitButtonBar( ) 함수는 F버튼 인터페이스를 정의한 객체들의 배열을 리턴합니다. 각 객체 항목은 버튼 레이블을 지정한 속성 label과, 버튼 클릭 시 수행될 javascript를 지정한 속성 script로 구성됩니다.
+The InitButtonBar( ) function returns an array of objects that define the interfaces for the F buttons. Each object item consists of an attribute label that designates the button label and an attribute script that designates code in JavaScript to be executed when the button is clicked.
 
 </br>
 
-InitButtonBar( ) 함수의 리턴값
+InitButtonBar( ) function's return values
 
 ``` js
 [
@@ -61,15 +61,16 @@ InitButtonBar( ) 함수의 리턴값
 ]
 ```
 
-위 코드에서 지정한 script는 각각 setAllValueAsDef( ) 함수 호출과 setSelectedValueAsDef( ) 함수 호출입니다. 이들은 dst_setup.js가 기본 제공해주는 함수들입니다.
+The scripts designated in the code above are for calling the setAllValueAsDef( ) function and setSelectedValueAsDef( ) function, respectively. These functions are provided by dst_setup.js by default.
 
-만일, 다른 동작을 원한다면, 직접 함수를 구현하면 됩니다.
+
+If you want other operations, you need to implment the relevant functions yourself.
 
 </br>
-이제 동작을 시험해봅시다. 가상제어기를 다시 실행한 후, ArgosX 설정화면으로 진입합니다. default와는 다른 값들로 설정을 변경한 후 [OK] 버튼으로 저장합니다.
+Let's test the operation. Run the virtual controller again and enter the ArgosX setup screen. After that, change the settings to values ​​different from the default values, then save them ​by clicking the [OK] button.
 
-설정 화면으로 재진입 한 후, 임의의 element에 커서를 두고 Initialize One 버튼을 클릭하여 default 값으로 복원되는지 확인합니다.
+Enter the setup screen again and place the cursor on an arbitrary element. After that, click the Initialize One button and check whether the default values ​​are restored.
 
-또한 Initialize All 버튼을 클릭하여 화면 전체의 값이 default 값으로 복원되는지 확인합니다.
+In addition, click the Initialize All button and check whether all values of the screen are restored to the default values.
 
 ![](../../_assets/image_48.png)

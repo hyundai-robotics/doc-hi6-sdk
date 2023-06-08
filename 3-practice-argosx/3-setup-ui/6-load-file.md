@@ -1,12 +1,12 @@
-# 3.3.6 설정 파일 불러오기와 저장하기
+# 3.3.6 Loading and saving the setup files
 
-앞 절에서는 설정 값을 python 변수에 저장하고, 다시 불러오는 실습을 했습니다.
+In the previous section, we practiced saving the setup values into the Python variables and loading them back.
 
-제어기를 껐다 켜더라도 이 설정이 보관되려면 파일에 저장해야 합니다.
+To keep this setting, even when we turn the controller off and on, it should be saved into a file.
 
 
 
-setup.py에 file에 저장하는 함수 save_to_setup_file( )와 file에서 불러오는 함수 load_from_setup_file()를 다음과 같이 추가합니다.
+Add the save_to_setup_file( ) function, which is used for saving the settings to a file, and the load_from_setup_file( ) function, used for loading the settings from the file, to setup.py as follows.
 
 
 
@@ -142,9 +142,9 @@ sigcode_err = gen_def['sigcode_err']
 ```
 </br>
 
-설정화면 값을 python 변수에 저장하는 함수 put_general( )의 마지막 동작으로서 save_to_setup_file(body) 호출을 추가했습니다.
+We added calling save_to_setup_file(body) as the last operation of the put_general( ) function for saving the values of the setup screen into the Python variables.
 
-또한, 아래와 같이 main.py의 on_app_init( ) 함수 내에 setup.load_from_setup_file( ) 호출을 추가했습니다. 이제, argosx 플러그인이 import되는 순간 setup.load_from_setup_file( ) 이 호출되어 설정이 load됩니다.
+In addition, we added calling setup.load_from_setup_file( ) into the function on_app_init( ) of main.py as follows. The moment the ArgosX plug-in is imported, setup.load_from_setup_file( ) will be called to load the settings.
 
 </br>
 
@@ -183,14 +183,14 @@ def on_app_init() -> int:
 </br>
 
 
-이제 앞 절에서 한 시험을 반복해봅시다.
+Here, let's repeat the test we performed in the previous section.
 
-ArgosX의 설정화면을 열고, IP 주소, 출력 할당 신호 등의 설정값을 바꾼 후, [OK] 키로 저장합니다.
+Open the ArgosX setup screen, change the setup values, ​​such as the IP address and output assigned signal, and save them by pressing the [OK] key.
 
-가상제어기의 project/ 폴더에 아래와 같은 argosx.json 파일이 생성되었는지 확인합니다.
+Check whether an argosx.json file is created in the project/ folder of the virtual controller, as shown below.
 
 </br>
-argosx.json (IP주소를 192.168.1.172로, 에러 시 출력 할당 신호를 fb3.4로 변경했을 때의 예)
+argosx.json (An example of changing the IP address to 192.168.1.172 and the output assigned signal for an error to fb3.4)
 
 ```json
 {
@@ -202,7 +202,7 @@ argosx.json (IP주소를 192.168.1.172로, 에러 시 출력 할당 신호를 fb
 
 
 </br>
-main S/W를 재실행 한 후 ArgosX 설정화면을 열어봅니다. 파일에 저장했던 설정값들이 정상적으로 로드되었는지 확인합니다.
+Run the main software again and open the ArgosX setup screen. Check whether the setup values saved in the file are loaded normally.
 
 ![](../../_assets/image_46.png)
 

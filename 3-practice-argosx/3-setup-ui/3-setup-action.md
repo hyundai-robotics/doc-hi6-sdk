@@ -1,8 +1,8 @@
-# 3.3.3 설정화면의 동작
+# 3.3.3 Operating the setup screen
 
-setup.html의 head 안에 아래와 같이 script를 추가합니다.
+As shown below, add the scripts into the head of setup.html.
 
-setup.js 파일은 이 설정화면에만 적용되는 동작들을 구현하기 위한 script 파일입니다. 아래에서 다시 설명됩니다.
+The setup.js file is a script file designed to implement operations that are to be applied only on this setup screen. Additional descriptions will be provided below.
 
 
 
@@ -56,7 +56,7 @@ ui/setup.html
 
 
 
-ui/ 폴더에 setup.js 파일을 추가하고 내용을 아래와 같이 작성합니다.
+Add the setup.js file into the ui/ folder and write the following content.
 
 
 
@@ -111,17 +111,17 @@ function updateData(data, to_data)
 }
 ```
 
-updateGuideBar( ) 함수는 입력 element에 커서가 위치했을 때, 안내 프레임에 어떤 메시지를 표시할 지를 setGuideBarMsg( ) 함수를 호출하여 지정합니다.
+When the cursor is located on the input element, the updateGuideBar( ) function will call the setGuideBarMsg( ) function, then it will designate the message to be displayed in the guidance frame.
 
-__setGuideBarMsg(element의 id 혹은 name, 표시할 message)___
+__setGuideBarMsg(The ID or name of the element and the message to be displayed)___
 <br></br>
 
-가령, 위의 예에서 sg('ip_addr', msg_ip_addr);는 name이 'ip_addr'인 input element에 커서가 위치했을 때, msg_ip_addr 문자열을 안내 프레임에 표시하라는 설정입니다.
+For example, sg('ip_addr', msg_ip_addr); in the example above refers to the setting that displays the msg_ip_addr string in the guidance frame when the cursor is located on the input element with the name 'ip_addr.'
 
 
 
-처음 설정화면이 열렸을 때, 현재 설정 값을 불러오고 [OK] 버튼을 클릭하면 저장해야 합니다.
+When the setup screen is opened initially, the current setup value needs to be loaded. Upon pressing the [OK] button, the value should be saved.
 
-이러한 설정값과 관련된 동작은 setDomPath("/apps/argosx/svr_setup");의 호출과 updateData( ) 함수의 정의로 구현됩니다.
+Operations related to these settings are to be implemented by calling setDomPath("/apps/argosx/svr_setup"); and defining the updateData() function.
 
-자세한 내용은 이 후의 절에서 다시 설명하겠습니다.
+More detailed descriptions will be provided in the subsequent sections.

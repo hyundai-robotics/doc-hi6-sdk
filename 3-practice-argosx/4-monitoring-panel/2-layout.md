@@ -1,14 +1,14 @@
-# 3.4.2 모니터링 panel의 레이아웃
+# 3.4.2 Layout of the monitoring panel
 
-argosx 의 부모인 apps/ 폴더에 대해 vscode를 여십시오.
+Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 
 
-ui/panel.html 과 panel.js 파일을 생성합니다.
+Create ui/panel.html and panel.js files.
 
 ![](../../_assets/image_50.png)
 
 
-내용은 아래와 같이 작성합니다. <table> 하나로 구성되어 있는 간단한 layout입니다. table의 첫번째 열에는 'thd' 라는 class를 부여했는데(table header의 줄임말), 이 class는 공용 style.css에 회색 바탕의 검은 글씨로 정의되어 있습니다.  스타일을 바꾸고 싶다면, 별도의 local css로 class를 정의하여 적용해도 됩니다.
+Write the content as follows, which is about a simple layout consisting of one table. The first column of the table is given a class called 'thd' (abbreviation for table header), and this class is defined in the common style.css with black characters on a gray background. If you want to change the style, you can define a class using a separate local css and apply it.
 
 
 
@@ -62,11 +62,11 @@ panel.html
 </html>
 ```
 
-panel.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Live server를 실행하면 Chrome 브라우저가 열립니다.
+While panel.html is open, if you execute Live server by clicking the Go Live button at the bottom right, the Google Chrome browser will open.
 
 ![](../../_assets/image_51.png)
 <br></br>
-아직 panel.js의 내용은 없지만, 레이아웃이 정상적인지는 확인할 수 있습니다.
+Even though there is no content in panel.js yet, we can check whether the layout is normal.
 ![](../../_assets/image_52.png)
 
 

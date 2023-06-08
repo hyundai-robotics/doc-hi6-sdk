@@ -1,54 +1,54 @@
-# 1.1 필요한 사전 지식
+# 1.1 Required knowledge
 
-SDK를 활용한 앱(app) 개발을 하기 위해서는 아래의 기술들에 대해 기본 이상의 숙련도를 갖추고 있어야 합니다.
+Developing apps using an SDK requires more than basic proficiency in the following technologies.
 
-만일 아래 기술들이 익숙하지 않다면, 먼저 적절한 교재를 이용해 학습하기를 권장합니다.
+If you are unfamiliar with the technologies below, studying them first using the appropriate materials is recommended.
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">필요한 기술</th>
-      <th style="text-align:left">용도</th>
-      <th style="text-align:left">교재</th>
+      <th style="text-align:left">Required technology</th>
+      <th style="text-align:left">Usage</th>
+      <th style="text-align:left">Textbook</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Hi6 제어기의 기본 사용법</td>
+      <td>Basic method of using the Hi6 controller</td>
       <td>
-       로봇 조작의 기본 지식
+       Basic knowledge for operating robots
       </td>
-      <td>Hi6 제어기 조작설명서</td>
+      <td>Hi6 Controller Operation Manual</td>
     </tr>
    <tr>
-      <td>HRScript 로봇언어 프로그래밍</td>
+      <td>HRScript robot language programming</td>
       <td>
-       HRScript와 app과의 연동
+       Interlocking between HRScript and apps
       </td>
-      <td>Hi6 제어기 기능설명서 - HRScript</td>
+      <td>Hi6 Controller Function Manual - HRScript</td>
     </tr>
     <tr>
-      <td>python3 프로그래밍</td>
+      <td>Python 3 programming</td>
       <td>
-       app 동작의 구현
+       Implementation of app operations
       </td>
-      <td>python 학습서, 혹은 온/오프라인 교육 프로그램</td>
+      <td>Python tutorials or online/offline training programs</td>
     </tr>
     <tr>
-      <td>웹 앱 프로그래밍</br>
+      <td>Web app programming</br>
       (HTML5/CSS/JavaScript, jQuery)</td>
       <td>
-       app U/I 화면의 구현	
+       Implementation of app UI	
       </td>
-      <td>웹 개발 학습서, 혹은 온/오프라인 교육 프로그램</br>
-      (U/I가 없는 app 개발 시에는 필요없음.)</td>
+      <td>Web development tutorials or online/offline training programs</br>
+      (Not required when developing apps without UIs.)</)</td>
     </tr>
     <tr>
-      <td>이더넷 UDP 통신의 기본 개념</td>
+      <td>The basic concept of Ethernet user data protocol (UDP) communication</td>
       <td>
-       argosx 예제의 이해
+       Understanding the ArgosX examples
       </td>
-      <td>python 학습서의 이더넷 socket 통신 챕터</td>
+      <td>Chapters for Ethernet socket communication in Python tutorials</td>
     </tr>
 
   </tbody>

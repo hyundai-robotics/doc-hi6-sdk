@@ -1,18 +1,18 @@
-# 3.1.4 ip_addr, port attribute 생성
+# 3.1.4 Creating ip_addr and port attributes
 
-<u>ArgosX와 interface plug-in의 사양</u>을 보면 우선 ip_addr를 지정하는 문자열 속성(attribute)이 있습니다.
-
-
-
-argosx_main.py 파일에, 아래와 같이 전역변수와 attr_names( ) 함수를 추가합니다.
-
-python 프로그램 내에 많은 전역변수를 정의해 사용할 수 있지만, 이 중 attr_names( )이 리턴하는 튜플(tuple) 내에 열거한 이름들만 HRScript에 argosx 모듈의 속성(attribute)으로서 노출합니다. 속성으로 노출한 변수는 그 이름에 get_과 set_을 붙인 getter, setter 함수를 정의해야 합니다.
-
-본 예제에서는 ip_attr와 port 두 개의 전역변수를 정의한 후, 이들을 attribute로 노출시켜 HRScript에서 읽기 쓰기가 가능하게 해봅시다.
+When looking at <u>3.1.1 Specification of ArgosX and interface plug-ins</u>, you can find a string attribute to designate the ip_addr.
 
 
 
-argosx/ 프로젝트 폴더에 setup.py 파일을 새로 만들고 다음과 같이 구현합니다.
+Add the global variables and attr_names( ) function to the argosx_main.py file, as shown below.
+
+We can define and use many global variables in the Python program. However, only the names listed in the tuple returned by attr_names( ) will be exposed in HRScript as ArgosX module attributes. For variables exposed as attributes, the getter and setter functions with get_ and set_ added to their names should be defined.
+
+For this example, let’s define two global variables, ip_attr and port, then expose them as attributes and permit reading and writing them in HRScript.
+
+
+
+Create a new setup.py file in the argosx/ project folder, then implement it as follows.
 
 
 
@@ -46,9 +46,9 @@ ip_addr : str = "192.168.1.100"
 port : int = 54321
 ```
 
-getter와 setter 함수들을 HRScript에서 호출할 수 있도록 setup module 전체를 main.py에 import 해주고, attrubite 이름들의 tuple을 리턴하는 attr_name( ) 함수를 정의해줍니다.
+Import the entire setup module into main.py so that the getter and setter functions can be called from HRScript, then define the attr_name( ) function that returns the tuples of the attribute names.
 
-(host는 argosx/ 폴더를 package로 다룹니다. main module에서 setup module을 import할 때 setup 앞에 같은 폴더를 뜻하는 . (period)를 명시적으로 붙여줘야 합니다.)
+(The host handles the argosx/ folder as a package. When importing the setup module from the main module, you should explicitly add a . (period) in front of setup, which means the same folder.)
 
 
 
@@ -69,7 +69,7 @@ def attr_names() -> tuple:
    return ("ip_addr", "port")
 ```
 
-시험용 job 프로그램은 아래와 같이 교시한 후 실행합니다.
+The test job program should be taught and executed as follows.
 ```
 import argosx
 print argosx.ip_addr
@@ -77,7 +77,7 @@ print argosx.port
 end
 ```
 
-아래와 같이 python 전역변수들의 값이 안내 프레임에 차례로 표시되면 정상 동작한 것입니다.
+If the values of the Python global variables are displayed in order in the guidance frame, as shown below, it means the operation is normal.
 
 ```
 192.168.1.100
@@ -86,20 +86,20 @@ end
 ```
 
 
-argosx와 argosx_stub 간의 통신시험은 동일한 PC 내에서 수행하려고 합니다. 따라서, ip_addr 의 값을 본인의 PC의 IP주소로 변경한 후, 잘 변경됐는지 확인해봅시다.
+We will test communications between ArgosX and the argosx_stub within the same PC. Let's change the value of ip_addr to the IP address of your PC and check whether it has changed.
 
-job 프로그램은 아래와 같이 변경한 후 실행합니다.
+Change and execute the job program as follows.
 
 ```
 import argosx
 print argosx.ip_addr
 print argosx.port
-argosx.ip_addr="192.168.1.172" # 본인 PC의 IP주소
-print argosx.ip_addr # 재확인
+argosx.ip_addr="192.168.1.172" # your own PC's IP address
+print argosx.ip_addr # re-checking
 end
 ```
 
-안내프레임에 새로 ip_addr에 대입된 값이 잘 출력되는지 확인하십시오.
+Check whether the value newly assigned to ip_addr is printed on the guidance frame.
 ```
 192.168.1.172
 ```

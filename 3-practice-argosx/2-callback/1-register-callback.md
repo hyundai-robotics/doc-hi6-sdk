@@ -1,20 +1,20 @@
-# 3.2.1 callback 함수 등록
+# 3.2.1 Registering a callback function
 
 
-callback 함수를 등록하는 방법은 아주 간단합니다. 각 이벤트 별로 callback 함수명이 정해져 있으며, plug-in 코드에 이 함수명으로 함수를 정의해놓기만 하면, plug-in이 import 될 때 자동으로 등록됩니다.
+The method of registering a callback function is very simple. The callback function name is determined already for each event, so, by defining a callback function in the plug-in code using the relevant callback function name, the callback function will be registered automatically when the plug-in is imported.
 
 
-다시 <U>ArgosX와 interface plug-in의 사양</U>의 기타 기능을 참고해봅시다.
+We need to refer to the other functions of <U>3.1.1 Specifications of ArgosX and interface plug-ins</U> again.
 
-로봇의 모터ON/OFF에 따라서 ArgosX의 LED조명도 함께 켜지고 꺼져야 합니다. 구체적으로는 ArgosX에 "light-on", "light-off"라는 명령을 송신해야 합니다.
-
-
-
-callback 함수들을 별도의 파일(python 모듈)에 다음과 같이 작성합시다. 일단은 구체적인 동작 없이, 시험을 위해 문자열 출력만 합니다.
+Depending on whether the robot is in the motor ON or motor OFF state, ArgosX's LED light should also be switched on or off accordingly. Specifically, the commands "light-on" or "light-off" should be transmitted to ArgosX.
 
 
 
-callback.py (시험용)
+Let's create the callback functions in a separate file (Python module) as follows. For now, we will just print the strings for testing without performing specific operations.
+
+
+
+callback.py (for testing)
 ```python
 def on_motor_on() -> int:
    """(callback) on motor-on
@@ -32,13 +32,13 @@ def on_motor_off() -> int:
    return 0
 ```
 
-callback 모듈을 entry 파일에서 import합니다.
+Import the callback module from the entry file.
 
 
 
 main.py
 ```python
-이전 생략...
+Previous steps skipped...
  
 from . import setup
 from .roblang import *
@@ -47,12 +47,12 @@ from .callback import *
  
 import xhost
  
-이후 생략...
+Subsequent steps skipped...
 
 ```
-이제 제어기를 재부팅한 후, 모터ON하고 StepFWD로 import argosx를 실행합니다.
+Reboot the controller, turn on the motor, and import ArgosX using the Step FWD button.
 
-이 상태에서, 모터ON, 모터OFF를 할 때마다 콘솔창에 아래와 같이 출력되면, callback 함수를 잘 정의한 것입니다.
+In this state, if the result is printed on the console window as follows every time the motor is turned on or off, it means the callback function is well defined.
 ```
 on_motor_on
 

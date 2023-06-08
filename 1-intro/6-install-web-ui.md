@@ -1,14 +1,14 @@
-# 1.6 웹기반 U/I 개발환경 설치
+# 1.6 Installing a web-based UI development environment
 
-티치펜던트를 위한 커스터마이즈된 U/I는 HTML5/CSS/jQuery의 웹앱 형태로 개발합니다.
+The customized UI for the teach pendant should be developed as a web app form of HTML5/CSS/jQuery.
 
 
 
-## Google Chrome 웹브라우저 설치
+## Installing the Google Chrome web browser
 
-Google Chrome 웹 브라우저는 웹 앱의 구동 및 디버깅 환경을 제공합니다. 아직 설치되어 있지 않다면 아래 링크를 클릭하여 설치하십시오.
+The Google Chrome web browser provides an environment for running and debugging web apps. If you have not installed the browser yet, install it by clicking the link below.
 
-(Microsoft Edge나 Mozilla Firefox 웹 브라우저도 거의 동일한 기능을 제공합니다. 하지만 이 설명서에서는 Chrome을 기준으로 설명하겠습니다.)
+(Microsoft Edge or Mozilla Firefox also provides almost the same functions. However, this manual will provide explanations based on Google Chrome.)
 
 https://www.google.com/intl/ko/chrome/
 

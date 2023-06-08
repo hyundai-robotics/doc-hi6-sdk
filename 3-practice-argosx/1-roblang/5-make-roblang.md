@@ -1,19 +1,19 @@
-# 3.1.5 ArgosX의 로봇언어용 함수 생성
+# 3.1.5 Creating functions for the ArgosX robot language
 
 
-다음 구현할 사양은 init( ), req( ), res( ), close( ) 함수입니다.
+The specifications to be implemented next are the init( ), req( ), res( ), and close( ) functions.
 
-(<u>ArgosX와 interface plug-in의 사양</u>의 프로토콜과 로봇언어 function 부분을 참고하십시오.)
-
-
-
-일단 각 함수는 간단한 print 동작만 수행하도록 해봅시다.
-
-argosx/ 폴더 밑에 roblang.py 라는 파일을 아래와 같이 생성합니다.
+(Refer to the functions of the Protocol and Robot Language of <u>3.1.1 Specifications of ArgosX and interface plug-ins</u>.)
 
 
 
-roblang.py (시험용)
+For now, let's perform a print operation for each function.
+
+Create a roblang.py file under the argosx/ folder as follows.
+
+
+
+roblang.py (for testing)
 ``` python 
 """ ArgosX Vision System interface - robot language
  
@@ -44,7 +44,7 @@ def res():
    return "data"
 ```
 
-roblang.py의 모든 명칭을 main.py 안에 import 시킵니다.
+Import all names from roblang.py into the main.py.
 
 
 
@@ -70,36 +70,36 @@ def attr_names() -> tuple:
 ```
 
 
-job 파일
+job file
 ```
 var iret
 import argosx
  
 print argosx.ip_addr
 print argosx.port
-argosx.ip_addr="192.168.1.172" # 본인의 PC명
-print argosx.ip_addr # 재확인
+argosx.ip_addr="192.168.1.172" # your own PC's name
+print argosx.ip_addr # re-checking
  
-iret=argosx.init() # socket 초기화
+iret=argosx.init() # initializing the socket
 if iret<0
   print "init error"
   stop
 endif
  
-iret=argosx.req(39) # 요청 송신
+iret=argosx.req(39) # transmitting the request
 if iret<0
   print "req error"
   stop
 endif
  
-var str=argosx.res() # 응답 대기
+var str=argosx.res() # waiting for a response
 print str
  
-argosx.close() # socket 닫기
+argosx.close() # closing the socket
 end
 ```
 
-가상제어기를 재부팅한 후, job 파일을 실행해봅니다. 정상적으로 만들어졌다면 가상제어기 콘솔에는 아래와 같이 출력될 것입니다. HRScript에서 python 함수가 호출된 것입니다.
+Reboot the virtual controller and execute the job file. If the file was created normally, the following result will be printed on the virtual controller console. This is a Python function called from HRScript.
 ```
 192.168.1.172
 

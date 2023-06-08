@@ -1,4 +1,4 @@
-# 4. 디버깅
+# 4. Debugging
 
-* python 코드의 디버깅
-* web 기반 U/I의 디버깅
+* Debugging Python code
+* Debugging a web-baesd UI

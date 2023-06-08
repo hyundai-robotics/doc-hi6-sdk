@@ -1,12 +1,12 @@
-# 3.1.10 로봇언어 명령입력 등록
+# 3.1.10 Registering the robot language command inputs
 
-실제 TP를 사용하다보면 로봇언어를 직접 입력하는 것은 번거로운 일입니다.
+Inputting a robot language directly when using a teach pendant is inconvenient.
 
-따라서 [명령입력]을 통해 로봇 언어를 좀더 쉽게 작성할 수 있도록 해야합니다.
+Therefore, we need to ensure that a robot language can be written more easily through [Command Inputting].
 
-이를 위해 로봇언어를 등록해주어야 합니다.
+For this purpose, we need to register a robot language.
 
-먼저, info.json에 "cmds" 라벨 을 추가하고, 이에 상응하는 값은 cmds의 내용을 정리한 json을 지정해줍니다.
+First, we need to add a "cmds" label to info.json. For a value corresponding to it, we need to designate a json that contains the organized content of cmds.
 
 info.json
 ```json
@@ -23,7 +23,7 @@ info.json
 }
 ```
 
-argosx 폴더 안에 cmds.json을 추가하여 해당 파일 안에 명령어의 속성들을 정의해줍니다.
+Add cmds.json into the ArgosX folder to define the properties of the commands in the relevant files.
 
 ``` json
 {
@@ -52,21 +52,21 @@ argosx 폴더 안에 cmds.json을 추가하여 해당 파일 안에 명령어의
 
 ```
 
-|항목|의미|예제|
+|Item|Meaning|Example|
 |---|---|---|
-|fmts|로봇언어 모듈명|"fmts"|
-|name|함수명 |"name": "init"|
-|samples|샘플(로봇언어 입력형태)|"samples": "req 39"|
-|props|함수의 입력 속성|"props"|
-|guide|입력 인자 가이드 메세지|"guide": "work no."|
-|range|입력 인자 값의 범위|"range": "[1~100]"|
+|fmts|Robot language module name|"fmts"|
+|name|Function name|"name": "init"|
+|samples|Sample (robot language input type))|"samples": "req 39"|
+|props|Function's input properties|"props"|
+|guide|Input argument guide message|"guide": "work no."|
+|range|Input argument value's range|"range": "[1–100]"|
 
-각 항목들의 의미하는 바는 위의 표와 같으며, 입력인자가 많은 경우는 "props" 안에 입력인자 수 대로 속성들을 묶음으로 추가하면 됩니다.
+The meaning of each item is as follows in the table above. If there are many input arguments, arrange the properties into as many groups as the number of input arguments, then add them into "props".
 
 
 <br></br>
-추가된 명령어는 TP의 하단의 [명령입력] 버튼을 눌러 확인할 수 있습니다.
+For an added command, you can check it by pressing the [Command Inputting] button at the bottom of the teach pendant.
 ![](../../_assets/image_82.png)
 
-[명령입력]-[argosx]
+[Command Inputting]-[argosx]
 ![](../../_assets/image_83.png)

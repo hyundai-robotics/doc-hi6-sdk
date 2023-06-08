@@ -1,50 +1,50 @@
-# 1.4 python3 개발환경 설치
-## python3 설치
-아래의 절차에 따라 python v3.8을 설치합니다.
+# 1.4 Installing the Python 3 development environment
+## Installing Python 3 
+Install Python v3.8 according to the following procedures.
 
 <br></br>
-1) 아래 링크는 python v3.8.0 설치 화면으로 연결됩니다. x86 32bit를 설치하십시오.
+1) The link below will lead to a Python v3.8.0. installation screen. Install x86 32bit.
 
-    <span style='background-color:#ffdce0'>(주의! : Hi6 가상제어기는 32bit 애플리케이션이므로 python 런타임도 이와 일치시켜야 합니다. x86-64를 설치하면 안됩니다 !) </span>
+    <span style='background-color:#ffdce0'>(caution: As the Hi6 virtual controller is a 32bit app, the python runtime should be made to match it. Do not install x86-64) </span>
 
     https://www.python.org/downloads/release/python-380/
 
     ![](../_assets/image_2.png)
 
-2) Add Python 3.8 to PATH 체크 후, Curtomize installation 선택합니다.
+2) Tick Add Python 3.8 to PATH, then select Customize installation.
     ![](../_assets/image_3.png)
 
-3) 모두 check 하고 Next 클릭합니다.
+3) Tick all and click Next.
     ![](../_assets/image_4.png)
-4) 모두 check. 설치 경로는 주어진 대로, C:\Program Files (x86)\Python38-32 로 두고 Install 클릭합니다.
+4) Tick all. Leave the installation path as C:\Program Files (x86)\Python38-32 as is and click Install.
     ![](../_assets/image_5.png)
-5) Disable path length limit는 안 눌러도 됩니다. Close 클릭합니다.
+5) You do not need to press Disable path length limit. Click Close.
     ![](../_assets/image_6.png)
 
-6) 윈도우 명령 프롬프트를 엽니다. (Windows + R 누른 후 cmd 타이핑하고, enter키) 
+6) Open the Windows Command Prompt (press Windows + R, type in cmd, then press the enter key.)
 
-    ```python --version``` 을 타이핑한 후 enter 키를 눌러 아래와 같은 버전이 출력되는지 확인합니다.
+    Type in ```python --version``` then press the enter key to check whether the version shown below is printed.
 
     ```
     Python 3.8.0
     ```
 
-## python import 검색 경로 추가
-1) .pth 라는 파일을 만들고 안에 _common/ 폴더가 위치한 경로를 지정해준다. 
-    SDK 내의 .pth 파일을 열어, Hi6 가상제어기의 HOME 경로에 맞게 아래 경로를 지정해줍니다.
+## Adding a python import search path
+1) Create a .pth file and designate the path where the _common/ folder is located. 
+    Open the .pth file in the SDK and designate the path below to match the HOME path of the Hi6 virtual controller.
  
 
-    파일내용 예:    
+    Example of file contents:    
     ```
     D:\Hi6\home_main\apps
     ```
 
-2) 편집한 .pth 파일을 python 설치 경로/Lib/site-packages/ 에 배치합니다.
+2) Deploy the edited .pth file into the python installation path/Lib/site-packages/.
     
-    예: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
+    Example: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
 
 
-## 동적 라이브러리 배치
-SDK 내의 ucrtbased.dll와 vcruntime140d.dll를 python 설치 경로에 배치합니다.
+## Deploying dynamic libraries
+Deploy ucrtbased.dll and vcruntime140d.dll in the SDK to the python installation path.
 
-예: C:\Program Files (x86)\Python38-32\ 에 복사.
+Example: Copy to C:\Program Files (x86)\Python38-32\.

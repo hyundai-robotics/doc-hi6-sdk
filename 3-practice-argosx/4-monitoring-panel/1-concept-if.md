@@ -1,14 +1,14 @@
-# 3.4.1 ArgosX의 모니터링 panel 사용자 인터페이스의 사양
+# 3.4.1 Specifications of the ArgosX monitoring panel user interface
 
-아래와 같은 정보들을 관측할 수 있는 모니터링 panel 사용자 인터페이스를 만들어 봅시다.
+Let's create a monitoring panel user interface to monitor information, as shown below.
 
-* IP주소
-* port번호
-* 에러 입력할당 번호
-* 요청 횟수
-* 응답 횟수
+* IP address
+* Port number
+* Error input assigned number
+* Request count
+* Response count
 
-갱신 주기는 500msec으로 합니다.
+The update cycle should be set to 500 msec.
 <br></br>
 ![](../../_assets/image_49.png)
 

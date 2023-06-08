@@ -1,10 +1,10 @@
-# 3.1.3 argosx 프로젝트 생성
+# 3.1.3 Creating an ArgosX project
 
-apps/ 폴더 밑에 argosx 라는 이름의 폴더를 생성합니다.
+Create an ArgosX folder under the apps/ folder.
 
-탐색기의 argosx/ 폴더에 마우스 우버튼을 클릭한 후, pop-up 메뉴에서 "Code(으)로 열기"를 클릭하십시오.
+Right-click the mouse on the argosx/ folder in the explorer and click "Open using code" in the pop-up menu.
 
-argosx/ 폴더를 프로젝트로 하여 vscode가 열립니다. argosx/ 밑에 info.json을 아래와 같이 만듭니다.
+This will open vscode with the argosx/ folder as the project. Create info.json under the argosx/ folder as follows.
 
 info.json
 
@@ -22,7 +22,7 @@ info.json
 ```
 
 
-우선 argosx/ 폴더 밑에 main.py 파일을 생성합니다. (@author에는 본인 이름을 적어도 됩니다.)
+ First, create a main.py file under the argosx/ folder (you may write your name in @author.)
 
 main.py
 ```python 
@@ -34,7 +34,7 @@ main.py
 """
 ```
 
-그리고 아래와 같이 이를 시험할 job 파일을 하나 교시합니다.
+Then, teach a job file, as shown below, to perform the relevant test.
 
 ```
 import argosx

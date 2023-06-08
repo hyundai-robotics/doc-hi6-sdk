@@ -1,8 +1,7 @@
-# 1.7 가상제어기 환경에 SDK 설치
+# 1.7 Installing an SDK in a virtual controller environment
 
-SDK의 apps/ 폴더를 가상제어기의 hi6 home_main 폴더 밑에 복사하십시오.
+The apps/ folder of the SDK should be copied under the Hi6 home_main folder of the virtual controller.
 
-apps/ 폴더 밑의 _common/ 폴더는 모든 app들이 공용으로 사용하는 라이브러리를 담고 있습니다.
+The _common/ folder under the apps/ folder contains the libraries all apps commonly use.
 
-앞으로 개발하게 될 app들도 이와 같이 apps/의 서브 폴더들로서 배치되어야 합니다.
-
+Apps that will be developed in the future need to be deployed as subfolders of the apps/ folder as follows.

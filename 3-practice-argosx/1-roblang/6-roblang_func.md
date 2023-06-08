@@ -1,14 +1,14 @@
-# 3.1.6 ArgosX의 로봇언어용 함수 구현
+# 3.1.6 Implementing functions for the ArgosX robot language
 
-이제 각 함수의 실제 동작을 구현해봅시다.
+Now let's implement the actual operations of each function.
 
-UDP 클라이언트 통신을 수행하는 동작은 추후 다른 부분에서도 사용될 것이므로 별도의 .py 파일로 모듈화하도록 하겠습니다.
+The operation for UDP client communications may be used in other sections later. Here, we will modularize the operation into a separate .py file.
 
-프로젝트에 comm.py라는 파일을 추가하고 아래와 같은 동작을 작성합니다.
+Add a comm.py file to the project and write the following operations, as shown below.
 
-UDP socket을 초기화하고, 문자열 메시지를 송신하고, 수신하고, 닫는 간단한 동작들입니다.
+They are simple operations, such as initializing a UDP socket, sending, receiving, and closing a string message.
 
-- xhost는 호스트(로봇제어기)의 기능을 호출하기 위한 모듈로서, main s/w가 동적으로 만들어 줍니다. (즉, xhost.py라는 파일은 존재하지 않습니다.) 후속 절에서 자세히 설명되므로 여기서는 이 정도만 이해하면 됩니다.
+- While xhost is a module that calls the functions of the host (robot controller), the main software makes it dynamic (there is no file called xhost.py.) Subsequent sections will provide detailed explanations, so this is all you need to understand for now.
 
 
 comm.py
@@ -112,11 +112,11 @@ def logd(text: str):
    xhost.printh(text)
 ```
 
-이제 comm 모듈을 import하여 로봇언어에서 호출할 각 함수를 간단하게 구현할 수 있습니다.
+By importing the comm module, you can simply implement individual functions that are to be called in the robot language.
 
-ip_addr와 port 값도 참조해야 하므로 setup 모듈도 import해 줍니다.
+You also need to import the setup module because referring to the ip_addr and port values is necessary.
 
-get_base_shift_array_from_res()는 ArgosX에서 수신된 shift 문자열을 HRScript의 Shift( )함수로 해석되는 형식으로 변환하는 함수입니다.
+get_base_shift_array_from_res() is a function that converts the shift string received from ArgosX into a format that will be interpreted as the shift( ) function of HRScript.
 
 
 roblang.py
@@ -195,7 +195,7 @@ def get_base_shift_array_from_res(msg: str):
    return tmp
 ```
 
-job 은 아래와 같이 수정합니다.
+The job should be corrected as follows.
 
 
 ```
@@ -205,47 +205,47 @@ Hyundai Robot Job File; { version: 1.6, mech_type: "780(YL012-0D)", total_axis: 
       
      print argosx.ip_addr
      print argosx.port
-     argosx.ip_addr="192.168.1.172" # 본인의 PC명
-     print argosx.ip_addr # 재확인
+     argosx.ip_addr="192.168.1.172" # your own PC's name
+     print argosx.ip_addr # re-checking
       
-     iret=argosx.init() # socket 초기화
+     iret=argosx.init() # initializing the socket
      if iret<0
        print "init error"
        stop
      endif
       
-     iret=argosx.req(39) # 요청 송신
+     iret=argosx.req(39) # transmitting the request
      if iret<0
        print "req error"
        stop
      endif
       
-     var str=argosx.res() # 응답 대기
+     var str=argosx.res() # waiting for a response
      print str
-     var sft=Shift(str) # shift 배열 문자열을 shift 데이터로 변환
+     var sft=Shift(str) # converting the shift array string into shift data
      print sft.x, sft.y, sft.z, sft.rx, sft.ry, sft.rz
  
-     argosx.close() # socket 닫기
+     argosx.close() # closing the socket
      end
 ```
 <br></br>
-먼저, argosx_stub를 명령 프롬프트나 vscode에서 실행해놓습니다.
+First, execute the argosx_stub from the Command Prompt or vscode.
 
-가상제어기를 재부팅한 후, job 파일을 실행해봅니다. 정상적으로 만들어졌다면 아래와 같이 동작할 것입니다.
+Reboot the virtual controller and execute the job file. If the file was created normally, the following operation will occur.
 
 
 
-<U>__argosx_stub측 (ArgosX 역할의 server)__ </U>
+<U>__argosx_stub side (a server playing the role of ArgosX)__ </U>
 
-argosx.req( )가 실행되는 순간마다, 콘솔 출력에 아래와 같은 문자열이 출력됩니다.
+Every time argosx.req( ) is executed, the following string will be printed on the console.
 ```
 request : req 39
 response: res (9, 15.5, 10.3, 11.2, 19.2, 1.3)
 ```
 
-<U>__argosx interface plug-in측 (client)__</U>
+<U>__argosx interface plug-in side (client)__</U>
 
-마지막 print 문이 실행될 때마다 티치펜던트 안내프레임에 아래와 같이 출력됩니다.
+Every time the last print command is executed, the guidance frame of the teach pendant will print the following.
 ```
 9.000000 15.500000 10.300000 11.200000, 19.200000 1.300000
 ```

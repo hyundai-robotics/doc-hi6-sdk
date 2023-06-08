@@ -1,10 +1,10 @@
-# 3.5.4 사용자 막대의 주입
+# 3.5.4 Injecting a user bar
 
-ArgosX의 사용자 막대를, 실제 티치펜던트에 주입해봅시다.
+Let's inject the ArgosX user bar into the actual teach pendant.
 
 
 
-ui/menu.json 파일에 아래와 같이 "ubars" path의 항목을 추가합니다.
+Add the "ubars" path item into the ui/menu.json file, as shown below. 
 
 
 
@@ -33,7 +33,7 @@ menu.json
 ]
 ```
 
-가상 티치펜던트에서 우측의 사용자키 버튼을 누르면 설치된 응용의 사용자 막대들이 차례로 나타납니다. 이제 우리가 만든 ArgosX용 사용자 막대도 볼 수 있습니다. 버튼을 조작해 동작이 ArgosX stub가 정상적으로 반응하는지 확인하십시오.
+Pressing the User Key button on the right side of the virtual teach pendant will bring up the user bars of the installed applications in sequence. Now you can also see the user bar we created for ArgosX. Operate the buttons to check whether the ArgosX stub responds normally.
 
 ![](../../_assets/image_62.png)
 

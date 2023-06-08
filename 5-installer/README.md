@@ -1,3 +1,3 @@
-# 5. 인스톨러
+# 5. Installer
 
-(추후 작성 필요)
+(to be written in the future)

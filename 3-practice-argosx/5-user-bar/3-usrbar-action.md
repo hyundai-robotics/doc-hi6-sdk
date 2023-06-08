@@ -1,12 +1,13 @@
-# 3.5.3 사용자 막대의 동작
+# 3.5.3 Operating the user bar
 
-## 클라이언트단 (티치펜던트)
+## Client side (teach pendant)
 
 
-ui/ubar.js 파일에 아래와 같이 작성합니다. 버튼을 누를 때마다 티치펜던트는 "light_onoff"라는 HTTP post 메시지를 메인보드로 송신합니다. on인지 off인지는 onoff라는 속성을 가진 객체에 담아, post 메시지의 body에 실어 보냅니다.
 
-- light-on일 때의 body : { onoff: true }
-- light-off일 때의 body : { onoff: false }
+Write the following content in the ui/ubar.js file. Every time the button is pressed, the teach pendant will transmit an HTTP post message called "light_onoff" to the main board. Whether it is on or off will be contained in an object that has the onoff attribute, and it will be loaded in the body of the post message and sent. 
+
+- Body in light-on state: { onoff: true }
+- Body in light-off sate: { onoff: false }
 
 
 ui/ubar.js
@@ -56,14 +57,14 @@ function light_onoff(onoff)
 
 
 
-## 서버단 (메인보드)
+## Server side (mainboard)
 
 
-이제 메인보드의 argosx 플러그인에서 이 메시지를 받아 실제 ArgosX 장치(stub로 실험)로 "light-on", "light-off" 메시지를 보내주면 됩니다.
+Now, the ArgosX plug-in of the mainboard needs to receive this message and send the "light-on" and "light-off" messages to the actual ArgosX device (testing with a stub).
 
 
 
-argosx/ 폴더에 ubar.py 파일을 아래와 같이 작성합니다. 구현 내용은 이전 챕터의 callback에서 구현한 것과 비슷하게 comm_ex 모듈을 활용합니다.
+Write the ubar.py file into the argosx/ folder as follows. Regarding its implementation, the comm_ex module will be utilized similarly to how we performed the callback implementations in a previous chapter.
 ``` python
 """ ArgosX Vision System interface - main
  
@@ -91,7 +92,7 @@ def post_light_onoff(body: dict) -> int:
    return comm_ex.send_msg_once(msg)
 ```
 
-마지막으로, main.py에 ubar.py의 모든 함수를 import 해줍니다.
+As the final step, import all functions of ubar.py to main.py.
 
 
 
@@ -113,19 +114,19 @@ from .ubar import *
 import xhost
  
  
-이후 생략...
+Subsequent steps skipped...
 ```
 
-가상제어기를 재부팅한 후, job 파일을 argosx.init( )까지 실행합니다. 다시 Go Live를 실행하여 웹브라우저에 사용자 막대 화면을 띄웁니다.
+Reboot the virtual controller, then run the job file up to argosx.init( ). Execute Go Live again to bring up the user bar screen on the web browser.
 
-ArgosX stub를 실행하고 웹 브라우저의 버튼을 조작해봅니다. stub의 콘솔 출력에 "light-on", "light-off" 수신이 표시되면 정상입니다.
+Execute an ArgosX stub then operate the buttons on the web browser. If the stub’s output on the console is displayed as “light-on" and "light-off", it means the operation is normal.
 <br>
 ![](../../_assets/image_60.png)
 
 
 
 
-ArgosX stub 콘솔 출력
+ArgosX stub's output on the console
 <br>
 ![](../../_assets/image_61.png)
 

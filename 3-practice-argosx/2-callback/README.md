@@ -1,12 +1,12 @@
-# 3.2 실전 프로젝트 : ArgosX - callback
+# 3.2 Practical project: ArgosX - callback
 
 
-Hi6 제어기의 동작에는 모드 변경, 모터ON, 리셋, 기동, 정지, Accuracy OK 등 주요 이벤트들이 있습니다. 각 plug-in 들은 이러한 이벤트에 대해 고유한 동작을 수행하도록 함수를 등록시켜 둘 수 있습니다.
+While operating the Hi6 controller, there are main events, such as Mode Change, Motor On, Reset, Start and Accuracy OK. We can register functions into a plug-in for it to perform unique operations for an event.
 
-이러한 함수를 callback 함수라고 합니다. python 코드 내에서 능동적으로 호출하는 것이 아니라, 누군가(Hi6 host)에 의해 호출 당한다는 뜻에서 callback 이라고 하는 것입니다.
+These functions are callback functions. They are referred to as such because they are called by other parts (Hi6 host) and not actively called within the Python code.
 
 
 
-* callback 함수 등록
-* callback 함수 구현
-* callback 함수 참조설명서
+* Registering a callback function
+* Implementing a callback function
+* Manual for referring to the callback functions

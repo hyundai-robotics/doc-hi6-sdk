@@ -1,12 +1,12 @@
-﻿# 1. Hi6 SDK 개요
+﻿# 1. Overview of Hi6 SDK
 
-이 설명서는 Hi6 제어기의 추가 기능 개발을 위한 플러그인 앱(plugin-app) 개발용 SDK (Software Development Kit) 사용법을 설명합니다.
+This manual describes how to use the SDK for developing plug-in apps to develop the additional functions of the Hi6 controller.
 
-SDK로 개발할 수 있는 앱의 기능은 아래와 같습니다.
+The functions of apps that can be developed with the SDK are as follows.
 
 
 
-로봇언어에 새로운 명령문이나 객체형을 추가할 수 있습니다.
-전원On, 모터 on/off, 기동/정지 등 각종 이벤트에 수행할 동작을 추가할 수 있습니다.
-주기적으로 수행할 동작을 추가할 수 있습니다.
-티치펜던트를 위한 설정화면 등 사용자 정의 UI를 추가할 수 있습니다.
+You can add new commands or object types to the robot language.
+You can add operations that can be performed in various events, such as power on, motor on/off, and start/stop.
+You can add operations that can be performed periodically.
+You can add user-defined user interfaces (UIs), such as a setup screen for the teach pendant.

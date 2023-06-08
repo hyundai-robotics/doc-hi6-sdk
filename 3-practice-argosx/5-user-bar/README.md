@@ -1,12 +1,12 @@
-# 3.5 실전 프로젝트 : ArgosX - user-bar U/I 개발
+# 3.5 Practical project: Developing an ArgosX user bar UI
 
-이전 챕터에서 우리는 로봇언어를 통해 플러그인에서 구현한 기능을 수행하는 방법을 배웠습니다.
+In the previous chapters, we learned how to perform the functions implemented in the plug-ins using a robot language.
 
-그런데, 경우에 따라서는 사용자가 직접 U/I를 조작하여 플러그인의 기능을 호출하는 기능을 제공해야 할 수도 있습니다. 설정창이나 모니터링창에 이러한 조작버튼을 제공할 수도 있지만, 교시화면에서 빠르게 조작하려면 user-bar (사용자 막대) 형태가 적합할 것입니다.
+However, in some cases, it may be necessary to provide a function for the user to directly operate the UI to call the functions of a plug-in. These operating buttons can be provided on the setup window or monitoring window. However, a user bar would be suitable for quick operations on the teaching screen.
 <br></br>
-이번 챕터에서는  ArgosX 용 web 기반 user-bar U/I의 개발을 실습해봅시다.
+In this chapter, let's practice developing a web-based ArgosX user bar UI.
 
-* ArgosX의 user-bar 사용자 인터페이스의 사양
-* 사용자 막대의 레이아웃
-* 사용자 막대의 동작
-* 사용자 막대의 주입
+* Specifications of the ArgosX user bar user interface
+* Layout of the user bar
+* Operating the user bar
+* Injecting a user bar

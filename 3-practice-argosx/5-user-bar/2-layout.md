@@ -1,11 +1,11 @@
-# 3.5.2 사용자 막대의 레이아웃
+# 3.5.2 Layout of the user bar
 
-argosx 의 부모인 apps/ 폴더에 대해 vscode를 여십시오.
+Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 
-ui/ubar.html 와 ui/ubar.js 파일을 생성합니다.
+Create ui/ubar.html and ui/ubar.js files.
 <br>![](../../_assets/image_57.png)
 
-내용은 아래와 같이 작성합니다. 2개의 button으로 구성된 간단한 layout입니다. table의 첫번째 열에는 'ubar-bt' 이라는 class를 부여했는데, 이 class는 공용 style.css에 정의되어 있습니다. TP600과 TP630을 자동으로 인식하여 기본 U/I와 유사한 버튼 크기와 색상을 부여해줍니다. 스타일을 바꾸고 싶다면, 별도의 local css로 class를 정의하여 적용해도 됩니다.
+Write the content below, which is about a simple layout consisting of two buttons. The first column of the table is given a class called 'ubar-bt', which is defined in the common style.css. It automatically recognizes TP600 and TP630 and gives the button’s sizes and colors similar to the default UI. If you want to change the style, you can define a class using a separate local css and apply it.
 
 ubar.html
 ``` html
@@ -31,11 +31,11 @@ ubar.html
 </html>
 ```
 
-ubar.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Live server를 실행하면 Chrome 브라우저가 열립니다.
+While ubar.html is open, if you execute Live server by clicking the Go Live button at the bottom right, the Google Chrome browser will open.
 <br>![](../../_assets/image_58.png)
 
 
 
 
-아직 ubar.js의 내용은 없지만, 레이아웃이 정상적인지는 확인할 수 있습니다.
+Even though there is no content in ubar.js yet, we can check whether the layout is normal.
 <br>![](../../_assets/image_59.png)

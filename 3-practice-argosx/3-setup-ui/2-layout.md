@@ -1,16 +1,16 @@
-# 3.3.2 설정화면의 레이아웃
+# 3.3.2 The layout of the setup screen
 
 
-argosx 의 부모인 apps/ 폴더에 대해 vscode를 여십시오.
+Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 
-(이렇게 하는 이유는 argosx의 사용자 인터페이스가 apps/_common/의 파일을 참조해야 하기 때문입니다. Live server가 참조하는 파일들을 모두 포함하는 폴더를 workspace의 최상위 폴더로서 열어야 합니다.)
+(This step is performed because the ArgosX user interface needs to refer to the files in apps/_common/. A folder containing all the files referred to by the Live server should be opened as a top-level folder in the workspace.)
 </br>
 ![](../../_assets/image_35.png)
 </br>
 
 
 
-New Folder 버튼을 클릭하여 ui/ 폴더를 만듭니다.
+Create a ui/ folder by clicking the New Folder button.
 </br>
 ![](../../_assets/image_36.png)
 </br>
@@ -18,14 +18,14 @@ New Folder 버튼을 클릭하여 ui/ 폴더를 만듭니다.
 
 
 
-ui/setup.html 파일을 생성합니다.
+Create a ui/setup.html file.
 </br>
 ![](../../_assets/image_37.png)
 </br>
 
 
 
-내용은 아래와 같이 작성합니다.
+Write the content as follows. 
 
 
 
@@ -68,7 +68,7 @@ setup.html
 </html>
 ```
 
-setup.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Live server를 실행합니다.
+While setup.html is opened, click the Go Live button on the bottom right to run the Live server.
 </br>
 ![](../../_assets/image_38.png)
 </br>
@@ -76,7 +76,7 @@ setup.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Li
 
 
 
-혹시 Visual Studio Code에 대한 보안 경고가 나타나면, 통신 허용을 모두 체크하고 액세스 허용 버튼을 클릭해주십시오.
+If a security warning about vscode appears, tick all items under Permit Communications and click the Allow Access button.
 </br>
 ![](../../_assets/image_39.png)
 </br>
@@ -84,7 +84,7 @@ setup.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Li
 
 
 
-혹은, setup.html에 대해 우버튼으로 팝업 메뉴를 열고 "Open with Live Server"를 선택합니다.
+Alternatively, you should open a pop-up menu by right-clicking the mouse on setup.html, then select "Open with Live Server."
 </br>
 ![](../../_assets/image_40.png)
 </br>
@@ -92,11 +92,11 @@ setup.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Li
 
 
 
-Chrome 브라우저가 열리면서, 대략적인 레이아웃을 확인할 수 있습니다.
+When the Google Chrome browser opens, we can check the sketchy layout.
 
 
 
-setup.html의 대략적인 레이아웃
+Sketchy layout of setup.html
 </br>
 ![](../../_assets/image_41.png)
 </br>
