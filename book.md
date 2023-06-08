@@ -11,9 +11,15 @@ The manual can change without prior notification.
 
 
 
-**Copyright ⓒ 2020 by Hyundai Robotics**
+**Copyright ⓒ 2020 by HD Hyundai Robotics**
 {% endhint %}
-# 1. Overview of Hi6 SDK
+
+{% hint style="warning" %}
+The Hi6 SDK is prior to its official release and is undergoing internal verification testing and supplementation.
+
+In the future, the interface specifications may change significantly without notice, so if you are not an official tester, please put the software development using this on hold.
+
+{% endhint %}# 1. Overview of Hi6 SDK
 
 This manual describes how to use the SDK for developing plug-in apps to develop the additional functions of the Hi6 controller.
 
@@ -25,7 +31,6 @@ You can add new commands or object types to the robot language.
 You can add operations that can be performed in various events, such as power on, motor on/off, and start/stop.
 You can add operations that can be performed periodically.
 You can add user-defined user interfaces (UIs), such as a setup screen for the teach pendant.
-
 # 1.1 Required knowledge
 
 Developing apps using an SDK requires more than basic proficiency in the following technologies.
@@ -53,7 +58,7 @@ If you are unfamiliar with the technologies below, studying them first using the
       <td>
        Interlocking between HRScript and apps
       </td>
-      <td>Hi6 Controller Function Manual - HRScript </td>
+      <td>Hi6 Controller Function Manual - HRScript</td>
     </tr>
     <tr>
       <td>Python 3 programming</td>
@@ -66,10 +71,10 @@ If you are unfamiliar with the technologies below, studying them first using the
       <td>Web app programming</br>
       (HTML5/CSS/JavaScript, jQuery)</td>
       <td>
-       Implementation of app UI
+       Implementation of app UI	
       </td>
       <td>Web development tutorials or online/offline training programs</br>
-      (Not required when developing apps without UIs.)</td>
+      (Not required when developing apps without UIs.)</)</td>
     </tr>
     <tr>
       <td>The basic concept of Ethernet user data protocol (UDP) communication</td>
@@ -113,26 +118,74 @@ This web app is stored in the main module, which will be transferred to the teac
 
 By calling the OpenAPI, the teach pendant web app can call the Python functions and send and receive data.
 
-![](../_assets/image_1.png)
+![](../_assets/image_1.png)# 1.3 Installing an Hi6 virtual controller 
 
-# 1.3 Installing an Hi6 virtual controller 
+(temporary)
+<br></br>
 
-(temporary)</br>
-1) Unzip the downloaded Hi6 controller zip file.
-2) Execute according to the 'How to Use.txt' in the unziped folder to adjust the development environment.
-3) Execute hi6_main.exe in the Debug folder.
-4) At the same location
-Input the command argument -layout=k.
+## 1) Installing 
+Unzip the downloaded Hi6 controller zip file.
 
-# 1.4 Installing the Python 3 development environment
+### Installing the virtual robot controller (VRC) development environment 
+1. Copy and ensure that the path will be D:\util\hi6_vrc\.
+   (The folder path recorded in hi6main_platform_cfg.json and hi6tp_platform_cfg.json should be modified to change the folder path.)
+2. Install the Visual Studio 2013 redistributable package by executing the vcredist_x64.exe file in the install folder.
+3. Copy the contents of the System32 and SysWOW64 folders from the install folder to the relevant individual folders in C:\Windows\.
+
+### Installing the Qt library
+1. Create the path C:\Qt\Qt5.7.1\5.7.
+2. Unzip msvc2013 under the path.
+
+### Installing Python 
+Please refer to the contents of <u> 1.4 Installing the Python 3 development environment </u>.
+
+<span style = 'background-color:#ffdce0'> Caution: For successful installations, you must be connected to the Internet during execution.</span>
+
+1. Execute the "python-3.8.0.exe" file in the install folder. 
+2. Tick only Add Python 3.8 to PATH, then click Customize installation.
+3. Tick the checkboxes for all items afterward and start the installation.
+4. End when the 'setup was successful' message is confirmed.
+5. Copy the "ucrtbased.dll" and "vcruntime140d.dll" files from the install folder into C:\Program Files (x86)\Python38-32\.
+
+
+## 2) Executing
+1. Execute hi6_main.exe in the debug folder.
+2. Run PowerShell in the debug folder, then run the teach pendant (TP) with the command as follows. 
+   ```
+    ./hi6_tp -layout=k
+   ```
+
+- If you execute hi6_tp right away, <U>TP600</U> will be executed.
+
+- The <U>TP630</U> is the actual target model of Hi6 TP. Therefore, to properly execute this, you need to run TP630 by inputting '-layout=k' through commands. 
+
+<b>TP630</b>&nbsp;![](../_assets/image_81.png)  
+
+<b>TP600</b>&nbsp;![](../_assets/image_84.png)
+
+   ### When required to interlock with HRSpace
+    1. Download HRSpace from https://www.hyundai-robotics.com/customer/customer4.html?p=3 and install it.
+    2. Right-click the mouse on Workspace and load the robot using "Load Model."  
+    3. Right-click the mouse on Robot and select "ENetHi6" to connect the controller in "Robot Attributes."
+    4. Set the IP addresses of the PC and robot controller to "127.0.0.1."
+    5. Press the Start Simulation button.
+
+
+
+<br></br>
+(Content related to controller installation will be improved later along with the installer-related content)
+
+
+
+ # 1.4 Installing the Python 3 development environment
 ## Installing Python 3 
 Install Python v3.8 according to the following procedures.
 
-
-
+<br></br>
 1) The link below will lead to a Python v3.8.0. installation screen. Install x86 32bit.
 
-    (caution: As the Hi6 virtual controller is a 32bit app, the python runtime should be made to match it. Do not install x86-64) </br>
+    <span style='background-color:#ffdce0'>(caution: As the Hi6 virtual controller is a 32bit app, the python runtime should be made to match it. Do not install x86-64) </span>
+
     https://www.python.org/downloads/release/python-380/
 
     ![](../_assets/image_2.png)
@@ -149,44 +202,51 @@ Install Python v3.8 according to the following procedures.
 
 6) Open the Windows Command Prompt (press Windows + R, type in cmd, then press the enter key.)
 
-Type in python --version, then press the Enter key to check whether the version shown below is printed.
+    Type in ```python --version``` then press the enter key to check whether the version shown below is printed.
 
-Python 3.8.0
+    ```
+    Python 3.8.0
+    ```
 
-## Adding a Python import search path
-1) Create a .pth file and designate the path where the _common/ folder is located. </br>Open the .pth file in the SDK and designate the path below to match the HOME path of the Hi6 virtual controller.
+## Adding a python import search path
+1) Create a .pth file and designate the path where the _common/ folder is located. 
+    Open the .pth file in the SDK and designate the path below to match the HOME path of the Hi6 virtual controller.
  
 
-Example of file contents:    
+    Example of file contents:    
+    ```
     D:\Hi6\home_main\apps
+    ```
 
-Deploy the edited .pth file into the python installation path/Lib/site-packages/.
-
-Example: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
+2) Deploy the edited .pth file into the python installation path/Lib/site-packages/.
+    
+    Example: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
 
 
 ## Deploying dynamic libraries
-Deploy ucrtbased.dll and vcruntime140d.dll in the SDK to the Python installation path.
+Deploy ucrtbased.dll and vcruntime140d.dll in the SDK to the python installation path.
 
-Example: Copy to C:\Program Files (x86)\Python38-32\.
+Example: Copy to C:\Program Files (x86)\Python38-32\.# 1.5 Installing Visual Studio Code
 
-# 1.5 Installing Visual Studio Code
-
-Microsoft Visual Studio Code (hereafter referred to as vscode) is a powerful text editor that is available for free. Through the installation of various extensions, vsode provides a development environment for numerous programming languages.
+Microsoft Visual Studio Code (hereafter referred to as vscode) is a powerful text editor that is available for free. Through the installation of various extensions, vscode provides a development environment for numerous programming languages.
 
 You may use other familiar editors, such as Atom or SublimeText, but this manual provides explanations based on vscode.
 
 
 
-Installing the code
-1) Access the link below then download the stable build version for Windows.</br>For Windows: https://code.visualstudio.com/</br>
-![](../_assets/image_7.png)
+## Installing the code
+1) Access the link below then download the stable build version for Windows. 
+
+    For Windows: https://code.visualstudio.com/<br>
+    ![](../_assets/image_7.png)
 
 2) Execute the downloaded installation file and accept the license agreement.
-![](../_assets/image_8.png)
+
+    ![](../_assets/image_8.png)
 
 3) While keeping the default values, such as the installation path, continue pressing the Next button. When the screen for selecting additional jobs appears, tick as shown below, then click the Next button.
-![](../_assets/image_9.png)
+    
+    ![](../_assets/image_9.png)
 
 4) Click the Install button. 
 
@@ -217,6 +277,7 @@ Now, you are ready to use vscode. Learning about how to use it is recommended by
 
 ![](../_assets/image_12.png)
 # 1.6 Installing a web-based UI development environment
+
 The customized UI for the teach pendant should be developed as a web app form of HTML5/CSS/jQuery.
 
 
@@ -236,7 +297,6 @@ The apps/ folder of the SDK should be copied under the Hi6 home_main folder of t
 The _common/ folder under the apps/ folder contains the libraries all apps commonly use.
 
 Apps that will be developed in the future need to be deployed as subfolders of the apps/ folder as follows.
-
 # 2. Very simple project: hello_world
 Skip to the end of the metadata
 Created by Wonhyeok Choi, last modified on December 24, 2021
@@ -302,7 +362,7 @@ Click info.json to open it and input the following.
       <td>
        The form of binding with the Hi6 host software</br>
        - Plug-in: Will be executed in bound form.</br>
-       - Standalone: Will be executed as an independent app (process). 
+       - Standalone: Will be executed as an independent app (process.) 
       </td>
     </tr>
     <tr>
@@ -337,7 +397,7 @@ Click info.json to open it and input the following.
       <td>
        Execution start mode
        - Manual: Manually start the execution
-       - Boot: Automatically start the execution while booting
+       - Boot: Automatically start the execution while booting	
       </td>
     </tr>
      <tr>
@@ -347,9 +407,7 @@ Click info.json to open it and input the following.
       </td>
     </tr>
   </tbody>
-</table>
-
-# 2.2 Implementing the Python function hello( )
+</table># 2.2 Implementing the python function hello( )
 
 Create a new file using the New File button and name it hello_world.py.
 ![](../_assets/image_16.png)
@@ -366,12 +424,15 @@ def hello():
 
 - As you might know if you are familiar with python programming, a line below def should be indented with the tab character.
 - xhost is a module that calls the functions of the host (robot controller). You do not have to write an xhost.py file yourself. The subsequent sections will provide detailed explanations, so this is all you need to understand for now.
+<br></br>
 
 Now, execute the Hi6 virtual controller, which is the main module, and the TP in order.
 
 When starting, the Hi6 controller recognizes the installed apps by reading the info.json from all folders under the apps/ folder.
 
-[service] - 10: Clicking the app will bring up a screen called 10: app - TP. Clicking the [location] button twice will change the TP in the title to MAIN via USB. On this screen, hello_world created earlier can be found.
+[service] - 10: Clicking the app will bring up a screen called 10: app - TP. 
+
+Clicking the [location] button twice will change the TP in the title to MAIN via USB. On this screen, hello_world created earlier can be found.
 
 ![](../_assets/image_17.png)
 
@@ -385,7 +446,7 @@ hello_world.hello()
 end
 ```
 
-While leaving the previous screen pane open and turning on the motor, if you perform an execution with the Step FWD or START buttons, Hello, World! will be printed.
+While leaving the previous screen pane open and turning on the motor, if you perform an execution with the Step FWD or START button, Hello, World! will be printed.
 
 ```
 15:05:20.894 ( 968) .import hello_world
@@ -407,9 +468,7 @@ While leaving the previous screen pane open and turning on the motor, if you per
 
 <span style='background-color:#ffdce0'>
 Caution: If you modify the Python program, you should run the virtual controller to reflect the modification.
-</span>
-
-# 2.3 Transferring parameters to a Python function and receiving a return value
+</span># 2.3 Transferring parameters to a Python function and receiving a return value
 
 
 Now, let's apply two parameters, name and age, to a Python function. Add the introduce( ) function by modifying the code as follows.
@@ -443,7 +502,7 @@ end
 If the following string is printed on the guidance frame of the teach pendant, it means the operation is normal.
 ![](../_assets/image_18.png)
 
-As seen in the example, the string values and integer values of HRScript are naturally transferred as the string values and integer values of Python. Conversely, the string return values of Python are also naturally returned as the string values of HRScript. The values of both languages are converted automatically and mutually like this. The table below is a data type map of the two languages.
+As seen in the example, the string values and integer values of HRScript are naturally transferred as the string values and integer values of Python. Conversely, the string return values of Python are also naturally returned as the string values of HRScript. The values of both languages are automatically converted mutually like this. The table below is a data type map of the two languages.
 
 <table>
   <thead>
@@ -494,7 +553,7 @@ As seen in the example, the string values and integer values of HRScript are nat
   </tbody>
 </table>
 
--  When an object created in Python is transferred to HRScript, it is specifically called as xpy-object. When it comes to xpy-objects, it is possible to read the attribute values and call methods. We will cover them in more detail later.
+-  When an object created in Python is transferred to HRScript, it is specifically called as xpy-object. When it comes to xpy-objects, it is possible to read attribute values and call methods. We will cover them in more detail later.
 - For Python grammar, multiple return values can be transferred from a function to the outside, but they cannot be transferred to HRScript.
 # 2.4 Creating a simple web-based UI
 
@@ -505,6 +564,7 @@ In this example, we will create a simple function that will print Hello, world! 
 
 
 Create a new folder by clicking the New Folder button at the top left. Set the folder name as ui.
+
 ![](../_assets/image_19.png)
 
 Create a new file in the ui/ folder and name it setup.html. The result will appear as such in the figure below.
@@ -603,10 +663,10 @@ Adobe Illustrator (https://www.adobe.com/kr/products/illustrator.html): Illustra
 
 GIMP (http://gimp.org): Photoshop-level image editing software (free)
 
-Medibang Paint Pro (https://medibangpaint.com/pc/): Easy-to-use graphics tool (free)
+Medibang Paint Pro (https://medibangpaint.com/pc/):
+Easy-to-use graphics tool (free)
 
-COOLTEXT (https://cooltext.com/): Easy-to-use graphics tool (free)
-
+COOLTEXT (https://cooltext.com/): A website for creating a text-into-logo image file (free)
 
 
 Execute the virtual main board and virtual teach pendant again.
@@ -620,8 +680,7 @@ When you press the menu, the teach pendant will show the setup.html screen, as s
 (Initially, loading will take about one or two seconds. In subsequent instances, the cache will load faster.)
 
 ![](../_assets/image_23.png)
-# 3. Practical project: ArgosX
-# 3.1 Practical project: ArgosX - Robot language
+# 3. Practical project : ArgosX# 3.1 Practical project: ArgosX - Robot language
 
 
 Now let's practice with a more realistic example project.
@@ -636,7 +695,7 @@ We will learn how to develop an app by developing plug-ins for a virtual vision 
 - Creating functions for the ArgosX robot language</br>
 - Implementing functions for the ArgosX robot language</br>
 - Calling the xhost module methods</br>
-- Manual for referring to the methods of the xhost module</br>
+- Manual for referring to the xhost module methods</br>
 - Solving the robot language function-blocking problem</br>
 # 3.1.1 Specifications of ArgosX and interface plug-ins
 
@@ -695,7 +754,6 @@ We will learn how to develop an app by developing plug-ins for a virtual vision 
         e.g. "req 39"</td>
       <td>Request for the shift value of the workpiece #</br>The workpiece number (#) ranges from 1 to 100 </td>
     </tr>
-    </tr>
    <tr>
       <td>robot ← ArgosX</td>
       <td></td>
@@ -704,7 +762,7 @@ We will learn how to develop an app by developing plug-ins for a virtual vision 
             e.g. "res (30, 25.7, 11.9, 31.6, 12.8, -54.6)"</br>
             e.g. "fail"</td>
       <td>Response regarding the shift value of the workpiece #</br>
-        The values of x-rz are real numbers, and their units are mm and deg</td>
+        The values of x-rz are real numbers, and their units are mm and deg.</td>
     </tr>
     <tr>
       <td>robot → ArgosX</td>
@@ -729,7 +787,6 @@ The interface plug-ins for ArgosX will be developed with the following specifica
 
 
 ### Robot language
-<table>
 <table>
   <thead>
     <tr>
@@ -791,13 +848,12 @@ By opening the ArgosX monitoring panel on the teaching pendant, you can see the 
 - Response count
 
 
+
 ### User bar
 When you open the ArgosX user bar on the teach pendant, a UI, as shown below, will be provided.
 
 - Light-on button: Turns the ArgosX LED light on.
-- Light-off button: Turns the ArgosX LED light off.
-
-# 3.1.2 ArgosX stub
+- Light-off button: Turns the ArgosX LED light off.# 3.1.2 ArgosX stub
 
 The ArgosX vision system is not real. Therefore, if we want to test the interface plug-ins, we need the test software, namely the stub, to take ArgosX's place.
 
@@ -965,6 +1021,7 @@ print('...server ended')
 ```
 
 Copy the content above and create an argosx_stub.py file under the hello_world/ folder. Next, go to the hello_world/ folder using Windows PowerShell or Command Prompt, then execute it using the command below.
+
 ```
 python argosx_stub.py
 ```
@@ -978,9 +1035,7 @@ Alternatively, if you open vscode and press F5, the execution will be performed 
 
 The result will be printed on the TERMINAL window at the bottom. You can hold, resume, or stop debugging by operating the ![](../../_assets/image_25.png) button on the top right.
 
-![](../../_assets/image_26.png)
-
-# 3.1.3 Creating an ArgosX project
+![](../../_assets/image_26.png)# 3.1.3 Creating an ArgosX project
 
 Create an ArgosX folder under the apps/ folder.
 
@@ -1004,7 +1059,7 @@ info.json
 ```
 
 
-First, create a main.py file under the argosx/ folder (you may write your name in @author.)
+ First, create a main.py file under the argosx/ folder (you may write your name in @author.)
 
 main.py
 ```python 
@@ -1037,7 +1092,6 @@ For this example, let’s define two global variables, ip_attr and port, then ex
 
 
 Create a new setup.py file in the argosx/ project folder, then implement it as follows.
-
 
 
 
@@ -1120,7 +1174,7 @@ import argosx
 print argosx.ip_addr
 print argosx.port
 argosx.ip_addr="192.168.1.172" # your own PC's IP address
-print argosx.ip_addr # Rechecking
+print argosx.ip_addr # re-checking
 end
 ```
 
@@ -1208,7 +1262,7 @@ import argosx
 print argosx.ip_addr
 print argosx.port
 argosx.ip_addr="192.168.1.172" # your own PC's name
-print argosx.ip_addr # rechecking
+print argosx.ip_addr # re-checking
  
 iret=argosx.init() # initializing the socket
 if iret<0
@@ -1253,7 +1307,7 @@ Add a comm.py file to the project and write the following operations, as shown b
 
 They are simple operations, such as initializing a UDP socket, sending, receiving, and closing a string message.
 
-- While xhost is a module that calls the functions of the host (robot controller), the main software makes it dynamic (there is no file called xhost.py). Subsequent sections will provide detailed explanations, so this is all you need to understand for now.
+- While xhost is a module that calls the functions of the host (robot controller), the main software makes it dynamic (there is no file called xhost.py.) Subsequent sections will provide detailed explanations, so this is all you need to understand for now.
 
 
 comm.py
@@ -1451,7 +1505,7 @@ Hyundai Robot Job File; { version: 1.6, mech_type: "780(YL012-0D)", total_axis: 
      print argosx.ip_addr
      print argosx.port
      argosx.ip_addr="192.168.1.172" # your own PC's name
-     print argosx.ip_addr # rechecking
+     print argosx.ip_addr # re-checking
       
      iret=argosx.init() # initializing the socket
      if iret<0
@@ -1473,14 +1527,14 @@ Hyundai Robot Job File; { version: 1.6, mech_type: "780(YL012-0D)", total_axis: 
      argosx.close() # closing the socket
      end
 ```
-
+<br></br>
 First, execute the argosx_stub from the Command Prompt or vscode.
 
 Reboot the virtual controller and execute the job file. If the file was created normally, the following operation will occur.
 
 
 
-<U>___argosx_stub side (a server playing the role of ArgosX)__ </U>
+<U>__argosx_stub side (a server playing the role of ArgosX)__ </U>
 
 Every time argosx.req( ) is executed, the following string will be printed on the console.
 ```
@@ -1493,9 +1547,7 @@ response: res (9, 15.5, 10.3, 11.2, 19.2, 1.3)
 Every time the last print command is executed, the guidance frame of the teach pendant will print the following.
 ```
 9.000000 15.500000 10.300000 11.200000, 19.200000 1.300000
-```
-
-# 3.1.7 Calling the xhost module methods
+```# 3.1.7 Calling the xhost module methods
 
 xhost is a module containing various methods to call the functions of the host (robot controller).
 
@@ -1509,7 +1561,7 @@ Refer to <U>3.1.8 Manual for referring to the methods of the xhost module</U>.
 
 There is also an item regarding error handling in <U>3.1.1 Specifications of ArgosX and interface plug-ins</U>.
 
-When "fail" is received from ArgosX, the universal I/O output signal of the robot controller corresponding to the preset number will be switched on.
+- When "fail" is received from ArgosX, the universal I/O output signal of the robot controller corresponding to the preset number will be switched on.
 
 
 The universal I/O output signals of the robot controller can be switched on/off using the method below.
@@ -1520,21 +1572,19 @@ def io_set_out_bit(sigcode: int, val: int) -> int
 sigcode is a code that combines the block number and index of the I/O into one number, as shown below.
 
 sigcode = block number x 10000 + index
-
-
+<br></br>
 
 For example, the sigcode of fb3.do72 is as follows.
 
 3 x 10000 + 72 = 30072
+<br></br>
 
 
 
 1 if val is on and 0 if it is off.
 <br></br>
 
-
-
-Add the output signal assigned number for the ArgosX error as a module variable named sigcode_err, and set its default value to 5 (i.e. fb0.do5.)
+Add the output signal-assigned number for the ArgosX error as a module variable named sigcode_err, and set its default value to 5 (i.e. fb0.do5.)
 
 (We can also declare it as an attribute to make a change possible in HRScript. However, it will be skipped in this example.)
 
@@ -1548,19 +1598,19 @@ port : int = 54321
 sigcode_err = 5
 ```
 
-The msg value received in the res( ) function will be compared with "res fail", and an output signal will be transmitted according to the result.
-
+ The msg value received in the res( ) function will be compared with "res fail", and an output signal will be transmitted according to the result.
+<br></br>
 
 
 roblang.py
 ```python
-.. previous steps skipped  
+.. previous steps skipped
   
   
 import xhost
   
   
-...Skipped
+...skipped
  
  
 def res() -> str:
@@ -1612,7 +1662,7 @@ job
        print sft.x, sft.y, sft.z, sft.rx, sft.ry, sft.rz
      endif
  
-     argosx.close() # closing socket
+     argosx.close() # closing the socket
      end
 ```
 
@@ -1632,13 +1682,13 @@ Using the xhost method below, you can designate a specific sigcode as assigned.
 def io_assign_set_out_bit(sigcode: int) -> int
 ```
 
-When you define an on_app_init( ) function in the main.py, then input a routine that designates an assignment, as shown below, the execution will occur the moment ArgosX is imported.
+When you define an on_app_init( ) function in the main.py, then input a routine that designates an assignment, as shown below, the execution will occur at the moment ArgosX is imported.
 
 
 
 main.py
 ```python 
-.. previous steps skipped
+.. previous steps skippd
  
  
 import xhost
@@ -1657,13 +1707,11 @@ def on_app_init() -> int:
    return 0
 ```
 
-Execute the virtual controller again. Then, when Import ArgosX is executed in the job, reopen the universal output panel.
+Execute the virtual controller again. Then, when import argosx is executed in the job, reopen the universal output panel.
 
 The designated signal will be displayed as assigned (bold).
 
-![](../../_assets/image_28.png)
-
-# 3.1.8 Manual for referring to the xhost module methods
+![](../../_assets/image_28.png)# 3.1.8 Manual for referring to the xhost module methods
 
 <html>
 <body>
@@ -1754,7 +1802,7 @@ issue notice event.<br><br>
 <b>task_no</b>: int. task number (0~7).<br>
 <b>code</b>: int. alarm code number.<br>
 <b>msg</b>: str. notice message.<br>
-<b>delay_sec</b>: float. time to delay before hide (sec).<br>
+<b>delay_sec</b>: float. time to delay before hiding (sec).<br>
 
 <h3>Returns:</h3>
 	
@@ -1764,7 +1812,7 @@ issue notice event.<br><br>
 <h2>set_job_state_msg(task_no, msg)</h2>
 
 <h3>Description:</h3>
-set the job state message on teach pendant.<br><br>
+set the job state message on the teach pendant.<br><br>
 <h3>Args:</h3>
 <b>task_no</b>: int. task number (0~7).<br>
 <b>msg</b>: str. state message to show.<br>
@@ -1868,13 +1916,13 @@ set sigcode as the assigned output i/o<br><br>
 <h2>io_set_triggout(task_no, fbname, val, ofs, ax_no, type)</h2>
 
 <h3>Description:</h3>
-trigger output i/o<br><br>
+trigger the output i/o<br><br>
 <h3>Args:</h3>
 <b>task_no</b>: int. task number (0~7).<br>
 <b>fbname</b>: str. output variable name (e.g. fb3.do17, dob3)<br>
 <b>val</b>: int. output value.<br>
 <b>ofs</b>: int. offset-time (msec), or offset-distance (mm)<br>
-<b>ax_no</b>: int. 0(TCP), 1~(axis-number) ; axis that is observed when the type is OD<br>
+<b>ax_no</b>: int. 0(TCP), 1~(axis-number) ; the axis observed when the type is OD<br>
 <b>type</b>: <br>
 &nbsp&nbsp <b>0x01</b>: OT (time-based)<br>
 &nbsp&nbsp <b>0x02</b>: OD (distance-based) ; relative distance from the previous position<br>
@@ -1920,13 +1968,13 @@ int. The number of bits (address-space) in a block.<br>
 <h2>io_fbname_from_sigcode(sigcode, is_out)</h2>
 
 <h3>Description:</h3>
-get the fbname from sigcode.<br><br>
+gets the fbname from sigcode.<br><br>
 <h3>Args:</h3>
 <b>sigcode</b>: int. signal-code (e.g. 30017)<br>
 <b>is_out</b>: 1               output 0               input<br>
 
 <h3>Returns:</h3>
-the fbname of the sigcode (e.g. fb3.di17)<br>
+fbname of the sigcode (e.g. fb3.di17)<br>
 <br>
 
 <hr>
@@ -1959,7 +2007,7 @@ int. the resulting integer value of the expression.<br>
 <h2>exec_mode()</h2>
 
 <h3>Description:</h3>
-	
+check whether the mode is execution mode.<br>
 <h3>Args:</h3>
 	
 <h3>Returns:</h3>
@@ -1970,7 +2018,8 @@ int. the resulting integer value of the expression.<br>
 
 <hr>
 <h2>cont_mode()</h2>
-<h3>Description:</h3>	
+<h3>Description:</h3>
+check whether the mode is continue mode.<br>
 <h3>Args:</h3>
 	
 <h3>Returns:</h3>
@@ -1983,7 +2032,7 @@ int. the resulting integer value of the expression.<br>
 <h2>req_to_continue()</h2>
 
 <h3>Description:</h3>
-request host to be in continue mode
+request the host to be in continue mode
 <h3>Args:</h3>
 	
 <h3>Returns:</h3>
@@ -2010,14 +2059,14 @@ set error code.<br><br>
 <h3>Args:</h3>
 	
 <h3>Returns:</h3>
-int. current value of the language-timer.<br>
+int. current value of language-timer.<br>
 <br>
 
 <hr>
 <h2>set_lang_timer(timeout)</h2>
 
 <h3>Description:</h3>
-	set value to the language-timer.<br><br>
+    set the value to the language-timer.<br><br>
 <h3>Args:</h3>
 <b>timeout</b>: int. initial value (msec)<br>
 
@@ -2029,7 +2078,7 @@ int. current value of the language-timer.<br>
 <h2>branch_to_addr(addr)</h2>
 
 <h3>Description:</h3>
-branch to the address.<br><br>
+the branch to the address.<br><br>
 <h3>Args:</h3>
 <b>addr</b>: str. address to branch.<br>
 
@@ -2058,7 +2107,7 @@ serial port open<br>        Args:<br>        port (int): serial port number<br><
 	
 <h3>Returns:</h3>
 &nbsp&nbsp <b>0</b>: OK<br>
-&nbsp&nbsp <b>'<0'</b>: Not OK<br>
+&nbsp&nbsp <b>-1</b>: Not OK<br>
 
 <br>
 
@@ -2079,7 +2128,7 @@ serial port close<br>        Args:<br>        port (int): serial port number<br>
 <h2>sci_send_bytes(port, data)</h2>
 
 <h3>Description:</h3>
-serial communication sends byte-type data<br>xhost dbg not supported<br>
+serial communication sends byte-type data<br>xhost dbg not supporteds<br>
 <h3>Args:</h3>
 <b>port (int)</b>: serial port number<br>
 <b>data (bytes)</b>: input data<br>
@@ -2094,20 +2143,21 @@ serial communication sends byte-type data<br>xhost dbg not supported<br>
 <h2>sci_recv_bytes(port, len)</h2>
 
 <h3>Description:</h3>
-serial communication receives byte-type data<br>xhost dbg not supported
+	serial communication receives byte-type data<br>xhost dbg not supported<br><br>
 <h3>Args:</h3>
-	
+<b>port (int)</b>: serial port number<br>
+<b>len (int)</b>: length of data<br>	
 <h3>Returns:</h3>
-	
+	recieved data (bytes)<br>
 <br>
 
 <hr>
 <h2>sci_clear_buf(port)</h2>
 
 <h3>Description:</h3>
-	
+	clear serial buffer<br><br>
 <h3>Args:</h3>
-	
+<b>port (int)</b>: serial port number<br>	
 <h3>Returns:</h3>
 	
 <br>
@@ -2140,9 +2190,7 @@ serial communication receives string-type data<br><br>
 
 <hr>
 </body>
-</html>
-
-# 3.1.9 Solving the robot language function-blocking problem
+</html># 3.1.9 Solving the robot language function-blocking problem
 ## Blocking problem
 
 
@@ -2173,10 +2221,11 @@ If you execute argosx.res( ) right after executing argosx.req, it will be imposs
 <br></br>
 ![](../../_assets/image_29.png)
 
-Which specification would be desirable? In general, when a command is waiting for a certain state, such as the wait command, waiting will occur when the STEP FWD key is pressed, and the cursor can be moved when the key is not pressed. In addition, a timeout and the escape address can be designated as arguments, so when a timeout occurs, the exception-handling operation to branch to the escape address can be performed.
-</br>
+Which specification would be desirable? In general, when a command is waiting for a certain state, such as the wait command, waiting will occur when the STEP FWD key is pressed, and the cursor can be moved when the key is not pressed. In addition, timeout and the escape address can be designated as arguments, so when a timeout occurs, the exception-handling operation to branch to the escape address can be performed.
+<br></br>
 ![](../../_assets/image_30.png)
-If a timeout occurs after 10 seconds in the wait-di6 state, branching to *tout will occur. 
+
+If a timeout occurs after 10 seconds in the wait-di6 state, branching to *tout will occur.  
 
 
 
@@ -2186,9 +2235,10 @@ If a timeout occurs after 10 seconds in the wait-di6 state, branching to *tout w
 Let’s take a look at the flow chart below. There are two modes where the Hi6 host calls the robot language commands: execution mode and continue mode. In continue mode, the host calls the command again.
 
 The host calls commands in execution mode first. In most cases, individual commands perform their operations and end immediately, while the host completes the handling of the commands after confirming that it is not in continue mode.
-</br>
+<br></br>
+
 ![](../../_assets/image_31.png)
-</br>
+
 
 However, some commands have a wait operation (meaning it waits for a certain state or event, such as I/O input, Ethernet data reception, certain periods of time, robot operation completion, etc.) The following procedure will be performed between the host and a plug-in. 
 
@@ -2197,20 +2247,21 @@ However, some commands have a wait operation (meaning it waits for a certain sta
 * The plug-in’s wait operation command will check the mode with xhost.exec_mode( ). If the mode is confirmed to be continue mode (No), the timer will be checked. If a timeout has occurred, branching to the escape address (branch_to_addr) will occur, and the operation will end without making a request for continue mode.
 * If a timeout has not occurred, whether the wait condition is complete (wait-complete condition?) will be checked. If the wait condition is complete, the operation will end as is because there is no request for continue mode, but if it is not complete, the operation will end without the Hi6 host being requested to call in continue mode (req_to_continue.)
 * If there is no request for continue mode in the current call (continue-mode No), the Hi6 host will complete the handling of the relevant command.
- </br>
+<br></br>
+
  ![](../../_assets/image_32.png)
-</br>
 
 
 
-Now let's improve argosx.res( ) in such a way that it can also have the specifications of the wait operation.
+
+Now let's improve argosx.res( ) in a way that it can also have the specifications for the wait operation.
 
 
 
 ## Making a non-blocking comm module
 
 
-For the comm module implemented for Ethernet transmission/reception, a socket module is used internally. A socket is in blocking mode by default, meaning that the socket.recvfrom( ) function, a UDP reception function, does not perform any return operation until data is received.
+For the comm module implemented for Ethernet transmissions/receptions, a socket module is used internally. A socket is in blocking mode by default, meaning that the socket.recvfrom( ) function, a UDP reception function, does not perform any return operations until data is received.
 
 First, we need to change the socket instance, which we used, to non-blocking mode. Insert sock.setblocking(False) into the comm.open( ) function, as shown below.
 
@@ -2359,7 +2410,6 @@ If a timeout does not occur, data reception will be performed. If there was no d
 
 
 
-
 roblang.py
 ``` python
 Previous steps skipped...
@@ -2454,7 +2504,78 @@ job
      end
 ```
 
-# 3.2 Practical project: ArgosX - callback
+# 3.1.10 Registering the robot language command inputs
+
+Inputting a robot language directly when using a teach pendant is inconvenient.
+
+Therefore, we need to ensure that a robot language can be written more easily through [Command Inputting].
+
+For this purpose, we need to register a robot language.
+
+First, we need to add a "cmds" label to info.json. For a value corresponding to it, we need to designate a json that contains the organized content of cmds.
+
+info.json
+```json
+{
+	"author" : "BlueOcean Robot & Automation, Ltd.",
+	"binding" : "plug-in",
+	"cmds" : "cmds.json",
+	"copyright" : "All right reserved",
+	"description" : "ArgosX Vision System interface",
+	"entry" : "main.py",
+	"menu" : "ui/menu.json",
+	"startup" : "boot",
+	"version" : "v0.9.0"
+}
+```
+
+Add cmds.json into the ArgosX folder to define the properties of the commands in the relevant files.
+
+``` json
+{
+	"fmts" : [
+		{
+			"name": "init"
+		},
+		{
+			"name": "req",
+			"samples": "req 39",
+			"props": [
+				{
+					"guide": "work no.",
+					"range": "[1~100]"
+				}
+			]
+		},
+		{
+			"name": "res"
+		},
+		{
+			"name": "close"
+		}
+	]
+}
+
+```
+
+|Item|Meaning|Example|
+|---|---|---|
+|fmts|Robot language module name|"fmts"|
+|name|Function name|"name": "init"|
+|samples|Sample (robot language input type))|"samples": "req 39"|
+|props|Function's input properties|"props"|
+|guide|Input argument guide message|"guide": "work no."|
+|range|Input argument value's range|"range": "[1–100]"|
+
+The meaning of each item is as follows in the table above. If there are many input arguments, arrange the properties into as many groups as the number of input arguments, then add them into "props".
+
+
+<br></br>
+For an added command, you can check it by pressing the [Command Inputting] button at the bottom of the teach pendant.
+![](../../_assets/image_82.png)
+
+[Command Inputting]-[argosx]
+![](../../_assets/image_83.png)# 3.2 Practical project: ArgosX - callback
 
 
 While operating the Hi6 controller, there are main events, such as Mode Change, Motor On, Reset, Start and Accuracy OK. We can register functions into a plug-in for it to perform unique operations for an event.
@@ -2465,9 +2586,7 @@ These functions are callback functions. They are referred to as such because the
 
 * Registering a callback function
 * Implementing a callback function
-* Manual for referring to the callback functions
-
-# 3.2.1 Registering a callback function
+* Manual for referring to the callback functions# 3.2.1 Registering a callback function
 
 
 The method of registering a callback function is very simple. The callback function name is determined already for each event, so, by defining a callback function in the plug-in code using the relevant callback function name, the callback function will be registered automatically when the plug-in is imported.
@@ -2475,7 +2594,7 @@ The method of registering a callback function is very simple. The callback funct
 
 We need to refer to the other functions of <U>3.1.1 Specifications of ArgosX and interface plug-ins</U> again.
 
-Depending on whether the robot is in the motor ON or motor OFF state, ArgosX's LED light should be also switched on or off accordingly. Specifically, the commands "light-on" or "light-off" should be transmitted to ArgosX.
+Depending on whether the robot is in the motor ON or motor OFF state, ArgosX's LED light should also be switched on or off accordingly. Specifically, the commands "light-on" or "light-off" should be transmitted to ArgosX.
 
 
 
@@ -2539,6 +2658,7 @@ Because the comm module already has a function implemented to send an Ethernet s
 comm.send_msg("light-on")
 comm.send_msg("light-off")
 ```
+<br></br>
 
 However, there is one problem with this implementation. If the comm.open( ) function is called through argosx.init, a robot language command, the string will be transmitted normally. However, if the function is not called, the string will not be transmitted.
 
@@ -2546,9 +2666,9 @@ In addition, transmissions will not occur even when communications are closed be
 
 Therefore, it is necessary to define a string transmission function that makes it possible to open communications, if it is in closed state, and carry out transmissions and close communications.
 
-
+<br></br>
 Create a comm_ex.py file, as shown below, in the same folder where comm.py exists.
-
+<br></br>
 
 
 comm_ex.py
@@ -2613,7 +2733,7 @@ First, execute argosx_stub from the command prompt or vscode.
 Reboot the virtual controller, then run the job file up to argosx.init( ). If the operation was performed as follows in this state, it means the normal lighting function's operation was checked.
 
 
-
+<br></br>
 <U>__argosx_stub side (server playing the role of ArgosX)__</U>
 
 Every time the motor OFF and motor ON functions occur, the following strings will be printed on the console.
@@ -2691,33 +2811,33 @@ LED light is ON
       </td>
     </tr>
     <tr>
-      <td>on_stop(task_no)</td>
+      <td>on_stop(task_no:int)</td>
       <td>
        When stopping
       </td>
     </tr>
     <tr>
-      <td>on_restart(task_no)</td>
+      <td>on_restart(task_no:int)</td>
       <td>When starting</td>
     </tr>
     <tr>
       <td>on_reset0()</td>
       <td>
-       reset 0	
+      reset 0	
       </td>
     </tr>
      <tr>
-      <td>on_cur_job_selected_by_tp(task_no)</td>
+      <td>on_cur_job_selected_by_tp(task_no:int)</td>
       <td>When the TP selects the job program.</td>
     </tr>
     <tr>
-      <td>on_step_func_no_change_for_clear(task_no,..)</td>
+      <td>on_step_func_no_change_for_clear(task_no:int,..)</td>
       <td>
        When changing the program counter
       </td>
     </tr>
     <tr>
-      <td>on_job_end(task_no)</td>
+      <td>on_job_end(task_no:int)</td>
       <td> Executing the job end command
       </td>
     </tr>
@@ -2728,12 +2848,12 @@ LED light is ON
     <tr>
       <td>set_ext_io_sig_proc()</td>
       <td>
-       When handling assigned signals	
+       When handling assigned signals
       </td>
     </tr>
     <tr>
-      <td>is_assigned_input(sigcode) /</br>
-      is_assigned_output(sigcode)</td>
+      <td>is_assigned_input(sigcode:int) /</br>
+      is_assigned_output(sigcode:int)</td>
       <td>When returning whether sigcode is assigned for the input/output signals</td>
     </tr>
     <tr>
@@ -2742,9 +2862,7 @@ LED light is ON
       <td>When setting up the look-up table for the host's assigned input/output signals</td>
     </tr>
   </tbody>
-</table>
-
-# 3.3 Practical project: Developing an ArgosX setup screen UI
+</table># 3.3.1 Practical project: Developing an ArgosX setup screen UI
 
 If there are various settings in a plug-in, we need a setup screen that shows the setup values to the user and allows the user to change them to new values when necessary.
 
@@ -2761,13 +2879,14 @@ In this section, let’s practice implementing an ArgosX setup screen UI and dep
 * Operating the F buttons - Initializing to default values
 # 3.3.1 Specifications of the ArgosX setup screen user interface
 
-Let’s create the user interface of the setup screen with the following specifications.
+Let's create the setup screen user interface with the following specifications.
 
 * In the Setup - Application Parameter menu, there is a menu to enter the ArgosX setup screen.
-* In the ArgosX setup screen, you can set the IP address and port number of the ArgosX system
+* On the ArgosX setup screen, you can set the IP address and port number of the ArgosX system
 * The content of the setup will be saved into the argosx.json file as a json file.
-* An F button (Initialize All) that sets the entire screen to default values is provided.
+* An F button (Initialize All) that sets the entire screen to the default values is provided.
 * An F button (Initialize One) that sets only the currently selected items to default values is provided.
+<br></br>
 
 ![](../../_assets/image_34.png)
 
@@ -2779,8 +2898,7 @@ Regardless of whether ArgosX is imported to the job program, we want to make ope
 
 Change the startup item in the argosx/info.json file from "manual" to "boot". Now, as ArgosX will be imported while the controller is booting, you do not need to import ArgosX to the job program.
 
-(You can still carry out the setups in HRScript.)
-# 3.3.2 The layout of the setup screen
+(You can still carry out the setups in HRScript.)# 3.3.2 The layout of the setup screen
 
 
 Open vscode for the apps/ folder that is the parent of the ArgosX folder.
@@ -2792,7 +2910,7 @@ Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 
 
 
-Creating a ui/ folder by clicking the New Folder button.
+Create a ui/ folder by clicking the New Folder button.
 </br>
 ![](../../_assets/image_36.png)
 </br>
@@ -2808,7 +2926,6 @@ Create a ui/setup.html file.
 
 
 Write the content as follows. 
-
 
 
 
@@ -3001,11 +3118,8 @@ function updateData(data, to_data)
 
 When the cursor is located on the input element, the updateGuideBar( ) function will call the setGuideBarMsg( ) function, then it will designate the message to be displayed in the guidance frame.
 
-
-
 __setGuideBarMsg(The ID or name of the element and the message to be displayed)___
-
-
+<br></br>
 
 For example, sg('ip_addr', msg_ip_addr); in the example above refers to the setting that displays the msg_ip_addr string in the guidance frame when the cursor is located on the input element with the name 'ip_addr.'
 
@@ -3015,8 +3129,7 @@ When the setup screen is opened initially, the current setup value needs to be l
 
 Operations related to these settings are to be implemented by calling setDomPath("/apps/argosx/svr_setup"); and defining the updateData() function.
 
-More detailed descriptions will be provided in the subsequent sections.
-# 3.3.4 Injecting a menu into the description screen
+More detailed descriptions will be provided in the subsequent sections.# 3.3.4 Injecting a menu into the description screen
 
 We have already practiced injecting a menu through the hello_world example.
 
@@ -3042,7 +3155,7 @@ menu.json
 ```
 
 
-Let’s inject a picture icon this time. Using the two websites below, we obtained a png icon with a transparent 104 x 104-pixel background.
+Let’s inject a picture icon this time. Using the two websites below, we obtained a png icon with a transparent 104 x 104-pixel background. 
 
 
 
@@ -3054,6 +3167,7 @@ EZGIFCOM (https://ezgif.com/svg-to-png): Performs online conversions of SVG file
 ![](../../_assets/lm_argosx.png) Example of lm_argosx.png (You can download and use this picture.)
 
 
+<br></br>
 
 Now, we should run the virtual mainboard and virtual teach pendant again.
 
@@ -3086,11 +3200,9 @@ When the user modifies the values and clicks the [OK] button, the HTML elements 
 
 
 To perform the transfer, implement JavaScript's updateData( ) function and the getter and putter functions of Python's setup module.
-</br>![](../../_assets/image_44.png)</br>
+<br></br>
 
-
-
-
+![](../../_assets/image_44.png)
 
 
 ## element ↔ javascript object
@@ -3115,15 +3227,16 @@ function updateData(data, to_data)
 The two-way transfer of values between an element and a JavaScript object is defined with the updateData( ) function. The parameter data is a JavaScript object, while to_data is a boolean variable and indicates the direction of the transfer. If it is true, the direction will be from element to data, while if it is false, the direction will be from data to element.
 
 We can also implement the transfer directly using the document object model application programming interface (DOM API) or jQuery. However, the transfer can be implemented more concisely by using the dynamic data exchange (DDX) functions provided by dst_setup.js.
+<br></br>
 
+DDX functions 
 
-# 3.2.3 Manual for referring to the callback functions
 |Function signature|HTML element|Data type|Description|
 |---|---|---|---|
 |ddx_edit(data, name, to_data)|```<input type='text'>```|string||
 |ddx_edit_i(data, name, to_data)|```<input type='text'>```|integer||
-|ddx_edit_sig(data, name, to_data)|```<input type='text'>```|If the value of the element for setting the universal I/O signals is sigcode, it will be transmitted as is.</br>If the value is in the form of fb?.?, it will be converted to sigcode and transmitted.|
-|ddx_edit_ip(data, name, to_data)|```<input type='text'>``` x 4 (units)|string|This is for setting an IP address.</br>If the name is 'ip', each ID of the four elements should be 'ip_0', 'ip_1', 'ip_2', and 'ip_3.'</br>The data will be saved as "xxx.xxx.xxx.xxx."|
+|ddx_edit_sig(data, name, to_data)|```<input type='text'>```|integer|If the value of the element for setting the universal I/O signals is sigcode, it will be transmitted as is.</br>If the value is in the form of fb?.?, it will be converted to sigcode and transmitted.|
+|ddx_edit_ip(data, name, to_data)|```<input type='text'>``` x 4 (units)|string|This is for setting an IP address.</br>If the name is 'ip', each ID of the four elements should be 'ip_0', 'ip_1', 'ip_2', and 'ip_3'.</br>The data will be saved as "xxx.xxx.xxx.xxx."|
 |ddx_check(data, name, to_data)|```<input type='checkbox'>```|boolean||
 |ddx_radio(data, name, to_data)|```<input type='radio'>```x N (units)|integer|Each radio element should have a unique value attribute.|
 
@@ -3156,15 +3269,14 @@ During the initialization step, the "/apps/argosx/svr_general" path was designat
 
 All plug-ins, including ArgosX, will be deployed under /apps/, and the last name of the path is "svr_" with the setup group name attached to it.
 
-</br>
+<br></br>
 
 **/apps/{app name}/svr_{setup group name}**
 
-</br>
+<br></br>
 A plug-in can have one or more setup screens, and the data on one screen will be treated as one object and referred to as a setup group. Each setup group can be named freely, and that name becomes the setup group name. In this example, the setup group name is determined as 'general.'
 
 If you append the prefix "get_" or "put_", instead of "svr_", to a setup group name, it will become the getter or putter service function name, respectively. Moreover, if you add '_def' at the end of the getter function name, it will become the name of the default getter service function that acquires the default value.
-
 
 
 Accordingly, in the example above, the default getter, getter, and putter service function names will become get_general_def( ), get_general( ), and put_general( ), respectively.
@@ -3191,8 +3303,8 @@ Add the setup.py file into the project folder argosx/.
     <tr>
       <td>dgetter</td>
       <td>get_general( )</td>
-      <td>When the setup screen is opened.</td>
-      <td>>Each default setup value that a Python plug-in has will be saved into an object as an attribute value, and all of the objects will be returned.</td>
+      <td>When the setup screen is opened./td>
+      <td>Each default setup value that a Python plug-in has will be saved into an object as an attribute value, and all objects will be returned.</td>
     </tr>
     <tr>
       <td>putter</td>
@@ -3318,7 +3430,6 @@ To keep this setting, even when we turn the controller off and on, it should be 
 
 
 Add the save_to_setup_file( ) function, which is used for saving the settings to a file, and the load_from_setup_file( ) function, used for loading the settings from the file, to setup.py as follows.
-
 
 
 
@@ -3458,7 +3569,6 @@ We added calling save_to_setup_file(body) as the last operation of the put_gener
 
 In addition, we added calling setup.load_from_setup_file( ) into the function on_app_init( ) of main.py as follows. The moment the ArgosX plug-in is imported, setup.load_from_setup_file( ) will be called to load the settings.
 
-
 </br>
 
 main.py
@@ -3523,7 +3633,6 @@ Run the main software again and open the ArgosX setup screen. Check whether the 
 
 
 
-
 As described in <U>3.3.1 Specifications of the user interface of the ArgosX setup screen </U>,  implement the F buttons used for initializing the settings of the screen to default values.
 
 Add the InitButtonBar( ) function to setup.js as follows.
@@ -3567,7 +3676,7 @@ The InitButtonBar( ) function returns an array of objects that define the interf
 
 </br>
 
-The InitButtonBar( ) function's return values
+InitButtonBar( ) function's return values
 
 ``` js
 [
@@ -3583,9 +3692,10 @@ The InitButtonBar( ) function's return values
 ]
 ```
 
-The scripts designated in the code above are for calling the setAllValueAsDef( ) function and the setSelectedValueAsDef( ) function, respectively. These functions are provided by dst_setup.js by default.
+The scripts designated in the code above are for calling the setAllValueAsDef( ) function and setSelectedValueAsDef( ) function, respectively. These functions are provided by dst_setup.js by default.
 
-If you want other operations, you just need to implment the relevant functions yourself.
+
+If you want other operations, you need to implment the relevant functions yourself.
 
 </br>
 Let's test the operation. Run the virtual controller again and enter the ArgosX setup screen. After that, change the settings to values ​​different from the default values, then save them ​by clicking the [OK] button.
@@ -3594,8 +3704,7 @@ Enter the setup screen again and place the cursor on an arbitrary element. After
 
 In addition, click the Initialize All button and check whether all values of the screen are restored to the default values.
 
-![](../../_assets/image_48.png)
-# 3.4 Practical project: Developing an ArgosX monitoring panel user interface
+![](../../_assets/image_48.png)# 3.4 Practical project: Developing an ArgosX monitoring panel UI
 
 There should be a monitoring panel to show the current state of the plug-ins to the user through a split screen.
 
@@ -3605,8 +3714,7 @@ In this section, let's practice developing a web-based ArgosX monitoring panel.
 * Specifications of the ArgosX monitoring panel user interface
 * Layout of the monitoring panel
 * Operating the monitoring panel
-* Injecting a panel item into the panel menu 
-# 3.4.1 Specifications of the ArgosX monitoring panel user interface
+* Injecting a panel item into the panel menu # 3.4.1 Specifications of the ArgosX monitoring panel user interface
 
 Let's create a monitoring panel user interface to monitor information, as shown below.
 
@@ -3684,7 +3792,7 @@ panel.html
 </html>
 ```
 
-While panel.html is open, if you execute a Live server by clicking the Go Live button at the bottom right, the Google Chrome browser will open.
+While panel.html is open, if you execute Live server by clicking the Go Live button at the bottom right, the Google Chrome browser will open.
 
 ![](../../_assets/image_51.png)
 <br></br>
@@ -3726,7 +3834,7 @@ def get_general() -> dict:
    return ret
  
  
-Skipped...
+skipped...
  
  
 gen_def = get_general_def()
@@ -3737,7 +3845,7 @@ n_req = 0   # request count
 n_res = 0   # response count
 ```
 
-Add the count-up operations of n_req and n_res to the implementation of the robot language commands.
+Add the count-up operations of n_requ and n_res to the implementation of the robot language commands.
 
 
 
@@ -3884,20 +3992,21 @@ Here, we just made panel_argosx.png by scaling down the existing lm_argosx.png p
 
 
 ![](../../_assets/panel_argosx.png)
-An example of panel_argosx.png (you can download and use this picture.)
+Example of panel_argosx.png (you can download and use this picture.)
 
 
 
 Now, let's run the virtual mainboard and virtual teach pendant.
 
 
-When you open the panel menu to add a new panel item, you can see a newly added ArogsX Vision menu item.
+When you open the panel menu to add a new panel item, you can see the newly added ArogsX Vision menu item.
 ![](../../_assets/image_54.png)
 
 
 
 
 When you select the menu, the monitoring panel we made will appear shortly.
+<br></br>
 ![](../../_assets/image_55.png)
 
 
@@ -3921,15 +4030,13 @@ In this chapter, let's practice developing a web-based ArgosX user bar UI.
 
 Pressing the User Key button multiple times will switch the user bar.
 
-Let’s create a user bar UI to provide a UI as follows.
+Let's create a user bar UI to provide a UI as follows.
 
 - Light-on button: Turns ArgosX's LED light on.
 - Light-off button: Turns ArgosX's LED light off.
-<br>
-<br>
-![](../../_assets/image_56.png)
+<br></br>
 
-# 3.5.2 Layout of the user bar
+![](../../_assets/image_56.png)# 3.5.2 Layout of the user bar
 
 Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 
@@ -3969,17 +4076,16 @@ While ubar.html is open, if you execute Live server by clicking the Go Live butt
 
 
 Even though there is no content in ubar.js yet, we can check whether the layout is normal.
-<br>![](../../_assets/image_59.png)
-
-# 3.5.3 Operating the user bar
+<br>![](../../_assets/image_59.png)# 3.5.3 Operating the user bar
 
 ## Client side (teach pendant)
 
 
+
 Write the following content in the ui/ubar.js file. Every time the button is pressed, the teach pendant will transmit an HTTP post message called "light_onoff" to the main board. Whether it is on or off will be contained in an object that has the onoff attribute, and it will be loaded in the body of the post message and sent. 
 
-- Body in the light-on state: { onoff: true }
-- Body in the light-off sate: { onoff: false }
+- Body in light-on state: { onoff: true }
+- Body in light-off sate: { onoff: false }
 
 
 ui/ubar.js
@@ -4098,7 +4204,7 @@ Execute an ArgosX stub then operate the buttons on the web browser. If the stub�
 
 
 
-ArgosX stub's ouput on the console
+ArgosX stub's output on the console
 <br>
 ![](../../_assets/image_61.png)
 
@@ -4114,7 +4220,6 @@ Let's inject the ArgosX user bar into the actual teach pendant.
 
 
 Add the "ubars" path item into the ui/menu.json file, as shown below. 
-
 
 
 
@@ -4151,7 +4256,7 @@ Pressing the User Key button on the right side of the virtual teach pendant will
 # 4. Debugging
 
 * Debugging Python code
-* Debugging a web-based UI
+* Debugging a web-baesd UI
 # 4.1 Debugging Python code
 
 If the Python code we wrote has grammatical errors in the web UI or logical errors in the implementation body, a debugger should be used to trace the cause and supplement it.
@@ -4169,7 +4274,8 @@ xhost is a module to be used by plug-ins to call the functions of the Hi6 host. 
 
 
 However, when a plug-in is executed with the vscode debugger, an execution error will occur when the xhost method is called because there is no actual xhost module created/injected. Therefore, an alternative xhost for debugging should be used. In the common folder of the SDK, there is an alternative module, xhost_dbg. It is a kind of proxy that performs the host’s operations by calling an OpenAPI via Ethernet.
-<br> ![](../_assets/image_64.png)
+
+ ![](../_assets/image_64.png)
 <br>
 
 
@@ -4199,7 +4305,7 @@ xhost_remote_ip.py
 remote_ip="127.0.0.1"
 ```
 
-If you want to run tests by accessing the actual Hi6 controller with an IP address of "192.168.1.150", you can set it as follows.
+If you want to perform testing by accessing the actual Hi6 controller with an IP address of "192.168.1.150", you can set it as follows.
 
 
 
@@ -4215,28 +4321,26 @@ If Microsoft Python extensions are properly installed in<u> 1.5 Installing the V
 
 
 
-For tracing the functions to be called by a robot language or a callback operation, we defined the test module under the argosx/ folder, as shown in the figure below. Implement the routine that needs to be tested, then call the test( ) function from the main routine.  
+
+For tracing the functions to be called by a robot language or a callback operation, we defined the test module under the argosx/ folder, as shown in the figure below. Implement the routine that needs to be tested, then call the test( ) function from the main routine. 
 
 You can toggle the breakpoint by clicking the left side of the line number.
 
 
 
 test.py
-<br>
+<br></br>
 ![](../_assets/image_65.png)
 
 
 
 When you press the F5 key in the test.py window or click the Run - Start Debugging menu, the execution will occur in Python runtime and in debugging mode.
-<br>
+<br></br>
 ![](../_assets/image_66.png)
 
 
-
-
-
 For the ArgosX plug-ins in a previous section, you should execute the argosx_stub for the purpose of testing. If you need to run two Python programs, like in this case, you need to open two vscode sessions and run the debugger in each, as shown below.
-<br>
+<br></br>
 ![](../_assets/image_67.png)
 
 
@@ -4246,15 +4350,15 @@ For the ArgosX plug-ins in a previous section, you should execute the argosx_stu
 When a breakpoint is placed, the VARIABLES, WATCH, CALL STACK, and BREAKPOINTS windows will open on the left. You can perform tracing with the operating buttons on the top right: Continue (F5), Step Over (F10), Step Into (F11), and Step Out (Shift+F11). If you click the Restart (Ctrl+Shift+F5) button, the execution will restart from the beginning. If you click the Stop (Shift+F5) button, debugging will stop.
 
 When the print( ) command, a built-in Python function, is called, a string will be printed in the TERMINAL window at the bottom, and it can be used for debugging.
-<br>
+<br></br>
 ![](../_assets/image_68.png)
 
 
 
 
 
-Operating test.py is interlocked with the controller host by xhost_dbg, so debugging is possible while checking the actual operation as follows. 
-<br>
+The operation of test.py is interlocked with the controller host by xhost_dbg, so debugging is possible while checking the actual operation as follows. 
+<br></br>
 ![](../_assets/image_69.png)
 
 
@@ -4295,7 +4399,7 @@ Alternatively, you can open a pop-up menu by right-clicking the mouse on setup.h
 
 
 
-As you can see below, setup.html is opened with the Google Chrome web browser.
+ As you can see below, setup.html is opened with the Chrome web browser.
 
 ![](../_assets/image_72.png)
 
@@ -4367,3 +4471,5 @@ Refreshing can also be performed from a virtual teach pendant rather than on a w
 
 
 # 5. Installer
+
+(to be written in the future)
