@@ -11,5 +11,12 @@
 
 
 
-**Copyright ⓒ 2020 by Hyundai Robotics**
+**Copyright ⓒ 2020 by HD Hyundai Robotics**
+{% endhint %}
+
+{% hint style="warning" %}
+Hi6 SDK는 공식 릴리즈 전이며 내부 검증 시험 및 보완 진행 중입니다.
+
+향후 인터페이스 사양이 예고 없이 크게 변경될 수 있으므로, 공식 시험 요원이 아니라면 이를 활용한 소프트웨어 개발을 보류해 주시기 바랍니다.
+
 {% endhint %}

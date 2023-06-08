@@ -11,9 +11,15 @@
 
 
 
-**Copyright ⓒ 2020 by Hyundai Robotics**
+**Copyright ⓒ 2020 by HD Hyundai Robotics**
 {% endhint %}
-# 1. Hi6 SDK 개요
+
+{% hint style="warning" %}
+Hi6 SDK는 공식 릴리즈 전이며 내부 검증 시험 및 보완 진행 중입니다.
+
+향후 인터페이스 사양이 예고 없이 크게 변경될 수 있으므로, 공식 시험 요원이 아니라면 이를 활용한 소프트웨어 개발을 보류해 주시기 바랍니다.
+
+{% endhint %}# 1. Hi6 SDK 개요
 
 이 설명서는 Hi6 제어기의 추가 기능 개발을 위한 플러그인 앱(plugin-app) 개발용 SDK (Software Development Kit) 사용법을 설명합니다.
 
@@ -113,20 +119,72 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
 
 ![](../_assets/image_1.png)# 1.3 Hi6 가상제어기 설치
 
-(임시)</br>
-1) 다운받은 Hi6 controller zip을 해제한다.
-2) 해제한 폴더 속의 '사용 방법.txt'대로 수행하여 개발환경을 맞추어 준다.
-3) Debug 폴더 안에 hi6_main.exe를 실행시킨다.
-4) 같은 위치에서 포
-명령인수 -layout=k를 입력한다.# 1.4 python3 개발환경 설치
+(임시)
+<br></br>
+
+## 1) 설치 
+다운받은 Hi6 controller zip을 해제합니다.
+
+### VRC 개발환경의 설치 
+1. D:\util\hi6_vrc\가 되도록 복사합니다.
+   (폴더 경로를 변경하려면 hi6main_platform_cfg.json, hi6tp_platform_cfg.json에 기록된 폴더 경로를 수정해야 합니다.)
+2. install 폴더의 vcredist_x64.exe를 실행하여 visual studio 2013 재배포 패키지를 설치합니다.
+3. install 폴더의 System32와 SysWOW64 폴더의 내용을 C:\Windows\의 각 폴더로 복사합니다.
+
+### Qt 라이브러리의 설치
+1.  C:\Qt\Qt5.7.1\5.7 경로를 생성합니다.
+2. msvc2013 를 해당 경로 아래에 압축 해제합니다.
+
+### Python 설치 
+<u> 1.4 python3 개발환경 설치 </u>의 내용을 참조하시길 바랍니다.
+
+<span style = 'background-color:#ffdce0'> 주의: 반드시 인터넷이 연결 되어있는 상태에서 실행해야 설치를 성공할 수 있습니다.</span>
+
+1. install 폴더의 "python-3.8.0.exe"를 실행합니다. 
+2. Add Python 3.8 to PATH 만 체크한 후 Customize installation 클릭.
+3. 이 후의 모든 항목들에 대한 체크박스에 빠짐없이 체크한 후 install 시작
+4. 'Setup was successful'확인하면 종료.
+5. install 폴더의 "ucrtbased.dll"와 "vcruntime140d.dll" 파일을 복사하여 C:\Program Files (x86)\Python38-32\에 복사합니다.
+
+
+## 2) 실행
+1. Debug 폴더 안에 hi6_main.exe를 실행합니다.
+2.  Debug 폴더 안에서 PowerShell를 실행하여 아래와 같은 명령어를 통해 TP를 실행합니다. 
+   ```
+    ./hi6_tp -layout=k
+   ```
+
+- hi6_tp를 바로 실행 시키면 <U>TP600</U>으로 실행하게 됩니다.
+
+- 실질적인 Hi6 TP 모델은 <U>TP630</U>이 타겟이기 때문에 커맨드를 통해 '-layout=k'를 입력해서 TP630으로 실행해야 올바르게 실행한 것 입니다. 
+
+<b>TP630</b>&nbsp;![](../_assets/image_81.png)  
+
+<b>TP600</b>&nbsp;![](../_assets/image_84.png)
+
+   ### hrspace 연동이 필요한 경우 
+    1. https://www.hyundai-robotics.com/customer/customer4.html?p=3 에서 HRSpace를 받아 설치합니다. 
+    2. workspace에서 마우스 오른쪽 클릭하여 "모델 불러오기..."로 로봇을 로딩합니다.
+    3. robot에서 마우스 오른쪽 클릭하여 "로봇속성..."에서 제어기 연결을 "ENetHi6"를 선택합니다.
+    4. PC주소와 로봇제어기의 IP주소를 "127.0.0.1"로 설정합니다.
+    5. 시뮬레이션 시작 버튼을 누릅니다.
+
+
+
+<br></br>
+(제어기의 설치는 추후의 인스톨러와 함께 개선 예정)
+
+
+
+ # 1.4 python3 개발환경 설치
 ## python3 설치
 아래의 절차에 따라 python v3.8을 설치합니다.
 
-
-
+<br></br>
 1) 아래 링크는 python v3.8.0 설치 화면으로 연결됩니다. x86 32bit를 설치하십시오.
 
-    (주의! : Hi6 가상제어기는 32bit 애플리케이션이므로 python 런타임도 이와 일치시켜야 합니다. x86-64를 설치하면 안됩니다 !) </br>
+    <span style='background-color:#ffdce0'>(주의! : Hi6 가상제어기는 32bit 애플리케이션이므로 python 런타임도 이와 일치시켜야 합니다. x86-64를 설치하면 안됩니다 !) </span>
+
     https://www.python.org/downloads/release/python-380/
 
     ![](../_assets/image_2.png)
@@ -141,22 +199,27 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
 5) Disable path length limit는 안 눌러도 됩니다. Close 클릭합니다.
     ![](../_assets/image_6.png)
 
-6) 윈도우 명령 프롬프트를 엽니다. (Windows + R 누른 후 cmd 타이핑하고, enter키)
+6) 윈도우 명령 프롬프트를 엽니다. (Windows + R 누른 후 cmd 타이핑하고, enter키) 
 
-python --version을 타이핑한 후 enter 키를 눌러 아래와 같은 버전이 출력되는지 확인합니다.
+    ```python --version``` 을 타이핑한 후 enter 키를 눌러 아래와 같은 버전이 출력되는지 확인합니다.
 
-Python 3.8.0
+    ```
+    Python 3.8.0
+    ```
 
 ## python import 검색 경로 추가
-1) .pth 라는 파일을 만들고 안에 _common/ 폴더가 위치한 경로를 지정해준다. </br>SDK 내의 .pth 파일을 열어, Hi6 가상제어기의 HOME 경로에 맞게 아래 경로를 지정해줍니다.
+1) .pth 라는 파일을 만들고 안에 _common/ 폴더가 위치한 경로를 지정해준다. 
+    SDK 내의 .pth 파일을 열어, Hi6 가상제어기의 HOME 경로에 맞게 아래 경로를 지정해줍니다.
  
 
-파일내용 예:    
+    파일내용 예:    
+    ```
     D:\Hi6\home_main\apps
+    ```
 
-편집한 .pth 파일을 python 설치 경로/Lib/site-packages/ 에 배치합니다.
-
-예: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
+2) 편집한 .pth 파일을 python 설치 경로/Lib/site-packages/ 에 배치합니다.
+    
+    예: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
 
 
 ## 동적 라이브러리 배치
@@ -170,15 +233,19 @@ Atom이나 SublimeText 등 본인이 익숙한 다른 편집기를 사용해도 
 
 
 
-Code의 설치
-1) 아래 링크에 접속한 후 윈도우용 stable build 버전을 다운로드 합니다.</br>윈도우용  https://code.visualstudio.com/</br>
-![](../_assets/image_7.png)
+## Code의 설치
+1) 아래 링크에 접속한 후 윈도우용 stable build 버전을 다운로드 합니다. 
+
+    윈도우용  https://code.visualstudio.com/<br>
+    ![](../_assets/image_7.png)
 
 2) 다운로드된 설치파일을 실행하고 라이선스에 동의합니다.
-![](../_assets/image_8.png)
+
+    ![](../_assets/image_8.png)
 
 3) 설치 경로 등을 기본값 그대로 하여 <다음> 버튼을 계속 누르다가, 추가 작업 선택 화면이 나오면 아래와 같이 체크하고 <다음> 버튼을 클릭합니다.
-![](../_assets/image_9.png)
+    
+    ![](../_assets/image_9.png)
 
 4) <설치> 버튼을 클릭합니다.
 
@@ -195,9 +262,9 @@ vscode 화면에서 가장 왼쪽에 아이콘들이 배치된 수직막대가 A
 
 
 
-같은 이름의 확장이 여러 개 있을 수도 있습니다. 저자의 이름을 확인하여 올바른 확장을 선택하십시오.
-Microsoft의 Python을 설치하면 Pylance 등 부가적인 확장들이 자동으로 추가 설치됩니다. Pylance는 우리가 사용해야 할 Pyright와 충돌합니다. Python을 제외한 부가 확장들은 모두 삭제하십시오.
-job 파일 편집 시, HR-BASIC이 아닌 HRScript로 인식되어야 합니다. hrbasic은 Disabled 시켜 두십시오.
+- 같은 이름의 확장이 여러 개 있을 수도 있습니다. 저자의 이름을 확인하여 올바른 확장을 선택하십시오.
+- Microsoft의 Python을 설치하면 Pylance 등 부가적인 확장들이 자동으로 추가 설치됩니다. Pylance는 우리가 사용해야 할 Pyright와 충돌합니다. Python을 제외한 부가 확장들은 모두 삭제하십시오.
+- job 파일 편집 시, HR-BASIC이 아닌 HRScript로 인식되어야 합니다. hrbasic은 Disabled 시켜 두십시오.
 
 ![](../_assets/image_11.png)
 
@@ -209,6 +276,7 @@ job 파일 편집 시, HR-BASIC이 아닌 HRScript로 인식되어야 합니다.
 
 ![](../_assets/image_12.png)
 # 1.6 웹기반 U/I 개발환경 설치
+
 티치펜던트를 위한 커스터마이즈된 U/I는 HTML5/CSS/jQuery의 웹앱 형태로 개발합니다.
 
 
@@ -223,7 +291,7 @@ https://www.google.com/intl/ko/chrome/
 
 # 1.7 가상제어기 환경에 SDK 설치
 
-SDK의 apps/ 폴더를 가상제어기의 hi6 home 폴더 밑에 복사하십시오.
+SDK의 apps/ 폴더를 가상제어기의 hi6 home_main 폴더 밑에 복사하십시오.
 
 apps/ 폴더 밑의 _common/ 폴더는 모든 app들이 공용으로 사용하는 라이브러리를 담고 있습니다.
 
@@ -238,10 +306,10 @@ hello_world라는 이름의 이 app이 하는 일은, 히스토리 화면과 설
 
 
 
-hello_world 프로젝트 생성 - 폴더와 메타정보
-python 함수 hello( ) 구현
-python 함수에 매개변수 전달하고 리턴값 전달받기
-간단한 웹 기반 U/I 화면 만들기
+- hello_world 프로젝트 생성 - 폴더와 메타정보
+- python 함수 hello( ) 구현
+- python 함수에 매개변수 전달하고 리턴값 전달받기
+- 간단한 웹 기반 U/I 화면 만들기
 # 2.1 hello_world 프로젝트 생성 - 폴더와 메타정보
 
 apps/ 폴더 밑에 hello_world 라는 이름의 폴더를 생성합니다. 폴더의 이름이 곧 프로젝트명이며, apps/ 폴더에서 유일한(unique) 이름이어야 합니다.
@@ -355,12 +423,15 @@ def hello():
 
 - python 프로그래밍을 익혔다면 이미 알고 있겠지만, def 아래 행들은 tab 문자로 들여쓰기 해야 합니다.
 - xhost는 호스트(로봇제어기)의 기능을 호출하기 위한 모듈입니다. xhost.py라는 파일은 직접 작성할 필요가 없습니다. 후속 절에서 자세히 설명되므로 여기서는 이 정도만 이해하면 됩니다.
+<br></br>
 
 이제 Hi6 가상제어기 main과 TP를 차례로 실행합니다.
 
 Hi6 제어기 main은 시작하면서 apps/ 폴더 밑의 모든 폴더의 info.json를 읽어들임으로써, 설치된 app들을 인식합니다.
 
-[서비스] - 10: 앱(App)을 클릭하면 10: 앱(App) - TP라는 제목의 화면이 나타납니다. [location] 버튼을 2번 클릭하면 제목의 TP가 USB를 거쳐 MAIN으로 바뀝니다. 이 화면에서 우리가 만든 hello_world를 찾을 수 있습니다.
+[서비스] - 10: 앱(App)을 클릭하면 10: 앱(App) - TP라는 제목의 화면이 나타납니다. 
+
+[location] 버튼을 2번 클릭하면 제목의 TP가 USB를 거쳐 MAIN으로 바뀝니다. 이 화면에서 우리가 만든 hello_world를 찾을 수 있습니다.
 
 ![](../_assets/image_17.png)
 
@@ -492,6 +563,7 @@ app에 대한 설정을 티치펜던트로 하기 위해, 웹 기반의 U/I를 �
 
 
 좌상단의 New Folder 버튼을 클릭하여 새 폴더를 만듭니다. 폴더명은 ui로 설정합니다.
+
 ![](../_assets/image_19.png)
 
 ui/ 폴더에 새 파일을 만든 후, 이름은 setup.html로 설정합니다. 이제 아래 그림과 같은 상황이 됩니다.
@@ -598,7 +670,7 @@ COOLTEXT (https://cooltext.com/) : text를 로고 그림파일로 생성해주�
 이제 가상 메인보드과 가상 티치펜던트를 재실행 합니다.
 
 
-시스템 - 응용 파라미터 메뉴로 진입하면 아래와 같이 새로 추가된 hello, world 메뉴 항목이 보입니다.
+[시스템] - [응용 파라미터] 메뉴로 진입하면 아래와 같이 새로 추가된 hello, world 메뉴 항목이 보입니다.
 ![](../_assets/image_22.png)
 
 메뉴를 누르면 아래와 같이 setup.html 의 화면이 티치펜던트에 나타납니다.
@@ -946,6 +1018,7 @@ print('...server ended')
 ```
 
 위 내용을 복사하여 hello_world/ 폴더 아래에 argosx_stub.py 파일을 생성해놓고, 윈도우 PowerShell이나 명령 프롬프트에서  hello_world/ 폴더로 이동한 후 아래 명령으로 실행하십시오.
+
 ```
 python argosx_stub.py
 ```
@@ -957,7 +1030,7 @@ python argosx_stub.py
 
 ![](../../_assets/image_24.png)
 
-출력은 하단의 TERMINAL 창으로 나옵니다. 우상단의 ![](../_assets/image_25.png) 버튼을 조작해 디버깅을 일시정지, 재실행, 정지할 수 있습니다.
+출력은 하단의 TERMINAL 창으로 나옵니다. 우상단의 ![](../../_assets/image_25.png) 버튼을 조작해 디버깅을 일시정지, 재실행, 정지할 수 있습니다.
 
 ![](../../_assets/image_26.png)# 3.1.3 argosx 프로젝트 생성
 
@@ -1003,7 +1076,7 @@ end
 ```
 # 3.1.4 ip_addr, port attribute 생성
 
-ArgosX와 interface plug-in의 사양을 보면 우선 ip_addr를 지정하는 문자열 속성(attribute)이 있습니다.
+<u>ArgosX와 interface plug-in의 사양</u>을 보면 우선 ip_addr를 지정하는 문자열 속성(attribute)이 있습니다.
 
 
 
@@ -1111,7 +1184,7 @@ end
 
 다음 구현할 사양은 init( ), req( ), res( ), close( ) 함수입니다.
 
-(ArgosX와 interface plug-in의 사양의 프로토콜과 로봇언어 function 부분을 참고하십시오.)
+(<u>ArgosX와 interface plug-in의 사양</u>의 프로토콜과 로봇언어 function 부분을 참고하십시오.)
 
 
 
@@ -1231,7 +1304,7 @@ UDP 클라이언트 통신을 수행하는 동작은 추후 다른 부분에서�
 
 UDP socket을 초기화하고, 문자열 메시지를 송신하고, 수신하고, 닫는 간단한 동작들입니다.
 
-xhost는 호스트(로봇제어기)의 기능을 호출하기 위한 모듈로서, main s/w가 동적으로 만들어 줍니다. (즉, xhost.py라는 파일은 존재하지 않습니다.) 후속 절에서 자세히 설명되므로 여기서는 이 정도만 이해하면 됩니다.
+- xhost는 호스트(로봇제어기)의 기능을 호출하기 위한 모듈로서, main s/w가 동적으로 만들어 줍니다. (즉, xhost.py라는 파일은 존재하지 않습니다.) 후속 절에서 자세히 설명되므로 여기서는 이 정도만 이해하면 됩니다.
 
 
 comm.py
@@ -1451,7 +1524,7 @@ Hyundai Robot Job File; { version: 1.6, mech_type: "780(YL012-0D)", total_axis: 
      argosx.close() # socket 닫기
      end
 ```
-
+<br></br>
 먼저, argosx_stub를 명령 프롬프트나 vscode에서 실행해놓습니다.
 
 가상제어기를 재부팅한 후, job 파일을 실행해봅니다. 정상적으로 만들어졌다면 아래와 같이 동작할 것입니다.
@@ -1483,9 +1556,9 @@ xhost는 호스트(로봇제어기)의 기능을 호출하기 위한 다양한 m
 
 
 
-<<U>ArgosX와 interface plug-in의 사양</U>에서 에러 처리 관련 아래의 항목이 있었습니다.
+<U>ArgosX와 interface plug-in의 사양</U>에서 에러 처리 관련 아래의 항목이 있었습니다.
 
-ArgosX로부터 "fail"이 수신되면, 미리 설정해 둔 번호의 로봇제어기 범용 I/O 출력신호를 켠다.
+- ArgosX로부터 "fail"이 수신되면, 미리 설정해 둔 번호의 로봇제어기 범용 I/O 출력신호를 켠다.
 
 
 로봇제어기의 범용 I/O 출력신호는, 아래 method로 on/off 할 수 있습니다.
@@ -1496,18 +1569,17 @@ def io_set_out_bit(sigcode: int, val: int) -> int
 sigcode는 아래와 같이 io의 block 번호와 인덱스를 하나의 숫자로 합친 code입니다.
 
 sigcode = block번호 x 10000 + 인덱스
-
-
+<br></br>
 
 가령 fb3.do72의 sigcode는 아래와 같습니다.
 
 3 x 10000 + 72 = 30072
+<br></br>
 
 
 
 val는 ON일 때 1, OFF일 때 0입니다.
-
-
+<br></br>
 
 ArgosX 에러를 위한 출력신호 할당 번호를 sigcode_err라는 이름의 모듈 변수로 추가하고 default 값은 5 (즉, fb0.do5)로 설정합니다.
 
@@ -1524,7 +1596,7 @@ sigcode_err = 5
 ```
 
  res( ) 함수 내에서 수신된 msg 값을 "res fail"과 비교하고, 결과에 따라 출력신호를 내보냅니다.
-
+<br></br>
 
 
 roblang.py
@@ -1777,7 +1849,7 @@ signal value, 0 or 1.<br>
 <h2>io_set_out_bit(sigcode, val)</h2>
 
 <h3>Description:</h3>
-get user i/o input bit by sigcode.<br><br>
+get user i/o output bit by sigcode.<br><br>
 <h3>Args:</h3>
 <b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.do17)<br>
 <b>val</b>: int. value to set. (1 or 0)<br>
@@ -1932,7 +2004,7 @@ int. the result integer value of the expression.<br>
 <h2>exec_mode()</h2>
 
 <h3>Description:</h3>
-	
+check whether the mode is execute-mode or not.<br>
 <h3>Args:</h3>
 	
 <h3>Returns:</h3>
@@ -1943,7 +2015,8 @@ int. the result integer value of the expression.<br>
 
 <hr>
 <h2>cont_mode()</h2>
-<h3>Description:</h3>	
+<h3>Description:</h3>
+check whether the mode is continue-mode or not.<br>
 <h3>Args:</h3>
 	
 <h3>Returns:</h3>
@@ -2031,7 +2104,7 @@ serial port open<br>        Args:<br>        port (int): serial port number<br><
 	
 <h3>Returns:</h3>
 &nbsp&nbsp <b>0</b>: OK<br>
-&nbsp&nbsp <b>'<0'</b>: Not OK<br>
+&nbsp&nbsp <b>-1</b>: Not OK<br>
 
 <br>
 
@@ -2067,20 +2140,21 @@ serial communication send bytes type data<br>xhost dbg not supporteds<br>
 <h2>sci_recv_bytes(port, len)</h2>
 
 <h3>Description:</h3>
-serial communication recv bytes type data<br>xhost dbg not supported
+	serial communication recv bytes type data<br>xhost dbg not supported<br><br>
 <h3>Args:</h3>
-	
+<b>port (int)</b>: serial port number<br>
+<b>len (int)</b>: length of data<br>	
 <h3>Returns:</h3>
-	
+	recieved data (bytes)<br>
 <br>
 
 <hr>
 <h2>sci_clear_buf(port)</h2>
 
 <h3>Description:</h3>
-	
+	clear serial buffer<br><br>
 <h3>Args:</h3>
-	
+<b>port (int)</b>: serial port number<br>	
 <h3>Returns:</h3>
 	
 <br>
@@ -2141,12 +2215,13 @@ sleep_sec = 20        # delay before response
 argosx_stub.py 를 재실행하고, 티치펜던트의 STEP FWD키로 job 프로그램을 한 행씩 실행해봅시다.
 
 argosx.req를 실행하고 바로 이어서 argosx.res( )를 실행하면, 아래와 같이 req 실행 이후 20초간 커서를 움직일 수 없는 상태가 되어 버립니다. 이러한 상태를 blocking이라고 하는데, 사용자 조작성 측면에서 좋지 않습니다. 응답이 영구적으로 오지 않을 경우 로봇 제어기를 껐다 켜야 하는 상황까지 초래하기 때문에 문제가 있는 사양입니다.
-</br>
+<br></br>
 ![](../../_assets/image_29.png)
 
 어떤 사양이 바람직할까요? 일반적으로, wait 문과 같이 어떤 상태를 기다리는 명령문의 경우 STEP FWD키를 누르면 대기하고 떼면 커서를 이동할 수 있습니다. 또한 timeout과 퇴피주소를 인수로 지정할 수 있어서, timeout이 되면 퇴피주소로 분기하는 예외 처리 동작이 가능합니다.
-</br>
+<br></br>
 ![](../../_assets/image_30.png)
+
 di6을 10초 대기. timeout 시, *tout으로 분기.
 
 
@@ -2157,9 +2232,10 @@ di6을 10초 대기. timeout 시, *tout으로 분기.
 아래 순서도를 봅시다. Hi6 호스트(HOST)가 로봇언어 명령문을 호출할 때는 실행모드(execution-mode)와 계속모드(continue-mode)의 2가지 상태가 있습니다. 계속모드라면, 호스트는 해당 명령문을 다시 호출해줍니다.
 
 호스트는 명령문을 일단 실행모드로 호출합니다. 대부분의 명령문들은 자신의 동작을 수행하고 즉각 종료하며, 호스트도 연속모드가 되지 않은 것을 확인하고 해당 명령문에 대한 처리를 완료시킵니다.
-</br>
+<br></br>
+
 ![](../../_assets/image_31.png)
-</br>
+
 
 그러나 일부 명령문들은 대기 동작을 가지고 있습니다. (IO 입력이나 이더넷 데이터 수신, 일정 시간, 로봇 동작 완료 등 어떤 상태나 사건(event)의 대기를 뜻합니다.) 호스트와 플러그인 간에는 아래의 절차가 수행됩니다.
 
@@ -2168,9 +2244,10 @@ di6을 10초 대기. timeout 시, *tout으로 분기.
 * 플러그인의 대기 동작 명령문은 xhost.exec_mode( )로 모드를 확인합니다. 연속모드임이 확인(No)되면 timer를 확인하여 timeout 인 경우 퇴피주소로 분기(branch_to_addr)하고 연속모드 요청 없이 종료합니다.
 * timeout이 아니면, 대기조건이 완료되었는지(wait-complete condition?) 확인합니다. 완료이면 연속모드 요청 없이 그대로 종료하고, 미완료이면 Hi6 호스트에게 연속모드 요청(req_to_continue)을 하고 자신의 동작을 수행(execute command)한 후 종료합니다.
 * Hi6 호스트는 이번 호출에서 연속모드 요청이 없었을 경우(continue-mode No), 해당 명령문 처리를 완료(complete)시킵니다.
- </br>
+<br></br>
+
  ![](../../_assets/image_32.png)
-</br>
+
 
 
 
@@ -2424,7 +2501,78 @@ job
      end
 ```
 
-# 3.2 실전 프로젝트 : ArgosX - callback
+# 3.1.10 로봇언어 명령입력 등록
+
+실제 TP를 사용하다보면 로봇언어를 직접 입력하는 것은 번거로운 일입니다.
+
+따라서 [명령입력]을 통해 로봇 언어를 좀더 쉽게 작성할 수 있도록 해야합니다.
+
+이를 위해 로봇언어를 등록해주어야 합니다.
+
+먼저, info.json에 "cmds" 라벨 을 추가하고, 이에 상응하는 값은 cmds의 내용을 정리한 json을 지정해줍니다.
+
+info.json
+```json
+{
+	"author" : "BlueOcean Robot & Automation, Ltd.",
+	"binding" : "plug-in",
+	"cmds" : "cmds.json",
+	"copyright" : "All right reserved",
+	"description" : "ArgosX Vision System interface",
+	"entry" : "main.py",
+	"menu" : "ui/menu.json",
+	"startup" : "boot",
+	"version" : "v0.9.0"
+}
+```
+
+argosx 폴더 안에 cmds.json을 추가하여 해당 파일 안에 명령어의 속성들을 정의해줍니다.
+
+``` json
+{
+	"fmts" : [
+		{
+			"name": "init"
+		},
+		{
+			"name": "req",
+			"samples": "req 39",
+			"props": [
+				{
+					"guide": "work no.",
+					"range": "[1~100]"
+				}
+			]
+		},
+		{
+			"name": "res"
+		},
+		{
+			"name": "close"
+		}
+	]
+}
+
+```
+
+|항목|의미|예제|
+|---|---|---|
+|fmts|로봇언어 모듈명|"fmts"|
+|name|함수명 |"name": "init"|
+|samples|샘플(로봇언어 입력형태)|"samples": "req 39"|
+|props|함수의 입력 속성|"props"|
+|guide|입력 인자 가이드 메세지|"guide": "work no."|
+|range|입력 인자 값의 범위|"range": "[1~100]"|
+
+각 항목들의 의미하는 바는 위의 표와 같으며, 입력인자가 많은 경우는 "props" 안에 입력인자 수 대로 속성들을 묶음으로 추가하면 됩니다.
+
+
+<br></br>
+추가된 명령어는 TP의 하단의 [명령입력] 버튼을 눌러 확인할 수 있습니다.
+![](../../_assets/image_82.png)
+
+[명령입력]-[argosx]
+![](../../_assets/image_83.png)# 3.2 실전 프로젝트 : ArgosX - callback
 
 
 Hi6 제어기의 동작에는 모드 변경, 모터ON, 리셋, 기동, 정지, Accuracy OK 등 주요 이벤트들이 있습니다. 각 plug-in 들은 이러한 이벤트에 대해 고유한 동작을 수행하도록 함수를 등록시켜 둘 수 있습니다.
@@ -2507,6 +2655,7 @@ comm 모듈에 이미 이더넷 문자열 송신 기능이 구현되어 있으�
 comm.send_msg("light-on")
 comm.send_msg("light-off")
 ```
+<br></br>
 
 그런데 이 구현은 한가지 문제가 있습니다. 로봇언어 명령문 argosx.init를 통해 comm.open( ) 함수가 호출된 상태라면 정상적으로 문자열이 송신되지만, 호출되지 않은 상황에서는 송신이 안됩니다.
 
@@ -2514,9 +2663,9 @@ comm.send_msg("light-off")
 
 따라서, 통신이 닫혀있으면 열고 송신한 후 다시 닫아주는 동작까지 해주는 문자열 송신 함수를 정의해야 합니다.
 
-
+<br></br>
 comm.py와 같은 폴더에 comm_ex.py 파일을 아래와 같이 작성합니다.
-
+<br></br>
 
 
 comm_ex.py
@@ -2581,7 +2730,7 @@ def on_motor_off() -> int:
 가상제어기를 재부팅한 후, job 파일을 argosx.init( )까지 실행합니다. 이 상태에서 아래와 같이 동작하면, 조명 기능의 정상 동작은 확인된 것입니다.
 
 
-
+<br></br>
 <U>__argosx_stub측 (ArgosX 역할의 server)__</U>
 
 motor OFF, motor ON을 할 때마다, 콘솔 출력에 아래와 같은 문자열이 출력됩니다.
@@ -2659,13 +2808,13 @@ LED light is ON
       </td>
     </tr>
     <tr>
-      <td>on_stop(task_no)</td>
+      <td>on_stop(task_no:int)</td>
       <td>
        정지
       </td>
     </tr>
     <tr>
-      <td>on_restart(task_no)</td>
+      <td>on_restart(task_no:int)</td>
       <td>기동</td>
     </tr>
     <tr>
@@ -2675,17 +2824,17 @@ LED light is ON
       </td>
     </tr>
      <tr>
-      <td>on_cur_job_selected_by_tp(task_no)</td>
+      <td>on_cur_job_selected_by_tp(task_no:int)</td>
       <td>TP에 의한 job program 선택</td>
     </tr>
     <tr>
-      <td>on_step_func_no_change_for_clear(task_no,..)</td>
+      <td>on_step_func_no_change_for_clear(task_no:int,..)</td>
       <td>
        프로그램 카운터 변경
       </td>
     </tr>
     <tr>
-      <td>on_job_end(task_no)</td>
+      <td>on_job_end(task_no:int)</td>
       <td> job end문 실행
       </td>
     </tr>
@@ -2700,8 +2849,8 @@ LED light is ON
       </td>
     </tr>
     <tr>
-      <td>is_assigned_input(sigcode) /</br>
-      is_assigned_output(sigcode)</td>
+      <td>is_assigned_input(sigcode:int) /</br>
+      is_assigned_output(sigcode:int)</td>
       <td>sigcode가 할당된 입/출력 신호인지 여부 리턴</td>
     </tr>
     <tr>
@@ -2734,6 +2883,7 @@ LED light is ON
 * 설정 내용은 argosx.json 파일에 json 파일 형식으로 저장된다.
 * 화면 전체를 default 값으로 만드는 F버튼 (Initialize All)을 제공한다.
 * 현재 선택한 항목만 default 값으로 만드는 F버튼 (Initialize One)을 제공한다.
+<br></br>
 
 ![](../../_assets/image_34.png)
 
@@ -2965,11 +3115,8 @@ function updateData(data, to_data)
 
 updateGuideBar( ) 함수는 입력 element에 커서가 위치했을 때, 안내 프레임에 어떤 메시지를 표시할 지를 setGuideBarMsg( ) 함수를 호출하여 지정합니다.
 
-
-
 __setGuideBarMsg(element의 id 혹은 name, 표시할 message)___
-
-
+<br></br>
 
 가령, 위의 예에서 sg('ip_addr', msg_ip_addr);는 name이 'ip_addr'인 input element에 커서가 위치했을 때, msg_ip_addr 문자열을 안내 프레임에 표시하라는 설정입니다.
 
@@ -3017,6 +3164,7 @@ EZGIFCOM (https://ezgif.com/svg-to-png) : SVG 파일을 원하는 해상도의 P
 ![](../../_assets/lm_argosx.png) lm_argosx.png 의 예 (이 그림을 다운받아 사용해도 됩니다.)
 
 
+<br></br>
 
 이제 가상 메인보드과 가상 티치펜던트를 재실행 합니다.
 
@@ -3049,11 +3197,9 @@ EZGIFCOM (https://ezgif.com/svg-to-png) : SVG 파일을 원하는 해상도의 P
 
 
 이러한 전달을 수행하기 위해, javascript의 updateData( ) 함수와 python의 setup 모듈의 getter, putter 함수를 구현해야 합니다.
-</br>![](../../_assets/image_44.png)</br>
+<br></br>
 
-
-
-
+![](../../_assets/image_44.png)
 
 
 ## element ↔ javascript object
@@ -3078,9 +3224,10 @@ function updateData(data, to_data)
 element와 javascript 객체간 값의 양방향 전달을 updateData( ) 함수로 정의했습니다. 매개변수 data는 javascript 객체입니다. to_data는 전달방향을 나타내는 boolean 변수인데, true이면 element → data 방향, false이면 element ← data 방향입니다.
 
 이러한 전달은 DOM API 혹은 jquery를 활용하여 직접 구현해도 됩니다. 하지만, dst_setup.js가 제공하는 ddx (dynamic data exchange) 함수들을 사용하면 좀 더 간결하게 전달을 구현할 수 있습니다.
+<br></br>
 
+ddx 함수들 
 
-# 3.2.3 callback 함수 참조설명서
 |함수 signature|HTML element|data type|설명|
 |---|---|---|---|
 |ddx_edit(data, name, to_data)|```<input type='text'>```|string||
@@ -3119,11 +3266,11 @@ function init()
 
 argosx를 비롯해 모든 플러그인은 /apps/ 밑에 배치됩니다. 그리고, 경로 마지막 이름은 "svr_"에 설정 그룹명을 붙인 형태입니다.
 
-</br>
+<br></br>
 
 **/apps/{app name}/svr_{setup group name}**
 
-</br>
+<br></br>
 플러그인은 1개 혹은 여러 개의 설정 화면을 가질 수 있는데, 한 화면의 데이터는 하나의 객체로 다루어지고 이를 설정 그룹(setup group)이라고 합니다. 각 설정 그룹에는 자유롭게 이름을 부여할 수가 있는데, 이것이 설정 그룹명입니다. 이 예제에서는 설정 그룹명을 'general'로 정했습니다.
 
 설정 그룹명에 접두어 "svr_" 대신, "get_"과 "put_"을 붙이면 각각이 getter와 putter 서비스 함수명이 됩니다. 또한, getter 함수명 끝에 '_def'를 붙이면 default값을 얻는 default getter 서비스 함수명이 됩니다.
@@ -3856,6 +4003,7 @@ panel_argosx.png의 예 (이 그림을 다운받아 사용해도 됩니다.)
 
 
 메뉴를 선택하면 잠시 후, 우리가 작성한 모니터링 panel이 나타납니다.
+<br></br>
 ![](../../_assets/image_55.png)
 
 
@@ -3881,10 +4029,10 @@ panel_argosx.png의 예 (이 그림을 다운받아 사용해도 됩니다.)
 
 아래와 같은 U/I를 제공하는 사용자 막대 U/I를 만들어 봅시다.
 
-light-on 버튼 : ArgosX의 LED 조명을 켠다.
-light-off 버튼 : ArgosX의 LED 조명을 끈다.
-<br>
-<br>
+- light-on 버튼 : ArgosX의 LED 조명을 켠다.
+- light-off 버튼 : ArgosX의 LED 조명을 끈다.
+<br></br>
+
 ![](../../_assets/image_56.png)# 3.5.2 사용자 막대의 레이아웃
 
 argosx 의 부모인 apps/ 폴더에 대해 vscode를 여십시오.
@@ -3932,8 +4080,8 @@ ubar.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Liv
 
 ui/ubar.js 파일에 아래와 같이 작성합니다. 버튼을 누를 때마다 티치펜던트는 "light_onoff"라는 HTTP post 메시지를 메인보드로 송신합니다. on인지 off인지는 onoff라는 속성을 가진 객체에 담아, post 메시지의 body에 실어 보냅니다.
 
-light-on일 때의 body : { onoff: true }
-light-off일 때의 body : { onoff: false }
+- light-on일 때의 body : { onoff: true }
+- light-off일 때의 body : { onoff: false }
 
 
 ui/ubar.js
@@ -4101,7 +4249,672 @@ menu.json
 ![](../../_assets/image_62.png)
 
 
-# 4. 디버깅
+# 3.6 실전 프로젝트 : ArgosX - 다국어화
+
+
+지금까지의 예제에서는 영어를 기반으로 한 U/I 개발 이었습니다. Hi6 제어기의 경우, 영어뿐만 아니라 다양한 언어를 제공합니다.
+
+이러한 경우 플러그인 앱(plugin-app) 역시, 다국어화를 통해 다양한 언어를 제공하도록 할 수 있습니다.
+
+이제, ArgosX 프로젝트에 대하여 다국어화 작업을 실습해봅시다.
+
+
+* 설정 화면 U/I 다국어화 
+* 모니터링 panel U/I 다국어화 
+* user-bar U/I 다국어화# 3.6.1 설정 화면 U/I 다국어화
+
+먼저, 설정 화면의 U/I의 대하여 번역 작업을 시작해봅시다. 
+
+* 설정화면 메뉴의 번역 
+* 설정화면 U/I의 번역 
+* F버튼의 U/I의 번역
+# 3.6.1.1 설정화면 메뉴의 번역 
+
+## string table의 등록
+다국어화의 리소스 등록을 위하여 string table을 등록해야합니다.
+이는 json 형태로 등록을 해야하며 하기의 형식으로 추가가 되어야합니다.
+
+1) argosx 프로젝트의 ui 폴더 내에 str_table.json 파일 추가
+
+    ![](../../../_assets/image_85.png)
+
+2) 내용
+    ``` json
+    {
+          "en":
+        {
+            "IDS_title" : "ArgosX Vision System"
+        },
+        "ko": 
+        {
+            "IDS_title" : "ArgosX 비전 시스템"
+        }
+    }
+    ```
+
+    "en"과 "ko"는 Hi6 와 통용되는 language code(이하 langcode) 이며, "en"은 English 영어, "ko"는 Korean 한국어를 의미합니다.
+
+    각 langcode 별로 str 데이터의 id 와 string value 값의 멤버들을 가집니다.
+
+    menu에서 제목을 추가하기 위해여 "IDS_title"이라는 동일한 id를 가진 string data들을 각각 "en"과 "ko"에 형식에 맞춰 추가해줍니다.
+
+## 메뉴 라벨 번역
+메뉴에서 설정화면의 라벨 역시 번역을 해야합니다.
+
+아래의 내용을 따라해봅시다.
+
+1) info.json
+   
+    기존에 작성되어 있던 info.json의 내용을 변경해봅시다.
+    
+    생성한 str_table.json 파일을 "strs" id의 값으로 추가 해줍니다. 
+    
+    ``` json
+    {
+	    "author" : "BlueOcean Robot & Automation, Ltd.",
+	    "binding" : "plug-in",
+	    "cmds" : "cmds.json",
+	    "copyright" : "All right reserved",
+	    "description" : "ArgosX Vision System interface",
+	    "entry" : "main.py",
+	    "menu" : "ui/menu.json",
+	    "strs" : "ui/str_table.json",
+	    "startup" : "boot",
+	    "version" : "v0.9.0"
+    }
+    ```
+2) menu.json
+    
+    기존에 작성되어 있던 menu.json의 내용을 변경해봅시다.
+
+    ``` json
+        {
+            "path": "system/appl/",
+            "id": "argosx",
+            "icon": "argosx/ui/lm_argosx.png",
+            "label": "IDS_title",
+            "url": "argosx/ui/setup.html"
+        }
+    ```
+    label의 값을 기존의 "ArgosX Vision System"이 아닌 "IDS_title"로 작성해 줍니다.
+
+3) 언어 선택
+
+    가상 제어기 환경에서는 hi6tp_platform_cfg.json의 "lang_code" 내용을 변경해야 합니다.
+
+    ``` json
+    "lang_code": "ko"
+    ```
+    위와 같이 lang_code를 변경 한 뒤에 제어기와 tp를 재실행하여 변경된 언어와 메뉴 라벨을 확인합니다.
+
+    정상적으로 반영이 되었다면 아래와 같이 메뉴에서 한글로 표기되어야합니다.
+    
+    ![](../../../_assets/image_86.png)
+
+# 3.6.1.2 설정화면 U/I의 번역 
+
+## setup layout에서의 변경
+
+설정화면의 U/I의 번역을 위해 먼저 setup.html을 살펴봅시다.
+
+str_table.json과 lang.js를 아래와 같이 script로 추가해 줍니다.
+
+해당 파일들은 서로에게 종속성이 있기때문에 반드시 하기와 같은 순으로 작성해주어야 합니다.
+
+```html
+    <script src='./str_table.json' type='application/json'></script>
+    <script src='../../_common/js/lang.js'></script>
+    <script src='../../_common/js/dst_setup.js'></script>
+```
+또한 body에 선언되어 있는 contents들을 살펴 보면
+```html
+    <span class='col0' name='ip_addr'>IP address</span>
+```
+IP address 라고 작성되어 있는 span의 내용은 생략하셔도 무방합니다.
+(추후에 번역된 내용들이 작성됩니다.)
+
+위와 같은 내용들을 다 반영한 html 파일은 아래와 같이 작성됩니다.
+
+setup.html
+
+```html
+    <!DOCTYPE html:5>
+    <!--
+        @author: Jane Doe, BlueOcean Robot & Automation, Ltd.
+        @brief: ArgosX Vision System interface - setup
+        @create: 2021-12-06
+    -->
+    <html>
+    
+    <head>
+    <title>ArgosX Vision System - setup</title>
+    <meta http-equiv=Content-Type content='text/html; charset=utf-8'>
+        <link rel='stylesheet' href='../../_common/css/style.css' type=text/css rel=stylesheet>
+        <script src='../../_common/js/jquery-3.6.0.min.js'></script>
+        <script src='../../_common/js/Parser.js'></script>
+        <script src='../../_common/js/sigcode.js'></script>
+        <script src='./str_table.json' type='application/json'></script>
+        <script src='../../_common/js/lang.js'></script>
+        <script src='../../_common/js/dst_setup.js'></script>
+        <script src='./setup.js'></script>
+        <script> 
+            $(document).ready(init);
+        </script>
+    </head>
+    
+    <body class='no-scroll'>
+    <div>
+        <div id='contents'>
+                <span class='col0' name='ip_addr'></span>
+                <input class='col1' type='text' name='ip_addr' id='ip_addr_0' size='3'/>
+                .
+                <input class='col1' type='text' name='ip_addr' id='ip_addr_1' size='3'/>
+                .
+                <input class='col1' type='text' name='ip_addr' id='ip_addr_2' size='3'/>
+                .
+                <input class='col1' type='text' name='ip_addr' id='ip_addr_3' size='3'/>
+                <br>
+                <span class='col0' name='port'></span>
+                <input class='col1' type='text' id='port' size='5'/>
+                <br>
+                <span class='col0' name='sigcode_err'></span>
+                <input class='col1' type='text' id='sigcode_err' size='5'/>
+            </div>
+            <div id='guidebar'></div>
+    </div>
+    </body>
+    </html>
+````
+
+
+## setup의 번역 동작 추가
+이제 setup 화면에 번역 동작을 추가해봅시다.
+
+### 1) 초기화 
+
+먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 Hi6에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
+
+setup.js
+
+```js
+
+function init()
+{
+	parseStrData();
+	setDomPath('/apps/argosx/svr_general');
+	setLangCode('/apps/argosx/svr_lang_code', updateAllStrByLang);
+	setUpdateData(updateData);
+	onReady();
+}
+
+```
+
+parseStrData 는 string data를 로드해오는 함수입니다.
+
+setLangcode는 python의 함수를 호출하여 Hi6에 설정되어있는 lang_code를 읽어오는 동작을 하며, callback 함수로 updateAllStrByLang 를 설정하는 함수입니다.
+
+setLangcode의 동작을 위해 main.py에 get_lang_code라는 함수를 추가해줍니다.
+
+main.py에 추가하는 이유는 추후에, ubar와 panel에서 역시 lang_code를 공통적으로 사용하는 것응 용이하게 하기 위함입니다.
+
+main.py 
+
+```python
+
+def get_lang_code()->dict:
+	""" Get language code from remote
+	
+	Returns: data: information of language code
+
+	"""
+	data = {}
+	lang_code = xhost.lang_code()
+	print(lang_code)
+	data["lang_code"] = lang_code
+	return data 
+
+```
+
+위의 함수는 xhost의 lang_code 함수를 이용하여 읽어온 lang_code를 반환합니다.
+
+
+### 2) lang_code에 따른 번역 지정
+
+callback 함수로 지정한 updateAllStrByLang는 updateElement 과 updateGuideBarMsg를 호출하는 함수 이며, 각각 lang_code에 따라서 각 element들과 guidebar의 메세지들을 번역하는 동작을 합니다.
+
+먼저 str_table.json에 번역이 필요한 element들과 guidebar 메세지들을 추가해줍니다.
+
+str_table.json
+
+```json
+{
+      "en":
+        {
+          "IDS_title" : "ArgosX Vision System",
+          "IDS_IpAddr" :"IP Address",
+          "IDS_Port" : "Port#",
+          "IDS_OUtSigcodeErr" : "Failure output signal",
+          "IDS_msg_ip_addr" : "Enter the IP address of ArgosX.",
+          "IDS_msg_port" : "Enter the port # of ArgosX.",
+          "IDS_msg_sigcode" :"Enter the number of the signal to assign.[0 - 4096]"
+      },    
+      "ko": 
+      {
+        "IDS_title" : "ArgosX 비전 시스템",
+        "IDS_IpAddr" :"IP 주소",
+        "IDS_Port" : "port 번호",
+        "IDS_OUtSigcodeErr" : "실패 신호 출력 할당번호",
+        "IDS_msg_ip_addr" : "ArgosX의 IP 주소값을 입력하세요.",
+        "IDS_msg_port" : "ArgosX의 포트 번호를 입력하세요.",
+        "IDS_msg_sigcode" :"할당할 신호의 번호를 입력하세요 [0~4096]."
+      }
+}
+```
+
+다음으로, setup.js 에 하기 내용으로 수정해줍니다.
+
+기존의 updateGuideBar 함수를 삭제하고 대신, updateGuideBarMsg를 사용하게 됩니다.
+
+```js
+///@brief	update all string by language code
+function updateAllStrByLang()
+{
+	updateElement();
+	updateGuideBarMsg();
+}
+
+///@brief	update all element by language code
+function updateElement()
+{
+	let se = setElemByLang;
+	se('ip_addr', 'IDS_IpAddr');
+	se('port', 'IDS_Port');
+	se('sigcode_err', 'IDS_OUtSigcodeErr');
+}
+
+
+///@brief	have guidebar display message on clicking widget & update msg by langcode
+function updateGuideBarMsg()
+{
+	let sg = setGuideMsgByLang;
+	sg('ip_addr', 'IDS_msg_ip_addr');
+	sg('port', 'IDS_msg_port');
+	sg('sigcode_err', 'IDS_msg_sigcode');
+}
+
+```
+
+setElemByLang과 setGuideMsgByLang 을 통해서 각 element들과 guidebar 메세지에 string id를 지정해줍니다.
+
+가상 제어기와 TP를 재부팅한 뒤, 정상 동작이 된다면 아래와 같은 설정화면을 확인하실 수 있습니다.
+
+![](../../../_assets/image_87.png)
+
+# 3.6.1.3 F 버튼 U/I의 번역 
+F 버튼의 U/I의 내용을 번역하는 동작을 추가해봅시다.
+
+## string data 추가
+str_table.json 파일에 각 lang_code 별로 F 버튼 번역을 위한 string data를 추가해줍니다. 
+
+``` json
+        "en":
+        {
+            "IDS_msg_lb_all" : "Initialize\nAll",
+            "IDS_msg_lb_one" : "Initialize\nOne"
+        },
+        "ko": 
+        {
+            "IDS_msg_lb_all" : "전체\n초기화",
+            "IDS_msg_lb_one" : "단일\n초기화"
+        }
+
+```
+
+## F버튼의 동작
+기존에 구현되어 있는 initButtonBar 함수 내에 정의한 btn_infos의 내용에서 label의 값을 string id 로 수정해줍니다.
+
+setup.js 
+
+``` js
+///@return		f-button infos array
+function initButtonBar()
+{
+	console.log('initButtonBar()');	
+
+	var btn_infos = [
+		{
+			label:"IDS_msg_lb_all",
+			script: 'setAllValueAsDef();'
+		},
+		{
+			label:"IDS_msg_lb_one",
+			script: 'setSelectedValueAsDef();'
+		}
+	]
+	return btn_infos;
+}
+```
+
+가상 제어기와 TP를 재부팅한 뒤, 정상 동작이 된다면 아래와 같이 번역 처리된 F버튼을 확인하실 수 있습니다.
+
+![](../../../_assets/image_88.png)
+
+# 3.6.2 모니터링 panel U/I 다국어화
+다음으로는 모니터링 panel에서의 번역 작업을 따라해봅시다.
+
+## 1. menu 번역
+panel U/I 역시 menu에서 번역이 필요합니다.
+
+모니터링 panel 메뉴에서 해당 panel 화면의 라벨을 확인하기 위해서 id를 추가해줍니다.
+기존에 정의해둔 "IDS_title"를 다시 활용합니다.
+
+menu.json
+    
+기존에 작성되어 있던 menu.json의 내용을 변경해봅시다.
+
+``` json
+    {
+        "path": "panels",
+        "id": "argosx",
+        "icon": "argosx/ui/panel_argosx.png",
+        "label": "IDS_title",
+        "url": "argosx/ui/panel.html"
+    }
+```
+
+label의 값을 기존의 "ArgosX Vision System"이 아닌 "IDS_title"로 작성해 줍니다.
+
+정상적으로 반영이 된다면, 아래와 같이 모니터링 panel menu에서 번역이 반영 된 내용을 확인하실 수 있습니다.
+
+![](../../_assets/image_89.png)
+
+
+## 2. panel layout에서의 변경
+
+모니터링 화면의 U/I의 번역을 위해 먼저 panel.html을 살펴봅시다.
+
+setup에서의 작업과 마찬가지로 str_table.json과 lang.js를 아래와 같이 script로 추가해 줍니다.
+
+해당 파일들은 서로에게 종속성이 있기때문에 반드시 하기와 같은 순으로 작성해주어야 합니다.
+
+```html
+    <script src='./str_table.json' type='application/json'></script>
+    <script src='../../_common/js/lang.js'></script>
+```
+
+또한 body에 선언되어 있는 table의 내용을 살펴 보면
+
+```html
+       <table>
+		<th id = 'name'></th>
+		<th id = 'value'></th>
+		<tr>
+			<td class='thd' id = 'lb_ip_addr'></td>
+			<td id='ip_addr'></td>
+		</tr>
+		<tr>
+			<td class='thd' id = 'lb_port'></td>
+			<td id='port'></td>
+		</tr>
+		<tr>
+			<td class='thd' id = 'lb_sigcode_err'></td>
+			<td id='sigcode_err'></td>
+		</tr>
+		<tr>
+			<td class='thd' id = 'lb_n_req'></td>
+			<td id='n_req'></td>
+		</tr>
+		<tr>
+			<td class='thd' id = 'lb_n_res'></td>
+			<td id='n_res'></td>
+		</tr>
+	</table>
+```
+
+1) 번역 동작을 위하여 th와 td로 정의 되어 있는 table의 내용들에 각자 <b>id를 지정</b>합니다. 
+
+2) 기존에 IP address 라고 작성되어 있는 td의 내용은 생략하셔도 무방합니다(추후에 번역된 내용들이 작성됩니다.)
+
+    위와 같은 내용들을 다 반영한 html 파일은 아래와 같이 작성됩니다.
+
+    panel.html
+
+    ```html
+    <!DOCTYPE html:5>
+    <!--
+        @author: Jane Doe, BlueOcean Robot & Automation, Ltd.
+        @brief: ArgosX Vision System interface - panel
+        @create: 2021-12-07
+    -->
+    <html>
+    
+    <head>
+    <title>ArgosX Vision System</title>
+    <meta http-equiv=Content-Type content='text/html; charset=utf-8'>
+        <link rel='stylesheet' href='../../_common/css/style.css' type=text/css rel=stylesheet>
+        <script src='../../_common/js/jquery-3.6.0.min.js'></script>
+        <script src='./str_table.json' type='application/json'></script>
+        <script src='../../_common/js/lang.js'></script>
+        <script src='./panel.js'></script>
+        <script> 
+            $(document).ready(init);
+        </script>
+    </head>
+    
+    <body>
+    <table>
+            <th id = 'name'></th>
+            <th id = 'value'></th>
+            <tr>
+                <td class='thd' id = 'lb_ip_addr'></td>
+                <td id='ip_addr'></td>
+            </tr>
+            <tr>
+                <td class='thd' id = 'lb_port'></td>
+                <td id='port'></td>
+            </tr>
+            <tr>
+                <td class='thd' id = 'lb_sigcode_err'></td>
+                <td id='sigcode_err'></td>
+            </tr>
+            <tr>
+                <td class='thd' id = 'lb_n_req'></td>
+                <td id='n_req'></td>
+            </tr>
+            <tr>
+                <td class='thd' id = 'lb_n_res'></td>
+                <td id='n_res'></td>
+            </tr>
+        </table>
+    </body>
+    </html>
+    ```
+
+## 3. panel 번역 동작 추가
+ 
+이제 panel 화면에 번역 동작을 추가해봅시다.
+
+### 1) 초기화 
+
+먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 Hi6에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
+
+panel.js
+
+```js
+function init()
+{
+	parseStrData();
+	setLangCode('/apps/argosx/svr_lang_code', updateAllStrByLang);
+	updateData();
+	setInterval('updateData()', 500);
+}
+```
+
+setup.js에서와 동일하게 parseStrData, setLangcode를 추가하여 위와 같이 작성해줍니다.
+
+
+
+### 2) lang_code에 따른 번역 지정
+기존에 작성된 string data를 활용하는 부분은 그대로 두고, 추가적으로 필요한 elements들에 대한 내용을 str_table.json에 추가해줍니다.
+
+str_table.json
+
+```json
+"en":
+    {
+          "IDS_InSigcodeErr" : "sigcode for error",
+          "IDS_NReq" : "n.request",
+          "IDS_NRes" : "n.response",
+          "IDS_Name" : "name",
+          "IDS_Value" : "value"
+    },    
+"ko": 
+    {
+        "IDS_InSigcodeErr" : "에러 신호 입력 할당 번호",
+        "IDS_NReq" : "요청 횟수",
+        "IDS_NRes" : "응답 횟수",
+        "IDS_Name" : "명칭",
+        "IDS_Value" : "값"
+    }
+```
+
+다음으로, panel.js 에 하기 내용으로 수정해줍니다.
+
+```js
+function updateAllStrByLang()
+{
+	let se = setElemByLang;
+	se('lb_ip_addr', 'IDS_IpAddr');
+	se('lb_port', 'IDS_Port');
+	se('lb_sigcode_err', 'IDS_InSigcodeErr');
+	se('lb_n_req', 'IDS_NReq');
+	se('lb_n_res', 'IDS_NRes');
+	se('name', 'IDS_Name');
+	se('value', 'IDS_Value');
+}
+```
+panel의 경우 elements들의 명칭만 변경해주면 되기 때문에 updateAllStrByLang내에서 setElemByLang를 통해 string id를 지정해줍니다.
+
+가상 제어기와 TP를 재부팅한 뒤, 정상 동작이 된다면 아래와 같은 모니터링 panel 화면을 확인하실 수 있습니다.
+
+![](../../_assets/image_90.png)# 3.6.3 user-bar U/I 다국어화
+## 1. user-bar layout에서의 변경
+
+User-bar U/I의 번역을 위해 먼저 ubar.html을 살펴봅시다.
+이전의 작업과 마찬가지로 str_table.json과 lang.js를 아래와 같이 script로 추가해 줍니다.
+
+해당 파일들은 서로에게 종속성이 있기때문에 반드시 하기와 같은 순으로 작성해주어야 합니다.
+
+또한 ubar.html에서는 기존에 없던 초기화 함수인 init을 정의해줄 것이기 때문에 아래와 같이 작성해줍니다.
+
+ubar.html
+
+```html
+     <script src='./str_table.json' type='application/json'></script>
+	 <script src='../../_common/js/lang.js'></script>
+	 <script src='./ubar.js'></script>
+	 <script> 
+		$(document).ready(init);
+	</script>
+
+```
+
+또한 body에 선언되어 있는 table의 내용을 살펴 보면
+
+```html
+	<button id='light-on' class='ubar-bt' onclick='light_onoff(true);'>light<br>on</button>
+	<button id='light-off' class='ubar-bt' onclick='light_onoff(false);'>light<br>off</button>
+```
+
+기존에 light on 이라고 작성되어 있는 내용은 생략하셔도 무방합니다(추후에 번역된 내용들이 작성됩니다.)
+
+위와 같은 내용들을 다 반영한 html 파일은 아래와 같이 작성됩니다.
+
+ubar.html
+
+```html
+<!DOCTYPE html:5>
+<!--
+	@author: Jane Doe, BlueOcean Robot & Automation, Ltd.
+	@brief: ArgosX Vision System interface - bar
+	@create: 2021-12-07
+-->
+<html>
+ 
+<head>
+    <title>ArgosX</title>
+	 <link rel='stylesheet' href='../../_common/css/style.css' type=text/css rel=stylesheet>
+	 <script src='../../_common/js/jquery-3.6.0.min.js'></script>
+	 <script src='./str_table.json' type='application/json'></script>
+	 <script src='../../_common/js/lang.js'></script>
+	 <script src='./ubar.js'></script>
+	 <script> 
+		$(document).ready(init);
+	</script>
+</head>
+ 
+<body class='ubar'>
+	<div class='ubar-title'>argosx</div>
+	<button id='light-on' class='ubar-bt' onclick='light_onoff(true);'></button>
+	<button id='light-off' class='ubar-bt' onclick='light_onoff(false);'></button>
+</body>
+</html>
+```
+
+## 2. user-bar 번역 동작 추가
+ 
+이제 user-bar 화면에 번역 동작을 추가해봅시다.
+
+### 1) 초기화 
+
+먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 Hi6에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
+
+ubar.js
+
+```js
+function init()
+{
+	parseStrData();
+	setLangCode('/apps/argosx/svr_lang_code', updateAllStrByLang);
+}
+```
+
+이전과 동일하게 parseStrData, setLangcode를 추가하여 위와 같이 작성해줍니다.
+
+
+### 2) lang_code에 따른 번역 지정
+추가적으로 필요한 elements들에 대한 내용을 str_table.json에 추가해줍니다.
+
+str_table.json
+
+```json
+"en":
+    {
+          "IDS_light_on" :"light on",
+          "IDS_light_off" : "light off"
+    },    
+"ko": 
+    {
+        "IDS_light_on" :"조명 ON",
+        "IDS_light_off" : "조명 OFF"
+    }
+```
+
+다음으로, ubar.js 에 하기 내용으로 수정해줍니다.
+
+```js
+function updateAllStrByLang()
+{
+	setElemByLang('light-on', 'IDS_light_on');
+	setElemByLang('light-off', 'IDS_light_off');
+
+}
+```
+ubar의 경우 elements들의 명칭만 변경해주면 되기 때문에 setElemByLang를 통해 string id를 지정해줍니다.
+
+가상 제어기와 TP를 재부팅한 뒤, 정상 동작이 된다면 아래와 같은 user-bar 화면을 확인하실 수 있습니다.
+
+![](../../_assets/image_91.png)# 4. 디버깅
 
 * python 코드의 디버깅
 * web 기반 U/I의 디버깅
@@ -4122,7 +4935,8 @@ xhost는 플러그인에서 Hi6 호스트의 기능을 호출할 때 사용되�
 
 
 하지만 vscode의 디버거로 플러그인을 실행할 때는 생성/주입된 실제 xhost 모듈이 없으므로 xhost 메소드 호출 시 실행에러가 나게 됩니다. 따라서, 디버깅용 대체 xhost를 사용해야 합니다. SDK의 common 폴더 안에는 대체 모듈인 xhost_dbg가 있으며, 이것은 이더넷을 통한 OpenAPI 호출을 통해 호스트의 동작을 수행해주는 일종의 proxy입니다.
-<br> ![](../_assets/image_64.png)
+
+ ![](../_assets/image_64.png)
 <br>
 
 
@@ -4175,21 +4989,18 @@ line 번호의 좌측을 마우스 클릭하여 breakpoint를 토글할 수 있�
 
 
 test.py
-<br>
+<br></br>
 ![](../_assets/image_65.png)
 
 
 
 test.py 창에서 F5키를 누르거나 Run - Start Debugging 메뉴를 클릭하면, python runtime으로 실행되면서 디버깅 모드로 실행됩니다.
-<br>
+<br></br>
 ![](../_assets/image_66.png)
 
 
-
-
-
 이전 절의 argosx 플러그인의 경우, 시험을 위해서는 argosx_stub 서버도 실행해야 합니다. 이렇게 2개의 python 프로그램을 실행해야 하는 경우에는 아래와 같이 Visual Studio Code를 2개를 열어 각각 디버거를 실행하면 됩니다.
-<br>
+<br></br>
 ![](../_assets/image_67.png)
 
 
@@ -4199,7 +5010,7 @@ test.py 창에서 F5키를 누르거나 Run - Start Debugging 메뉴를 클릭�
 breakpoint에 걸리면 좌측에 VARIABLES, WATCH, CALL STACK, BREAKPOINTS 창이 열립니다. 우상단의 조작 버튼 Continue (F5), Step Over (F10), Step Into (F11), Step Out (Shift+F11)으로 trace 할 수 있습니다. Restart (Ctrl+Shift+F5) 버튼을 클릭하면 처음부터 재실행하며, Stop (Shift+F5) 버튼을 클릭하면 디버깅이 중단됩니다.
 
 python 내장함수인 print( )문을 호출하면, 하단의 TERMINAL 창에 문자열이 출력되므로, 디버깅에 활용할 수 있습니다.
-<br>
+<br></br>
 ![](../_assets/image_68.png)
 
 
@@ -4207,7 +5018,7 @@ python 내장함수인 print( )문을 호출하면, 하단의 TERMINAL 창에 �
 
 
 test.py의 동작은 xhost_dbg에 의해 제어기 호스트와 연동되기 때문에 아래와 같이 실제 동작을 확인하면서 디버깅할 수 있습니다. 
-<br>
+<br></br>
 ![](../_assets/image_69.png)
 
 
@@ -4227,7 +5038,7 @@ test.py의 동작은 xhost_dbg에 의해 제어기 호스트와 연동되기 때
 ## Live server 로 web UI 실행
 
 
-<u>설정화면의 레이아웃</u>d 절에서 argosx 플러그인의 setup.html을 Chrome 웹 브라우저로 실행해본 바 있습니다.
+<u>설정화면의 레이아웃</u> 절에서 argosx 플러그인의 setup.html을 Chrome 웹 브라우저로 실행해본 바 있습니다.
 
 다시한번 실행해봅시다.
 
@@ -4320,3 +5131,5 @@ html이나 css, javascript 소스코드를 수정한 후, 웹 브라우저에서
 
 
 # 5. 인스톨러
+
+(추후 작성 필요)
