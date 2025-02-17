@@ -27,8 +27,8 @@
 1) `윈도우 키` 입력 > `HRSpace3_kor` 입력 > 클릭 > 프로그램 실행
 2) 좌측 workspace 의 workspace 컴포넌트 우클릭 > ‘모델 불러오기‘ 클릭 > ‘Robot’ 클릭 > 원하는 모델 클릭  
 <img src="../_assets/hrspace/00_select_robot_model.png" height=360vw></img><p style="background-color:orange; color:black;"><b>단,  C:\Program Files\HHI Robotics\HRSpace3\VRC_Hi6\fbrr 에 있는 모델만 불러와야 에러가 발생하지 않습니다.</b></p>  
-1) `로봇제어기(RC) 타입 선택 팝업 창` > VRC_Hi6 클릭 > 확인 > 로봇 로드
-<img src="../_assets/hrspace/01_selected_robot.png" height=360vw></img>
+1) `로봇제어기(RC) 타입 선택 팝업 창` > VRC_Hi6 클릭 > 확인 > 로봇 로드  
+   <img src="../_assets/hrspace/01_selected_robot.png" height=360vw></img>
 
 ### b. workspace 저장하기
 1) 작업 표시줄의 `저장` 클릭&nbsp;&nbsp;<img src="../_assets/hrspace/02_save_btn.png" height=40vw></img>
@@ -37,7 +37,7 @@
    <img src="../_assets/hrspace/03_temp_hrs.PNG" height=360vw>
 
 ### c. 가상 티칭펜던트 실행하기
-1) 좌측 workspace 창에 생성된 robot 모델 우클릭 > 가상 티칭펜던트 클릭
+1) 좌측 workspace 창에 생성된 robot 모델 우클릭 > 가상 티칭펜던트 클릭  
    <img src="../_assets/hrspace/04_vtp_imp.PNG" height=360wv>
 2) 티칭 펜던트 종료 방법 2가지   
    1. `TP홈` > `서비스` > `9: TP 응용프로그램 종료`
@@ -61,11 +61,13 @@
    ```text
    C:\Program Files\HHI Robotics\HRSpace3\VRC_Hi6\apps
    ```
-3) 저장된 플러그인 위치 확인
+3) 저장된 플러그인 위치 확인  
    <img src="../_assets/hrspace/05_plugin_install_loc.PNG" height=150vw>
-4) 가상 티칭펜던트 종료 > 재실행 > `TP홈` > `시스템` > `4: 응용 파라미터` > hello, world 확인
+
+4) 가상 티칭펜던트 종료 > 재실행 > `TP홈` > `시스템` > `4: 응용 파라미터` > hello, world 확인  
    <img src="../_assets/hrspace/06_hello_world_menu_list.PNG" height=460vw>
-5) hello, world 플러그인 실행
+
+5) hello, world 플러그인 실행  
    <img src="../_assets/hrspace/07_hello_world_result.PNG" height=460vw>
       
 <br>
