@@ -7,6 +7,7 @@
   * [1.3 python3 개발환경 설치]( 1-intro/3-install-python.md)
   * [1.4 VisualStudio Code의 설치]( 1-intro/4-install-vscode.md)
   * [1.5 웹기반 U/I 개발환경 설치]( 1-intro/5-install-web-ui.md)
+  * [1.6 HRSpace 로 플러그인 테스트 하기]( 1-intro/6-install-hrspace.md)
 
 * [2. 초간단 프로젝트:hello_world](2-example-helloworld/README.md)
   * [2.1 hello_world 프로젝트 생성 - 폴더와 메타정보](2-example-helloworld/1-make-proj.md)
