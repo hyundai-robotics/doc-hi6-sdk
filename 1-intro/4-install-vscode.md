@@ -2,7 +2,7 @@
 
 Microsot Visual Studio Code (이하 vscode로 지칭)는 무료로 사용가능한 강력한 텍스트 편집기입니다. 다양한 EXTENSION 설치를 통해, 수 많은 프로그래밍 언어의 개발환경을 제공합니다.
 
-vi, nvim, Atom, SublimeText 등 본인이 익숙한 다른 편집기를 사용해도 되지만, 이 설명서에서는 vscode를 기준으로 설명하겠습니다.  
+본인이 익숙한 다른 편집기를 사용해도 되지만, 이 설명서에서는 vscode를 기준으로 설명하겠습니다.  
 
 <br>
 
