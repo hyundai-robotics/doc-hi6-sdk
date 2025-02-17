@@ -117,66 +117,7 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
 
 티치펜던트 웹 앱은 OpenAPI 호출을 통해서 python 함수를 호출하고 데이터를 주고 받을 수 있습니다.
 
-![](../_assets/image_1.png)# 1.3 Hi6 가상제어기 설치
-
-(임시)
-<br></br>
-
-## 1) 설치 
-다운받은 Hi6 controller zip을 해제합니다.
-
-### VRC 개발환경의 설치 
-1. D:\util\hi6_vrc\가 되도록 복사합니다.
-   (폴더 경로를 변경하려면 hi6main_platform_cfg.json, hi6tp_platform_cfg.json에 기록된 폴더 경로를 수정해야 합니다.)
-2. install 폴더의 vcredist_x64.exe를 실행하여 visual studio 2013 재배포 패키지를 설치합니다.
-3. install 폴더의 System32와 SysWOW64 폴더의 내용을 C:\Windows\의 각 폴더로 복사합니다.
-
-### Qt 라이브러리의 설치
-1.  C:\Qt\Qt5.7.1\5.7 경로를 생성합니다.
-2. msvc2013 를 해당 경로 아래에 압축 해제합니다.
-
-### Python 설치 
-<u> 1.4 python3 개발환경 설치 </u>의 내용을 참조하시길 바랍니다.
-
-<span style = 'background-color:#ffdce0'> 주의: 반드시 인터넷이 연결 되어있는 상태에서 실행해야 설치를 성공할 수 있습니다.</span>
-
-1. install 폴더의 "python-3.8.0.exe"를 실행합니다. 
-2. Add Python 3.8 to PATH 만 체크한 후 Customize installation 클릭.
-3. 이 후의 모든 항목들에 대한 체크박스에 빠짐없이 체크한 후 install 시작
-4. 'Setup was successful'확인하면 종료.
-5. install 폴더의 "ucrtbased.dll"와 "vcruntime140d.dll" 파일을 복사하여 C:\Program Files (x86)\Python38-32\에 복사합니다.
-
-
-## 2) 실행
-1. Debug 폴더 안에 hi6_main.exe를 실행합니다.
-2.  Debug 폴더 안에서 PowerShell를 실행하여 아래와 같은 명령어를 통해 TP를 실행합니다. 
-   ```
-    ./hi6_tp -layout=k
-   ```
-
-- hi6_tp를 바로 실행 시키면 <U>TP600</U>으로 실행하게 됩니다.
-
-- 실질적인 Hi6 TP 모델은 <U>TP630</U>이 타겟이기 때문에 커맨드를 통해 '-layout=k'를 입력해서 TP630으로 실행해야 올바르게 실행한 것 입니다. 
-
-<b>TP630</b>&nbsp;![](../_assets/image_81.png)  
-
-<b>TP600</b>&nbsp;![](../_assets/image_84.png)
-
-   ### hrspace 연동이 필요한 경우 
-    1. https://www.hyundai-robotics.com/customer/customer4.html?p=3 에서 HRSpace를 받아 설치합니다. 
-    2. workspace에서 마우스 오른쪽 클릭하여 "모델 불러오기..."로 로봇을 로딩합니다.
-    3. robot에서 마우스 오른쪽 클릭하여 "로봇속성..."에서 제어기 연결을 "ENetHi6"를 선택합니다.
-    4. PC주소와 로봇제어기의 IP주소를 "127.0.0.1"로 설정합니다.
-    5. 시뮬레이션 시작 버튼을 누릅니다.
-
-
-
-<br></br>
-(제어기의 설치는 추후의 인스톨러와 함께 개선 예정)
-
-
-
- # 1.4 python3 개발환경 설치
+![](../_assets/image_1.png)# 1.3 python3 개발환경 설치
 ## python3 설치
 아래의 절차에 따라 python v3.8을 설치합니다.
 
@@ -225,13 +166,13 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
 ## 동적 라이브러리 배치
 SDK 내의 ucrtbased.dll와 vcruntime140d.dll를 python 설치 경로에 배치합니다.
 
-예: C:\Program Files (x86)\Python38-32\ 에 복사.# 1.5 VisualStudio Code의 설치
+예: C:\Program Files (x86)\Python38-32\ 에 복사.# 1.4 VisualStudio Code의 설치
 
 Microsot Visual Studio Code (이하 vscode로 지칭)는 무료로 사용가능한 강력한 텍스트 편집기입니다. 다양한 EXTENSION 설치를 통해, 수 많은 프로그래밍 언어의 개발환경을 제공합니다.
 
-Atom이나 SublimeText 등 본인이 익숙한 다른 편집기를 사용해도 되지만, 이 설명서에서는 vscode를 기준으로 설명하겠습니다.
+본인이 익숙한 다른 편집기를 사용해도 되지만, 이 설명서에서는 vscode를 기준으로 설명하겠습니다.  
 
-
+<br>
 
 ## Code의 설치
 1) 아래 링크에 접속한 후 윈도우용 stable build 버전을 다운로드 합니다. 
@@ -250,6 +191,8 @@ Atom이나 SublimeText 등 본인이 익숙한 다른 편집기를 사용해도 
 4) <설치> 버튼을 클릭합니다.
 
 5) 설치가 끝나면 vscode를 실행해 봅니다.
+
+<br>
 
 # EXTENSION의 설치
 마켓플레이스에 있는 다양한 확장(EXTENSION)을 설치할 수 있다는 것이 vscode의 강력한 장점입니다.
@@ -272,16 +215,13 @@ vscode 화면에서 가장 왼쪽에 아이콘들이 배치된 수직막대가 A
 
 
 
-이제 vscode를 사용할 준비가 끝났습니다. 상세한 사용방법은 vscode의 Help 메뉴 혹은 인터넷 강좌를 참고하여 습득하시기 바랍니다.
+이제 vscode를 사용할 준비가 끝났습니다. 상세한 사용방법은 vscode의 Help 메뉴 혹은 인터넷 강좌를 참고하여 습득하시기 바랍니다.# 1.5 웹기반 U/I 개발환경 설치
 
-![](../_assets/image_12.png)
-# 1.6 웹기반 U/I 개발환경 설치
+티치펜던트를 위한 커스터마이즈된 U/I는 HTML5/CSS/jQuery의 웹앱 형태로 개발합니다.  
 
-티치펜던트를 위한 커스터마이즈된 U/I는 HTML5/CSS/jQuery의 웹앱 형태로 개발합니다.
+<br>
 
-
-
-## Google Chrome 웹브라우저 설치
+## Google Chrome 웹브라우저 설치  
 
 Google Chrome 웹 브라우저는 웹 앱의 구동 및 디버깅 환경을 제공합니다. 아직 설치되어 있지 않다면 아래 링크를 클릭하여 설치하십시오.
 
@@ -289,17 +229,8 @@ Google Chrome 웹 브라우저는 웹 앱의 구동 및 디버깅 환경을 제�
 
 https://www.google.com/intl/ko/chrome/
 
-# 1.7 가상제어기 환경에 SDK 설치
-
-SDK의 apps/ 폴더를 가상제어기의 hi6 home_main 폴더 밑에 복사하십시오.
-
-apps/ 폴더 밑의 _common/ 폴더는 모든 app들이 공용으로 사용하는 라이브러리를 담고 있습니다.
-
-앞으로 개발하게 될 app들도 이와 같이 apps/의 서브 폴더들로서 배치되어야 합니다.
-
 # 2. 초간단 프로젝트 : hello_world
-Skip to end of metadata
-Created by 최원혁, last modified on 2021년 12월 24일Go to start of metadata
+
 아주 간단한 프로젝트로 app 제작을 시작해봅시다.
 
 hello_world라는 이름의 이 app이 하는 일은, 히스토리 화면과 설정화면에 Hello, world! 라는 문자열을 출력하는 것 뿐입니다.
