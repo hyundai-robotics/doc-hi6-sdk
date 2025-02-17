@@ -301,7 +301,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 <br>
 
 ## 1.6.4 Running a Plugin on the Virtual Teaching Pendant
-1. [Refer to the HRBook manual](../2-example-helloworld/README.md) to develop the hello-world plugin.
+1. Create a hello-world example plugin and inject it into HRSpace's Virtual Teaching Pendant. This process was carried out with reference to the [HRBook manual](../2-example-helloworld/README.md).
    ```text
    hello_world
     ├── cmds.json
@@ -313,7 +313,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
         └── setup.html
    ```
 
-2. Save the developed hello-world plugin in the following path.
+1. Save the developed hello-world plugin in the following path.
    ```text
    ${HRSpace installation folder}\VRC_Hi6\apps
    ex) C:\Program Files\HHI Robotics\HRSpace3\VRC_Hi6\apps
