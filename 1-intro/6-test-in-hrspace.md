@@ -106,4 +106,6 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 2. If you modify Python code while the plugin is running, you must reboot the virtual controller for the changes to apply.  
 → Right-click on the robot in the Workspace panel > Click `VRC Tools...` > Click `Reboot`  
    <img src="../_assets/hrspace/10_vrc_tools.PNG" height=150vw>
-   <img src="../_assets/hrspace/11_vrc_tools_complete.PNG" height=150vw>
+   <img src="../_assets/hrspace/11_vrc_tools_complete.PNG" height=150vw>  
+
+3. After reboot the virtual controller, re-run `1.6.4 Running a Plugin on the Virtual Teaching Pendant`.
