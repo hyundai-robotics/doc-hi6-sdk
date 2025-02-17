@@ -1,10 +1,10 @@
-# 1.5 VisualStudio Code의 설치
+# 1.4 VisualStudio Code의 설치
 
 Microsot Visual Studio Code (이하 vscode로 지칭)는 무료로 사용가능한 강력한 텍스트 편집기입니다. 다양한 EXTENSION 설치를 통해, 수 많은 프로그래밍 언어의 개발환경을 제공합니다.
 
-Atom이나 SublimeText 등 본인이 익숙한 다른 편집기를 사용해도 되지만, 이 설명서에서는 vscode를 기준으로 설명하겠습니다.
+vi, nvim, Atom, SublimeText 등 본인이 익숙한 다른 편집기를 사용해도 되지만, 이 설명서에서는 vscode를 기준으로 설명하겠습니다.  
 
-
+<br>
 
 ## Code의 설치
 1) 아래 링크에 접속한 후 윈도우용 stable build 버전을 다운로드 합니다. 
@@ -23,6 +23,8 @@ Atom이나 SublimeText 등 본인이 익숙한 다른 편집기를 사용해도 
 4) <설치> 버튼을 클릭합니다.
 
 5) 설치가 끝나면 vscode를 실행해 봅니다.
+
+<br>
 
 # EXTENSION의 설치
 마켓플레이스에 있는 다양한 확장(EXTENSION)을 설치할 수 있다는 것이 vscode의 강력한 장점입니다.
@@ -46,5 +48,3 @@ vscode 화면에서 가장 왼쪽에 아이콘들이 배치된 수직막대가 A
 
 
 이제 vscode를 사용할 준비가 끝났습니다. 상세한 사용방법은 vscode의 Help 메뉴 혹은 인터넷 강좌를 참고하여 습득하시기 바랍니다.
-
-![](../_assets/image_12.png)
