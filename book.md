@@ -118,66 +118,7 @@ This web app is stored in the main module, which will be transferred to the teac
 
 By calling the OpenAPI, the teach pendant web app can call the Python functions and send and receive data.
 
-![](../_assets/image_1.png)# 1.3 Installing an Hi6 virtual controller 
-
-(temporary)
-<br></br>
-
-## 1) Installing 
-Unzip the downloaded Hi6 controller zip file.
-
-### Installing the virtual robot controller (VRC) development environment 
-1. Copy and ensure that the path will be D:\util\hi6_vrc\.
-   (The folder path recorded in hi6main_platform_cfg.json and hi6tp_platform_cfg.json should be modified to change the folder path.)
-2. Install the Visual Studio 2013 redistributable package by executing the vcredist_x64.exe file in the install folder.
-3. Copy the contents of the System32 and SysWOW64 folders from the install folder to the relevant individual folders in C:\Windows\.
-
-### Installing the Qt library
-1. Create the path C:\Qt\Qt5.7.1\5.7.
-2. Unzip msvc2013 under the path.
-
-### Installing Python 
-Please refer to the contents of <u> 1.4 Installing the Python 3 development environment </u>.
-
-<span style = 'background-color:#ffdce0'> Caution: For successful installations, you must be connected to the Internet during execution.</span>
-
-1. Execute the "python-3.8.0.exe" file in the install folder. 
-2. Tick only Add Python 3.8 to PATH, then click Customize installation.
-3. Tick the checkboxes for all items afterward and start the installation.
-4. End when the 'setup was successful' message is confirmed.
-5. Copy the "ucrtbased.dll" and "vcruntime140d.dll" files from the install folder into C:\Program Files (x86)\Python38-32\.
-
-
-## 2) Executing
-1. Execute hi6_main.exe in the debug folder.
-2. Run PowerShell in the debug folder, then run the teach pendant (TP) with the command as follows. 
-   ```
-    ./hi6_tp -layout=k
-   ```
-
-- If you execute hi6_tp right away, <U>TP600</U> will be executed.
-
-- The <U>TP630</U> is the actual target model of Hi6 TP. Therefore, to properly execute this, you need to run TP630 by inputting '-layout=k' through commands. 
-
-<b>TP630</b>&nbsp;![](../_assets/image_81.png)  
-
-<b>TP600</b>&nbsp;![](../_assets/image_84.png)
-
-   ### When required to interlock with HRSpace
-    1. Download HRSpace from https://www.hyundai-robotics.com/customer/customer4.html?p=3 and install it.
-    2. Right-click the mouse on Workspace and load the robot using "Load Model."  
-    3. Right-click the mouse on Robot and select "ENetHi6" to connect the controller in "Robot Attributes."
-    4. Set the IP addresses of the PC and robot controller to "127.0.0.1."
-    5. Press the Start Simulation button.
-
-
-
-<br></br>
-(Content related to controller installation will be improved later along with the installer-related content)
-
-
-
- # 1.4 Installing the Python 3 development environment
+![](../_assets/image_1.png)# 1.3 Installing the Python 3 development environment
 ## Installing Python 3 
 Install Python v3.8 according to the following procedures.
 
@@ -226,7 +167,7 @@ Install Python v3.8 according to the following procedures.
 ## Deploying dynamic libraries
 Deploy ucrtbased.dll and vcruntime140d.dll in the SDK to the python installation path.
 
-Example: Copy to C:\Program Files (x86)\Python38-32\.# 1.5 Installing Visual Studio Code
+Example: Copy to C:\Program Files (x86)\Python38-32\.# 1.4 Installing Visual Studio Code
 
 Microsoft Visual Studio Code (hereafter referred to as vscode) is a powerful text editor that is available for free. Through the installation of various extensions, vscode provides a development environment for numerous programming languages.
 
@@ -276,7 +217,7 @@ During the development process, you will handle files with html, css, javascript
 Now, you are ready to use vscode. Learning about how to use it is recommended by referring to the vscode help menu or online lectures.
 
 ![](../_assets/image_12.png)
-# 1.6 Installing a web-based UI development environment
+# 1.5 Installing a web-based UI development environment
 
 The customized UI for the teach pendant should be developed as a web app form of HTML5/CSS/jQuery.
 
@@ -290,13 +231,114 @@ The Google Chrome web browser provides an environment for running and debugging 
 
 https://www.google.com/intl/ko/chrome/
 
-# 1.7 Installing an SDK in a virtual controller environment
+# 1.6 Testing plugins in HRSpace
 
-The apps/ folder of the SDK should be copied under the Hi6 home_main folder of the virtual controller.
+You can test your own plugin app on HRSpace's virtual controller and virtual teaching pendant.
 
-The _common/ folder under the apps/ folder contains the libraries all apps commonly use.
+{% hint style="warning" %}   
+<b>There are differences from the actual controller environment.</b> Please use it only for simple functional tests during the development stage, and ensure thorough testing in a real environment before applying the plugin. We are not responsible for any damages or issues arising from failure to consider this information.  
+{% endhint %}  
 
-Apps that will be developed in the future need to be deployed as subfolders of the apps/ folder as follows.
+<br>
+
+## 1.6.1 HRSpace Installation Environment
+- Operating System: Windows 64-bit
+
+<br>
+
+## 1.6.2 HRSpace Installation Process
+
+1. Access the HD Hyundai Robotics website and sign up if not already registered.
+2. Open the HRSpace download page.
+3. Install the latest version (as of the document date: v3.95b10).
+4. Extract the downloaded zip file.
+5. Run the installer (HRSpace3.msi) → Select language → Choose installation location → Complete installation and exit.
+
+<br>
+
+## 1.6.3 Running HRSpace
+
+### a. Load the robot model
+1. Press the `Windows key` > Type `HRSpace3_eng` > Click > Run the program.
+2. Right-click on the `workspace component` in the left Workspace panel > Click `Load Model as a Child...` > Click `Robot` folder > Select the desired model.  
+   
+   <img src ="../_assets/hrspace/01_select_robot_model.png" height = 350hw>
+
+   <p style="background-color: orange; color: black;"><b>To avoid errors, only models located in ${HRSpace installation folder}\VRC_Hi6\fbrr should be loaded.</b></p>
+
+3. Robot Controller (RC) Type Selection Popup > Click VRC_Hi6 > Confirm > Load Robot.  
+   
+   <img src = "../_assets/hrspace/02_rc_type_popup.PNG" height = 250hw>
+
+4. Robot Loaded  
+
+   <img src = "../_assets/hrspace/03_robot_loaded.PNG" height = 350hw>
+
+
+### b. Saving workspace
+1. 
+   <img src = "../_assets/hrspace/00_save_btn.PNG" height = 50vw> Click `Save` on the taskbar. 
+
+2. Create a new folder in the desired location and save the file.  
+Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Right-click on an empty space > New > Folder > Create a temp folder > Create a model as temp.hrs > Once saved, the saved filename will be displayed in the title bar. > Click `Save` on the taskbar.   
+   <img src = "../_assets/hrspace/04_temp_hrs.PNG" height = 150vw>  
+
+
+### c. Running the Virtual Teaching Pendant
+
+1. Right-click on the robot model created in the left workspace panel > Click Virtual Teaching Pendant.
+   <img src = "../_assets/hrspace/05_start_virtual_tp.PNG" height = 500vw>
+
+   <img src = "../_assets/hrspace/06_tp_imp.PNG" height = 500vw>
+
+2. Two Ways to Exit the Teaching Pendant
+
+   1. TP Home > `Service` > `9: Exit TP application`  
+    
+   2. Right-click on the keypad area > Click `close`
+
+<br>
+
+## 1.6.4 Running a Plugin on the Virtual Teaching Pendant
+1. [Refer to the HRBook manual](../2-example-helloworld/README.md) to develop the hello-world plugin.
+   ```text
+   hello_world
+    ├── cmds.json
+    ├── hello_world.py
+    ├── info.json
+    └── ui
+        ├── lm_hello.png
+        ├── menu.json
+        └── setup.html
+   ```
+
+2. Save the developed hello-world plugin in the following path.
+   ```text
+   ${HRSpace installation folder}\VRC_Hi6\apps
+   ex) C:\Program Files\HHI Robotics\HRSpace3\VRC_Hi6\apps
+   ```
+
+
+3. Check the location of the saved plugin.  
+
+   <img src = "../_assets/hrspace/07_saved_hello_world.PNG" height = 200vw>
+
+
+
+4. Exit the Virtual Teaching Pendant > Restart > TP Home > `system` > `4: Application parameter` > Check `hello, world` plugin   
+
+   <img src = "../_assets/hrspace/08_hello_world_menu.PNG" height = 500vw>  
+
+   <img src = "../_assets/hrspace/09_hello_world_menu_success.PNG" height = 500vw>
+
+<br>
+
+## 1.6.5 Notes
+1. If you modify HTML, CSS, or JavaScript code, just return to the TP Home screen and re-enter the plugin for the changes to take effect.
+2. If you modify Python code while the plugin is running, you must reboot the virtual controller for the changes to apply.  
+→ Right-click on the robot in the Workspace panel > Click `VRC Tools...` > Click `Reboot`  
+   <img src = "../_assets/hrspace/10_vrc_tools.PNG" height = 150vw>
+   <img src = "../_assets/hrspace/11_vrc_tools_complete.PNG" height = 150vw>
 # 2. Very simple project: hello_world
 Skip to the end of the metadata
 Created by Wonhyeok Choi, last modified on December 24, 2021
