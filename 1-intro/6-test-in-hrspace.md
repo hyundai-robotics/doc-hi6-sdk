@@ -32,7 +32,7 @@ You can test your own plugin app on HRSpace's virtual controller and virtual tea
    <img src="../_assets/hrspace/01_select_robot_model.png" height="400hw">
 
 
-   <p style="background-color: orange; color: black;"><b>To avoid errors, only models located in ${HRSpace installation folder}\VRC_Hi6\fbrr should be loaded.</b></p>
+   <p style="background-color: orange; color: black; width:max-content"><b>To avoid errors, only models located in ${HRSpace installation folder}\VRC_Hi6\fbrr should be loaded.</b></p>
 
 3. Robot Controller (RC) Type Selection Popup > Click VRC_Hi6 > Confirm > Load Robot.  
    
