@@ -32,9 +32,9 @@ You can test your own plugin app on HRSpace's virtual controller and virtual tea
    <img src="../_assets/hrspace/01_select_robot_model.png" height="400hw">
 
 
-   <p style="background-color: orange; color: black; width:max-content"><b>To avoid errors, only models located in ${HRSpace installation folder}\VRC_Hi6\fbrr should be loaded.</b></p>
+   <p style="background-color: orange; color: black; width:max-content"><b>To avoid errors, only models located in ${HRSpace installation folder}\VRC_${cont_model}\fbrr should be loaded.</b></p>
 
-3. Robot Controller (RC) Type Selection Popup > Click VRC_Hi6 > Confirm > Load Robot.  
+3. Robot Controller (RC) Type Selection Popup > Click VRC_${cont_model} > Confirm > Load Robot.  
    
    <img src="../_assets/hrspace/02_rc_type_popup.PNG" height=250hw>
 
@@ -82,8 +82,8 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 1. Save the developed hello-world plugin in the following path.
    ```text
-   ${HRSpace installation folder}\VRC_Hi6\apps
-   ex) C:\Program Files\HHI Robotics\HRSpace3\VRC_Hi6\apps
+   ${HRSpace installation folder}\VRC_${cont_model}\apps
+   ex) C:\Program Files\HHI Robotics\HRSpace3\VRC_${cont_model}\apps
    ```
 
 

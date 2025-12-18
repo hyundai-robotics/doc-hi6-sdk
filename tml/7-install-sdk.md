@@ -1,6 +1,6 @@
 # 1.7 Installing an SDK in a virtual controller environment
 
-The apps/ folder of the SDK should be copied under the Hi6 home_main folder of the virtual controller.
+The apps/ folder of the SDK should be copied under the ${cont_model} home_main folder of the virtual controller.
 
 The _common/ folder under the apps/ folder contains the libraries all apps commonly use.
 

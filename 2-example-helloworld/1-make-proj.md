@@ -47,7 +47,7 @@ Click info.json to open it and input the following.
    <tr>
       <td>binding</td>
       <td>
-       The form of binding with the Hi6 host software</br>
+       The form of binding with the ${cont_model} host software</br>
        - Plug-in: Will be executed in bound form.</br>
        - Standalone: Will be executed as an independent app (process.) 
       </td>

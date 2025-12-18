@@ -1,6 +1,6 @@
-﻿# 1. Overview of Hi6 SDK
+﻿# 1. Overview of ${cont_model} SDK
 
-This manual describes how to use the SDK for developing plug-in apps to develop the additional functions of the Hi6 controller.
+This manual describes how to use the SDK for developing plug-in apps to develop the additional functions of the ${cont_model} controller.
 
 The functions of apps that can be developed with the SDK are as follows.
 

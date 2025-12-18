@@ -5,7 +5,7 @@ Install Python v3.8 according to the following procedures.
 <br></br>
 1) The link below will lead to a Python v3.8.0. installation screen. Install x86 32bit.
 
-    <span style='background-color:#ffdce0'>(caution: As the Hi6 virtual controller is a 32bit app, the python runtime should be made to match it. Do not install x86-64) </span>
+    <span style='background-color:#ffdce0'>(caution: As the ${cont_model} virtual controller is a 32bit app, the python runtime should be made to match it. Do not install x86-64) </span>
 
     https://www.python.org/downloads/release/python-380/
 
@@ -31,12 +31,12 @@ Install Python v3.8 according to the following procedures.
 
 ## Adding a python import search path
 1) Create a .pth file and designate the path where the _common/ folder is located. 
-    Open the .pth file in the SDK and designate the path below to match the HOME path of the Hi6 virtual controller.
+    Open the .pth file in the SDK and designate the path below to match the HOME path of the ${cont_model} virtual controller.
  
 
     Example of file contents:    
     ```
-    D:\Hi6\home_main\apps
+    D:\${cont_model}\home_main\apps
     ```
 
 2) Deploy the edited .pth file into the python installation path/Lib/site-packages/.

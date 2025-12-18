@@ -1,10 +1,10 @@
-# 1.3 Installing an Hi6 virtual controller 
+# 1.3 Installing an ${cont_model} virtual controller 
 
 (temporary)
 <br></br>
 
 ## 1) Installing 
-Unzip the downloaded Hi6 controller zip file.
+Unzip the downloaded ${cont_model} controller zip file.
 
 ### Installing the virtual robot controller (VRC) development environment 
 1. Copy and ensure that the path will be D:\util\hi6_vrc\.
@@ -37,7 +37,7 @@ Please refer to the contents of <u> 1.4 Installing the Python 3 development envi
 
 - If you execute hi6_tp right away, <U>TP600</U> will be executed.
 
-- The <U>TP630</U> is the actual target model of Hi6 TP. Therefore, to properly execute this, you need to run TP630 by inputting '-layout=k' through commands. 
+- The <U>TP630</U> is the actual target model of ${cont_model} TP. Therefore, to properly execute this, you need to run TP630 by inputting '-layout=k' through commands. 
 
 <b>TP630</b>&nbsp;![](../_assets/image_81.png)  
 

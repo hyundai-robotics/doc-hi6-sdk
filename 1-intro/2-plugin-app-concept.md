@@ -1,5 +1,5 @@
-# 1.2 Concept of Hi6 plug-in apps
-An Hi6 app consists of Python 3 scripts that operate in the main module and JavaScript-based web software that execute UI operations in the teach pendant.
+# 1.2 Concept of ${cont_model} plug-in apps
+An ${cont_model} app consists of Python 3 scripts that operate in the main module and JavaScript-based web software that execute UI operations in the teach pendant.
 
 For apps without UIs, they may consist of only Python scripts.
 

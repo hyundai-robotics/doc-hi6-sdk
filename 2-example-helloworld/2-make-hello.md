@@ -17,9 +17,9 @@ def hello():
 - xhost is a module that calls the functions of the host (robot controller). You do not have to write an xhost.py file yourself. The subsequent sections will provide detailed explanations, so this is all you need to understand for now.
 <br></br>
 
-Now, execute the Hi6 virtual controller, which is the main module, and the TP in order.
+Now, execute the ${cont_model} virtual controller, which is the main module, and the TP in order.
 
-When starting, the Hi6 controller recognizes the installed apps by reading the info.json from all folders under the apps/ folder.
+When starting, the ${cont_model} controller recognizes the installed apps by reading the info.json from all folders under the apps/ folder.
 
 [service] - 10: Clicking the app will bring up a screen called 10: app - TP. 
 

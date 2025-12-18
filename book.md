@@ -1,4 +1,4 @@
-﻿# Hi6 Software Development Kit (SDK) Manual
+﻿# ${cont_model} Software Development Kit (SDK) Manual
 
 {% hint style="warning" %}
 The information provided in this product manual is the property of Hyundai Robotics.
@@ -15,13 +15,13 @@ The manual can change without prior notification.
 {% endhint %}
 
 {% hint style="warning" %}
-The Hi6 SDK is prior to its official release and is undergoing internal verification testing and supplementation.
+The ${cont_model} SDK is prior to its official release and is undergoing internal verification testing and supplementation.
 
 In the future, the interface specifications may change significantly without notice, so if you are not an official tester, please put the software development using this on hold.
 
-{% endhint %}# 1. Overview of Hi6 SDK
+{% endhint %}# 1. Overview of ${cont_model} SDK
 
-This manual describes how to use the SDK for developing plug-in apps to develop the additional functions of the Hi6 controller.
+This manual describes how to use the SDK for developing plug-in apps to develop the additional functions of the ${cont_model} controller.
 
 The functions of apps that can be developed with the SDK are as follows.
 
@@ -47,18 +47,18 @@ If you are unfamiliar with the technologies below, studying them first using the
   </thead>
   <tbody>
     <tr>
-      <td>Basic method of using the Hi6 controller</td>
+      <td>Basic method of using the ${cont_model} controller</td>
       <td>
        Basic knowledge for operating robots
       </td>
-      <td>Hi6 Controller Operation Manual</td>
+      <td>${cont_model} Controller Operation Manual</td>
     </tr>
    <tr>
       <td>HRScript robot language programming</td>
       <td>
        Interlocking between HRScript and apps
       </td>
-      <td>Hi6 Controller Function Manual - HRScript</td>
+      <td>${cont_model} Controller Function Manual - HRScript</td>
     </tr>
     <tr>
       <td>Python 3 programming</td>
@@ -99,8 +99,8 @@ If you are unfamiliar with the technologies below, studying them first using the
 
 
 		
-# 1.2 Concept of Hi6 plug-in apps
-An Hi6 app consists of Python 3 scripts that operate in the main module and JavaScript-based web software that execute UI operations in the teach pendant.
+# 1.2 Concept of ${cont_model} plug-in apps
+An ${cont_model} app consists of Python 3 scripts that operate in the main module and JavaScript-based web software that execute UI operations in the teach pendant.
 
 For apps without UIs, they may consist of only Python scripts.
 
@@ -125,7 +125,7 @@ Install Python v3.8 according to the following procedures.
 <br></br>
 1) The link below will lead to a Python v3.8.0. installation screen. Install x86 32bit.
 
-    <span style='background-color:#ffdce0'>(caution: As the Hi6 virtual controller is a 32bit app, the python runtime should be made to match it. Do not install x86-64) </span>
+    <span style='background-color:#ffdce0'>(caution: As the ${cont_model} virtual controller is a 32bit app, the python runtime should be made to match it. Do not install x86-64) </span>
 
     https://www.python.org/downloads/release/python-380/
 
@@ -151,12 +151,12 @@ Install Python v3.8 according to the following procedures.
 
 ## Adding a python import search path
 1) Create a .pth file and designate the path where the _common/ folder is located. 
-    Open the .pth file in the SDK and designate the path below to match the HOME path of the Hi6 virtual controller.
+    Open the .pth file in the SDK and designate the path below to match the HOME path of the ${cont_model} virtual controller.
  
 
     Example of file contents:    
     ```
-    D:\Hi6\home_main\apps
+    D:\${cont_model}\home_main\apps
     ```
 
 2) Deploy the edited .pth file into the python installation path/Lib/site-packages/.
@@ -265,9 +265,9 @@ You can test your own plugin app on HRSpace's virtual controller and virtual tea
    <img src="../_assets/hrspace/01_select_robot_model.png" height="400hw">
 
 
-   <p style="background-color: orange; color: black;"><b>To avoid errors, only models located in ${HRSpace installation folder}\VRC_Hi6\fbrr should be loaded.</b></p>
+   <p style="background-color: orange; color: black; width:max-content"><b>To avoid errors, only models located in ${HRSpace installation folder}\VRC_${cont_model}\fbrr should be loaded.</b></p>
 
-3. Robot Controller (RC) Type Selection Popup > Click VRC_Hi6 > Confirm > Load Robot.  
+3. Robot Controller (RC) Type Selection Popup > Click VRC_${cont_model} > Confirm > Load Robot.  
    
    <img src="../_assets/hrspace/02_rc_type_popup.PNG" height=250hw>
 
@@ -315,8 +315,8 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 1. Save the developed hello-world plugin in the following path.
    ```text
-   ${HRSpace installation folder}\VRC_Hi6\apps
-   ex) C:\Program Files\HHI Robotics\HRSpace3\VRC_Hi6\apps
+   ${HRSpace installation folder}\VRC_${cont_model}\apps
+   ex) C:\Program Files\HHI Robotics\HRSpace3\VRC_${cont_model}\apps
    ```
 
 
@@ -336,8 +336,9 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 ## 1.6.5 Notes
 1. If you modify HTML, CSS, or JavaScript code, just return to the TP Home screen and re-enter the plugin for the changes to take effect.
-2. If you modify Python code while the plugin is running, you must reboot the virtual controller for the changes to apply.  
-→ Right-click on the robot in the Workspace panel > Click `VRC Tools...` > Click `Reboot`  
+2. <p style="background-color:darkslategrey; color:white;width:max-content">If you modify Python code while the plugin is running, you must reboot the virtual controller for the changes to apply.</p>  
+   → Right-click on the robot in the Workspace panel > Click `VRC Tools...` > Click `Reboot`   
+   
    <img src="../_assets/hrspace/10_vrc_tools.PNG" height=150vw>
    <img src="../_assets/hrspace/11_vrc_tools_complete.PNG" height=150vw>  
 
@@ -404,7 +405,7 @@ Click info.json to open it and input the following.
    <tr>
       <td>binding</td>
       <td>
-       The form of binding with the Hi6 host software</br>
+       The form of binding with the ${cont_model} host software</br>
        - Plug-in: Will be executed in bound form.</br>
        - Standalone: Will be executed as an independent app (process.) 
       </td>
@@ -470,9 +471,9 @@ def hello():
 - xhost is a module that calls the functions of the host (robot controller). You do not have to write an xhost.py file yourself. The subsequent sections will provide detailed explanations, so this is all you need to understand for now.
 <br></br>
 
-Now, execute the Hi6 virtual controller, which is the main module, and the TP in order.
+Now, execute the ${cont_model} virtual controller, which is the main module, and the TP in order.
 
-When starting, the Hi6 controller recognizes the installed apps by reading the info.json from all folders under the apps/ folder.
+When starting, the ${cont_model} controller recognizes the installed apps by reading the info.json from all folders under the apps/ folder.
 
 [service] - 10: Clicking the app will bring up a screen called 10: app - TP. 
 
@@ -2276,7 +2277,7 @@ If a timeout occurs after 10 seconds in the wait-di6 state, branching to *tout w
 ## Execution mode and continue mode
 
 
-Let’s take a look at the flow chart below. There are two modes where the Hi6 host calls the robot language commands: execution mode and continue mode. In continue mode, the host calls the command again.
+Let’s take a look at the flow chart below. There are two modes where the ${cont_model} host calls the robot language commands: execution mode and continue mode. In continue mode, the host calls the command again.
 
 The host calls commands in execution mode first. In most cases, individual commands perform their operations and end immediately, while the host completes the handling of the commands after confirming that it is not in continue mode.
 <br></br>
@@ -2286,11 +2287,11 @@ The host calls commands in execution mode first. In most cases, individual comma
 
 However, some commands have a wait operation (meaning it waits for a certain state or event, such as I/O input, Ethernet data reception, certain periods of time, robot operation completion, etc.) The following procedure will be performed between the host and a plug-in. 
 
-* The plug-in’s wait operation command will check the mode with xhost.exec_mode( ). True means execution mode and false means continue mode. As such, if the mode is confirmed to be execution mode (Yes), the time, transferred to the timeout argument, will be set to the timer for the robot language (set_lang_timer), and the Hi6 host will be requested to call in continue mode next time before the operation ends.
-* If the operation ends after the execution of xhost.req_to_continue, it means the mode is continue mode. Accordingly, the Hi6 host calls the relevant command again.
+* The plug-in’s wait operation command will check the mode with xhost.exec_mode( ). True means execution mode and false means continue mode. As such, if the mode is confirmed to be execution mode (Yes), the time, transferred to the timeout argument, will be set to the timer for the robot language (set_lang_timer), and the ${cont_model} host will be requested to call in continue mode next time before the operation ends.
+* If the operation ends after the execution of xhost.req_to_continue, it means the mode is continue mode. Accordingly, the ${cont_model} host calls the relevant command again.
 * The plug-in’s wait operation command will check the mode with xhost.exec_mode( ). If the mode is confirmed to be continue mode (No), the timer will be checked. If a timeout has occurred, branching to the escape address (branch_to_addr) will occur, and the operation will end without making a request for continue mode.
-* If a timeout has not occurred, whether the wait condition is complete (wait-complete condition?) will be checked. If the wait condition is complete, the operation will end as is because there is no request for continue mode, but if it is not complete, the operation will end without the Hi6 host being requested to call in continue mode (req_to_continue.)
-* If there is no request for continue mode in the current call (continue-mode No), the Hi6 host will complete the handling of the relevant command.
+* If a timeout has not occurred, whether the wait condition is complete (wait-complete condition?) will be checked. If the wait condition is complete, the operation will end as is because there is no request for continue mode, but if it is not complete, the operation will end without the ${cont_model} host being requested to call in continue mode (req_to_continue.)
+* If there is no request for continue mode in the current call (continue-mode No), the ${cont_model} host will complete the handling of the relevant command.
 <br></br>
 
  ![](../../_assets/image_32.png)
@@ -2622,9 +2623,9 @@ For an added command, you can check it by pressing the [Command Inputting] butto
 ![](../../_assets/image_83.png)# 3.2 Practical project: ArgosX - callback
 
 
-While operating the Hi6 controller, there are main events, such as Mode Change, Motor On, Reset, Start and Accuracy OK. We can register functions into a plug-in for it to perform unique operations for an event.
+While operating the ${cont_model} controller, there are main events, such as Mode Change, Motor On, Reset, Start and Accuracy OK. We can register functions into a plug-in for it to perform unique operations for an event.
 
-These functions are callback functions. They are referred to as such because they are called by other parts (Hi6 host) and not actively called within the Python code.
+These functions are callback functions. They are referred to as such because they are called by other parts (${cont_model} host) and not actively called within the Python code.
 
 
 
@@ -2816,22 +2817,6 @@ LED light is ON
        When detecting a servo error
       </td>
     </tr>
-    <tr>
-      <td>on_mot_on_ready_check_remote_auto()</td>
-      <td>
-       Motor on ready, remote/auto
-      </td>
-    </tr>
-    <tr>
-      <td>on_entry_teach_mode()</td>
-      <td>When entering teaching mode</td>
-    </tr>
-    <tr>
-      <td>on_entry_auto_mode()</td>
-      <td>
-        When entering auto mode
-      </td>
-    </tr>
      <tr>
       <td>on_system_status_chk_proc()</td>
       <td>When checking the system for any abnormalities (10 ms)</td>
@@ -2864,26 +2849,9 @@ LED light is ON
       <td>on_restart(task_no:int)</td>
       <td>When starting</td>
     </tr>
-    <tr>
-      <td>on_reset0()</td>
-      <td>
-      reset 0	
-      </td>
-    </tr>
      <tr>
       <td>on_cur_job_selected_by_tp(task_no:int)</td>
       <td>When the TP selects the job program.</td>
-    </tr>
-    <tr>
-      <td>on_step_func_no_change_for_clear(task_no:int,..)</td>
-      <td>
-       When changing the program counter
-      </td>
-    </tr>
-    <tr>
-      <td>on_job_end(task_no:int)</td>
-      <td> Executing the job end command
-      </td>
     </tr>
     <tr>
       <td>init_signal_output_status()</td>
@@ -2894,16 +2862,6 @@ LED light is ON
       <td>
        When handling assigned signals
       </td>
-    </tr>
-    <tr>
-      <td>is_assigned_input(sigcode:int) /</br>
-      is_assigned_output(sigcode:int)</td>
-      <td>When returning whether sigcode is assigned for the input/output signals</td>
-    </tr>
-    <tr>
-      <td>update_input_assign_info() / </br>
-      update_output_assign_info()</td>
-      <td>When setting up the look-up table for the host's assigned input/output signals</td>
     </tr>
   </tbody>
 </table># 3.3.1 Practical project: Developing an ArgosX setup screen UI
@@ -4305,13 +4263,13 @@ Pressing the User Key button on the right side of the virtual teach pendant will
 
 If the Python code we wrote has grammatical errors in the web UI or logical errors in the implementation body, a debugger should be used to trace the cause and supplement it.
 
-However, the Python source code of the plug-ins is called from the Hi6 host through the Import operation, callback operation, or by a robot language. As there is no built-in Python debugger in the Hi6 host, tracing by placing a breakpoint to a call from the host is impossible. However, you can perform partial debugging by executing the entry function of a plug-in with an external debugger.
+However, the Python source code of the plug-ins is called from the ${cont_model} host through the Import operation, callback operation, or by a robot language. As there is no built-in Python debugger in the ${cont_model} host, tracing by placing a breakpoint to a call from the host is impossible. However, you can perform partial debugging by executing the entry function of a plug-in with an external debugger.
 
 
 <br>
 
 ## xhost for debugging
-xhost is a module to be used by plug-ins to call the functions of the Hi6 host. It is created and injected into the plug-in by the host. The figure below shows a typical operational flow between the host and a plug-in.
+xhost is a module to be used by plug-ins to call the functions of the ${cont_model} host. It is created and injected into the plug-in by the host. The figure below shows a typical operational flow between the host and a plug-in.
 <br> ![](../_assets/image_63.png)
 
 
@@ -4326,7 +4284,7 @@ However, when a plug-in is executed with the vscode debugger, an execution error
 
 
 
-What you see below is a simple xhost.py in the apps/ folder that imports xhost_dbg. When the actual Hi6 host creates/injects xhost, it will override this xhost alternative module.
+What you see below is a simple xhost.py in the apps/ folder that imports xhost_dbg. When the actual ${cont_model} host creates/injects xhost, it will override this xhost alternative module.
 
 
 
@@ -4338,9 +4296,9 @@ xhost.py
 from _common.py.xhost_dbg import *
 ```
 
-The host can be a Hi6 virtual controller running in a PC development environment or an actual controller. You need to designate where xhost_dbg should access.
+The host can be a ${cont_model} virtual controller running in a PC development environment or an actual controller. You need to designate where xhost_dbg should access.
 
-There is xhost_remote_ip.py file in the apps/ folder of the Hi6 home path. The default value is set as the PC development environment itself (namely, the Hi6 virtual controller) as follows.
+There is xhost_remote_ip.py file in the apps/ folder of the ${cont_model} home path. The default value is set as the PC development environment itself (namely, the ${cont_model} virtual controller) as follows.
 
 
 
@@ -4349,7 +4307,7 @@ xhost_remote_ip.py
 remote_ip="127.0.0.1"
 ```
 
-If you want to perform testing by accessing the actual Hi6 controller with an IP address of "192.168.1.150", you can set it as follows.
+If you want to perform testing by accessing the actual ${cont_model} controller with an IP address of "192.168.1.150", you can set it as follows.
 
 
 

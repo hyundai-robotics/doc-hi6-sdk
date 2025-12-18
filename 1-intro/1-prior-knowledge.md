@@ -14,18 +14,18 @@ If you are unfamiliar with the technologies below, studying them first using the
   </thead>
   <tbody>
     <tr>
-      <td>Basic method of using the Hi6 controller</td>
+      <td>Basic method of using the ${cont_model} controller</td>
       <td>
        Basic knowledge for operating robots
       </td>
-      <td>Hi6 Controller Operation Manual</td>
+      <td>${cont_model} Controller Operation Manual</td>
     </tr>
    <tr>
       <td>HRScript robot language programming</td>
       <td>
        Interlocking between HRScript and apps
       </td>
-      <td>Hi6 Controller Function Manual - HRScript</td>
+      <td>${cont_model} Controller Function Manual - HRScript</td>
     </tr>
     <tr>
       <td>Python 3 programming</td>

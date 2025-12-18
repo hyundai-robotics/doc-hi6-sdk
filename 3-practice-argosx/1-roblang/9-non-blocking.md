@@ -40,7 +40,7 @@ If a timeout occurs after 10 seconds in the wait-di6 state, branching to *tout w
 ## Execution mode and continue mode
 
 
-Let’s take a look at the flow chart below. There are two modes where the Hi6 host calls the robot language commands: execution mode and continue mode. In continue mode, the host calls the command again.
+Let’s take a look at the flow chart below. There are two modes where the ${cont_model} host calls the robot language commands: execution mode and continue mode. In continue mode, the host calls the command again.
 
 The host calls commands in execution mode first. In most cases, individual commands perform their operations and end immediately, while the host completes the handling of the commands after confirming that it is not in continue mode.
 <br></br>
@@ -50,11 +50,11 @@ The host calls commands in execution mode first. In most cases, individual comma
 
 However, some commands have a wait operation (meaning it waits for a certain state or event, such as I/O input, Ethernet data reception, certain periods of time, robot operation completion, etc.) The following procedure will be performed between the host and a plug-in. 
 
-* The plug-in’s wait operation command will check the mode with xhost.exec_mode( ). True means execution mode and false means continue mode. As such, if the mode is confirmed to be execution mode (Yes), the time, transferred to the timeout argument, will be set to the timer for the robot language (set_lang_timer), and the Hi6 host will be requested to call in continue mode next time before the operation ends.
-* If the operation ends after the execution of xhost.req_to_continue, it means the mode is continue mode. Accordingly, the Hi6 host calls the relevant command again.
+* The plug-in’s wait operation command will check the mode with xhost.exec_mode( ). True means execution mode and false means continue mode. As such, if the mode is confirmed to be execution mode (Yes), the time, transferred to the timeout argument, will be set to the timer for the robot language (set_lang_timer), and the ${cont_model} host will be requested to call in continue mode next time before the operation ends.
+* If the operation ends after the execution of xhost.req_to_continue, it means the mode is continue mode. Accordingly, the ${cont_model} host calls the relevant command again.
 * The plug-in’s wait operation command will check the mode with xhost.exec_mode( ). If the mode is confirmed to be continue mode (No), the timer will be checked. If a timeout has occurred, branching to the escape address (branch_to_addr) will occur, and the operation will end without making a request for continue mode.
-* If a timeout has not occurred, whether the wait condition is complete (wait-complete condition?) will be checked. If the wait condition is complete, the operation will end as is because there is no request for continue mode, but if it is not complete, the operation will end without the Hi6 host being requested to call in continue mode (req_to_continue.)
-* If there is no request for continue mode in the current call (continue-mode No), the Hi6 host will complete the handling of the relevant command.
+* If a timeout has not occurred, whether the wait condition is complete (wait-complete condition?) will be checked. If the wait condition is complete, the operation will end as is because there is no request for continue mode, but if it is not complete, the operation will end without the ${cont_model} host being requested to call in continue mode (req_to_continue.)
+* If there is no request for continue mode in the current call (continue-mode No), the ${cont_model} host will complete the handling of the relevant command.
 <br></br>
 
  ![](../../_assets/image_32.png)

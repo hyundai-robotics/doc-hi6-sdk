@@ -1,4 +1,4 @@
-﻿# Hi6 Software Development Kit (SDK) Manual
+﻿# ${cont_model} Software Development Kit (SDK) Manual
 
 {% hint style="warning" %}
 The information provided in this product manual is the property of Hyundai Robotics.
@@ -15,7 +15,7 @@ The manual can change without prior notification.
 {% endhint %}
 
 {% hint style="warning" %}
-The Hi6 SDK is prior to its official release and is undergoing internal verification testing and supplementation.
+The ${cont_model} SDK is prior to its official release and is undergoing internal verification testing and supplementation.
 
 In the future, the interface specifications may change significantly without notice, so if you are not an official tester, please put the software development using this on hold.
 

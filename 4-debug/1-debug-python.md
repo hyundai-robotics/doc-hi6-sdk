@@ -2,13 +2,13 @@
 
 If the Python code we wrote has grammatical errors in the web UI or logical errors in the implementation body, a debugger should be used to trace the cause and supplement it.
 
-However, the Python source code of the plug-ins is called from the Hi6 host through the Import operation, callback operation, or by a robot language. As there is no built-in Python debugger in the Hi6 host, tracing by placing a breakpoint to a call from the host is impossible. However, you can perform partial debugging by executing the entry function of a plug-in with an external debugger.
+However, the Python source code of the plug-ins is called from the ${cont_model} host through the Import operation, callback operation, or by a robot language. As there is no built-in Python debugger in the ${cont_model} host, tracing by placing a breakpoint to a call from the host is impossible. However, you can perform partial debugging by executing the entry function of a plug-in with an external debugger.
 
 
 <br>
 
 ## xhost for debugging
-xhost is a module to be used by plug-ins to call the functions of the Hi6 host. It is created and injected into the plug-in by the host. The figure below shows a typical operational flow between the host and a plug-in.
+xhost is a module to be used by plug-ins to call the functions of the ${cont_model} host. It is created and injected into the plug-in by the host. The figure below shows a typical operational flow between the host and a plug-in.
 <br> ![](../_assets/image_63.png)
 
 
@@ -23,7 +23,7 @@ However, when a plug-in is executed with the vscode debugger, an execution error
 
 
 
-What you see below is a simple xhost.py in the apps/ folder that imports xhost_dbg. When the actual Hi6 host creates/injects xhost, it will override this xhost alternative module.
+What you see below is a simple xhost.py in the apps/ folder that imports xhost_dbg. When the actual ${cont_model} host creates/injects xhost, it will override this xhost alternative module.
 
 
 
@@ -35,9 +35,9 @@ xhost.py
 from _common.py.xhost_dbg import *
 ```
 
-The host can be a Hi6 virtual controller running in a PC development environment or an actual controller. You need to designate where xhost_dbg should access.
+The host can be a ${cont_model} virtual controller running in a PC development environment or an actual controller. You need to designate where xhost_dbg should access.
 
-There is xhost_remote_ip.py file in the apps/ folder of the Hi6 home path. The default value is set as the PC development environment itself (namely, the Hi6 virtual controller) as follows.
+There is xhost_remote_ip.py file in the apps/ folder of the ${cont_model} home path. The default value is set as the PC development environment itself (namely, the ${cont_model} virtual controller) as follows.
 
 
 
@@ -46,7 +46,7 @@ xhost_remote_ip.py
 remote_ip="127.0.0.1"
 ```
 
-If you want to perform testing by accessing the actual Hi6 controller with an IP address of "192.168.1.150", you can set it as follows.
+If you want to perform testing by accessing the actual ${cont_model} controller with an IP address of "192.168.1.150", you can set it as follows.
 
 
 

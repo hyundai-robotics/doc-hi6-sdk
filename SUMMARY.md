@@ -1,9 +1,9 @@
 ﻿# Table of contents
 
-* [Hi6 Software Development Kit (SDK) Manual](README.md)
-* [1. Overview of Hi6 SDK](1-intro/README.md)
+* [${cont_model} Software Development Kit (SDK) Manual](README.md)
+* [1. Overview of ${cont_model} SDK](1-intro/README.md)
   * [1.1 Required knowledge]( 1-intro/1-prior-knowledge.md)
-  * [1.2 Concept of Hi6 plug-in apps]( 1-intro/2-plugin-app-concept.md)
+  * [1.2 Concept of ${cont_model} plug-in apps]( 1-intro/2-plugin-app-concept.md)
   * [1.3 Installing the Python 3 development environment]( 1-intro/3-install-python.md)
   * [1.4 Installing Visual Studio Code]( 1-intro/4-install-vscode.md)
   * [1.5 Installing a web-based UI development environment]( 1-intro/5-install-web-ui.md)
