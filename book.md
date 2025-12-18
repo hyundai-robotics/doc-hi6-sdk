@@ -1,9 +1,9 @@
-﻿# Hi6 SDK 설명서
+﻿# ${cont_model} SDK 설명서
 
 {% hint style="warning" %}
-본 제품 설명서에서 제공되는 정보는 현대로보틱스의 자산입니다.
+본 제품 설명서에서 제공되는 정보는 HD현대로보틱스의 자산입니다.
 
-현대로보틱스의 서면에 의한 동의 없이 전부 또는 일부를 무단 전재 및 재배포할 수 없으며, 제3자에게 제공되거나 다른 목적에 사용할 수 없습니다.
+HD현대로보틱스의 서면에 의한 동의 없이 전부 또는 일부를 무단 전재 및 재배포할 수 없으며, 제3자에게 제공되거나 다른 목적에 사용할 수 없습니다.
 
 
 
@@ -15,13 +15,13 @@
 {% endhint %}
 
 {% hint style="warning" %}
-Hi6 SDK는 공식 릴리즈 전이며 내부 검증 시험 및 보완 진행 중입니다.
+${cont_model} SDK는 공식 릴리즈 전이며 내부 검증 시험 및 보완 진행 중입니다.
 
 향후 인터페이스 사양이 예고 없이 크게 변경될 수 있으므로, 공식 시험 요원이 아니라면 이를 활용한 소프트웨어 개발에 주의해 주시기 바랍니다.
 
-{% endhint %}# 1. Hi6 SDK 개요
+{% endhint %}# 1. ${cont_model} SDK 개요
 
-이 설명서는 Hi6 제어기의 추가 기능 개발을 위한 플러그인 앱(plugin-app) 개발용 SDK (Software Development Kit) 사용법을 설명합니다.
+이 설명서는 ${cont_model} 제어기의 추가 기능 개발을 위한 플러그인 앱(plugin-app) 개발용 SDK (Software Development Kit) 사용법을 설명합니다.
 
 SDK로 개발할 수 있는 앱의 기능은 아래와 같습니다.
 
@@ -46,18 +46,18 @@ SDK를 활용한 앱(app) 개발을 하기 위해서는 아래의 기술들에 �
   </thead>
   <tbody>
     <tr>
-      <td>Hi6 제어기의 기본 사용법</td>
+      <td>${cont_model} 제어기의 기본 사용법</td>
       <td>
        로봇 조작의 기본 지식
       </td>
-      <td>Hi6 제어기 조작설명서</td>
+      <td>${cont_model} 제어기 조작설명서</td>
     </tr>
    <tr>
       <td>HRScript 로봇언어 프로그래밍</td>
       <td>
        HRScript와 app과의 연동
       </td>
-      <td>Hi6 제어기 기능설명서 - HRScript</td>
+      <td>${cont_model} 제어기 기능설명서 - HRScript</td>
     </tr>
     <tr>
       <td>python3 프로그래밍</td>
@@ -98,8 +98,8 @@ SDK를 활용한 앱(app) 개발을 하기 위해서는 아래의 기술들에 �
 
 
 		
-# 1.2 Hi6 플러그인 앱(plugin-app)의 개념
-Hi6 앱은 main module 내에서 동작하는 python 3 스크립트와, 티치펜던트 내에서 U/I 동작을 수행하는 javascript 기반 웹 소프트웨어로 구성됩니다.
+# 1.2 ${cont_model} 플러그인 앱(plugin-app)의 개념
+${cont_model} 앱은 main module 내에서 동작하는 python 3 스크립트와, 티치펜던트 내에서 U/I 동작을 수행하는 javascript 기반 웹 소프트웨어로 구성됩니다.
 
 만일 U/I 가 없는 앱이라면 python 스크립트만으로 구성될 수도 있습니다.
 
@@ -124,7 +124,7 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
 <br></br>
 1) 아래 링크는 python v3.8.0 설치 화면으로 연결됩니다. x86 32bit를 설치하십시오.
 
-    <span style='background-color:#ffdce0'>(주의! : Hi6 가상제어기는 32bit 애플리케이션이므로 python 런타임도 이와 일치시켜야 합니다. x86-64를 설치하면 안됩니다 !) </span>
+    <span style='background-color:#ffdce0'>(주의! : ${cont_model} 가상제어기는 32bit 애플리케이션이므로 python 런타임도 이와 일치시켜야 합니다. x86-64를 설치하면 안됩니다 !) </span>
 
     https://www.python.org/downloads/release/python-380/
 
@@ -150,12 +150,12 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
 
 ## python import 검색 경로 추가
 1) .pth 라는 파일을 만들고 안에 _common/ 폴더가 위치한 경로를 지정해준다. 
-    SDK 내의 .pth 파일을 열어, Hi6 가상제어기의 HOME 경로에 맞게 아래 경로를 지정해줍니다.
+    SDK 내의 .pth 파일을 열어, ${cont_model} 가상제어기의 HOME 경로에 맞게 아래 경로를 지정해줍니다.
  
 
     파일내용 예:    
     ```
-    D:\Hi6\home_main\apps
+    D:\${cont_model}\home_main\apps
     ```
 
 2) 편집한 .pth 파일을 python 설치 경로/Lib/site-packages/ 에 배치합니다.
@@ -255,9 +255,9 @@ https://www.google.com/intl/ko/chrome/
 ### a. 로봇 불러오기
 1) `윈도우 키` 입력 > `HRSpace3_kor` 입력 > 클릭 > 프로그램 실행
 2) 좌측 workspace 의 workspace 컴포넌트 우클릭 > ‘모델 불러오기‘ 클릭 > ‘Robot’ 클릭 > 원하는 모델 클릭  
-   <img src="../_assets/hrspace/00_select_robot_model.png" height=360vw></img><p style="background-color:orange; color:black;"><b>단,  ${HRSpace 설치 경로}\VRC_Hi6\fbrr 에 있는 모델만 불러와야 에러가 발생하지 않습니다.</b></p> 
+   <img src="../_assets/hrspace/00_select_robot_model.png" height=360vw></img><p style="background-color:orange; color:black; width:max-content"><b>단,  ${HRSpace 설치 경로}\VRC_${cont_model}\fbrr 에 있는 모델만 불러와야 에러가 발생하지 않습니다.</b></p> 
 
-3) `로봇제어기(RC) 타입 선택 팝업 창` > VRC_Hi6 클릭 > 확인 > 로봇 로드  
+3) `로봇제어기(RC) 타입 선택 팝업 창` > VRC_${cont_model} 클릭 > 확인 > 로봇 로드  
    <img src="../_assets/hrspace/01_selected_robot.png" height=360vw></img>
 
 ### b. workspace 저장하기
@@ -292,8 +292,8 @@ https://www.google.com/intl/ko/chrome/
    ```
 2) 개발한 hello-world 플러그인을 하기 경로에 저장   
    ```text
-   ${HRSpace 설치 경로}\VRC_Hi6\apps
-   ex) C:\Program Files\HHI Robotics\HRSpace3\VRC_Hi6\apps
+   ${HRSpace 설치 경로}\VRC_${cont_model}\apps
+   ex) C:\Program Files\HHI Robotics\HRSpace3\VRC_${cont_model}\apps
    ```
 
 3) 저장된 플러그인 위치 확인  
@@ -312,7 +312,7 @@ https://www.google.com/intl/ko/chrome/
 
 ## 1.6.5 참고사항
 1. html & css, js 코드를 수정하는 경우, `4:응용 파라미터` 선택 창으로 돌아갔다가 플러그인에 재진입하면 해당 내용이 반영이 됩니다.  
-2. <p style="background-color:darkslategrey; color:white;">플러그인을 실행한 상태에서 python 코드를 수정한 경우, 반영을 위해선 가상제어기를 재부팅하셔야 합니다.</p>&rightarrow; workspace 창의 robot 우클릭 > `가상제어기 도구` 클릭 > `재부팅` 클릭  <br>
+2. <p style="background-color:darkslategrey; color:white;width:max-content">플러그인을 실행한 상태에서 python 코드를 수정한 경우, 반영을 위해선 가상제어기를 재부팅하셔야 합니다.</p>&rightarrow; workspace 창의 robot 우클릭 > `가상제어기 도구` 클릭 > `재부팅` 클릭  <br>
    <img src="../_assets/hrspace/08_reboot_vrc.PNG" height=160vw>
    <img src="../_assets/hrspace/08_reboot_vrc_success.PNG" height=160vw>
 3. `1.6.4 가상 티칭펜던트에서 플러그인 실행하기` 재진행# 2. 초간단 프로젝트 : hello_world
@@ -347,7 +347,7 @@ info.json을 클릭해 열고 아래와 같이 입력합니다.
 
 ``` json
 {
-   "author" : "Hyundai Robotics",
+   "author" : "HD Hyundai Robotics",
    "binding" : "plug-in",
    "copyright" : "All right reserved",
    "description" : "First example - hello_world",
@@ -376,7 +376,7 @@ info.json을 클릭해 열고 아래와 같이 입력합니다.
    <tr>
       <td>binding</td>
       <td>
-       Hi6 호스트 소프트웨어와의 결합 형태</br>
+       ${cont_model} 호스트 소프트웨어와의 결합 형태</br>
        - plug-in: 결한된 형태로 실행됨.</br>
        - stand-alone: 독립된 응용 프로그램(process)으로 실행됨. 
       </td>
@@ -442,9 +442,9 @@ def hello():
 - xhost는 호스트(로봇제어기)의 기능을 호출하기 위한 모듈입니다. xhost.py라는 파일은 직접 작성할 필요가 없습니다. 후속 절에서 자세히 설명되므로 여기서는 이 정도만 이해하면 됩니다.
 <br></br>
 
-이제 Hi6 가상제어기 main과 TP를 차례로 실행합니다.
+이제 ${cont_model} 가상제어기 main과 TP를 차례로 실행합니다.
 
-Hi6 제어기 main은 시작하면서 apps/ 폴더 밑의 모든 폴더의 info.json를 읽어들임으로써, 설치된 app들을 인식합니다.
+${cont_model} 제어기 main은 시작하면서 apps/ 폴더 밑의 모든 폴더의 info.json를 읽어들임으로써, 설치된 app들을 인식합니다.
 
 [서비스] - 10: 앱(App)을 클릭하면 10: 앱(App) - TP라는 제목의 화면이 나타납니다. 
 
@@ -2246,7 +2246,7 @@ di6을 10초 대기. timeout 시, *tout으로 분기.
 ## 실행모드와 계속모드
 
 
-아래 순서도를 봅시다. Hi6 호스트(HOST)가 로봇언어 명령문을 호출할 때는 실행모드(execution-mode)와 계속모드(continue-mode)의 2가지 상태가 있습니다. 계속모드라면, 호스트는 해당 명령문을 다시 호출해줍니다.
+아래 순서도를 봅시다. ${cont_model} 호스트(HOST)가 로봇언어 명령문을 호출할 때는 실행모드(execution-mode)와 계속모드(continue-mode)의 2가지 상태가 있습니다. 계속모드라면, 호스트는 해당 명령문을 다시 호출해줍니다.
 
 호스트는 명령문을 일단 실행모드로 호출합니다. 대부분의 명령문들은 자신의 동작을 수행하고 즉각 종료하며, 호스트도 연속모드가 되지 않은 것을 확인하고 해당 명령문에 대한 처리를 완료시킵니다.
 <br></br>
@@ -2256,11 +2256,11 @@ di6을 10초 대기. timeout 시, *tout으로 분기.
 
 그러나 일부 명령문들은 대기 동작을 가지고 있습니다. (IO 입력이나 이더넷 데이터 수신, 일정 시간, 로봇 동작 완료 등 어떤 상태나 사건(event)의 대기를 뜻합니다.) 호스트와 플러그인 간에는 아래의 절차가 수행됩니다.
 
-* 플러그인의 대기 동작 명령문은 xhost.exec_mode( )로 모드를 확인합니다. True이면 실행모드, False이면 연속모드입니다. 실행모드임이 확인되면(Yes), timeout 인수로 전달받은 시간을 로봇언어용 timer에 설정한 후(set_lang_timer), Hi6 호스트에게 다음 번엔 연속모드로 호출해주기를 요청(xhost.req_to_continue)한 후 종료합니다.
-* xhost.req_to_continue 실행 후 종료되면 연속모드입니다. Hi6 호스트는 해당 명령문을 다시 호출(call)해줍니다.
+* 플러그인의 대기 동작 명령문은 xhost.exec_mode( )로 모드를 확인합니다. True이면 실행모드, False이면 연속모드입니다. 실행모드임이 확인되면(Yes), timeout 인수로 전달받은 시간을 로봇언어용 timer에 설정한 후(set_lang_timer), ${cont_model} 호스트에게 다음 번엔 연속모드로 호출해주기를 요청(xhost.req_to_continue)한 후 종료합니다.
+* xhost.req_to_continue 실행 후 종료되면 연속모드입니다. ${cont_model} 호스트는 해당 명령문을 다시 호출(call)해줍니다.
 * 플러그인의 대기 동작 명령문은 xhost.exec_mode( )로 모드를 확인합니다. 연속모드임이 확인(No)되면 timer를 확인하여 timeout 인 경우 퇴피주소로 분기(branch_to_addr)하고 연속모드 요청 없이 종료합니다.
-* timeout이 아니면, 대기조건이 완료되었는지(wait-complete condition?) 확인합니다. 완료이면 연속모드 요청 없이 그대로 종료하고, 미완료이면 Hi6 호스트에게 연속모드 요청(req_to_continue)을 하고 자신의 동작을 수행(execute command)한 후 종료합니다.
-* Hi6 호스트는 이번 호출에서 연속모드 요청이 없었을 경우(continue-mode No), 해당 명령문 처리를 완료(complete)시킵니다.
+* timeout이 아니면, 대기조건이 완료되었는지(wait-complete condition?) 확인합니다. 완료이면 연속모드 요청 없이 그대로 종료하고, 미완료이면 ${cont_model} 호스트에게 연속모드 요청(req_to_continue)을 하고 자신의 동작을 수행(execute command)한 후 종료합니다.
+* ${cont_model} 호스트는 이번 호출에서 연속모드 요청이 없었을 경우(continue-mode No), 해당 명령문 처리를 완료(complete)시킵니다.
 <br></br>
 
  ![](../../_assets/image_32.png)
@@ -2592,9 +2592,9 @@ argosx 폴더 안에 cmds.json을 추가하여 해당 파일 안에 명령어의
 ![](../../_assets/image_83.png)# 3.2 실전 프로젝트 : ArgosX - callback
 
 
-Hi6 제어기의 동작에는 모드 변경, 모터ON, 리셋, 기동, 정지, Accuracy OK 등 주요 이벤트들이 있습니다. 각 plug-in 들은 이러한 이벤트에 대해 고유한 동작을 수행하도록 함수를 등록시켜 둘 수 있습니다.
+${cont_model} 제어기의 동작에는 모드 변경, 모터ON, 리셋, 기동, 정지, Accuracy OK 등 주요 이벤트들이 있습니다. 각 plug-in 들은 이러한 이벤트에 대해 고유한 동작을 수행하도록 함수를 등록시켜 둘 수 있습니다.
 
-이러한 함수를 callback 함수라고 합니다. python 코드 내에서 능동적으로 호출하는 것이 아니라, 누군가(Hi6 host)에 의해 호출 당한다는 뜻에서 callback 이라고 하는 것입니다.
+이러한 함수를 callback 함수라고 합니다. python 코드 내에서 능동적으로 호출하는 것이 아니라, 누군가(${cont_model} host)에 의해 호출 당한다는 뜻에서 callback 이라고 하는 것입니다.
 
 
 
@@ -2786,22 +2786,6 @@ LED light is ON
        서보 에러 검지
       </td>
     </tr>
-    <tr>
-      <td>on_mot_on_ready_check_remote_auto()</td>
-      <td>
-       모터 on 준비 완료, 원격/자동
-      </td>
-    </tr>
-    <tr>
-      <td>on_entry_teach_mode()</td>
-      <td>교시 모드 진입</td>
-    </tr>
-    <tr>
-      <td>on_entry_auto_mode()</td>
-      <td>
-        자동 모드 진입
-      </td>
-    </tr>
      <tr>
       <td>on_system_status_chk_proc()</td>
       <td>시스템 이상 상태 여부 확인 (10ms)</td>
@@ -2834,26 +2818,9 @@ LED light is ON
       <td>on_restart(task_no:int)</td>
       <td>기동</td>
     </tr>
-    <tr>
-      <td>on_reset0()</td>
-      <td>
-       reset 0	
-      </td>
-    </tr>
      <tr>
       <td>on_cur_job_selected_by_tp(task_no:int)</td>
       <td>TP에 의한 job program 선택</td>
-    </tr>
-    <tr>
-      <td>on_step_func_no_change_for_clear(task_no:int,..)</td>
-      <td>
-       프로그램 카운터 변경
-      </td>
-    </tr>
-    <tr>
-      <td>on_job_end(task_no:int)</td>
-      <td> job end문 실행
-      </td>
     </tr>
     <tr>
       <td>init_signal_output_status()</td>
@@ -2862,18 +2829,8 @@ LED light is ON
     <tr>
       <td>set_ext_io_sig_proc()</td>
       <td>
-       할당 신호 처리	
+       할당 신호 처리
       </td>
-    </tr>
-    <tr>
-      <td>is_assigned_input(sigcode:int) /</br>
-      is_assigned_output(sigcode:int)</td>
-      <td>sigcode가 할당된 입/출력 신호인지 여부 리턴</td>
-    </tr>
-    <tr>
-      <td>update_input_assign_info() / </br>
-      update_output_assign_info()</td>
-      <td>host의 할당된 입/출력 신호 look-up table 설정</td>
     </tr>
   </tbody>
 </table># 3.3.1 실전 프로젝트 : ArgosX - 설정화면 U/I 개발
@@ -4269,7 +4226,7 @@ menu.json
 # 3.6 실전 프로젝트 : ArgosX - 다국어화
 
 
-지금까지의 예제에서는 영어를 기반으로 한 U/I 개발 이었습니다. Hi6 제어기의 경우, 영어뿐만 아니라 다양한 언어를 제공합니다.
+지금까지의 예제에서는 영어를 기반으로 한 U/I 개발 이었습니다. ${cont_model} 제어기의 경우, 영어뿐만 아니라 다양한 언어를 제공합니다.
 
 이러한 경우 플러그인 앱(plugin-app) 역시, 다국어화를 통해 다양한 언어를 제공하도록 할 수 있습니다.
 
@@ -4309,7 +4266,7 @@ menu.json
     }
     ```
 
-    "en"과 "ko"는 Hi6 와 통용되는 language code(이하 langcode) 이며, "en"은 English 영어, "ko"는 Korean 한국어를 의미합니다.
+    "en"과 "ko"는 ${cont_model} 와 통용되는 language code(이하 langcode) 이며, "en"은 English 영어, "ko"는 Korean 한국어를 의미합니다.
 
     각 langcode 별로 str 데이터의 id 와 string value 값의 멤버들을 가집니다.
 
@@ -4449,7 +4406,7 @@ setup.html
 
 ### 1) 초기화 
 
-먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 Hi6에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
+먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 ${cont_model}에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
 
 setup.js
 
@@ -4468,7 +4425,7 @@ function init()
 
 parseStrData 는 string data를 로드해오는 함수입니다.
 
-setLangcode는 python의 함수를 호출하여 Hi6에 설정되어있는 lang_code를 읽어오는 동작을 하며, callback 함수로 updateAllStrByLang 를 설정하는 함수입니다.
+setLangcode는 python의 함수를 호출하여 ${cont_model}에 설정되어있는 lang_code를 읽어오는 동작을 하며, callback 함수로 updateAllStrByLang 를 설정하는 함수입니다.
 
 setLangcode의 동작을 위해 main.py에 get_lang_code라는 함수를 추가해줍니다.
 
@@ -4753,7 +4710,7 @@ setup에서의 작업과 마찬가지로 str_table.json과 lang.js를 아래와 
 
 ### 1) 초기화 
 
-먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 Hi6에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
+먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 ${cont_model}에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
 
 panel.js
 
@@ -4884,7 +4841,7 @@ ubar.html
 
 ### 1) 초기화 
 
-먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 Hi6에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
+먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 ${cont_model}에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
 
 ubar.js
 
@@ -4939,13 +4896,13 @@ ubar의 경우 elements들의 명칭만 변경해주면 되기 때문에 setElem
 
 우리가 작성한 python 코드에 web U/I에 문법오류 혹은 구현체의 논리적인 오류가 있으면, 디버거를 동원해 원인을 추적하여 보완해야 합니다.
 
-그런데, 플러그인의 python 소스코드는 Hi6 호스트로부터 import와 callback, 로봇언어를 통해 호출됩니다. Hi6 호스트에는 python 디버거가 내장되어 있지 않기 때문에, 호스트로부터의 호출에 breakpoint를 걸어 trace하는 것은 불가능합니다. 하지만, 플러그인의 entry 함수를 외부 디버거로 실행하는 방식으로 부분적인 디버깅을 할 수 있습니다.
+그런데, 플러그인의 python 소스코드는 ${cont_model} 호스트로부터 import와 callback, 로봇언어를 통해 호출됩니다. ${cont_model} 호스트에는 python 디버거가 내장되어 있지 않기 때문에, 호스트로부터의 호출에 breakpoint를 걸어 trace하는 것은 불가능합니다. 하지만, 플러그인의 entry 함수를 외부 디버거로 실행하는 방식으로 부분적인 디버깅을 할 수 있습니다.
 
 
 <br>
 
 ## 디버깅용 xhost
-xhost는 플러그인에서 Hi6 호스트의 기능을 호출할 때 사용되는 모듈로서, 호스트에 의해 플러그인에 생성/주입됩니다. 아래 그림은 호스트와 플러그인의 일반적인 동작 흐름입니다.
+xhost는 플러그인에서 ${cont_model} 호스트의 기능을 호출할 때 사용되는 모듈로서, 호스트에 의해 플러그인에 생성/주입됩니다. 아래 그림은 호스트와 플러그인의 일반적인 동작 흐름입니다.
 <br> ![](../_assets/image_63.png)
 
 
@@ -4960,7 +4917,7 @@ xhost는 플러그인에서 Hi6 호스트의 기능을 호출할 때 사용되�
 
 
 
-apps/ 폴더에 있는 아래와 같은 간단한 xhost.py가 xhost_dbg를 import 해주고 있습니다. 실제 Hi6 host가 xhost를 생성/주입할 때는 이 xhost 대체 모듈을 override 해버립니다.
+apps/ 폴더에 있는 아래와 같은 간단한 xhost.py가 xhost_dbg를 import 해주고 있습니다. 실제 ${cont_model} host가 xhost를 생성/주입할 때는 이 xhost 대체 모듈을 override 해버립니다.
 
 
 
@@ -4972,9 +4929,9 @@ xhost.py
 from _common.py.xhost_dbg import *
 ```
 
-호스트는 개발환경 PC에서 함께 실행되는 Hi6 가상제어기일 수도 있고 실제제어기일 수도 있습니다. xhost_dbg가 어디에 접속해야 하는지를 지정해줘야 합니다.
+호스트는 개발환경 PC에서 함께 실행되는 ${cont_model} 가상제어기일 수도 있고 실제제어기일 수도 있습니다. xhost_dbg가 어디에 접속해야 하는지를 지정해줘야 합니다.
 
-Hi6 home 경로의 apps/ 폴더 안에 xhost_remote_ip.py 파일이 있습니다. 기본값은 아래와 같아서 개발환경 PC 자신 (즉, Hi6 가상제어기)으로 설정되어 있습니다.
+${cont_model} home 경로의 apps/ 폴더 안에 xhost_remote_ip.py 파일이 있습니다. 기본값은 아래와 같아서 개발환경 PC 자신 (즉, ${cont_model} 가상제어기)으로 설정되어 있습니다.
 
 
 
@@ -4983,7 +4940,7 @@ xhost_remote_ip.py
 remote_ip="127.0.0.1"
 ```
 
-만일 IP주소가 "192.168.1.150"인 실제 Hi6 제어기에 연결하여 시험하고자 한다면 아래와 같이 설정하면 됩니다.
+만일 IP주소가 "192.168.1.150"인 실제 ${cont_model} 제어기에 연결하여 시험하고자 한다면 아래와 같이 설정하면 됩니다.
 
 
 

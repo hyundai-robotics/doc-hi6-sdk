@@ -22,7 +22,7 @@
     }
     ```
 
-    "en"과 "ko"는 Hi6 와 통용되는 language code(이하 langcode) 이며, "en"은 English 영어, "ko"는 Korean 한국어를 의미합니다.
+    "en"과 "ko"는 ${cont_model} 와 통용되는 language code(이하 langcode) 이며, "en"은 English 영어, "ko"는 Korean 한국어를 의미합니다.
 
     각 langcode 별로 str 데이터의 id 와 string value 값의 멤버들을 가집니다.
 

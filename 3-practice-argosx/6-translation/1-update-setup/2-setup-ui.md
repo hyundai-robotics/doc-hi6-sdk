@@ -79,7 +79,7 @@ setup.html
 
 ### 1) 초기화 
 
-먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 Hi6에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
+먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 ${cont_model}에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
 
 setup.js
 
@@ -98,7 +98,7 @@ function init()
 
 parseStrData 는 string data를 로드해오는 함수입니다.
 
-setLangcode는 python의 함수를 호출하여 Hi6에 설정되어있는 lang_code를 읽어오는 동작을 하며, callback 함수로 updateAllStrByLang 를 설정하는 함수입니다.
+setLangcode는 python의 함수를 호출하여 ${cont_model}에 설정되어있는 lang_code를 읽어오는 동작을 하며, callback 함수로 updateAllStrByLang 를 설정하는 함수입니다.
 
 setLangcode의 동작을 위해 main.py에 get_lang_code라는 함수를 추가해줍니다.
 

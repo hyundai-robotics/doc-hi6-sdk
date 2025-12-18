@@ -1,6 +1,6 @@
-﻿# 1. Hi6 SDK 개요
+﻿# 1. ${cont_model} SDK 개요
 
-이 설명서는 Hi6 제어기의 추가 기능 개발을 위한 플러그인 앱(plugin-app) 개발용 SDK (Software Development Kit) 사용법을 설명합니다.
+이 설명서는 ${cont_model} 제어기의 추가 기능 개발을 위한 플러그인 앱(plugin-app) 개발용 SDK (Software Development Kit) 사용법을 설명합니다.
 
 SDK로 개발할 수 있는 앱의 기능은 아래와 같습니다.
 

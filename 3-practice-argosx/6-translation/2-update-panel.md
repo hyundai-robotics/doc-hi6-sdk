@@ -135,7 +135,7 @@ setup에서의 작업과 마찬가지로 str_table.json과 lang.js를 아래와 
 
 ### 1) 초기화 
 
-먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 Hi6에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
+먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 ${cont_model}에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
 
 panel.js
 

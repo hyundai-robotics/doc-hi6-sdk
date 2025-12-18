@@ -14,18 +14,18 @@ SDK를 활용한 앱(app) 개발을 하기 위해서는 아래의 기술들에 �
   </thead>
   <tbody>
     <tr>
-      <td>Hi6 제어기의 기본 사용법</td>
+      <td>${cont_model} 제어기의 기본 사용법</td>
       <td>
        로봇 조작의 기본 지식
       </td>
-      <td>Hi6 제어기 조작설명서</td>
+      <td>${cont_model} 제어기 조작설명서</td>
     </tr>
    <tr>
       <td>HRScript 로봇언어 프로그래밍</td>
       <td>
        HRScript와 app과의 연동
       </td>
-      <td>Hi6 제어기 기능설명서 - HRScript</td>
+      <td>${cont_model} 제어기 기능설명서 - HRScript</td>
     </tr>
     <tr>
       <td>python3 프로그래밍</td>

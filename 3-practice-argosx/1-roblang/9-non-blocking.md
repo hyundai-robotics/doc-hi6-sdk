@@ -40,7 +40,7 @@ di6을 10초 대기. timeout 시, *tout으로 분기.
 ## 실행모드와 계속모드
 
 
-아래 순서도를 봅시다. Hi6 호스트(HOST)가 로봇언어 명령문을 호출할 때는 실행모드(execution-mode)와 계속모드(continue-mode)의 2가지 상태가 있습니다. 계속모드라면, 호스트는 해당 명령문을 다시 호출해줍니다.
+아래 순서도를 봅시다. ${cont_model} 호스트(HOST)가 로봇언어 명령문을 호출할 때는 실행모드(execution-mode)와 계속모드(continue-mode)의 2가지 상태가 있습니다. 계속모드라면, 호스트는 해당 명령문을 다시 호출해줍니다.
 
 호스트는 명령문을 일단 실행모드로 호출합니다. 대부분의 명령문들은 자신의 동작을 수행하고 즉각 종료하며, 호스트도 연속모드가 되지 않은 것을 확인하고 해당 명령문에 대한 처리를 완료시킵니다.
 <br></br>
@@ -50,11 +50,11 @@ di6을 10초 대기. timeout 시, *tout으로 분기.
 
 그러나 일부 명령문들은 대기 동작을 가지고 있습니다. (IO 입력이나 이더넷 데이터 수신, 일정 시간, 로봇 동작 완료 등 어떤 상태나 사건(event)의 대기를 뜻합니다.) 호스트와 플러그인 간에는 아래의 절차가 수행됩니다.
 
-* 플러그인의 대기 동작 명령문은 xhost.exec_mode( )로 모드를 확인합니다. True이면 실행모드, False이면 연속모드입니다. 실행모드임이 확인되면(Yes), timeout 인수로 전달받은 시간을 로봇언어용 timer에 설정한 후(set_lang_timer), Hi6 호스트에게 다음 번엔 연속모드로 호출해주기를 요청(xhost.req_to_continue)한 후 종료합니다.
-* xhost.req_to_continue 실행 후 종료되면 연속모드입니다. Hi6 호스트는 해당 명령문을 다시 호출(call)해줍니다.
+* 플러그인의 대기 동작 명령문은 xhost.exec_mode( )로 모드를 확인합니다. True이면 실행모드, False이면 연속모드입니다. 실행모드임이 확인되면(Yes), timeout 인수로 전달받은 시간을 로봇언어용 timer에 설정한 후(set_lang_timer), ${cont_model} 호스트에게 다음 번엔 연속모드로 호출해주기를 요청(xhost.req_to_continue)한 후 종료합니다.
+* xhost.req_to_continue 실행 후 종료되면 연속모드입니다. ${cont_model} 호스트는 해당 명령문을 다시 호출(call)해줍니다.
 * 플러그인의 대기 동작 명령문은 xhost.exec_mode( )로 모드를 확인합니다. 연속모드임이 확인(No)되면 timer를 확인하여 timeout 인 경우 퇴피주소로 분기(branch_to_addr)하고 연속모드 요청 없이 종료합니다.
-* timeout이 아니면, 대기조건이 완료되었는지(wait-complete condition?) 확인합니다. 완료이면 연속모드 요청 없이 그대로 종료하고, 미완료이면 Hi6 호스트에게 연속모드 요청(req_to_continue)을 하고 자신의 동작을 수행(execute command)한 후 종료합니다.
-* Hi6 호스트는 이번 호출에서 연속모드 요청이 없었을 경우(continue-mode No), 해당 명령문 처리를 완료(complete)시킵니다.
+* timeout이 아니면, 대기조건이 완료되었는지(wait-complete condition?) 확인합니다. 완료이면 연속모드 요청 없이 그대로 종료하고, 미완료이면 ${cont_model} 호스트에게 연속모드 요청(req_to_continue)을 하고 자신의 동작을 수행(execute command)한 후 종료합니다.
+* ${cont_model} 호스트는 이번 호출에서 연속모드 요청이 없었을 경우(continue-mode No), 해당 명령문 처리를 완료(complete)시킵니다.
 <br></br>
 
  ![](../../_assets/image_32.png)

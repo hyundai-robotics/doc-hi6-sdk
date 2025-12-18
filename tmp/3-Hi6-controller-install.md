@@ -1,10 +1,10 @@
-# 1.3 Hi6 가상제어기 설치
+# 1.3 ${cont_model} 가상제어기 설치
 
 (임시)
 <br></br>
 
 ## 1) 설치 
-다운받은 Hi6 controller zip을 해제합니다.
+다운받은 ${cont_model} controller zip을 해제합니다.
 
 ### VRC 개발환경의 설치 
 1. D:\util\hi6_vrc\가 되도록 복사합니다.
@@ -37,14 +37,14 @@
 
 - hi6_tp를 바로 실행 시키면 <U>TP600</U>으로 실행하게 됩니다.
 
-- 실질적인 Hi6 TP 모델은 <U>TP630</U>이 타겟이기 때문에 커맨드를 통해 '-layout=k'를 입력해서 TP630으로 실행해야 올바르게 실행한 것 입니다. 
+- 실질적인 ${cont_model} TP 모델은 <U>TP630</U>이 타겟이기 때문에 커맨드를 통해 '-layout=k'를 입력해서 TP630으로 실행해야 올바르게 실행한 것 입니다. 
 
 <b>TP630</b>&nbsp;![](../_assets/image_81.png)  
 
 <b>TP600</b>&nbsp;![](../_assets/image_84.png)
 
    ### hrspace 연동이 필요한 경우 
-    1. https://www.hyundai-robotics.com/customer/customer4.html?p=3 에서 HRSpace를 받아 설치합니다. 
+    1. https://hd-hyundairobotics.com/biz/product/support/291 에서 HRSpace를 받아 설치합니다. 
     2. workspace에서 마우스 오른쪽 클릭하여 "모델 불러오기..."로 로봇을 로딩합니다.
     3. robot에서 마우스 오른쪽 클릭하여 "로봇속성..."에서 제어기 연결을 "ENetHi6"를 선택합니다.
     4. PC주소와 로봇제어기의 IP주소를 "127.0.0.1"로 설정합니다.

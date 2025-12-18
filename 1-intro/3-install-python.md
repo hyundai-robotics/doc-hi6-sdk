@@ -5,7 +5,7 @@
 <br></br>
 1) 아래 링크는 python v3.8.0 설치 화면으로 연결됩니다. x86 32bit를 설치하십시오.
 
-    <span style='background-color:#ffdce0'>(주의! : Hi6 가상제어기는 32bit 애플리케이션이므로 python 런타임도 이와 일치시켜야 합니다. x86-64를 설치하면 안됩니다 !) </span>
+    <span style='background-color:#ffdce0'>(주의! : ${cont_model} 가상제어기는 32bit 애플리케이션이므로 python 런타임도 이와 일치시켜야 합니다. x86-64를 설치하면 안됩니다 !) </span>
 
     https://www.python.org/downloads/release/python-380/
 
@@ -31,12 +31,12 @@
 
 ## python import 검색 경로 추가
 1) .pth 라는 파일을 만들고 안에 _common/ 폴더가 위치한 경로를 지정해준다. 
-    SDK 내의 .pth 파일을 열어, Hi6 가상제어기의 HOME 경로에 맞게 아래 경로를 지정해줍니다.
+    SDK 내의 .pth 파일을 열어, ${cont_model} 가상제어기의 HOME 경로에 맞게 아래 경로를 지정해줍니다.
  
 
     파일내용 예:    
     ```
-    D:\Hi6\home_main\apps
+    D:\${cont_model}\home_main\apps
     ```
 
 2) 편집한 .pth 파일을 python 설치 경로/Lib/site-packages/ 에 배치합니다.

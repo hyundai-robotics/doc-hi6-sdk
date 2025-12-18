@@ -6,287 +6,287 @@
 	},
 	{
 		"link": "1-intro/README.md",
-		"char_ofs": 418,
-		"byte_ofs": 822
+		"char_ofs": 442,
+		"byte_ofs": 846
 	},
 	{
 		"link": "1-intro/1-prior-knowledge.md",
-		"char_ofs": 716,
-		"byte_ofs": 1446
+		"char_ofs": 760,
+		"byte_ofs": 1490
 	},
 	{
 		"link": "1-intro/2-plugin-app-concept.md",
-		"char_ofs": 1830,
-		"byte_ofs": 3100
+		"char_ofs": 1904,
+		"byte_ofs": 3174
 	},
 	{
 		"link": "1-intro/3-install-python.md",
-		"char_ofs": 2558,
-		"byte_ofs": 4541
+		"char_ofs": 2652,
+		"byte_ofs": 4635
 	},
 	{
 		"link": "1-intro/4-install-vscode.md",
-		"char_ofs": 3894,
-		"byte_ofs": 6512
+		"char_ofs": 4018,
+		"byte_ofs": 6636
 	},
 	{
 		"link": "1-intro/5-install-web-ui.md",
-		"char_ofs": 5318,
-		"byte_ofs": 9203
+		"char_ofs": 5442,
+		"byte_ofs": 9327
 	},
 	{
 		"link": "1-intro/6-install-hrspace.md",
-		"char_ofs": 5653,
-		"byte_ofs": 9820
+		"char_ofs": 5777,
+		"byte_ofs": 9944
 	},
 	{
 		"link": "2-example-helloworld/README.md",
-		"char_ofs": 8646,
-		"byte_ofs": 14430
+		"char_ofs": 8845,
+		"byte_ofs": 14629
 	},
 	{
 		"link": "2-example-helloworld/1-make-proj.md",
-		"char_ofs": 8901,
-		"byte_ofs": 14920
+		"char_ofs": 9100,
+		"byte_ofs": 15119
 	},
 	{
 		"link": "2-example-helloworld/2-make-hello.md",
-		"char_ofs": 10733,
-		"byte_ofs": 17448
+		"char_ofs": 10945,
+		"byte_ofs": 17660
 	},
 	{
 		"link": "2-example-helloworld/3-function.md",
-		"char_ofs": 12170,
-		"byte_ofs": 19710
+		"char_ofs": 12402,
+		"byte_ofs": 19942
 	},
 	{
 		"link": "2-example-helloworld/4-make-ui.md",
-		"char_ofs": 14077,
-		"byte_ofs": 22536
+		"char_ofs": 14309,
+		"byte_ofs": 22768
 	},
 	{
 		"link": "3-practice-argosx/README.md",
-		"char_ofs": 16581,
-		"byte_ofs": 26412
+		"char_ofs": 16813,
+		"byte_ofs": 26644
 	},
 	{
 		"link": "3-practice-argosx/1-roblang/README.md",
-		"char_ofs": 16602,
-		"byte_ofs": 26448
+		"char_ofs": 16834,
+		"byte_ofs": 26680
 	},
 	{
 		"link": "3-practice-argosx/1-roblang/1-concept-interface.md",
-		"char_ofs": 16997,
-		"byte_ofs": 27136
+		"char_ofs": 17229,
+		"byte_ofs": 27368
 	},
 	{
 		"link": "3-practice-argosx/1-roblang/2-argosx-stub.md",
-		"char_ofs": 20414,
-		"byte_ofs": 31982
+		"char_ofs": 20646,
+		"byte_ofs": 32214
 	},
 	{
 		"link": "3-practice-argosx/1-roblang/3-make-proj-argosx.md",
-		"char_ofs": 24257,
-		"byte_ofs": 36525
+		"char_ofs": 24489,
+		"byte_ofs": 36757
 	},
 	{
 		"link": "3-practice-argosx/1-roblang/4-make-attribute.md",
-		"char_ofs": 25041,
-		"byte_ofs": 37617
+		"char_ofs": 25273,
+		"byte_ofs": 37849
 	},
 	{
 		"link": "3-practice-argosx/1-roblang/5-make-roblang.md",
-		"char_ofs": 27090,
-		"byte_ofs": 40639
+		"char_ofs": 27322,
+		"byte_ofs": 40871
 	},
 	{
 		"link": "3-practice-argosx/1-roblang/6-roblang_func.md",
-		"char_ofs": 28666,
-		"byte_ofs": 42704
+		"char_ofs": 28898,
+		"byte_ofs": 42936
 	},
 	{
 		"link": "3-practice-argosx/1-roblang/7-xhost-call.md",
-		"char_ofs": 33785,
-		"byte_ofs": 48993
+		"char_ofs": 34017,
+		"byte_ofs": 49225
 	},
 	{
 		"link": "3-practice-argosx/1-roblang/8-xhost-method.md",
-		"char_ofs": 36678,
-		"byte_ofs": 53400
+		"char_ofs": 36910,
+		"byte_ofs": 53632
 	},
 	{
 		"link": "3-practice-argosx/1-roblang/9-non-blocking.md",
-		"char_ofs": 46563,
-		"byte_ofs": 63780
+		"char_ofs": 46795,
+		"byte_ofs": 64012
 	},
 	{
 		"link": "3-practice-argosx/1-roblang/10-regi-cmds.md",
-		"char_ofs": 54116,
-		"byte_ofs": 75237
+		"char_ofs": 54398,
+		"byte_ofs": 75519
 	},
 	{
 		"link": "3-practice-argosx/2-callback/README.md",
-		"char_ofs": 55374,
-		"byte_ofs": 77136
+		"char_ofs": 55656,
+		"byte_ofs": 77418
 	},
 	{
 		"link": "3-practice-argosx/2-callback/1-register-callback.md",
-		"char_ofs": 55705,
-		"byte_ofs": 77768
+		"char_ofs": 56007,
+		"byte_ofs": 78070
 	},
 	{
 		"link": "3-practice-argosx/2-callback/2-uses-callback.md",
-		"char_ofs": 56722,
-		"byte_ofs": 79361
+		"char_ofs": 57024,
+		"byte_ofs": 79663
 	},
 	{
 		"link": "3-practice-argosx/2-callback/3-ref-callback.md",
-		"char_ofs": 58629,
-		"byte_ofs": 82138
+		"char_ofs": 58931,
+		"byte_ofs": 82440
 	},
 	{
 		"link": "3-practice-argosx/3-setup-ui/README.md",
-		"char_ofs": 60875,
-		"byte_ofs": 84790
+		"char_ofs": 60272,
+		"byte_ofs": 84024
 	},
 	{
 		"link": "3-practice-argosx/3-setup-ui/1-concept-if.md",
-		"char_ofs": 61187,
-		"byte_ofs": 85477
+		"char_ofs": 60584,
+		"byte_ofs": 84711
 	},
 	{
 		"link": "3-practice-argosx/3-setup-ui/2-layout.md",
-		"char_ofs": 61808,
-		"byte_ofs": 86607
+		"char_ofs": 61205,
+		"byte_ofs": 85841
 	},
 	{
 		"link": "3-practice-argosx/3-setup-ui/3-setup-action.md",
-		"char_ofs": 63893,
-		"byte_ofs": 89287
+		"char_ofs": 63290,
+		"byte_ofs": 88521
 	},
 	{
 		"link": "3-practice-argosx/3-setup-ui/4-menu.md",
-		"char_ofs": 67222,
-		"byte_ofs": 93254
+		"char_ofs": 66619,
+		"byte_ofs": 92488
 	},
 	{
 		"link": "3-practice-argosx/3-setup-ui/5-load-param.md",
-		"char_ofs": 68165,
-		"byte_ofs": 94743
+		"char_ofs": 67562,
+		"byte_ofs": 93977
 	},
 	{
 		"link": "3-practice-argosx/3-setup-ui/6-load-file.md",
-		"char_ofs": 73388,
-		"byte_ofs": 102015
+		"char_ofs": 72785,
+		"byte_ofs": 101249
 	},
 	{
 		"link": "3-practice-argosx/3-setup-ui/7-f-btn.md",
-		"char_ofs": 77176,
-		"byte_ofs": 106645
+		"char_ofs": 76573,
+		"byte_ofs": 105879
 	},
 	{
 		"link": "3-practice-argosx/4-monitoring-panel/README.md",
-		"char_ofs": 78679,
-		"byte_ofs": 108894
+		"char_ofs": 78076,
+		"byte_ofs": 108128
 	},
 	{
 		"link": "3-practice-argosx/4-monitoring-panel/1-concept-if.md",
-		"char_ofs": 78926,
-		"byte_ofs": 109375
+		"char_ofs": 78323,
+		"byte_ofs": 108609
 	},
 	{
 		"link": "3-practice-argosx/4-monitoring-panel/2-layout.md",
-		"char_ofs": 79132,
-		"byte_ofs": 109755
+		"char_ofs": 78529,
+		"byte_ofs": 108989
 	},
 	{
 		"link": "3-practice-argosx/4-monitoring-panel/3-panel-action.md",
-		"char_ofs": 80821,
-		"byte_ofs": 111894
+		"char_ofs": 80218,
+		"byte_ofs": 111128
 	},
 	{
 		"link": "3-practice-argosx/4-monitoring-panel/4-menu.md",
-		"char_ofs": 83792,
-		"byte_ofs": 115555
+		"char_ofs": 83189,
+		"byte_ofs": 114789
 	},
 	{
 		"link": "3-practice-argosx/5-user-bar/README.md",
-		"char_ofs": 84774,
-		"byte_ofs": 117037
+		"char_ofs": 84171,
+		"byte_ofs": 116271
 	},
 	{
 		"link": "3-practice-argosx/5-user-bar/1-concept-if.md",
-		"char_ofs": 85157,
-		"byte_ofs": 117850
+		"char_ofs": 84554,
+		"byte_ofs": 117084
 	},
 	{
 		"link": "3-practice-argosx/5-user-bar/2-layout.md",
-		"char_ofs": 85385,
-		"byte_ofs": 118236
+		"char_ofs": 84782,
+		"byte_ofs": 117470
 	},
 	{
 		"link": "3-practice-argosx/5-user-bar/3-usrbar-action.md",
-		"char_ofs": 86604,
-		"byte_ofs": 119903
+		"char_ofs": 86001,
+		"byte_ofs": 119137
 	},
 	{
 		"link": "3-practice-argosx/5-user-bar/4-inset-usrbar.md",
-		"char_ofs": 89047,
-		"byte_ofs": 123072
+		"char_ofs": 88444,
+		"byte_ofs": 122306
 	},
 	{
 		"link": "3-practice-argosx/6-translation/README.md",
-		"char_ofs": 89825,
-		"byte_ofs": 124160
+		"char_ofs": 89222,
+		"byte_ofs": 123394
 	},
 	{
 		"link": "3-practice-argosx/6-translation/1-update-setup/README.md",
-		"char_ofs": 90096,
-		"byte_ofs": 124719
+		"char_ofs": 89503,
+		"byte_ofs": 123963
 	},
 	{
 		"link": "3-practice-argosx/6-translation/1-update-setup/1-setup-menu.md",
-		"char_ofs": 90203,
-		"byte_ofs": 124937
+		"char_ofs": 89610,
+		"byte_ofs": 124181
 	},
 	{
 		"link": "3-practice-argosx/6-translation/1-update-setup/2-setup-ui.md",
-		"char_ofs": 92067,
-		"byte_ofs": 127612
+		"char_ofs": 91484,
+		"byte_ofs": 126866
 	},
 	{
 		"link": "3-practice-argosx/6-translation/1-update-setup/3-f-btn.md",
-		"char_ofs": 97397,
-		"byte_ofs": 134323
+		"char_ofs": 96834,
+		"byte_ofs": 133597
 	},
 	{
 		"link": "3-practice-argosx/6-translation/2-update-panel.md",
-		"char_ofs": 98305,
-		"byte_ofs": 135550
+		"char_ofs": 97742,
+		"byte_ofs": 134824
 	},
 	{
 		"link": "3-practice-argosx/6-translation/3-update-userbar.md",
-		"char_ofs": 102968,
-		"byte_ofs": 141661
+		"char_ofs": 102415,
+		"byte_ofs": 140945
 	},
 	{
 		"link": "4-debug/README.md",
-		"char_ofs": 105611,
-		"byte_ofs": 145267
+		"char_ofs": 105068,
+		"byte_ofs": 144561
 	},
 	{
 		"link": "4-debug/1-debug-python.md",
-		"char_ofs": 105656,
-		"byte_ofs": 145346
+		"char_ofs": 105113,
+		"byte_ofs": 144640
 	},
 	{
 		"link": "4-debug/2-debug-ui.md",
-		"char_ofs": 108262,
-		"byte_ofs": 149934
+		"char_ofs": 107799,
+		"byte_ofs": 149308
 	},
 	{
 		"link": "5-installer/README.md",
-		"char_ofs": 110741,
-		"byte_ofs": 154501
+		"char_ofs": 110278,
+		"byte_ofs": 153875
 	}
 ]

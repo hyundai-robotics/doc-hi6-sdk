@@ -18,7 +18,7 @@ info.json을 클릭해 열고 아래와 같이 입력합니다.
 
 ``` json
 {
-   "author" : "Hyundai Robotics",
+   "author" : "HD Hyundai Robotics",
    "binding" : "plug-in",
    "copyright" : "All right reserved",
    "description" : "First example - hello_world",
@@ -47,7 +47,7 @@ info.json을 클릭해 열고 아래와 같이 입력합니다.
    <tr>
       <td>binding</td>
       <td>
-       Hi6 호스트 소프트웨어와의 결합 형태</br>
+       ${cont_model} 호스트 소프트웨어와의 결합 형태</br>
        - plug-in: 결한된 형태로 실행됨.</br>
        - stand-alone: 독립된 응용 프로그램(process)으로 실행됨. 
       </td>
