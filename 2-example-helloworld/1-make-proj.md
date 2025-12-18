@@ -18,7 +18,7 @@ Click info.json to open it and input the following.
 
 ``` json
 {
-   "author" : "Hyundai Robotics",
+   "author" : "HD Hyundai Robotics",
    "binding" : "plug-in",
    "copyright" : "All right reserved",
    "description" : "First example - hello_world",

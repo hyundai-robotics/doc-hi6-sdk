@@ -44,7 +44,7 @@ Please refer to the contents of <u> 1.4 Installing the Python 3 development envi
 <b>TP600</b>&nbsp;![](../_assets/image_84.png)
 
    ### When required to interlock with HRSpace
-    1. Download HRSpace from https://www.hyundai-robotics.com/customer/customer4.html?p=3 and install it.
+    1. Download HRSpace from https://hd-hyundairobotics.com/biz/product/support/291 and install it.
     2. Right-click the mouse on Workspace and load the robot using "Load Model."  
     3. Right-click the mouse on Robot and select "ENetHi6" to connect the controller in "Robot Attributes."
     4. Set the IP addresses of the PC and robot controller to "127.0.0.1."
