@@ -1,9 +1,9 @@
 ﻿# Table of contents
 
-* [Hi6 SDK 설명서](README.md)
+* [${cont_model} SDK 설명서](README.md)
 * [1. 개요](1-intro/README.md)
   * [1.1 필요한 사전 지식]( 1-intro/1-prior-knowledge.md)
-  * [1.2 Hi6 플러그인 앱(plugin-app)의 개념]( 1-intro/2-plugin-app-concept.md)
+  * [1.2 ${cont_model} 플러그인 앱(plugin-app)의 개념]( 1-intro/2-plugin-app-concept.md)
   * [1.3 python3 개발환경 설치]( 1-intro/3-install-python.md)
   * [1.4 VisualStudio Code의 설치]( 1-intro/4-install-vscode.md)
   * [1.5 웹기반 U/I 개발환경 설치]( 1-intro/5-install-web-ui.md)
