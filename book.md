@@ -1,4 +1,6 @@
-﻿# ${cont_model} SDK 설명서
+﻿
+[__SOURCE](README.md)
+# ${cont_model} SDK 설명서
 
 {% hint style="warning" %}
 본 제품 설명서에서 제공되는 정보는 HD현대로보틱스의 자산입니다.
@@ -19,7 +21,9 @@ ${cont_model} SDK는 공식 릴리즈 전이며 내부 검증 시험 및 보완 
 
 향후 인터페이스 사양이 예고 없이 크게 변경될 수 있으므로, 공식 시험 요원이 아니라면 이를 활용한 소프트웨어 개발에 주의해 주시기 바랍니다.
 
-{% endhint %}# 1. ${cont_model} SDK 개요
+{% endhint %}
+[__SOURCE](1-intro/README.md)
+# 1. ${cont_model} SDK 개요
 
 이 설명서는 ${cont_model} 제어기의 추가 기능 개발을 위한 플러그인 앱(plugin-app) 개발용 SDK (Software Development Kit) 사용법을 설명합니다.
 
@@ -30,7 +34,9 @@ SDK로 개발할 수 있는 앱의 기능은 아래와 같습니다.
 로봇언어에 새로운 명령문이나 객체형을 추가할 수 있습니다.
 전원On, 모터 on/off, 기동/정지 등 각종 이벤트에 수행할 동작을 추가할 수 있습니다.
 주기적으로 수행할 동작을 추가할 수 있습니다.
-티치펜던트를 위한 설정화면 등 사용자 정의 UI를 추가할 수 있습니다.# 1.1 필요한 사전 지식
+티치펜던트를 위한 설정화면 등 사용자 정의 UI를 추가할 수 있습니다.
+[__SOURCE](1-intro/1-prior-knowledge.md)
+# 1.1 필요한 사전 지식
 
 SDK를 활용한 앱(app) 개발을 하기 위해서는 아래의 기술들에 대해 기본 이상의 숙련도를 갖추고 있어야 합니다.
 
@@ -98,6 +104,8 @@ SDK를 활용한 앱(app) 개발을 하기 위해서는 아래의 기술들에 �
 
 
 		
+
+[__SOURCE](1-intro/2-plugin-app-concept.md)
 # 1.2 ${cont_model} 플러그인 앱(plugin-app)의 개념
 ${cont_model} 앱은 main module 내에서 동작하는 python 3 스크립트와, 티치펜던트 내에서 U/I 동작을 수행하는 javascript 기반 웹 소프트웨어로 구성됩니다.
 
@@ -117,7 +125,9 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
 
 티치펜던트 웹 앱은 OpenAPI 호출을 통해서 python 함수를 호출하고 데이터를 주고 받을 수 있습니다.
 
-![](../_assets/image_1.png)# 1.3 python3 개발환경 설치
+![](../_assets/image_1.png)
+[__SOURCE](1-intro/3-install-python.md)
+# 1.3 python3 개발환경 설치
 ## python3 설치
 아래의 절차에 따라 python v3.8을 설치합니다.
 
@@ -166,7 +176,9 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
 ## 동적 라이브러리 배치
 SDK 내의 ucrtbased.dll와 vcruntime140d.dll를 python 설치 경로에 배치합니다.
 
-예: C:\Program Files (x86)\Python38-32\ 에 복사.# 1.4 VisualStudio Code의 설치
+예: C:\Program Files (x86)\Python38-32\ 에 복사.
+[__SOURCE](1-intro/4-install-vscode.md)
+# 1.4 VisualStudio Code의 설치
 
 Microsot Visual Studio Code (이하 vscode로 지칭)는 무료로 사용가능한 강력한 텍스트 편집기입니다. 다양한 EXTENSION 설치를 통해, 수 많은 프로그래밍 언어의 개발환경을 제공합니다.
 
@@ -215,7 +227,9 @@ vscode 화면에서 가장 왼쪽에 아이콘들이 배치된 수직막대가 A
 
 
 
-이제 vscode를 사용할 준비가 끝났습니다. 상세한 사용방법은 vscode의 Help 메뉴 혹은 인터넷 강좌를 참고하여 습득하시기 바랍니다.# 1.5 웹기반 U/I 개발환경 설치
+이제 vscode를 사용할 준비가 끝났습니다. 상세한 사용방법은 vscode의 Help 메뉴 혹은 인터넷 강좌를 참고하여 습득하시기 바랍니다.
+[__SOURCE](1-intro/5-install-web-ui.md)
+# 1.5 웹기반 U/I 개발환경 설치
 
 티치펜던트를 위한 커스터마이즈된 U/I는 HTML5/CSS/jQuery의 웹앱 형태로 개발합니다.  
 
@@ -229,6 +243,8 @@ Google Chrome 웹 브라우저는 웹 앱의 구동 및 디버깅 환경을 제�
 
 https://www.google.com/intl/ko/chrome/
 
+
+[__SOURCE](1-intro/6-install-hrspace.md)
 # 1.6 HRSpace 로 플러그인 테스트 하기  
 
 본인이 작성한 플러그인 앱을 HRSpace 의 가상제어기 및 가상 티칭펜던트에서 테스트 할 수 있습니다.  
@@ -254,7 +270,7 @@ https://www.google.com/intl/ko/chrome/
 ## 1.6.3 HRSpace 실행하기
 ### a. 로봇 불러오기
 1) `윈도우 키` 입력 > `HRSpace3_kor` 입력 > 클릭 > 프로그램 실행
-2) 좌측 workspace 의 workspace 컴포넌트 우클릭 > ‘모델 불러오기‘ 클릭 > ‘Robot’ 클릭 > 원하는 모델 클릭  
+2) 좌측 workspace 의 workspace 컴포넌트 우클릭 > '모델 불러오기' 클릭 > 'Robot' 클릭 > 원하는 모델 클릭  
    <img src="../_assets/hrspace/00_select_robot_model.png" height=360vw></img><p style="background-color:orange; color:black; width:max-content"><b>단,  ${HRSpace 설치 경로}\VRC_${cont_model}\fbrr 에 있는 모델만 불러와야 에러가 발생하지 않습니다.</b></p> 
 
 3) `로봇제어기(RC) 타입 선택 팝업 창` > VRC_${cont_model} 클릭 > 확인 > 로봇 로드  
@@ -315,7 +331,9 @@ https://www.google.com/intl/ko/chrome/
 2. <p style="background-color:darkslategrey; color:white;width:max-content">플러그인을 실행한 상태에서 python 코드를 수정한 경우, 반영을 위해선 가상제어기를 재부팅하셔야 합니다.</p>&rightarrow; workspace 창의 robot 우클릭 > `가상제어기 도구` 클릭 > `재부팅` 클릭  <br>
    <img src="../_assets/hrspace/08_reboot_vrc.PNG" height=160vw>
    <img src="../_assets/hrspace/08_reboot_vrc_success.PNG" height=160vw>
-3. `1.6.4 가상 티칭펜던트에서 플러그인 실행하기` 재진행# 2. 초간단 프로젝트 : hello_world
+3. `1.6.4 가상 티칭펜던트에서 플러그인 실행하기` 재진행
+[__SOURCE](2-example-helloworld/README.md)
+# 2. 초간단 프로젝트 : hello_world
 
 아주 간단한 프로젝트로 app 제작을 시작해봅시다.
 
@@ -327,6 +345,8 @@ hello_world라는 이름의 이 app이 하는 일은, 히스토리 화면과 설
 - python 함수 hello( ) 구현
 - python 함수에 매개변수 전달하고 리턴값 전달받기
 - 간단한 웹 기반 U/I 화면 만들기
+
+[__SOURCE](2-example-helloworld/1-make-proj.md)
 # 2.1 hello_world 프로젝트 생성 - 폴더와 메타정보
 
 apps/ 폴더 밑에 hello_world 라는 이름의 폴더를 생성합니다. 폴더의 이름이 곧 프로젝트명이며, apps/ 폴더에서 유일한(unique) 이름이어야 합니다.
@@ -423,7 +443,9 @@ info.json을 클릭해 열고 아래와 같이 입력합니다.
       </td>
     </tr>
   </tbody>
-</table># 2.2 python 함수 hello( ) 구현
+</table>
+[__SOURCE](2-example-helloworld/2-make-hello.md)
+# 2.2 python 함수 hello( ) 구현
 
 New File 버튼으로 새로운 파일을 만들고 이름을 hello_world.py로 정합니다.
 ![](../_assets/image_16.png)
@@ -484,7 +506,9 @@ end
 
 <span style='background-color:#ffdce0'>
 주의: python 프로그램을 수정하면 가상제어기 main을 다시 실행해야 수정한 내용이 반영됩니다. 
-</span># 2.3 python 함수에 매개변수 전달하고 리턴값 전달받기
+</span>
+[__SOURCE](2-example-helloworld/3-function.md)
+# 2.3 python 함수에 매개변수 전달하고 리턴값 전달받기
 
 
 이제 python 함수에 name과 age라는 2개의 매개변수를 적용해봅시다. 아래와 같이 코드를 수정하여 introduce( ) 함수를 추가합니다.
@@ -571,6 +595,8 @@ end
 
 -  python에서 생성한 객체를 HRScript가 전달받은 경우, 이를 특별히 xpy-object라고 지칭합니다. xpy-객체에 대해서는 속성값을 읽거나 method를 호출할 수 있는데, 뒤에서 자세히 알아보도록 하겠습니다.
 - python 문법은 함수에서 복수 개의 리턴값을 외부로 전달할 수 있으나, HRScript로 전달받을 수는 없습니다.
+
+[__SOURCE](2-example-helloworld/4-make-ui.md)
 # 2.4 간단한 웹 기반 U/I 화면 만들기
 
 app에 대한 설정을 티치펜던트로 하기 위해, 웹 기반의 U/I를 추가할 수 있습니다.
@@ -695,7 +721,11 @@ COOLTEXT (https://cooltext.com/) : text를 로고 그림파일로 생성해주�
 (처음에는 1~2초 정도의 로딩 시간이 소요될 수 있습니다. 2번째 부터는 캐시에 의해 좀 더 빠르게 로딩됩니다.)
 
 ![](../_assets/image_23.png)
-# 3. 실전 프로젝트 : ArgosX# 3.1 실전 프로젝트 : ArgosX - 로봇언어
+
+[__SOURCE](3-practice-argosx/README.md)
+# 3. 실전 프로젝트 : ArgosX
+[__SOURCE](3-practice-argosx/1-roblang/README.md)
+# 3.1 실전 프로젝트 : ArgosX - 로봇언어
 
 
 이제 좀 더 실제에 가까운 예제 프로젝트를 실습해봅시다.
@@ -712,6 +742,8 @@ COOLTEXT (https://cooltext.com/) : text를 로고 그림파일로 생성해주�
 - xhost 모듈의 method 호출</br>
 - xhost 모듈의 method 참조설명서</br>
 - 로봇언어 함수 blocking 문제 해결</br>
+
+[__SOURCE](3-practice-argosx/1-roblang/1-concept-interface.md)
 # 3.1.1 ArgosX와 interface plug-in의 사양
 
 ## ArgosX 비전시스템의 사양
@@ -867,7 +899,9 @@ ArgosX를 인터페이스하기 위한 플러그인은 아래와 같은 사양�
 티치펜던트의 ArgosX용 사용자 막대를 열면, 아래와 같은 U/I가 제공된다.
 
 - light-on 버튼 : ArgosX의 LED 조명을 켠다.
-- light-off 버튼 : ArgosX의 LED 조명을 끈다.# 3.1.2 ArgosX stub
+- light-off 버튼 : ArgosX의 LED 조명을 끈다.
+[__SOURCE](3-practice-argosx/1-roblang/2-argosx-stub.md)
+# 3.1.2 ArgosX stub
 
 ArgosX 비전 시스템은 실제로 존재하는 장치가 아닙니다. 따라서 우리가 인터페이스 플러그인을 시험하려면, ArgosX의 역할을 대신해줄 시험용 소프트웨어, 즉 stub가 필요합니다.
 
@@ -1049,7 +1083,9 @@ python argosx_stub.py
 
 출력은 하단의 TERMINAL 창으로 나옵니다. 우상단의 ![](../../_assets/image_25.png) 버튼을 조작해 디버깅을 일시정지, 재실행, 정지할 수 있습니다.
 
-![](../../_assets/image_26.png)# 3.1.3 argosx 프로젝트 생성
+![](../../_assets/image_26.png)
+[__SOURCE](3-practice-argosx/1-roblang/3-make-proj-argosx.md)
+# 3.1.3 argosx 프로젝트 생성
 
 apps/ 폴더 밑에 argosx 라는 이름의 폴더를 생성합니다.
 
@@ -1091,6 +1127,8 @@ main.py
 import argosx
 end
 ```
+
+[__SOURCE](3-practice-argosx/1-roblang/4-make-attribute.md)
 # 3.1.4 ip_addr, port attribute 생성
 
 <u>ArgosX와 interface plug-in의 사양</u>을 보면 우선 ip_addr를 지정하는 문자열 속성(attribute)이 있습니다.
@@ -1196,6 +1234,8 @@ end
 ```
 192.168.1.172
 ```
+
+[__SOURCE](3-practice-argosx/1-roblang/5-make-roblang.md)
 # 3.1.5 ArgosX의 로봇언어용 함수 생성
 
 
@@ -1311,6 +1351,8 @@ data
 
 close()
 ```
+
+[__SOURCE](3-practice-argosx/1-roblang/6-roblang_func.md)
 # 3.1.6 ArgosX의 로봇언어용 함수 구현
 
 이제 각 함수의 실제 동작을 구현해봅시다.
@@ -1561,7 +1603,9 @@ response: res (9, 15.5, 10.3, 11.2, 19.2, 1.3)
 마지막 print 문이 실행될 때마다 티치펜던트 안내프레임에 아래와 같이 출력됩니다.
 ```
 9.000000 15.500000 10.300000 11.200000, 19.200000 1.300000
-```# 3.1.7 xhost 모듈의 method 호출
+```
+[__SOURCE](3-practice-argosx/1-roblang/7-xhost-call.md)
+# 3.1.7 xhost 모듈의 method 호출
 
 xhost는 호스트(로봇제어기)의 기능을 호출하기 위한 다양한 method를 포함하는 모듈입니다.
 
@@ -1725,7 +1769,9 @@ def on_app_init() -> int:
 
 지정한 신호가 할당(bold체)으로 표시됩니다.
 
-![](../../_assets/image_28.png)# 3.1.8 xhost 모듈의 method 참조설명서
+![](../../_assets/image_28.png)
+[__SOURCE](3-practice-argosx/1-roblang/8-xhost-method.md)
+# 3.1.8 xhost 모듈의 method 참조설명서
 
 <html>
 <body>
@@ -2204,7 +2250,9 @@ serial communication receive string type data<br><br>
 
 <hr>
 </body>
-</html># 3.1.9 로봇언어 함수 blocking 문제 해결
+</html>
+[__SOURCE](3-practice-argosx/1-roblang/9-non-blocking.md)
+# 3.1.9 로봇언어 함수 blocking 문제 해결
 ## blocking 문제
 
 
@@ -2518,6 +2566,8 @@ job
      end
 ```
 
+
+[__SOURCE](3-practice-argosx/1-roblang/10-regi-cmds.md)
 # 3.1.10 로봇언어 명령입력 등록
 
 실제 TP를 사용하다보면 로봇언어를 직접 입력하는 것은 번거로운 일입니다.
@@ -2589,7 +2639,9 @@ argosx 폴더 안에 cmds.json을 추가하여 해당 파일 안에 명령어의
 ![](../../_assets/image_82.png)
 
 [명령입력]-[argosx]
-![](../../_assets/image_83.png)# 3.2 실전 프로젝트 : ArgosX - callback
+![](../../_assets/image_83.png)
+[__SOURCE](3-practice-argosx/2-callback/README.md)
+# 3.2 실전 프로젝트 : ArgosX - callback
 
 
 ${cont_model} 제어기의 동작에는 모드 변경, 모터ON, 리셋, 기동, 정지, Accuracy OK 등 주요 이벤트들이 있습니다. 각 plug-in 들은 이러한 이벤트에 대해 고유한 동작을 수행하도록 함수를 등록시켜 둘 수 있습니다.
@@ -2600,7 +2652,9 @@ ${cont_model} 제어기의 동작에는 모드 변경, 모터ON, 리셋, 기동,
 
 * callback 함수 등록
 * callback 함수 구현
-* callback 함수 참조설명서# 3.2.1 callback 함수 등록
+* callback 함수 참조설명서
+[__SOURCE](3-practice-argosx/2-callback/1-register-callback.md)
+# 3.2.1 callback 함수 등록
 
 
 callback 함수를 등록하는 방법은 아주 간단합니다. 각 이벤트 별로 callback 함수명이 정해져 있으며, plug-in 코드에 이 함수명으로 함수를 정의해놓기만 하면, plug-in이 import 될 때 자동으로 등록됩니다.
@@ -2660,6 +2714,8 @@ on_motor_on
 
 on_motor_off
 ```
+
+[__SOURCE](3-practice-argosx/2-callback/2-uses-callback.md)
 # 3.2.2 callback 함수 구현
 callback 함수가 잘 호출되는 것을 확인했으니, 이제 실제 동작을 구현해봅시다.
 
@@ -2758,6 +2814,8 @@ LED light is OFF
 request : light-on
 LED light is ON
 ```
+
+[__SOURCE](3-practice-argosx/2-callback/3-ref-callback.md)
 # 3.2.3 callback 함수 참조설명서
 
 <table>
@@ -2833,7 +2891,9 @@ LED light is ON
       </td>
     </tr>
   </tbody>
-</table># 3.3.1 실전 프로젝트 : ArgosX - 설정화면 U/I 개발
+</table>
+[__SOURCE](3-practice-argosx/3-setup-ui/README.md)
+# 3.3.1 실전 프로젝트 : ArgosX - 설정화면 U/I 개발
 
 플러그인에 각종 설정이 있다면, 사용자에게 설정값을 보여주고 새로운 값으로 변경할 수 있도록 해주는 설정화면이 필요합니다.
 
@@ -2848,6 +2908,8 @@ LED light is ON
 * 설정화면의 값 불러오기와 저장하기
 * 설정 파일 불러오기와 저장하기
 * F 버튼 동작 - default 값으로 초기화
+
+[__SOURCE](3-practice-argosx/3-setup-ui/1-concept-if.md)
 # 3.3.1 ArgosX의 설정화면 사용자 인터페이스의 사양
 
 아래와 같은 사양으로 설정화면 사용자 인터페이스를 만들어 봅시다.
@@ -2869,7 +2931,9 @@ job 프로그램에서의 import argosx 의 수행 여부와 무관하게, 설�
 
 argosx/info.json 파일의 startup 항목을 "manual"에서 "boot"로 바꿉니다. 이제, 제어기 booting 시에 argosx가 import 되므로, job 프로그램에서 import argosx 를 수행할 필요가 없습니다.
 
-(여전히, HRScript에서 설정할 수도 있습니다.)# 3.3.2 설정화면의 레이아웃
+(여전히, HRScript에서 설정할 수도 있습니다.)
+[__SOURCE](3-practice-argosx/3-setup-ui/2-layout.md)
+# 3.3.2 설정화면의 레이아웃
 
 
 argosx 의 부모인 apps/ 폴더에 대해 vscode를 여십시오.
@@ -2974,6 +3038,8 @@ setup.html의 대략적인 레이아웃
 
 
 
+
+[__SOURCE](3-practice-argosx/3-setup-ui/3-setup-action.md)
 # 3.3.3 설정화면의 동작
 
 setup.html의 head 안에 아래와 같이 script를 추가합니다.
@@ -3100,7 +3166,9 @@ __setGuideBarMsg(element의 id 혹은 name, 표시할 message)___
 
 이러한 설정값과 관련된 동작은 setDomPath("/apps/argosx/svr_setup");의 호출과 updateData( ) 함수의 정의로 구현됩니다.
 
-자세한 내용은 이 후의 절에서 다시 설명하겠습니다.# 3.3.4 설명화면 메뉴의 주입
+자세한 내용은 이 후의 절에서 다시 설명하겠습니다.
+[__SOURCE](3-practice-argosx/3-setup-ui/4-menu.md)
+# 3.3.4 설명화면 메뉴의 주입
 
 hello_world 예제에서 이미 메뉴 주입을 실습해 본 바 있습니다.
 
@@ -3160,6 +3228,8 @@ EZGIFCOM (https://ezgif.com/svg-to-png) : SVG 파일을 원하는 해상도의 P
 
 
 
+
+[__SOURCE](3-practice-argosx/3-setup-ui/5-load-param.md)
 # 3.3.5 설정화면의 값 불러오기와 저장하기
 
 
@@ -3393,6 +3463,8 @@ IP address를 192.168.1.172로 변경하고, Failure output signal에 3.4 <enter
 
 
 
+
+[__SOURCE](3-practice-argosx/3-setup-ui/6-load-file.md)
 # 3.3.6 설정 파일 불러오기와 저장하기
 
 앞 절에서는 설정 값을 python 변수에 저장하고, 다시 불러오는 실습을 했습니다.
@@ -3601,6 +3673,8 @@ main S/W를 재실행 한 후 ArgosX 설정화면을 열어봅니다. 파일에 
 
 ![](../../_assets/image_46.png)
 
+
+[__SOURCE](3-practice-argosx/3-setup-ui/7-f-btn.md)
 # 3.3.7 F버튼 동작 - default 값으로 초기화
 
 
@@ -3675,7 +3749,9 @@ InitButtonBar( ) 함수의 리턴값
 
 또한 Initialize All 버튼을 클릭하여 화면 전체의 값이 default 값으로 복원되는지 확인합니다.
 
-![](../../_assets/image_48.png)# 3.4 실전 프로젝트 : ArgosX - 모니터링 panel U/I 개발
+![](../../_assets/image_48.png)
+[__SOURCE](3-practice-argosx/4-monitoring-panel/README.md)
+# 3.4 실전 프로젝트 : ArgosX - 모니터링 panel U/I 개발
 
 분할된 화면을 통해 플러그인의 현재 상태를 사용자에게 보여주려면, 모니터링 panel이 있어야 합니다.
 
@@ -3685,7 +3761,9 @@ InitButtonBar( ) 함수의 리턴값
 * ArgosX의 모니터링 panel 사용자 인터페이스의 사양
 * 모니터링 panel의 레이아웃
 * 모니터링 panel의 동작
-* panel 메뉴의 주입# 3.4.1 ArgosX의 모니터링 panel 사용자 인터페이스의 사양
+* panel 메뉴의 주입
+[__SOURCE](3-practice-argosx/4-monitoring-panel/1-concept-if.md)
+# 3.4.1 ArgosX의 모니터링 panel 사용자 인터페이스의 사양
 
 아래와 같은 정보들을 관측할 수 있는 모니터링 panel 사용자 인터페이스를 만들어 봅시다.
 
@@ -3699,6 +3777,8 @@ InitButtonBar( ) 함수의 리턴값
 <br></br>
 ![](../../_assets/image_49.png)
 
+
+[__SOURCE](3-practice-argosx/4-monitoring-panel/2-layout.md)
 # 3.4.2 모니터링 panel의 레이아웃
 
 argosx 의 부모인 apps/ 폴더에 대해 vscode를 여십시오.
@@ -3773,6 +3853,8 @@ panel.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Li
 
 
 
+
+[__SOURCE](3-practice-argosx/4-monitoring-panel/3-panel-action.md)
 # 3.4.3 모니터링 panel의 동작
 
 
@@ -3931,6 +4013,8 @@ ArgosX stub를 실행하고 가상 티치펜던트로 job 프로그램을 실행
 
 
 
+
+[__SOURCE](3-practice-argosx/4-monitoring-panel/4-menu.md)
 # 3.4.4 panel 메뉴의 주입
 
 ArgosX의 모니터링 기능을, panel 메뉴에 주입해봅시다.
@@ -3985,6 +4069,8 @@ panel_argosx.png의 예 (이 그림을 다운받아 사용해도 됩니다.)
 
 가상 티치펜던트를 조작해, 요청과 응답을 수행해봅시다. n.request와 n.response 값이 증가하면 정상입니다.
 
+
+[__SOURCE](3-practice-argosx/5-user-bar/README.md)
 # 3.5 실전 프로젝트 : ArgosX - user-bar U/I 개발
 
 이전 챕터에서 우리는 로봇언어를 통해 플러그인에서 구현한 기능을 수행하는 방법을 배웠습니다.
@@ -3997,6 +4083,8 @@ panel_argosx.png의 예 (이 그림을 다운받아 사용해도 됩니다.)
 * 사용자 막대의 레이아웃
 * 사용자 막대의 동작
 * 사용자 막대의 주입
+
+[__SOURCE](3-practice-argosx/5-user-bar/1-concept-if.md)
 # 3.5.1 ArgosX의 user-bar 사용자 인터페이스의 사양
 
 사용자키 버튼을 여러 번 누르면 사용자 막대가 전환됩니다.
@@ -4007,7 +4095,9 @@ panel_argosx.png의 예 (이 그림을 다운받아 사용해도 됩니다.)
 - light-off 버튼 : ArgosX의 LED 조명을 끈다.
 <br></br>
 
-![](../../_assets/image_56.png)# 3.5.2 사용자 막대의 레이아웃
+![](../../_assets/image_56.png)
+[__SOURCE](3-practice-argosx/5-user-bar/2-layout.md)
+# 3.5.2 사용자 막대의 레이아웃
 
 argosx 의 부모인 apps/ 폴더에 대해 vscode를 여십시오.
 
@@ -4047,7 +4137,9 @@ ubar.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Liv
 
 
 아직 ubar.js의 내용은 없지만, 레이아웃이 정상적인지는 확인할 수 있습니다.
-<br>![](../../_assets/image_59.png)# 3.5.3 사용자 막대의 동작
+<br>![](../../_assets/image_59.png)
+[__SOURCE](3-practice-argosx/5-user-bar/3-usrbar-action.md)
+# 3.5.3 사용자 막대의 동작
 
 ## 클라이언트단 (티치펜던트)
 
@@ -4183,6 +4275,8 @@ ArgosX stub 콘솔 출력
 
 
 
+
+[__SOURCE](3-practice-argosx/5-user-bar/4-inset-usrbar.md)
 # 3.5.4 사용자 막대의 주입
 
 ArgosX의 사용자 막대를, 실제 티치펜던트에 주입해봅시다.
@@ -4223,6 +4317,8 @@ menu.json
 ![](../../_assets/image_62.png)
 
 
+
+[__SOURCE](3-practice-argosx/6-translation/README.md)
 # 3.6 실전 프로젝트 : ArgosX - 다국어화
 
 
@@ -4235,13 +4331,17 @@ menu.json
 
 * 설정 화면 U/I 다국어화 
 * 모니터링 panel U/I 다국어화 
-* user-bar U/I 다국어화# 3.6.1 설정 화면 U/I 다국어화
+* user-bar U/I 다국어화
+[__SOURCE](3-practice-argosx/6-translation/1-update-setup/README.md)
+# 3.6.1 설정 화면 U/I 다국어화
 
 먼저, 설정 화면의 U/I의 대하여 번역 작업을 시작해봅시다. 
 
 * 설정화면 메뉴의 번역 
 * 설정화면 U/I의 번역 
 * F버튼의 U/I의 번역
+
+[__SOURCE](3-practice-argosx/6-translation/1-update-setup/1-setup-menu.md)
 # 3.6.1.1 설정화면 메뉴의 번역 
 
 ## string table의 등록
@@ -4325,6 +4425,8 @@ menu.json
     
     ![](../../../_assets/image_86.png)
 
+
+[__SOURCE](3-practice-argosx/6-translation/1-update-setup/2-setup-ui.md)
 # 3.6.1.2 설정화면 U/I의 번역 
 
 ## setup layout에서의 변경
@@ -4524,6 +4626,8 @@ setElemByLang과 setGuideMsgByLang 을 통해서 각 element들과 guidebar 메�
 
 ![](../../../_assets/image_87.png)
 
+
+[__SOURCE](3-practice-argosx/6-translation/1-update-setup/3-f-btn.md)
 # 3.6.1.3 F 버튼 U/I의 번역 
 F 버튼의 U/I의 내용을 번역하는 동작을 추가해봅시다.
 
@@ -4573,6 +4677,8 @@ function initButtonBar()
 
 ![](../../../_assets/image_88.png)
 
+
+[__SOURCE](3-practice-argosx/6-translation/2-update-panel.md)
 # 3.6.2 모니터링 panel U/I 다국어화
 다음으로는 모니터링 panel에서의 번역 작업을 따라해봅시다.
 
@@ -4771,7 +4877,9 @@ panel의 경우 elements들의 명칭만 변경해주면 되기 때문에 update
 
 가상 제어기와 TP를 재부팅한 뒤, 정상 동작이 된다면 아래와 같은 모니터링 panel 화면을 확인하실 수 있습니다.
 
-![](../../_assets/image_90.png)# 3.6.3 user-bar U/I 다국어화
+![](../../_assets/image_90.png)
+[__SOURCE](3-practice-argosx/6-translation/3-update-userbar.md)
+# 3.6.3 user-bar U/I 다국어화
 ## 1. user-bar layout에서의 변경
 
 User-bar U/I의 번역을 위해 먼저 ubar.html을 살펴봅시다.
@@ -4888,10 +4996,14 @@ ubar의 경우 elements들의 명칭만 변경해주면 되기 때문에 setElem
 
 가상 제어기와 TP를 재부팅한 뒤, 정상 동작이 된다면 아래와 같은 user-bar 화면을 확인하실 수 있습니다.
 
-![](../../_assets/image_91.png)# 4. 디버깅
+![](../../_assets/image_91.png)
+[__SOURCE](4-debug/README.md)
+# 4. 디버깅
 
 * python 코드의 디버깅
 * web 기반 U/I의 디버깅
+
+[__SOURCE](4-debug/1-debug-python.md)
 # 4.1 python 코드의 디버깅
 
 우리가 작성한 python 코드에 web U/I에 문법오류 혹은 구현체의 논리적인 오류가 있으면, 디버거를 동원해 원인을 추적하여 보완해야 합니다.
@@ -4998,6 +5110,8 @@ test.py의 동작은 xhost_dbg에 의해 제어기 호스트와 연동되기 때
 
 
 
+
+[__SOURCE](4-debug/2-debug-ui.md)
 # 4.2 web 기반 U/I의 디버깅
 
 
@@ -5104,6 +5218,8 @@ html이나 css, javascript 소스코드를 수정한 후, 웹 브라우저에서
 
 
 
+
+[__SOURCE](5-installer/README.md)
 # 5. 인스톨러
 
 (추후 작성 필요)

@@ -1,4 +1,4 @@
-# 1.2 ${cont_model} 플러그인 앱(plugin-app)의 개념
+﻿# 1.2 ${cont_model} 플러그인 앱(plugin-app)의 개념
 ${cont_model} 앱은 main module 내에서 동작하는 python 3 스크립트와, 티치펜던트 내에서 U/I 동작을 수행하는 javascript 기반 웹 소프트웨어로 구성됩니다.
 
 만일 U/I 가 없는 앱이라면 python 스크립트만으로 구성될 수도 있습니다.

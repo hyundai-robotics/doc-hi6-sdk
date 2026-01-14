@@ -1,4 +1,4 @@
-# 3.2 실전 프로젝트 : ArgosX - callback
+﻿# 3.2 실전 프로젝트 : ArgosX - callback
 
 
 ${cont_model} 제어기의 동작에는 모드 변경, 모터ON, 리셋, 기동, 정지, Accuracy OK 등 주요 이벤트들이 있습니다. 각 plug-in 들은 이러한 이벤트에 대해 고유한 동작을 수행하도록 함수를 등록시켜 둘 수 있습니다.

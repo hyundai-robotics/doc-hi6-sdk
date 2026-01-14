@@ -1,4 +1,4 @@
-# 3.2.2 callback 함수 구현
+﻿# 3.2.2 callback 함수 구현
 callback 함수가 잘 호출되는 것을 확인했으니, 이제 실제 동작을 구현해봅시다.
 
 <U>ArgosX와 interface plug-in의 사양</U>을 확인해보면, ArgosX 하드웨어측으로 "light-on"과 "light-off" 메시지를 송신하기만 하면 됩니다.

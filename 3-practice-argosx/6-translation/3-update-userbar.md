@@ -1,4 +1,4 @@
-# 3.6.3 user-bar U/I 다국어화
+﻿# 3.6.3 user-bar U/I 다국어화
 ## 1. user-bar layout에서의 변경
 
 User-bar U/I의 번역을 위해 먼저 ubar.html을 살펴봅시다.

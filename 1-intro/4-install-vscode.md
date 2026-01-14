@@ -1,4 +1,4 @@
-# 1.4 VisualStudio Code의 설치
+﻿# 1.4 VisualStudio Code의 설치
 
 Microsot Visual Studio Code (이하 vscode로 지칭)는 무료로 사용가능한 강력한 텍스트 편집기입니다. 다양한 EXTENSION 설치를 통해, 수 많은 프로그래밍 언어의 개발환경을 제공합니다.
 

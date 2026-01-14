@@ -23,7 +23,7 @@
 ## 1.6.3 HRSpace 실행하기
 ### a. 로봇 불러오기
 1) `윈도우 키` 입력 > `HRSpace3_kor` 입력 > 클릭 > 프로그램 실행
-2) 좌측 workspace 의 workspace 컴포넌트 우클릭 > ‘모델 불러오기‘ 클릭 > ‘Robot’ 클릭 > 원하는 모델 클릭  
+2) 좌측 workspace 의 workspace 컴포넌트 우클릭 > '모델 불러오기' 클릭 > 'Robot' 클릭 > 원하는 모델 클릭  
    <img src="../_assets/hrspace/00_select_robot_model.png" height=360vw></img><p style="background-color:orange; color:black; width:max-content"><b>단,  ${HRSpace 설치 경로}\VRC_${cont_model}\fbrr 에 있는 모델만 불러와야 에러가 발생하지 않습니다.</b></p> 
 
 3) `로봇제어기(RC) 타입 선택 팝업 창` > VRC_${cont_model} 클릭 > 확인 > 로봇 로드  
