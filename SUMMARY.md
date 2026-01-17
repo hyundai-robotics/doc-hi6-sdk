@@ -1,6 +1,6 @@
 ﻿# Table of contents
 
-* [${cont_model} SDK 설명서](README.md)
+* [${cont_model} 제어기 기능설명서 - SDK](README.md)
 * [1. 개요](1-intro/README.md)
   * [1.1 필요한 사전 지식]( 1-intro/1-prior-knowledge.md)
   * [1.2 ${cont_model} 플러그인 앱(plugin-app)의 개념]( 1-intro/2-plugin-app-concept.md)
