@@ -1,4 +1,4 @@
-# 3.5 Practical project: Developing an ArgosX user bar UI
+﻿# 3.5 Practical project: Developing an ArgosX user bar UI
 
 In the previous chapters, we learned how to perform the functions implemented in the plug-ins using a robot language.
 

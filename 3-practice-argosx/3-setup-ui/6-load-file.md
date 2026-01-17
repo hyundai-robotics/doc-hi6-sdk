@@ -1,4 +1,4 @@
-# 3.3.6 Loading and saving the setup files
+﻿# 3.3.6 Loading and saving the setup files
 
 In the previous section, we practiced saving the setup values into the Python variables and loading them back.
 
@@ -185,7 +185,7 @@ def on_app_init() -> int:
 
 Here, let's repeat the test we performed in the previous section.
 
-Open the ArgosX setup screen, change the setup values, ​​such as the IP address and output assigned signal, and save them by pressing the [OK] key.
+Open the ArgosX setup screen, change the setup values,   such as the IP address and output assigned signal, and save them by pressing the [OK] key.
 
 Check whether an argosx.json file is created in the project/ folder of the virtual controller, as shown below.
 

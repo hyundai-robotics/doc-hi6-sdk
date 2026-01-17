@@ -1,4 +1,4 @@
-# 3.5.1 Specifications of the ArgosX user bar user interface
+﻿# 3.5.1 Specifications of the ArgosX user bar user interface
 
 Pressing the User Key button multiple times will switch the user bar.
 

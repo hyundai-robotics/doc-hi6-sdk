@@ -1,4 +1,4 @@
-# 3.4.4 Injecting a panel item into the panel menu
+﻿# 3.4.4 Injecting a panel item into the panel menu
 
 Let's inject the ArgosX monitoring function into the panel menu.
 
@@ -24,7 +24,7 @@ menu.json
 ]
 ```
 
-Let’s make a picture icon that will be injected into the panel menu. A png icon with a transparent 40 x 40-pixel background would be sufficient.
+Let's make a picture icon that will be injected into the panel menu. A png icon with a transparent 40 x 40-pixel background would be sufficient.
 
 Here, we just made panel_argosx.png by scaling down the existing lm_argosx.png properly and adjusting the colors.
 

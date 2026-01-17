@@ -1,4 +1,4 @@
-# 2.3 Transferring parameters to a Python function and receiving a return value
+﻿# 2.3 Transferring parameters to a Python function and receiving a return value
 
 
 Now, let's apply two parameters, name and age, to a Python function. Add the introduce( ) function by modifying the code as follows.

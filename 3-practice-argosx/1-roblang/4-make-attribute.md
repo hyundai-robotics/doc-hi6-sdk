@@ -1,4 +1,4 @@
-# 3.1.4 Creating ip_addr and port attributes
+﻿# 3.1.4 Creating ip_addr and port attributes
 
 When looking at <u>3.1.1 Specification of ArgosX and interface plug-ins</u>, you can find a string attribute to designate the ip_addr.
 
@@ -8,7 +8,7 @@ Add the global variables and attr_names( ) function to the argosx_main.py file, 
 
 We can define and use many global variables in the Python program. However, only the names listed in the tuple returned by attr_names( ) will be exposed in HRScript as ArgosX module attributes. For variables exposed as attributes, the getter and setter functions with get_ and set_ added to their names should be defined.
 
-For this example, let’s define two global variables, ip_attr and port, then expose them as attributes and permit reading and writing them in HRScript.
+For this example, let's define two global variables, ip_attr and port, then expose them as attributes and permit reading and writing them in HRScript.
 
 
 

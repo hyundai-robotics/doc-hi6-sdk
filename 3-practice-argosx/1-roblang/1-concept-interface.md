@@ -1,4 +1,4 @@
-# 3.1.1 Specifications of ArgosX and interface plug-ins
+﻿# 3.1.1 Specifications of ArgosX and interface plug-ins
 
 ## Specifications of the ArgosX vision system
 
@@ -25,7 +25,7 @@
        - The robot controller and ArgosX hardware communicate with each other through Ethernet UDP communications.</br>
         - The IP address of the ArgosX hardware is 192.168.1.XX. As the last set of digits, XX, should be set using the dip switch, the robot side should send a UDP request accordingly.</br>
         - The port number on the ArgosX hardware is fixed as 54321. However, it may change in future products.</br>
-        - Upon receiving a UDP request, the ArgosX hardware will send a response to the sender’s IP address.
+        - Upon receiving a UDP request, the ArgosX hardware will send a response to the sender's IP address.
       </td>
     </tr>
     <tr>

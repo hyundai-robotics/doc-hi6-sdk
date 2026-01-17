@@ -8,7 +8,7 @@ What this app, named hello_world, does is print a Hello, world! string onto the 
 
 
 
-Creating a hello_world project – Folders and meta-information
+Creating a hello_world project - Folders and meta-information
 Implementing the Python function hello( )
 Transferring parameters to a Python function and receiving a return value
 Creating a simple web-based UI

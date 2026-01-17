@@ -1,11 +1,11 @@
-# 3.5.2 Layout of the user bar
+﻿# 3.5.2 Layout of the user bar
 
 Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 
 Create ui/ubar.html and ui/ubar.js files.
 <br>![](../../_assets/image_57.png)
 
-Write the content below, which is about a simple layout consisting of two buttons. The first column of the table is given a class called 'ubar-bt', which is defined in the common style.css. It automatically recognizes TP600 and TP630 and gives the button’s sizes and colors similar to the default UI. If you want to change the style, you can define a class using a separate local css and apply it.
+Write the content below, which is about a simple layout consisting of two buttons. The first column of the table is given a class called 'ubar-bt', which is defined in the common style.css. It automatically recognizes TP600 and TP630 and gives the button's sizes and colors similar to the default UI. If you want to change the style, you can define a class using a separate local css and apply it.
 
 ubar.html
 ``` html

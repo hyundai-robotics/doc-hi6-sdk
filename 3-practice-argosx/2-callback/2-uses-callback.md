@@ -1,4 +1,4 @@
-# 3.2.2 Implementing a callback function
+﻿# 3.2.2 Implementing a callback function
 Because we ensured that the callback functions are called well, let's implement the actual operations.
 
 As you can see by checking <U>3.1.1 Specifications of ArgosX and interface plug-ins</U>, you just need to send the "light-on" and "light-off" messages to the ArgosX hardware.

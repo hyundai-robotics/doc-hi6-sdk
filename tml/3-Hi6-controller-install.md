@@ -1,4 +1,4 @@
-# 1.3 Installing an ${cont_model} virtual controller 
+﻿# 1.3 Installing an ${cont_model} virtual controller 
 
 (temporary)
 <br></br>

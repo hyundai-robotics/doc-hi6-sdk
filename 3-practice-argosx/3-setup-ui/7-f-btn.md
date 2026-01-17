@@ -1,4 +1,4 @@
-# 3.3.7 Operating the F buttons - Initializing to default values
+﻿# 3.3.7 Operating the F buttons - Initializing to default values
 
 
 
@@ -67,9 +67,9 @@ The scripts designated in the code above are for calling the setAllValueAsDef( )
 If you want other operations, you need to implment the relevant functions yourself.
 
 </br>
-Let's test the operation. Run the virtual controller again and enter the ArgosX setup screen. After that, change the settings to values ​​different from the default values, then save them ​by clicking the [OK] button.
+Let's test the operation. Run the virtual controller again and enter the ArgosX setup screen. After that, change the settings to values   different from the default values, then save them  by clicking the [OK] button.
 
-Enter the setup screen again and place the cursor on an arbitrary element. After that, click the Initialize One button and check whether the default values ​​are restored.
+Enter the setup screen again and place the cursor on an arbitrary element. After that, click the Initialize One button and check whether the default values   are restored.
 
 In addition, click the Initialize All button and check whether all values of the screen are restored to the default values.
 

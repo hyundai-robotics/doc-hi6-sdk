@@ -1,4 +1,4 @@
-# 3.1.10 Registering the robot language command inputs
+﻿# 3.1.10 Registering the robot language command inputs
 
 Inputting a robot language directly when using a teach pendant is inconvenient.
 
@@ -59,7 +59,7 @@ Add cmds.json into the ArgosX folder to define the properties of the commands in
 |samples|Sample (robot language input type))|"samples": "req 39"|
 |props|Function's input properties|"props"|
 |guide|Input argument guide message|"guide": "work no."|
-|range|Input argument value's range|"range": "[1–100]"|
+|range|Input argument value's range|"range": "[1-100]"|
 
 The meaning of each item is as follows in the table above. If there are many input arguments, arrange the properties into as many groups as the number of input arguments, then add them into "props".
 

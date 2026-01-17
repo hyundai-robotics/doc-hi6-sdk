@@ -1,4 +1,4 @@
-# 4.2 Debugging a web-based UI
+﻿# 4.2 Debugging a web-based UI
 
 
 Before testing a web UI on the teach pendant, we could pretest the screen with the Google Chrome web browser.

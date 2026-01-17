@@ -1,4 +1,4 @@
-# 3.2.1 Registering a callback function
+﻿# 3.2.1 Registering a callback function
 
 
 The method of registering a callback function is very simple. The callback function name is determined already for each event, so, by defining a callback function in the plug-in code using the relevant callback function name, the callback function will be registered automatically when the plug-in is imported.

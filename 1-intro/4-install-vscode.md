@@ -1,4 +1,4 @@
-# 1.4 Installing Visual Studio Code
+﻿# 1.4 Installing Visual Studio Code
 
 Microsoft Visual Studio Code (hereafter referred to as vscode) is a powerful text editor that is available for free. Through the installation of various extensions, vscode provides a development environment for numerous programming languages.
 

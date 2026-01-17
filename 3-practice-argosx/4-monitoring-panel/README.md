@@ -1,4 +1,4 @@
-# 3.4 Practical project: Developing an ArgosX monitoring panel UI
+﻿# 3.4 Practical project: Developing an ArgosX monitoring panel UI
 
 There should be a monitoring panel to show the current state of the plug-ins to the user through a split screen.
 

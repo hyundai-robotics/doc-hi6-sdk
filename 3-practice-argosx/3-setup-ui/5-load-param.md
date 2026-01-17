@@ -1,4 +1,4 @@
-# 3.3.5 Loading and saving the values of the setup screen
+﻿# 3.3.5 Loading and saving the values of the setup screen
 
 
 
@@ -213,7 +213,7 @@ sigcode_err = gen_def['sigcode_err']
 ## Operation test
 
 
-Now, let’s restart the virtual controller, import ArgosX, then enter the ArgosX setup screen. The default setup values will be shown as follows.
+Now, let's restart the virtual controller, import ArgosX, then enter the ArgosX setup screen. The default setup values will be shown as follows.
 </br> ![](../../_assets/image_45.png) </br>
 
 

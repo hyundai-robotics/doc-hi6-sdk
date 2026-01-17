@@ -1,4 +1,4 @@
-# 3.1.8 Manual for referring to the xhost module methods
+﻿# 3.1.8 Manual for referring to the xhost module methods
 
 <html>
 <body>

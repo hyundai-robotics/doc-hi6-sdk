@@ -1,4 +1,4 @@
-# 3.1.2 ArgosX stub
+﻿# 3.1.2 ArgosX stub
 
 The ArgosX vision system is not real. Therefore, if we want to test the interface plug-ins, we need the test software, namely the stub, to take ArgosX's place.
 

@@ -1,4 +1,4 @@
-# 4.1 Debugging Python code
+﻿# 4.1 Debugging Python code
 
 If the Python code we wrote has grammatical errors in the web UI or logical errors in the implementation body, a debugger should be used to trace the cause and supplement it.
 
@@ -14,7 +14,7 @@ xhost is a module to be used by plug-ins to call the functions of the ${cont_mod
 
 
 
-However, when a plug-in is executed with the vscode debugger, an execution error will occur when the xhost method is called because there is no actual xhost module created/injected. Therefore, an alternative xhost for debugging should be used. In the common folder of the SDK, there is an alternative module, xhost_dbg. It is a kind of proxy that performs the host’s operations by calling an OpenAPI via Ethernet.
+However, when a plug-in is executed with the vscode debugger, an execution error will occur when the xhost method is called because there is no actual xhost module created/injected. Therefore, an alternative xhost for debugging should be used. In the common folder of the SDK, there is an alternative module, xhost_dbg. It is a kind of proxy that performs the host's operations by calling an OpenAPI via Ethernet.
 
  ![](../_assets/image_64.png)
 <br>

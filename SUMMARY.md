@@ -1,6 +1,6 @@
 ﻿# Table of contents
 
-* [${cont_model} Software Development Kit (SDK) Manual](README.md)
+* [${cont_model} Controller Function Manual - Software Development Kit (SDK)](README.md)
 * [1. Overview of ${cont_model} SDK](1-intro/README.md)
   * [1.1 Required knowledge]( 1-intro/1-prior-knowledge.md)
   * [1.2 Concept of ${cont_model} plug-in apps]( 1-intro/2-plugin-app-concept.md)
@@ -10,7 +10,7 @@
   * [1.6 Testing plugins in HRSpace]( 1-intro/6-test-in-hrspace.md)
 
 * [2. Very simple project: hello_world](2-example-helloworld/README.md)
-  * [2.1 Creating a hello_world project – Folders and meta-information](2-example-helloworld/1-make-proj.md)
+  * [2.1 Creating a hello_world project - Folders and meta-information](2-example-helloworld/1-make-proj.md)
   * [2.2 Implementing the Python function hello( )](2-example-helloworld/2-make-hello.md)
   * [2.3 Transferring parameters to a Python function and receiving a return value](2-example-helloworld/3-function.md)
   * [2.4 Creating a simple web-based UI](2-example-helloworld/4-make-ui.md)

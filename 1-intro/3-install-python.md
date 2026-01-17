@@ -1,4 +1,4 @@
-# 1.3 Installing the Python 3 development environment
+﻿# 1.3 Installing the Python 3 development environment
 ## Installing Python 3 
 Install Python v3.8 according to the following procedures.
 

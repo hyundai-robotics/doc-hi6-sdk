@@ -1,4 +1,4 @@
-# 1.1 Required knowledge
+﻿# 1.1 Required knowledge
 
 Developing apps using an SDK requires more than basic proficiency in the following technologies.
 

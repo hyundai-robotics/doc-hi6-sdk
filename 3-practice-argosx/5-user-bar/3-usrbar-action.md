@@ -1,4 +1,4 @@
-# 3.5.3 Operating the user bar
+﻿# 3.5.3 Operating the user bar
 
 ## Client side (teach pendant)
 
@@ -119,7 +119,7 @@ Subsequent steps skipped...
 
 Reboot the virtual controller, then run the job file up to argosx.init( ). Execute Go Live again to bring up the user bar screen on the web browser.
 
-Execute an ArgosX stub then operate the buttons on the web browser. If the stub’s output on the console is displayed as “light-on" and "light-off", it means the operation is normal.
+Execute an ArgosX stub then operate the buttons on the web browser. If the stub's output on the console is displayed as "light-on" and "light-off", it means the operation is normal.
 <br>
 ![](../../_assets/image_60.png)
 

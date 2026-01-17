@@ -1,4 +1,4 @@
-# 2.1 Creating a hello_world project – Folders and meta-information
+﻿# 2.1 Creating a hello_world project - Folders and meta-information
 
 Create a folder named hello_world under the apps/ folder. The folder name should be the project name and must be unique in the apps/ folder.
 

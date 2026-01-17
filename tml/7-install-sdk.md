@@ -1,4 +1,4 @@
-# 1.7 Installing an SDK in a virtual controller environment
+﻿# 1.7 Installing an SDK in a virtual controller environment
 
 The apps/ folder of the SDK should be copied under the ${cont_model} home_main folder of the virtual controller.
 

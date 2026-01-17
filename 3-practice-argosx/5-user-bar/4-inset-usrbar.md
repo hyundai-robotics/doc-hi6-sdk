@@ -1,4 +1,4 @@
-# 3.5.4 Injecting a user bar
+﻿# 3.5.4 Injecting a user bar
 
 Let's inject the ArgosX user bar into the actual teach pendant.
 

@@ -1,4 +1,4 @@
-# 1.5 Installing a web-based UI development environment
+﻿# 1.5 Installing a web-based UI development environment
 
 The customized UI for the teach pendant should be developed as a web app form of HTML5/CSS/jQuery.
 

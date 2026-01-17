@@ -1,4 +1,4 @@
-# 3.3.1 Specifications of the ArgosX setup screen user interface
+﻿# 3.3.1 Specifications of the ArgosX setup screen user interface
 
 Let's create the setup screen user interface with the following specifications.
 
