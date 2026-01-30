@@ -1,4 +1,4 @@
-﻿# 3.3.1 Practical project: Developing an ArgosX setup screen UI
+﻿#### 3.3.1 Practical project: Developing an ArgosX setup screen UI
 
 If there are various settings in a plug-in, we need a setup screen that shows the setup values to the user and allows the user to change them to new values when necessary.
 

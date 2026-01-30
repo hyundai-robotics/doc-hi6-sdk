@@ -7,7 +7,7 @@ However, the Python source code of the plug-ins is called from the ${cont_model}
 
 <br>
 
-## xhost for debugging
+#### xhost for debugging
 xhost is a module to be used by plug-ins to call the functions of the ${cont_model} host. It is created and injected into the plug-in by the host. The figure below shows a typical operational flow between the host and a plug-in.
 <br> ![](../_assets/image_63.png)
 
@@ -57,7 +57,7 @@ remote_ip="192.168.1.150"
 
 
 
-## Debugging with Visual Studio Code and test.py
+#### Debugging with Visual Studio Code and test.py
 If Microsoft Python extensions are properly installed in<u> 1.5 Installing the Visual Studio Code</u>, the Python debugging environment can be used. If you are already familiar with debugging Python in vscode, you can skip this section.
 
 

@@ -6,7 +6,7 @@ You may use other familiar editors, such as Atom or SublimeText, but this manual
 
 
 
-## Installing the code
+#### Installing the code
 1) Access the link below then download the stable build version for Windows. 
 
     For Windows: https://code.visualstudio.com/<br>
@@ -24,7 +24,7 @@ You may use other familiar editors, such as Atom or SublimeText, but this manual
 
 5) Upon finishing the installation, try running vscode.
 
-# Installing extensions
+#### Installing extensions
 This is the advantage vscode possesses that makes installing various extensions available in the marketplace possible.
 
 The Activity Bar is a vertical bar on the far left of the vscode screen where icons are arranged. Among the icons, pressing the one marked in red will open the EXTENSIONS: MARKETPLACE screen, as shown in the figure. When you type the name of the desired extension in the filter window at the top, you can easily find the extension.

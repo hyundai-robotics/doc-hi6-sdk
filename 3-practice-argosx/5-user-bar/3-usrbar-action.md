@@ -1,6 +1,6 @@
-﻿# 3.5.3 Operating the user bar
+﻿#### 3.5.3 Operating the user bar
 
-## Client side (teach pendant)
+##### Client side (teach pendant)
 
 
 
@@ -57,7 +57,7 @@ function light_onoff(onoff)
 
 
 
-## Server side (mainboard)
+##### Server side (mainboard)
 
 
 Now, the ArgosX plug-in of the mainboard needs to receive this message and send the "light-on" and "light-off" messages to the actual ArgosX device (testing with a stub).

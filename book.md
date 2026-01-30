@@ -94,12 +94,12 @@ For apps without UIs, they may consist of only Python scripts.
 
 Multiple Python files and web app files will be installed under one folder in the main module.
 
-## Python scripts
+#### Python scripts
 The scripts can be called through specific robot controller events or periodically. In addition, the designated Python functions can be called using the robot language commands in the .job file.
 
 Through a module called xhost, the robot controller's software objects can be controlled or monitored, and xhost interacts with software objects through a Python interface or OpenAPI.
 
-## Teach pendant UI web apps
+#### Teach pendant UI web apps
 This web app is identical to normal web apps used in a PC or mobile environment. It consists of HyperText Markup Language (HTML)/Cascading Style Sheets (CSS)/JavaScript and resource files, such as various images.
 
 This web app is stored in the main module, which will be transferred to the teach pendant to be executed on a web browser engine.
@@ -107,9 +107,10 @@ This web app is stored in the main module, which will be transferred to the teac
 By calling the OpenAPI, the teach pendant web app can call the Python functions and send and receive data.
 
 ![](../_assets/image_1.png)
+
 [__SOURCE](1-intro/3-install-python.md)
 # 1.3 Installing the Python 3 development environment
-## Installing Python 3 
+#### Installing Python 3 
 Install Python v3.8 according to the following procedures.
 
 <br></br>
@@ -139,7 +140,7 @@ Install Python v3.8 according to the following procedures.
     Python 3.8.0
     ```
 
-## Adding a python import search path
+#### Adding a python import search path
 1) Create a .pth file and designate the path where the _common/ folder is located. 
     Open the .pth file in the SDK and designate the path below to match the HOME path of the ${cont_model} virtual controller.
  
@@ -154,10 +155,11 @@ Install Python v3.8 according to the following procedures.
     Example: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
 
 
-## Deploying dynamic libraries
+#### Deploying dynamic libraries
 Deploy ucrtbased.dll and vcruntime140d.dll in the SDK to the python installation path.
 
 Example: Copy to C:\Program Files (x86)\Python38-32\.
+
 [__SOURCE](1-intro/4-install-vscode.md)
 # 1.4 Installing Visual Studio Code
 
@@ -167,7 +169,7 @@ You may use other familiar editors, such as Atom or SublimeText, but this manual
 
 
 
-## Installing the code
+#### Installing the code
 1) Access the link below then download the stable build version for Windows. 
 
     For Windows: https://code.visualstudio.com/<br>
@@ -185,7 +187,7 @@ You may use other familiar editors, such as Atom or SublimeText, but this manual
 
 5) Upon finishing the installation, try running vscode.
 
-# Installing extensions
+#### Installing extensions
 This is the advantage vscode possesses that makes installing various extensions available in the marketplace possible.
 
 The Activity Bar is a vertical bar on the far left of the vscode screen where icons are arranged. Among the icons, pressing the one marked in red will open the EXTENSIONS: MARKETPLACE screen, as shown in the figure. When you type the name of the desired extension in the filter window at the top, you can easily find the extension.
@@ -217,7 +219,7 @@ The customized UI for the teach pendant should be developed as a web app form of
 
 
 
-## Installing the Google Chrome web browser
+#### Installing the Google Chrome web browser
 
 The Google Chrome web browser provides an environment for running and debugging web apps. If you have not installed the browser yet, install it by clicking the link below.
 
@@ -237,12 +239,12 @@ You can test your own plugin app on HRSpace's virtual controller and virtual tea
 
 <br>
 
-## 1.6.1 HRSpace Installation Environment
+#### 1.6.1 HRSpace Installation Environment
 - Operating System: Windows 64-bit
 
 <br>
 
-## 1.6.2 HRSpace Installation Process
+#### 1.6.2 HRSpace Installation Process
 
 1. Access the HD Hyundai Robotics website and sign up if not already registered.
 2. Open the HRSpace download page.
@@ -252,9 +254,9 @@ You can test your own plugin app on HRSpace's virtual controller and virtual tea
 
 <br>
 
-## 1.6.3 Running HRSpace
+#### 1.6.3 Running HRSpace
 
-### a. Load the robot model
+#### a. Load the robot model
 1. Press the `Windows key` > Type `HRSpace3_eng` > Click > Run the program.
 2. Right-click on the `workspace component` in the left Workspace panel > Click `Load Model as a Child...` > Click `Robot` folder > Select the desired model.  
    
@@ -272,7 +274,7 @@ You can test your own plugin app on HRSpace's virtual controller and virtual tea
    <img src="../_assets/hrspace/03_robot_loaded.PNG" height=350hw>
 
 
-### b. Saving workspace
+#### b. Saving workspace
 1. 
    <img src="../_assets/hrspace/00_save_btn.PNG" height=50vw> Click `Save` on the taskbar. 
 
@@ -281,7 +283,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
    <img src="../_assets/hrspace/04_temp_hrs.PNG" height=150vw>  
 
 
-### c. Running the Virtual Teaching Pendant
+#### c. Running the Virtual Teaching Pendant
 
 1. Right-click on the robot model created in the left workspace panel > Click Virtual Teaching Pendant.
    <img src="../_assets/hrspace/05_start_virtual_tp.PNG" height=500vw>
@@ -296,7 +298,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 <br>
 
-## 1.6.4 Running a Plugin on the Virtual Teaching Pendant
+#### 1.6.4 Running a Plugin on the Virtual Teaching Pendant
 1. Create a hello-world example plugin and inject it into HRSpace's Virtual Teaching Pendant. This process was carried out with reference to the [HRBook manual](../2-example-helloworld/README.md).
    ```text
    hello_world
@@ -330,7 +332,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 <br>
 
-## 1.6.5 Notes
+#### 1.6.5 Notes
 1. If you modify HTML, CSS, or JavaScript code, just return to the TP Home screen and re-enter the plugin for the changes to take effect.
 2. <p style="background-color:darkslategrey; color:white;width:max-content">If you modify Python code while the plugin is running, you must reboot the virtual controller for the changes to apply.</p>  
    → Right-click on the robot in the Workspace panel > Click `VRC Tools...` > Click `Reboot`   
@@ -339,6 +341,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
    <img src="../_assets/hrspace/11_vrc_tools_complete.PNG" height=150vw>  
 
 3. After reboot the virtual controller, re-run `1.6.4 Running a Plugin on the Virtual Teaching Pendant`.
+
 [__SOURCE](2-example-helloworld/README.md)
 # 2. Very simple project: hello_world
 Skip to the end of the metadata
@@ -372,7 +375,7 @@ Click info.json to open it and input the following.
 
 ![](../_assets/image_15.png)
 
-## info.json
+#### info.json
 
 ``` json
 {
@@ -453,6 +456,7 @@ Click info.json to open it and input the following.
     </tr>
   </tbody>
 </table>
+
 [__SOURCE](2-example-helloworld/2-make-hello.md)
 # 2.2 Implementing the python function hello( )
 
@@ -756,10 +760,10 @@ We will learn how to develop an app by developing plug-ins for a virtual vision 
 [__SOURCE](3-practice-argosx/1-roblang/1-concept-interface.md)
 # 3.1.1 Specifications of ArgosX and interface plug-ins
 
-## Specifications of the ArgosX vision system
+#### Specifications of the ArgosX vision system
 
 
-### Basic specifications
+##### Basic specifications
 <table>
   <thead>
     <tr>
@@ -793,7 +797,7 @@ We will learn how to develop an app by developing plug-ins for a virtual vision 
   </tbody>
 </table>
 
-### Protocol
+##### Protocol
 <table>
   <thead>
     <tr>
@@ -836,14 +840,14 @@ We will learn how to develop an app by developing plug-ins for a virtual vision 
   </tbody>
 </table>
 
-## Specifications of the interface plug-ins for ArgosX
+#### Specifications of the interface plug-ins for ArgosX
 
 
 The interface plug-ins for ArgosX will be developed with the following specifications.
 
 
 
-### Robot language
+##### Robot language
 <table>
   <thead>
     <tr>
@@ -887,15 +891,15 @@ The interface plug-ins for ArgosX will be developed with the following specifica
   </tbody>
 </table>
 
-### Lighting function
+##### Lighting function
 - When the robot is placed in the motor On state, the ArgosX LED light will also be switched on.
 - When the robot is placed in the motor Off state, the ArgosX LED light will also be switched off.
 
-### Error handling
+##### Error handling
 - When "fail" is received from ArgosX, the universal I/O output signal of the robot controller corresponding to the preset number will be switched on.
 
 
-### Monitoring
+##### Monitoring
 By opening the ArgosX monitoring panel on the teaching pendant, you can see the following information.
 
 - IP address
@@ -906,13 +910,14 @@ By opening the ArgosX monitoring panel on the teaching pendant, you can see the 
 
 
 
-### User bar
+##### User bar
 When you open the ArgosX user bar on the teach pendant, a UI, as shown below, will be provided.
 
 - Light-on button: Turns the ArgosX LED light on.
 - Light-off button: Turns the ArgosX LED light off.
+
 [__SOURCE](3-practice-argosx/1-roblang/2-argosx-stub.md)
-# 3.1.2 ArgosX stub
+#### 3.1.2 ArgosX stub
 
 The ArgosX vision system is not real. Therefore, if we want to test the interface plug-ins, we need the test software, namely the stub, to take ArgosX's place.
 
@@ -1095,8 +1100,9 @@ Alternatively, if you open vscode and press F5, the execution will be performed 
 The result will be printed on the TERMINAL window at the bottom. You can hold, resume, or stop debugging by operating the ![](../../_assets/image_25.png) button on the top right.
 
 ![](../../_assets/image_26.png)
+
 [__SOURCE](3-practice-argosx/1-roblang/3-make-proj-argosx.md)
-# 3.1.3 Creating an ArgosX project
+#### 3.1.3 Creating an ArgosX project
 
 Create an ArgosX folder under the apps/ folder.
 
@@ -1140,7 +1146,7 @@ end
 ```
 
 [__SOURCE](3-practice-argosx/1-roblang/4-make-attribute.md)
-# 3.1.4 Creating ip_addr and port attributes
+#### 3.1.4 Creating ip_addr and port attributes
 
 When looking at <u>3.1.1 Specification of ArgosX and interface plug-ins</u>, you can find a string attribute to designate the ip_addr.
 
@@ -1247,7 +1253,7 @@ Check whether the value newly assigned to ip_addr is printed on the guidance fra
 ```
 
 [__SOURCE](3-practice-argosx/1-roblang/5-make-roblang.md)
-# 3.1.5 Creating functions for the ArgosX robot language
+#### 3.1.5 Creating functions for the ArgosX robot language
 
 
 The specifications to be implemented next are the init( ), req( ), res( ), and close( ) functions.
@@ -1364,7 +1370,7 @@ close()
 ```
 
 [__SOURCE](3-practice-argosx/1-roblang/6-roblang_func.md)
-# 3.1.6 Implementing functions for the ArgosX robot language
+#### 3.1.6 Implementing functions for the ArgosX robot language
 
 Now let's implement the actual operations of each function.
 
@@ -1615,8 +1621,9 @@ Every time the last print command is executed, the guidance frame of the teach p
 ```
 9.000000 15.500000 10.300000 11.200000, 19.200000 1.300000
 ```
+
 [__SOURCE](3-practice-argosx/1-roblang/7-xhost-call.md)
-# 3.1.7 Calling the xhost module methods
+#### 3.1.7 Calling the xhost module methods
 
 xhost is a module containing various methods to call the functions of the host (robot controller).
 
@@ -1781,490 +1788,402 @@ Execute the virtual controller again. Then, when import argosx is executed in th
 The designated signal will be displayed as assigned (bold).
 
 ![](../../_assets/image_28.png)
+
 [__SOURCE](3-practice-argosx/1-roblang/8-xhost-method.md)
-# 3.1.8 Manual for referring to the xhost module methods
+#### 3.1.8 Manual for referring to the xhost module methods
+<hr>
 
-<html>
-<body>
-<h2>get(url, query)</h2>
-
-<h3>Description:</h3>
-OpenAPI GET method.<br><br>
-<h3>Args:</h3>
-<b>url</b>: str. OpenAPI URL.<br>
-<b>query</b>: str. OpenAPI query.<br>
-
-<h3>Returns:</h3>
-str. responded value.<br>
-<br>
+##### get(url, query)
+* Description:
+  OpenAPI GET method.
+* Args:
+  url: str. OpenAPI URL.
+  query: str. OpenAPI query.
+* Returns:
+  str. responded value.
 
 <hr>
-<h2>put(url, body)</h2>
 
-<h3>Description:</h3>
-OpenAPI PUT method.<br><br>
-<h3>Args:</h3>
-<b>url</b>: str. OpenAPI URL.<br>
-<b>body</b>: str. body of the request.<br>
-
-<h3>Returns:</h3>
-str. body of the response.<br>
-<br>
+##### put(url, body)
+* Description:
+  OpenAPI PUT method.
+* Args:
+  url: str. OpenAPI URL.
+  body: str. body of the request.
+* Returns:
+  str. body of the response.
 
 <hr>
-<h2>post(url, body)</h2>
 
-<h3>Description:</h3>
-OpenAPI POST method.<br><br>
-<h3>Args:</h3>
-<b>url</b>: str. OpenAPI URL.<br>
-<b>body</b>: str. body of the request.<br>
-
-<h3>Returns:</h3>
-str. body of the response.<br>
-<br>
+##### post(url, body)
+* Description:
+  OpenAPI POST method.
+* Args:
+  url: str. OpenAPI URL.
+  body: str. body of the request.
+* Returns:
+  str. body of the response.
 
 <hr>
-<h2>hist_print(msg)</h2>
 
-<h3>Description:</h3>
-Same as printh() except the user-param/hist_print_level setting is applied.<br><br>
-<h3>Args:</h3>
-<b>msg</b>: str. message.<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### hist_print(msg)
+* Description:
+  Same as printh() except user-param/hist_print_level setting is applied.
+* Args:
+  msg: str. message.
+* Returns:
+  None
 
 <hr>
-<h2>printh(msg)</h2>
 
-<h3>Description:</h3>
-print to history log.<br><br>
-<h3>Args:</h3>
-<b>msg</b>: str. message.<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### printh(msg)
+* Description:
+  print to history log.
+* Args:
+  msg: str. message.
+* Returns:
+  None
 
 <hr>
-<h2>issue_alarm(task_no, type, code)</h2>
 
-<h3>Description:</h3>
-issue error or warning event.<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>type</b>: <br>
-&nbsp&nbsp <b>'E'</b>: error<br>
-&nbsp&nbsp <b>'W'</b>: warning<br>
-<b>code</b>: alarm code number.<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### issue_alarm(task_no, type, code)
+* Description:
+  issue error or warning event.
+* Args:
+  task_no: int. task number (0~7)
+  type:
+    'E': error
+    'W': warning
+  code: int. alarm code number
+* Returns:
+  None
 
 <hr>
-<h2>issue_notice(task_no, code, msg, delay_sec)</h2>
 
-<h3>Description:</h3>
-issue notice event.<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>code</b>: int. alarm code number.<br>
-<b>msg</b>: str. notice message.<br>
-<b>delay_sec</b>: float. time to delay before hiding (sec).<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### issue_notice(task_no, code, msg, delay_sec)
+* Description:
+  issue notice event.
+* Args:
+  task_no: int. task number (0~7)
+  code: int. alarm code number
+  msg: str. notice message
+  delay_sec: float. time to delay before hide (sec)
+* Returns:
+  None
 
 <hr>
-<h2>set_job_state_msg(task_no, msg)</h2>
 
-<h3>Description:</h3>
-set the job state message on the teach pendant.<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>msg</b>: str. state message to show.<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### set_job_state_msg(task_no, msg)
+* Description:
+  set job state message on teach pendant.
+* Args:
+  task_no: int. task number (0~7)
+  msg: str. state message to show
+* Returns:
+  None
 
 <hr>
-<h2>io_set_so(sig_no, val)</h2>
 
-<h3>Description:</h3>
-set the system i/o output bit.<br><br>
-<h3>Args:</h3>
-<b>sig_no</b>: int. signal number (0~959).<br>
-<b>val</b>: int. value to set. (1 or 0)<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: ok<br>
-&nbsp&nbsp <b>-1</b>: index-range exceeded.<br>
-
-<br>
+##### io_set_so(sig_no, val)
+* Description:
+  set system i/o output bit.
+* Args:
+  sig_no: int. signal number (0~959)
+  val: int. (1 or 0)
+* Returns:
+  0: ok
+  -1: index-range exceeded
 
 <hr>
-<h2>io_get_in_bit(sigcode)</h2>
 
-<h3>Description:</h3>
-get the user i/o input bit using sigcode.<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.di17)<br>
-
-<h3>Returns:</h3>
-signal value, 0 or 1.<br>
-<br>
+##### io_get_in_bit(sigcode)
+* Description:
+  get user i/o input bit by sigcode.
+* Args:
+  sigcode: int. signal-code (e.g. 30017 for fb3.di17)
+* Returns:
+  0 or 1
 
 <hr>
-<h2>io_set_out_bit(sigcode, val)</h2>
 
-<h3>Description:</h3>
-get the user i/o output bit using sigcode.<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.do17)<br>
-<b>val</b>: int. value to set. (1 or 0)<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: ok<br>
-&nbsp&nbsp <b>-1</b>: index-range exceeded.<br>
-
-<br>
+##### io_set_out_bit(sigcode, val)
+* Description:
+  set user i/o output bit by sigcode.
+* Args:
+  sigcode: int. signal-code
+  val: int. (1 or 0)
+* Returns:
+  0: ok
+  -1: index-range exceeded
 
 <hr>
-<h2>io_set_pulse_by_sigcode(sigcode, onoff, count, on_ms, off_ms, lag_ms, non_update)</h2>
 
-<h3>Description:</h3>
-make the i/o pulse output<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.do17)<br>
-<b>onoff</b>: <br>
-&nbsp&nbsp <b>1</b>: on-pulse<br>
-&nbsp&nbsp <b>0</b>: non-pulsed off (lagged-off)<br>
-&nbsp&nbsp <b>-1</b>: off-pulse<br>
-<b>count</b>: int. pulse count.<br>
-<b>on_ms</b>: int. width of on (msec).<br>
-<b>off_ms</b>: int. width of off (msec).<br>
-<b>lag_ms</b>: int. width of lag (msec).<br>
-<b>non_update</b>: <br>
-&nbsp&nbsp <b>1</b>: don't update if the pulse is already registered.<br>
-&nbsp&nbsp <b>0</b>: reregister the pulse if the pulse is already registered.<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: ok<br>
-&nbsp&nbsp <b>-2</b>: already registered (when non_update==2).<br>
-
-<br>
+##### io_set_pulse_by_sigcode(sigcode, onoff, count, on_ms, off_ms, lag_ms, non_update)
+* Description:
+  make i/o pulse output
+* Args:
+  sigcode: int
+  onoff:
+    1: on-pulse
+    0: non-pulsed off (lagged-off)
+    -1: off-pulse
+  count: int. pulse count
+  on_ms: int. width of on (msec)
+  off_ms: int. width of off (msec)
+  lag_ms: int. width of lag (msec)
+  non_update:
+    1: don't update if already registered
+    0: re-register pulse
+* Returns:
+  0: ok
+  -2: already registered
 
 <hr>
-<h2>io_assign_set_in_bit(sigcode)</h2>
 
-<h3>Description:</h3>
-set sigcode as the assigned input i/o<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.di17)<br>
-
-<h3>Returns:</h3>
-0               ok -1              invalid sigcode<br>
-<br>
-
-<hr>
-<h2>io_assign_set_out_bit(sigcode)</h2>
-
-<h3>Description:</h3>
-set sigcode as the assigned output i/o<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.do17)<br>
-
-<h3>Returns:</h3>
-	0               ok -1              invalid sigcode<br>
-<br>
+##### io_assign_set_in_bit(sigcode)
+* Description:
+  set sigcode as assigned input i/o
+* Args:
+  sigcode: int
+* Returns:
+  0: ok
+  -1: invalid sigcode
 
 <hr>
-<h2>io_set_triggout(task_no, fbname, val, ofs, ax_no, type)</h2>
 
-<h3>Description:</h3>
-trigger the output i/o<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>fbname</b>: str. output variable name (e.g. fb3.do17, dob3)<br>
-<b>val</b>: int. output value.<br>
-<b>ofs</b>: int. offset-time (msec), or offset-distance (mm)<br>
-<b>ax_no</b>: int. 0(TCP), 1~(axis-number) ; the axis observed when the type is OD<br>
-<b>type</b>: <br>
-&nbsp&nbsp <b>0x01</b>: OT (time-based)<br>
-&nbsp&nbsp <b>0x02</b>: OD (distance-based) ; relative distance from the previous position<br>
-&nbsp&nbsp <b>0x04</b>: output even if it is an assigned i/o<br>
-&nbsp&nbsp <b>0x10</b>: OX (absolute position of X)<br>
-&nbsp&nbsp <b>0x20</b>: OY (absolute position of Y)<br>
-&nbsp&nbsp <b>0x30</b>: OZ (absolute position of Z)<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>1</b>: buffer full<br>
-&nbsp&nbsp <b>2</b>: complete<br>
-&nbsp&nbsp <b>0</b>: ok<br>
-&nbsp&nbsp <b>-1</b>: the robot axis is locked. (when, ax_no==0)<br>
-&nbsp&nbsp <b>-2</b>: the Nth robot axis is locked<br>
-&nbsp&nbsp <b>-3</b>: unsupported coordinate system<br>
-&nbsp&nbsp <b>-4</b>: the user coordinate system number is unmatched<br>
-
-<br>
+##### io_assign_set_out_bit(sigcode)
+* Description:
+  set sigcode as assigned output i/o
+* Args:
+  sigcode: int
+* Returns:
+  0: ok
+  -1: invalid sigcode
 
 <hr>
-<h2>io_n_blocks()</h2>
 
-<h3>Description:</h3>
-	
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-int. The number of i/o blocks<br>
-<br>
-
-<hr>
-<h2>io_size_block_addr()</h2>
-
-<h3>Description:</h3>
-	
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-int. The number of bits (address-space) in a block.<br>
-<br>
-
-<hr>
-<h2>io_fbname_from_sigcode(sigcode, is_out)</h2>
-
-<h3>Description:</h3>
-gets the fbname from sigcode.<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017)<br>
-<b>is_out</b>: 1               output 0               input<br>
-
-<h3>Returns:</h3>
-fbname of the sigcode (e.g. fb3.di17)<br>
-<br>
+##### io_set_triggout(task_no, fbname, val, ofs, ax_no, type)
+* Description:
+  trigger-out output i/o
+* Args:
+  task_no: int
+  fbname: str. (e.g. fb3.do17, dob3)
+  val: int
+  ofs: int. offset-time (msec) or offset-distance (mm)
+  ax_no: int. 0(TCP), 1~ axis number
+  type:
+    0x01: OT (time-based)
+    0x02: OD (distance-based)
+    0x04: force output
+    0x10: OX
+    0x20: OY
+    0x30: OZ
+* Returns:
+  1: buffer full
+  2: complete
+  0: ok
+  -1 ~ -4: error
 
 <hr>
-<h2>solve_expr_as_string(task_no, expr)</h2>
 
-<h3>Description:</h3>
-solve the expression and return the result value.<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>expr</b>: str. expression of robot language.<br>
-
-<h3>Returns:</h3>
-str. the result value of the expression.<br>
-<br>
+##### io_n_blocks()
+* Description:
+  get number of i/o blocks
+* Returns:
+  int
 
 <hr>
-<h2>solve_expr_as_int(task_no, expr)</h2>
 
-<h3>Description:</h3>
-solve the expression and return the result value as an integer.<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>expr</b>: str. expression of robot language.<br>
-
-<h3>Returns:</h3>
-int. the resulting integer value of the expression.<br>
-<br>
+##### io_size_block_addr()
+* Description:
+  get bits (address-space) in a block
+* Returns:
+  int
 
 <hr>
-<h2>exec_mode()</h2>
 
-<h3>Description:</h3>
-check whether the mode is execution mode.<br>
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-&nbsp&nbsp <b>True</b>: exec-mode.<br>
-&nbsp&nbsp <b>False</b>: not exec-mode.<br>
-
-<br>
+##### io_fbname_from_sigcode(sigcode, is_out)
+* Description:
+  get fbname from sigcode
+* Args:
+  sigcode: int
+  is_out: 1 output / 0 input
+* Returns:
+  fbname string
 
 <hr>
-<h2>cont_mode()</h2>
-<h3>Description:</h3>
-check whether the mode is continue mode.<br>
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-&nbsp&nbsp <b>True</b>: cont-mode.<br>
-&nbsp&nbsp <b>False</b>: not cont-mode.<br>
 
-<br>
-
-<hr>
-<h2>req_to_continue()</h2>
-
-<h3>Description:</h3>
-request the host to be in continue mode
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-	
-<br>
+##### solve_expr_as_string(task_no, expr)
+* Description:
+  solve expression and return string result
+* Args:
+  task_no: int
+  expr: str
+* Returns:
+  str
 
 <hr>
-<h2>set_err_code(code)</h2>
 
-<h3>Description:</h3>
-set error code.<br><br>
-<h3>Args:</h3>
-<b>code</b>: int. error code.<br>
-
-<h3>Returns:</h3>
-	
-<br>
-
-<hr>
-<h2>lang_timer()</h2>
-
-<h3>Description:</h3>
-	
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-int. current value of language-timer.<br>
-<br>
+##### solve_expr_as_int(task_no, expr)
+* Description:
+  solve expression and return integer result
+* Args:
+  task_no: int
+  expr: str
+* Returns:
+  int
 
 <hr>
-<h2>set_lang_timer(timeout)</h2>
 
-<h3>Description:</h3>
-    set the value to the language-timer.<br><br>
-<h3>Args:</h3>
-<b>timeout</b>: int. initial value (msec)<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### exec_mode()
+* Description:
+  check execute-mode
+* Returns:
+  True or False
 
 <hr>
-<h2>branch_to_addr(addr)</h2>
 
-<h3>Description:</h3>
-the branch to the address.<br><br>
-<h3>Args:</h3>
-<b>addr</b>: str. address to branch.<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### cont_mode()
+* Description:
+  check continue-mode
+* Returns:
+  True or False
 
 <hr>
-<h2>abs_path(name)</h2>
 
-<h3>Description:</h3>
-get absolute-path in the file-system.<br><br>
-<h3>Args:</h3>
-<b>name</b>: str. 'home', 'project', 'log', 'jobs', 'vars', 'backup', 'fbrr', 'module', 'apps_main', or 'help'<br>
-
-<h3>Returns:</h3>
-absolute-path<br>
-<br>
+##### req_to_continue()
+* Description:
+  request host to be continue-mode
+* Returns:
+  None
 
 <hr>
-<h2>sci_open(port)</h2>
 
-<h3>Description:</h3>
-serial port open<br>        Args:<br>        port (int): serial port number<br><br>
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: OK<br>
-&nbsp&nbsp <b>-1</b>: Not OK<br>
-
-<br>
+##### set_err_code(code)
+* Description:
+  set error code
+* Args:
+  code: int
+* Returns:
+  None
 
 <hr>
-<h2>sci_close(port)</h2>
 
-<h3>Description:</h3>
-serial port close<br>        Args:<br>        port (int): serial port number<br>        <br>
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: OK<br>
-&nbsp&nbsp <b>-1</b>: already closed.<br>
-
-<br>
+##### lang_timer()
+* Description:
+  get language timer value
+* Returns:
+  int (msec)
 
 <hr>
-<h2>sci_send_bytes(port, data)</h2>
 
-<h3>Description:</h3>
-serial communication sends byte-type data<br>xhost dbg not supporteds<br>
-<h3>Args:</h3>
-<b>port (int)</b>: serial port number<br>
-<b>data (bytes)</b>: input data<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: OK<br>
-&nbsp&nbsp <b>-1</b>: Not OK<br>
-
-<br>
+##### set_lang_timer(timeout)
+* Description:
+  set value to language-timer
+* Args:
+  timeout: int (msec)
+* Returns:
+  None
 
 <hr>
-<h2>sci_recv_bytes(port, len)</h2>
 
-<h3>Description:</h3>
-	serial communication receives byte-type data<br>xhost dbg not supported<br><br>
-<h3>Args:</h3>
-<b>port (int)</b>: serial port number<br>
-<b>len (int)</b>: length of data<br>	
-<h3>Returns:</h3>
-	recieved data (bytes)<br>
-<br>
+##### branch_to_addr(addr)
+* Description:
+  branch to the address
+* Args:
+  addr: str
+* Returns:
+  None
 
 <hr>
-<h2>sci_clear_buf(port)</h2>
 
-<h3>Description:</h3>
-	clear serial buffer<br><br>
-<h3>Args:</h3>
-<b>port (int)</b>: serial port number<br>	
-<h3>Returns:</h3>
-	
-<br>
-
-<hr>
-<h2>sci_send(port, data)</h2>
-
-<h3>Description:</h3>
-serial communication sends string-type data<br><br>
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: OK<br>
-&nbsp&nbsp <b>-1</b>: Not OK<br>
-
-<br>
+##### abs_path(name)
+* Description:
+  get absolute-path in the file-system
+* Args:
+  name: home, project, log, jobs, vars, backup, fbrr, module, apps_main, help
+* Returns:
+  absolute-path string
 
 <hr>
-<h2>sci_recv(port)</h2>
 
-<h3>Description:</h3>
-serial communication receives string-type data<br><br>
-<h3>Args:</h3>
-<b>port (int)</b>: serial port number<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>'str'</b>: receive string data<br>
-
-<br>
+##### sci_open(port)
+* Description:
+  serial port open
+* Args:
+  port: int
+* Returns:
+  0: OK
+  -1: Not OK
 
 <hr>
-</body>
-</html>
+
+##### sci_close(port)
+* Description:
+  serial port close
+* Args:
+  port: int
+* Returns:
+  0: OK
+  -1: already closed
+
+<hr>
+
+##### sci_send_bytes(port, data)
+* Description:
+  serial send bytes data
+* Args:
+  port: int
+  data: bytes
+* Returns:
+  0: OK
+  -1: Not OK
+
+<hr>
+
+##### sci_recv_bytes(port, len)
+* Description:
+  serial receive bytes data
+* Args:
+  port: int
+  len: int
+* Returns:
+  bytes
+
+<hr>
+
+##### sci_clear_buf(port)
+* Description:
+  clear serial buffer
+* Args:
+  port: int
+* Returns:
+  None
+
+<hr>
+
+##### sci_send(port, data)
+* Description:
+  serial send string data
+* Returns:
+  0: OK
+  -1: Not OK
+
+<hr>
+
+##### sci_recv(port)
+* Description:
+  serial receive string data
+* Args:
+  port: int
+* Returns:
+  str
+
+<hr>
+
 [__SOURCE](3-practice-argosx/1-roblang/9-non-blocking.md)
-# 3.1.9 Solving the robot language function-blocking problem
-## Blocking problem
+#### 3.1.9 Solving the robot language function-blocking problem
+##### Blocking problem
 
 
 There is one problem with the recv_msg( ) function implemented in the previous section.
@@ -2331,7 +2250,7 @@ Now let's improve argosx.res( ) in a way that it can also have the specification
 
 
 
-## Making a non-blocking comm module
+##### Making a non-blocking comm module
 
 
 For the comm module implemented for Ethernet transmissions/receptions, a socket module is used internally. A socket is in blocking mode by default, meaning that the socket.recvfrom( ) function, a UDP reception function, does not perform any return operations until data is received.
@@ -2398,7 +2317,7 @@ def recv_msg():
 ```
 
 
-## Implementing a wait operation in the res( ) function
+##### Implementing a wait operation in the res( ) function
 
 
 Add two arguments, timeout and addr_on_timeout (escape address), into the res( ) function as follows.
@@ -2530,7 +2449,7 @@ def _check_timeout_and_branch(addr_on_timeout: int_or_str) -> bool:
 
 
 
-## Testing the non-blocking operation  
+##### Testing the non-blocking operation  
 
 
 Now let's check if the specifications were made as we desired. Execute the virtual controller again and run the job program line by line with the teach pendant's STEP FWD key.
@@ -2579,7 +2498,7 @@ job
 
 
 [__SOURCE](3-practice-argosx/1-roblang/10-regi-cmds.md)
-# 3.1.10 Registering the robot language command inputs
+#### 3.1.10 Registering the robot language command inputs
 
 Inputting a robot language directly when using a teach pendant is inconvenient.
 
@@ -2651,6 +2570,7 @@ For an added command, you can check it by pressing the [Command Inputting] butto
 
 [Command Inputting]-[argosx]
 ![](../../_assets/image_83.png)
+
 [__SOURCE](3-practice-argosx/2-callback/README.md)
 # 3.2 Practical project: ArgosX - callback
 
@@ -2665,7 +2585,7 @@ These functions are callback functions. They are referred to as such because the
 * Implementing a callback function
 * Manual for referring to the callback functions
 [__SOURCE](3-practice-argosx/2-callback/1-register-callback.md)
-# 3.2.1 Registering a callback function
+#### 3.2.1 Registering a callback function
 
 
 The method of registering a callback function is very simple. The callback function name is determined already for each event, so, by defining a callback function in the plug-in code using the relevant callback function name, the callback function will be registered automatically when the plug-in is imported.
@@ -2727,7 +2647,7 @@ on_motor_off
 ```
 
 [__SOURCE](3-practice-argosx/2-callback/2-uses-callback.md)
-# 3.2.2 Implementing a callback function
+#### 3.2.2 Implementing a callback function
 Because we ensured that the callback functions are called well, let's implement the actual operations.
 
 As you can see by checking <U>3.1.1 Specifications of ArgosX and interface plug-ins</U>, you just need to send the "light-on" and "light-off" messages to the ArgosX hardware.
@@ -2827,7 +2747,7 @@ LED light is ON
 ```
 
 [__SOURCE](3-practice-argosx/2-callback/3-ref-callback.md)
-# 3.2.3 Manual for referring to the callback functions
+#### 3.2.3 Manual for referring to the callback functions
 
 <table>
   <thead>
@@ -2903,8 +2823,9 @@ LED light is ON
     </tr>
   </tbody>
 </table>
+
 [__SOURCE](3-practice-argosx/3-setup-ui/README.md)
-# 3.3.1 Practical project: Developing an ArgosX setup screen UI
+#### 3.3.1 Practical project: Developing an ArgosX setup screen UI
 
 If there are various settings in a plug-in, we need a setup screen that shows the setup values to the user and allows the user to change them to new values when necessary.
 
@@ -2921,7 +2842,7 @@ In this section, let's practice implementing an ArgosX setup screen UI and deplo
 * Operating the F buttons - Initializing to default values
 
 [__SOURCE](3-practice-argosx/3-setup-ui/1-concept-if.md)
-# 3.3.1 Specifications of the ArgosX setup screen user interface
+#### 3.3.1 Specifications of the ArgosX setup screen user interface
 
 Let's create the setup screen user interface with the following specifications.
 
@@ -2943,8 +2864,9 @@ Regardless of whether ArgosX is imported to the job program, we want to make ope
 Change the startup item in the argosx/info.json file from "manual" to "boot". Now, as ArgosX will be imported while the controller is booting, you do not need to import ArgosX to the job program.
 
 (You can still carry out the setups in HRScript.)
+
 [__SOURCE](3-practice-argosx/3-setup-ui/2-layout.md)
-# 3.3.2 The layout of the setup screen
+#### 3.3.2 The layout of the setup screen
 
 
 Open vscode for the apps/ folder that is the parent of the ArgosX folder.
@@ -3051,7 +2973,7 @@ Sketchy layout of setup.html
 
 
 [__SOURCE](3-practice-argosx/3-setup-ui/3-setup-action.md)
-# 3.3.3 Operating the setup screen
+#### 3.3.3 Operating the setup screen
 
 As shown below, add the scripts into the head of setup.html.
 
@@ -3178,8 +3100,9 @@ When the setup screen is opened initially, the current setup value needs to be l
 Operations related to these settings are to be implemented by calling setDomPath("/apps/argosx/svr_setup"); and defining the updateData() function.
 
 More detailed descriptions will be provided in the subsequent sections.
+
 [__SOURCE](3-practice-argosx/3-setup-ui/4-menu.md)
-# 3.3.4 Injecting a menu into the description screen
+#### 3.3.4 Injecting a menu into the description screen
 
 We have already practiced injecting a menu through the hello_world example.
 
@@ -3241,7 +3164,7 @@ When you select the menu, the layout we wrote will appear shortly.
 
 
 [__SOURCE](3-practice-argosx/3-setup-ui/5-load-param.md)
-# 3.3.5 Loading and saving the values of the setup screen
+#### 3.3.5 Loading and saving the values of the setup screen
 
 
 
@@ -3257,7 +3180,7 @@ To perform the transfer, implement JavaScript's updateData( ) function and the g
 ![](../../_assets/image_44.png)
 
 
-## element ↔ javascript object
+##### element ↔ javascript object
 
 
 setup.js
@@ -3294,7 +3217,7 @@ DDX functions
 
 </br>
 
-## javascript object ↔ python data
+##### javascript object ↔ python data
 
 
 setup.js
@@ -3453,7 +3376,7 @@ sigcode_err = gen_def['sigcode_err']
 
 
 
-## Operation test
+##### Operation test
 
 
 Now, let's restart the virtual controller, import ArgosX, then enter the ArgosX setup screen. The default setup values will be shown as follows.
@@ -3475,7 +3398,7 @@ When you enter the screen again, if the newly set values are displayed well, it 
 
 
 [__SOURCE](3-practice-argosx/3-setup-ui/6-load-file.md)
-# 3.3.6 Loading and saving the setup files
+#### 3.3.6 Loading and saving the setup files
 
 In the previous section, we practiced saving the setup values into the Python variables and loading them back.
 
@@ -3685,7 +3608,7 @@ Run the main software again and open the ArgosX setup screen. Check whether the 
 
 
 [__SOURCE](3-practice-argosx/3-setup-ui/7-f-btn.md)
-# 3.3.7 Operating the F buttons - Initializing to default values
+#### 3.3.7 Operating the F buttons - Initializing to default values
 
 
 
@@ -3761,6 +3684,7 @@ Enter the setup screen again and place the cursor on an arbitrary element. After
 In addition, click the Initialize All button and check whether all values of the screen are restored to the default values.
 
 ![](../../_assets/image_48.png)
+
 [__SOURCE](3-practice-argosx/4-monitoring-panel/README.md)
 # 3.4 Practical project: Developing an ArgosX monitoring panel UI
 
@@ -3774,7 +3698,7 @@ In this section, let's practice developing a web-based ArgosX monitoring panel.
 * Operating the monitoring panel
 * Injecting a panel item into the panel menu 
 [__SOURCE](3-practice-argosx/4-monitoring-panel/1-concept-if.md)
-# 3.4.1 Specifications of the ArgosX monitoring panel user interface
+#### 3.4.1 Specifications of the ArgosX monitoring panel user interface
 
 Let's create a monitoring panel user interface to monitor information, as shown below.
 
@@ -3790,7 +3714,7 @@ The update cycle should be set to 500 msec.
 
 
 [__SOURCE](3-practice-argosx/4-monitoring-panel/2-layout.md)
-# 3.4.2 Layout of the monitoring panel
+#### 3.4.2 Layout of the monitoring panel
 
 Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 
@@ -3866,7 +3790,7 @@ Even though there is no content in panel.js yet, we can check whether the layout
 
 
 [__SOURCE](3-practice-argosx/4-monitoring-panel/3-panel-action.md)
-# 3.4.3 Operating the monitoring panel
+#### 3.4.3 Operating the monitoring panel
 
 
 The Python code already contains the variables for the IP address, port number, and error-assigned input number.
@@ -4026,7 +3950,7 @@ Let's execute requests and responses by executing an ArgosX stub and running the
 
 
 [__SOURCE](3-practice-argosx/4-monitoring-panel/4-menu.md)
-# 3.4.4 Injecting a panel item into the panel menu
+#### 3.4.4 Injecting a panel item into the panel menu
 
 Let's inject the ArgosX monitoring function into the panel menu.
 
@@ -4096,7 +4020,7 @@ In this chapter, let's practice developing a web-based ArgosX user bar UI.
 * Injecting a user bar
 
 [__SOURCE](3-practice-argosx/5-user-bar/1-concept-if.md)
-# 3.5.1 Specifications of the ArgosX user bar user interface
+#### 3.5.1 Specifications of the ArgosX user bar user interface
 
 Pressing the User Key button multiple times will switch the user bar.
 
@@ -4107,8 +4031,9 @@ Let's create a user bar UI to provide a UI as follows.
 <br></br>
 
 ![](../../_assets/image_56.png)
+
 [__SOURCE](3-practice-argosx/5-user-bar/2-layout.md)
-# 3.5.2 Layout of the user bar
+#### 3.5.2 Layout of the user bar
 
 Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 
@@ -4149,10 +4074,11 @@ While ubar.html is open, if you execute Live server by clicking the Go Live butt
 
 Even though there is no content in ubar.js yet, we can check whether the layout is normal.
 <br>![](../../_assets/image_59.png)
-[__SOURCE](3-practice-argosx/5-user-bar/3-usrbar-action.md)
-# 3.5.3 Operating the user bar
 
-## Client side (teach pendant)
+[__SOURCE](3-practice-argosx/5-user-bar/3-usrbar-action.md)
+#### 3.5.3 Operating the user bar
+
+##### Client side (teach pendant)
 
 
 
@@ -4209,7 +4135,7 @@ function light_onoff(onoff)
 
 
 
-## Server side (mainboard)
+##### Server side (mainboard)
 
 
 Now, the ArgosX plug-in of the mainboard needs to receive this message and send the "light-on" and "light-off" messages to the actual ArgosX device (testing with a stub).
@@ -4289,7 +4215,7 @@ ArgosX stub's output on the console
 
 
 [__SOURCE](3-practice-argosx/5-user-bar/4-inset-usrbar.md)
-# 3.5.4 Injecting a user bar
+#### 3.5.4 Injecting a user bar
 
 Let's inject the ArgosX user bar into the actual teach pendant.
 
@@ -4346,7 +4272,7 @@ However, the Python source code of the plug-ins is called from the ${cont_model}
 
 <br>
 
-## xhost for debugging
+#### xhost for debugging
 xhost is a module to be used by plug-ins to call the functions of the ${cont_model} host. It is created and injected into the plug-in by the host. The figure below shows a typical operational flow between the host and a plug-in.
 <br> ![](../_assets/image_63.png)
 
@@ -4396,7 +4322,7 @@ remote_ip="192.168.1.150"
 
 
 
-## Debugging with Visual Studio Code and test.py
+#### Debugging with Visual Studio Code and test.py
 If Microsoft Python extensions are properly installed in<u> 1.5 Installing the Visual Studio Code</u>, the Python debugging environment can be used. If you are already familiar with debugging Python in vscode, you can skip this section.
 
 
@@ -4457,7 +4383,7 @@ If the web UI we have written has a grammatical error in JavaScript or a logical
 
 
 
-## Executing a web UI with Live server
+#### Executing a web UI with Live server
 
 
 In the <u>Layout of the setup screen</u> section, we have practiced executing the setup.html of the ArgosX plug-ins with the Google Chrome web browser before.
@@ -4490,7 +4416,7 @@ Alternatively, you can open a pop-up menu by right-clicking the mouse on setup.h
 
 
 
-## Chrome DevTools
+#### Chrome DevTools
 
 
 When you press the F12 button, Chrome DevTools will open on the right side of the browser. In the picture below, Console, a menu at the top of the DevTools is selected. When a string is called with console.log() in JavaScript, the string will be printed on this console window. During this process, the source code location where log( ) was called is also displayed, allowing you to click to move to the source code location, which makes the debugger useful for debugging.
@@ -4533,7 +4459,7 @@ Tracing can be performed when a breakpoint is placed. You can perform the Resume
 ![](../_assets/image_78.png)
 
 
-## Modifying and re-executing source code
+#### Modifying and re-executing source code
 
 
 After modifying the source codes of html, CSS, and JavaScript, if you click the Update button in the web browser or press the F5 key, the execution will occur based on the modified content.

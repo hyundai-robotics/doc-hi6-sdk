@@ -1,5 +1,5 @@
-﻿# 3.1.9 Solving the robot language function-blocking problem
-## Blocking problem
+﻿#### 3.1.9 Solving the robot language function-blocking problem
+##### Blocking problem
 
 
 There is one problem with the recv_msg( ) function implemented in the previous section.
@@ -66,7 +66,7 @@ Now let's improve argosx.res( ) in a way that it can also have the specification
 
 
 
-## Making a non-blocking comm module
+##### Making a non-blocking comm module
 
 
 For the comm module implemented for Ethernet transmissions/receptions, a socket module is used internally. A socket is in blocking mode by default, meaning that the socket.recvfrom( ) function, a UDP reception function, does not perform any return operations until data is received.
@@ -133,7 +133,7 @@ def recv_msg():
 ```
 
 
-## Implementing a wait operation in the res( ) function
+##### Implementing a wait operation in the res( ) function
 
 
 Add two arguments, timeout and addr_on_timeout (escape address), into the res( ) function as follows.
@@ -265,7 +265,7 @@ def _check_timeout_and_branch(addr_on_timeout: int_or_str) -> bool:
 
 
 
-## Testing the non-blocking operation  
+##### Testing the non-blocking operation  
 
 
 Now let's check if the specifications were made as we desired. Execute the virtual controller again and run the job program line by line with the teach pendant's STEP FWD key.

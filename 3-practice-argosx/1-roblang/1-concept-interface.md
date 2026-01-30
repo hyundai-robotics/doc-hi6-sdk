@@ -1,9 +1,9 @@
 ﻿# 3.1.1 Specifications of ArgosX and interface plug-ins
 
-## Specifications of the ArgosX vision system
+#### Specifications of the ArgosX vision system
 
 
-### Basic specifications
+##### Basic specifications
 <table>
   <thead>
     <tr>
@@ -37,7 +37,7 @@
   </tbody>
 </table>
 
-### Protocol
+##### Protocol
 <table>
   <thead>
     <tr>
@@ -80,14 +80,14 @@
   </tbody>
 </table>
 
-## Specifications of the interface plug-ins for ArgosX
+#### Specifications of the interface plug-ins for ArgosX
 
 
 The interface plug-ins for ArgosX will be developed with the following specifications.
 
 
 
-### Robot language
+##### Robot language
 <table>
   <thead>
     <tr>
@@ -131,15 +131,15 @@ The interface plug-ins for ArgosX will be developed with the following specifica
   </tbody>
 </table>
 
-### Lighting function
+##### Lighting function
 - When the robot is placed in the motor On state, the ArgosX LED light will also be switched on.
 - When the robot is placed in the motor Off state, the ArgosX LED light will also be switched off.
 
-### Error handling
+##### Error handling
 - When "fail" is received from ArgosX, the universal I/O output signal of the robot controller corresponding to the preset number will be switched on.
 
 
-### Monitoring
+##### Monitoring
 By opening the ArgosX monitoring panel on the teaching pendant, you can see the following information.
 
 - IP address
@@ -150,7 +150,7 @@ By opening the ArgosX monitoring panel on the teaching pendant, you can see the 
 
 
 
-### User bar
+##### User bar
 When you open the ArgosX user bar on the teach pendant, a UI, as shown below, will be provided.
 
 - Light-on button: Turns the ArgosX LED light on.

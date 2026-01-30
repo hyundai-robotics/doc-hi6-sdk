@@ -1,4 +1,4 @@
-﻿# 3.4.3 Operating the monitoring panel
+﻿#### 3.4.3 Operating the monitoring panel
 
 
 The Python code already contains the variables for the IP address, port number, and error-assigned input number.

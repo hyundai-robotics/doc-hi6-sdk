@@ -1,4 +1,4 @@
-﻿# 3.3.5 Loading and saving the values of the setup screen
+﻿#### 3.3.5 Loading and saving the values of the setup screen
 
 
 
@@ -14,7 +14,7 @@ To perform the transfer, implement JavaScript's updateData( ) function and the g
 ![](../../_assets/image_44.png)
 
 
-## element ↔ javascript object
+##### element ↔ javascript object
 
 
 setup.js
@@ -51,7 +51,7 @@ DDX functions
 
 </br>
 
-## javascript object ↔ python data
+##### javascript object ↔ python data
 
 
 setup.js
@@ -210,7 +210,7 @@ sigcode_err = gen_def['sigcode_err']
 
 
 
-## Operation test
+##### Operation test
 
 
 Now, let's restart the virtual controller, import ArgosX, then enter the ArgosX setup screen. The default setup values will be shown as follows.

@@ -1,4 +1,4 @@
-﻿# 3.3.3 Operating the setup screen
+﻿#### 3.3.3 Operating the setup screen
 
 As shown below, add the scripts into the head of setup.html.
 

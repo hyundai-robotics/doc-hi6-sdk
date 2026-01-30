@@ -9,7 +9,7 @@ If the web UI we have written has a grammatical error in JavaScript or a logical
 
 
 
-## Executing a web UI with Live server
+#### Executing a web UI with Live server
 
 
 In the <u>Layout of the setup screen</u> section, we have practiced executing the setup.html of the ArgosX plug-ins with the Google Chrome web browser before.
@@ -42,7 +42,7 @@ Alternatively, you can open a pop-up menu by right-clicking the mouse on setup.h
 
 
 
-## Chrome DevTools
+#### Chrome DevTools
 
 
 When you press the F12 button, Chrome DevTools will open on the right side of the browser. In the picture below, Console, a menu at the top of the DevTools is selected. When a string is called with console.log() in JavaScript, the string will be printed on this console window. During this process, the source code location where log( ) was called is also displayed, allowing you to click to move to the source code location, which makes the debugger useful for debugging.
@@ -85,7 +85,7 @@ Tracing can be performed when a breakpoint is placed. You can perform the Resume
 ![](../_assets/image_78.png)
 
 
-## Modifying and re-executing source code
+#### Modifying and re-executing source code
 
 
 After modifying the source codes of html, CSS, and JavaScript, if you click the Update button in the web browser or press the F5 key, the execution will occur based on the modified content.

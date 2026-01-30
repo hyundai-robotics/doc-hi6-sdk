@@ -8,12 +8,12 @@ You can test your own plugin app on HRSpace's virtual controller and virtual tea
 
 <br>
 
-## 1.6.1 HRSpace Installation Environment
+#### 1.6.1 HRSpace Installation Environment
 - Operating System: Windows 64-bit
 
 <br>
 
-## 1.6.2 HRSpace Installation Process
+#### 1.6.2 HRSpace Installation Process
 
 1. Access the HD Hyundai Robotics website and sign up if not already registered.
 2. Open the HRSpace download page.
@@ -23,9 +23,9 @@ You can test your own plugin app on HRSpace's virtual controller and virtual tea
 
 <br>
 
-## 1.6.3 Running HRSpace
+#### 1.6.3 Running HRSpace
 
-### a. Load the robot model
+#### a. Load the robot model
 1. Press the `Windows key` > Type `HRSpace3_eng` > Click > Run the program.
 2. Right-click on the `workspace component` in the left Workspace panel > Click `Load Model as a Child...` > Click `Robot` folder > Select the desired model.  
    
@@ -43,7 +43,7 @@ You can test your own plugin app on HRSpace's virtual controller and virtual tea
    <img src="../_assets/hrspace/03_robot_loaded.PNG" height=350hw>
 
 
-### b. Saving workspace
+#### b. Saving workspace
 1. 
    <img src="../_assets/hrspace/00_save_btn.PNG" height=50vw> Click `Save` on the taskbar. 
 
@@ -52,7 +52,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
    <img src="../_assets/hrspace/04_temp_hrs.PNG" height=150vw>  
 
 
-### c. Running the Virtual Teaching Pendant
+#### c. Running the Virtual Teaching Pendant
 
 1. Right-click on the robot model created in the left workspace panel > Click Virtual Teaching Pendant.
    <img src="../_assets/hrspace/05_start_virtual_tp.PNG" height=500vw>
@@ -67,7 +67,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 <br>
 
-## 1.6.4 Running a Plugin on the Virtual Teaching Pendant
+#### 1.6.4 Running a Plugin on the Virtual Teaching Pendant
 1. Create a hello-world example plugin and inject it into HRSpace's Virtual Teaching Pendant. This process was carried out with reference to the [HRBook manual](../2-example-helloworld/README.md).
    ```text
    hello_world
@@ -101,7 +101,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 <br>
 
-## 1.6.5 Notes
+#### 1.6.5 Notes
 1. If you modify HTML, CSS, or JavaScript code, just return to the TP Home screen and re-enter the plugin for the changes to take effect.
 2. <p style="background-color:darkslategrey; color:white;width:max-content">If you modify Python code while the plugin is running, you must reboot the virtual controller for the changes to apply.</p>  
    → Right-click on the robot in the Workspace panel > Click `VRC Tools...` > Click `Reboot`   

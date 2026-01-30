@@ -1,4 +1,4 @@
-﻿# 3.1.7 Calling the xhost module methods
+﻿#### 3.1.7 Calling the xhost module methods
 
 xhost is a module containing various methods to call the functions of the host (robot controller).
 

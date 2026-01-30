@@ -1,4 +1,4 @@
-﻿# 3.4.2 Layout of the monitoring panel
+﻿#### 3.4.2 Layout of the monitoring panel
 
 Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 

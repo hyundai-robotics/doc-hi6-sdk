@@ -1,4 +1,4 @@
-﻿# 3.4.4 Injecting a panel item into the panel menu
+﻿#### 3.4.4 Injecting a panel item into the panel menu
 
 Let's inject the ArgosX monitoring function into the panel menu.
 

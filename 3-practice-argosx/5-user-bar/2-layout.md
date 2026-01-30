@@ -1,4 +1,4 @@
-﻿# 3.5.2 Layout of the user bar
+﻿#### 3.5.2 Layout of the user bar
 
 Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 

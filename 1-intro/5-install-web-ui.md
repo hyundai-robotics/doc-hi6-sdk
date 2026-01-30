@@ -4,7 +4,7 @@ The customized UI for the teach pendant should be developed as a web app form of
 
 
 
-## Installing the Google Chrome web browser
+#### Installing the Google Chrome web browser
 
 The Google Chrome web browser provides an environment for running and debugging web apps. If you have not installed the browser yet, install it by clicking the link below.
 

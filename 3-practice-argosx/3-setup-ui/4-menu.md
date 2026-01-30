@@ -1,4 +1,4 @@
-﻿# 3.3.4 Injecting a menu into the description screen
+﻿#### 3.3.4 Injecting a menu into the description screen
 
 We have already practiced injecting a menu through the hello_world example.
 

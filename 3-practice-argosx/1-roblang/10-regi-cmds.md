@@ -1,4 +1,4 @@
-﻿# 3.1.10 Registering the robot language command inputs
+﻿#### 3.1.10 Registering the robot language command inputs
 
 Inputting a robot language directly when using a teach pendant is inconvenient.
 

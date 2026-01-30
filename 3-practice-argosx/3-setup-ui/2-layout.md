@@ -1,4 +1,4 @@
-﻿# 3.3.2 The layout of the setup screen
+﻿#### 3.3.2 The layout of the setup screen
 
 
 Open vscode for the apps/ folder that is the parent of the ArgosX folder.
