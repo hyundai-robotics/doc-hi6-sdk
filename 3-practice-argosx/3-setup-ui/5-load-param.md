@@ -1,4 +1,4 @@
-﻿# 3.3.5 설정화면의 값 불러오기와 저장하기
+﻿#### 3.3.5 설정화면의 값 불러오기와 저장하기
 
 
 
@@ -14,7 +14,7 @@
 ![](../../_assets/image_44.png)
 
 
-## element ↔ javascript object
+##### element ↔ javascript object
 
 
 setup.js
@@ -51,7 +51,7 @@ ddx 함수들
 
 </br>
 
-## javascript 객체 ↔ python data
+##### javascript 객체 ↔ python data
 
 
 setup.js
@@ -211,7 +211,7 @@ sigcode_err = gen_def['sigcode_err']
 
 
 
-## 동작 시험
+##### 동작 시험
 
 
 이제, 가상제어기를 재시작하고, import argosx를 수행한 후, ArgosX의 설정화면으로 진입해봅시다. 아래와 같이 기본 설정값들이 표시됩니다.

@@ -4,7 +4,7 @@
 
 <br>
 
-## Google Chrome 웹브라우저 설치  
+#### Google Chrome 웹브라우저 설치  
 
 Google Chrome 웹 브라우저는 웹 앱의 구동 및 디버깅 환경을 제공합니다. 아직 설치되어 있지 않다면 아래 링크를 클릭하여 설치하십시오.
 

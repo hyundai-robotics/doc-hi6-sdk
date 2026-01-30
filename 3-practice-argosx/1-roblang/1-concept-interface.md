@@ -1,9 +1,9 @@
-﻿# 3.1.1 ArgosX와 interface plug-in의 사양
+﻿#### 3.1.1 ArgosX와 interface plug-in의 사양
 
-## ArgosX 비전시스템의 사양
+#### ArgosX 비전시스템의 사양
 
 
-### 기본 사양
+##### 기본 사양
 <table>
   <thead>
     <tr>
@@ -37,7 +37,7 @@
   </tbody>
 </table>
 
-### 프로토콜
+##### 프로토콜
 <table>
   <thead>
     <tr>
@@ -80,14 +80,14 @@
   </tbody>
 </table>
 
-## ArgosX 인터페이스 플러그인의 사양
+#### ArgosX 인터페이스 플러그인의 사양
 
 
 ArgosX를 인터페이스하기 위한 플러그인은 아래와 같은 사양으로 개발하겠습니다.
 
 
 
-### 로봇언어
+##### 로봇언어
 <table>
   <thead>
     <tr>
@@ -131,15 +131,15 @@ ArgosX를 인터페이스하기 위한 플러그인은 아래와 같은 사양�
   </tbody>
 </table>
 
-### 조명 기능
+##### 조명 기능
 - 로봇이 motor ON 되면, ArgosX의 LED 조명도 같이 켜진다.
 - 로봇이 motor OFF 되면, ArgosX의 LED 조명도 같이 꺼진다.
 
-### 에러 처리
+##### 에러 처리
 - ArgosX로부터 "fail"이 수신되면, 미리 설정해 둔 번호의 로봇제어기 범용 I/O 출력신호를 켠다.
 
 
-### 모니터링
+##### 모니터링
 티치펜던트의 ArgosX용 모니터링 panel을 열어, 아래 정보들을 관측 할 수 있다.
 
 - IP주소
@@ -149,7 +149,7 @@ ArgosX를 인터페이스하기 위한 플러그인은 아래와 같은 사양�
 - 응답 횟수
 
 
-### 사용자 막대 (user-bar)
+##### 사용자 막대 (user-bar)
 티치펜던트의 ArgosX용 사용자 막대를 열면, 아래와 같은 U/I가 제공된다.
 
 - light-on 버튼 : ArgosX의 LED 조명을 켠다.

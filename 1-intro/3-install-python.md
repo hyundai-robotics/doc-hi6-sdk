@@ -1,5 +1,5 @@
 ﻿# 1.3 python3 개발환경 설치
-## python3 설치
+#### python3 설치
 아래의 절차에 따라 python v3.8을 설치합니다.
 
 <br></br>
@@ -29,7 +29,7 @@
     Python 3.8.0
     ```
 
-## python import 검색 경로 추가
+#### python import 검색 경로 추가
 1) .pth 라는 파일을 만들고 안에 _common/ 폴더가 위치한 경로를 지정해준다. 
     SDK 내의 .pth 파일을 열어, ${cont_model} 가상제어기의 HOME 경로에 맞게 아래 경로를 지정해줍니다.
  
@@ -44,7 +44,7 @@
     예: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
 
 
-## 동적 라이브러리 배치
+#### 동적 라이브러리 배치
 SDK 내의 ucrtbased.dll와 vcruntime140d.dll를 python 설치 경로에 배치합니다.
 
 예: C:\Program Files (x86)\Python38-32\ 에 복사.

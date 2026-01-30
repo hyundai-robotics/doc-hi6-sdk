@@ -1,5 +1,5 @@
-﻿# 3.6.3 user-bar U/I 다국어화
-## 1. user-bar layout에서의 변경
+﻿#### 3.6.3 user-bar U/I 다국어화
+##### 1. user-bar layout에서의 변경
 
 User-bar U/I의 번역을 위해 먼저 ubar.html을 살펴봅시다.
 이전의 작업과 마찬가지로 str_table.json과 lang.js를 아래와 같이 script로 추가해 줍니다.
@@ -62,11 +62,11 @@ ubar.html
 </html>
 ```
 
-## 2. user-bar 번역 동작 추가
+##### 2. user-bar 번역 동작 추가
  
 이제 user-bar 화면에 번역 동작을 추가해봅시다.
 
-### 1) 초기화 
+1) 초기화 
 
 먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 ${cont_model}에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
 
@@ -83,7 +83,8 @@ function init()
 이전과 동일하게 parseStrData, setLangcode를 추가하여 위와 같이 작성해줍니다.
 
 
-### 2) lang_code에 따른 번역 지정
+2) lang_code에 따른 번역 지정
+
 추가적으로 필요한 elements들에 대한 내용을 str_table.json에 추가해줍니다.
 
 str_table.json

@@ -1,7 +1,7 @@
-﻿# 3.6.2 모니터링 panel U/I 다국어화
+﻿#### 3.6.2 모니터링 panel U/I 다국어화
 다음으로는 모니터링 panel에서의 번역 작업을 따라해봅시다.
 
-## 1. menu 번역
+##### 1. menu 번역
 panel U/I 역시 menu에서 번역이 필요합니다.
 
 모니터링 panel 메뉴에서 해당 panel 화면의 라벨을 확인하기 위해서 id를 추가해줍니다.
@@ -28,7 +28,7 @@ label의 값을 기존의 "ArgosX Vision System"이 아닌 "IDS_title"로 작성
 ![](../../_assets/image_89.png)
 
 
-## 2. panel layout에서의 변경
+##### 2. panel layout에서의 변경
 
 모니터링 화면의 U/I의 번역을 위해 먼저 panel.html을 살펴봅시다.
 
@@ -129,11 +129,11 @@ setup에서의 작업과 마찬가지로 str_table.json과 lang.js를 아래와 
     </html>
     ```
 
-## 3. panel 번역 동작 추가
+##### 3. panel 번역 동작 추가
  
 이제 panel 화면에 번역 동작을 추가해봅시다.
 
-### 1) 초기화 
+1) 초기화 
 
 먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 ${cont_model}에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
 
@@ -153,7 +153,8 @@ setup.js에서와 동일하게 parseStrData, setLangcode를 추가하여 위와 
 
 
 
-### 2) lang_code에 따른 번역 지정
+2) lang_code에 따른 번역 지정
+
 기존에 작성된 string data를 활용하는 부분은 그대로 두고, 추가적으로 필요한 elements들에 대한 내용을 str_table.json에 추가해줍니다.
 
 str_table.json

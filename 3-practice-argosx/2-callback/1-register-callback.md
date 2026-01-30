@@ -1,4 +1,4 @@
-﻿# 3.2.1 callback 함수 등록
+﻿#### 3.2.1 callback 함수 등록
 
 
 callback 함수를 등록하는 방법은 아주 간단합니다. 각 이벤트 별로 callback 함수명이 정해져 있으며, plug-in 코드에 이 함수명으로 함수를 정의해놓기만 하면, plug-in이 import 될 때 자동으로 등록됩니다.
