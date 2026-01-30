@@ -4256,6 +4256,713 @@ Pressing the User Key button on the right side of the virtual teach pendant will
 
 
 
+[__SOURCE](3-practice-argosx/6-translation/README.md)
+# 3.6 Practical Project: ArgosX - Localization (Multi-language Support)
+
+Up to now, the examples have focused on UI development based on English.  
+However, the ${cont_model} controller supports multiple languages in addition to English.
+
+Therefore, plugin apps can also provide multiple languages through localization.
+
+Now, let's practice applying localization to the ArgosX project.
+
+* Localization of the Setup Screen UI  
+* Localization of the Monitoring Panel UI  
+* Localization of the User-bar UI
+
+[__SOURCE](3-practice-argosx/6-translation/1-update-setup/1-setup-menu.md)
+#### 3.6.1.1 Translating the Setup Screen Menu
+
+##### Registering the string table
+
+To register resources for localization, you must create a string table.  
+It must be registered in JSON format and added as shown below.
+
+1) Add the file str_table.json inside the ui folder of the argosx project.
+
+    ![](../../../_assets/image_85.png)
+
+2) Content
+
+```json
+{
+    "en":
+    {
+        "IDS_title" : "ArgosX Vision System"
+    },
+    "ko":
+    {
+        "IDS_title" : "ArgosX Vision System"
+    }
+}
+````
+
+"en" and "ko" are language codes (hereafter referred to as langcode) compatible with ${cont_model}.
+"en" means English, and "ko" means Korean.
+
+Each langcode contains members composed of a string id and its corresponding string value.
+
+To add a title in the menu, add string data with the same id "IDS_title" to both "en" and "ko" following the format above.
+
+<br>
+
+##### Translating the menu label
+
+The label on the setup screen menu must also be translated.
+
+Follow the steps below:
+
+1. info.json
+
+Modify the existing info.json file.
+
+Add the created str_table.json file as the value of the "strs" id.
+
+```json
+{
+    "author" : "BlueOcean Robot & Automation, Ltd.",
+    "binding" : "plug-in",
+    "cmds" : "cmds.json",
+    "copyright" : "All right reserved",
+    "description" : "ArgosX Vision System interface",
+    "entry" : "main.py",
+    "menu" : "ui/menu.json",
+    "strs" : "ui/str_table.json",
+    "startup" : "boot",
+    "version" : "v0.9.0"
+}
+```
+
+2. menu.json
+
+Modify the existing menu.json file.
+
+```json
+{
+    "path": "system/appl/",
+    "id": "argosx",
+    "icon": "argosx/ui/lm_argosx.png",
+    "label": "IDS_title",
+    "url": "argosx/ui/setup.html"
+}
+```
+
+Set the label value to "IDS_title" instead of the fixed text "ArgosX Vision System".
+
+<br>
+
+3. Language selection
+
+In the virtual controller environment, you must modify the "lang_code" value in hi6tp_platform_cfg.json.
+
+```json
+"lang_code": "ko"
+```
+
+After changing the lang_code, restart the controller and TP to verify the updated language and menu label.
+
+If applied correctly, the menu should now be displayed in Korean.
+
+    ![](../../../_assets/image_86.png)
+
+[__SOURCE](3-practice-argosx/6-translation/1-update-setup/2-setup-ui.md)
+#### 3.6.1.2 Translating the Setup Screen UI
+
+##### Changes in the Setup Layout
+
+To translate the UI of the setup screen, first open and review setup.html.
+
+Add str_table.json and lang.js as script files as shown below.
+
+Because these files depend on each other, you must include them in the following order.
+
+```html
+<script src='./str_table.json' type='application/json'></script>
+<script src='../../_common/js/lang.js'></script>
+<script src='../../_common/js/dst_setup.js'></script>
+```
+
+Also, check the contents declared inside the body:
+
+```html
+<span class='col0' name='ip_addr'>IP address</span>
+```
+
+You may remove the text "IP address".  
+(The translated text will be inserted later.)
+
+After applying all the changes above, the html file should look like this:
+
+setup.html
+
+```html
+<!DOCTYPE html:5>
+<!--
+    @author: Jane Doe, BlueOcean Robot & Automation, Ltd.
+    @brief: ArgosX Vision System interface - setup
+    @create: 2021-12-06
+-->
+<html>
+
+<head>
+<title>ArgosX Vision System - setup</title>
+<meta http-equiv=Content-Type content='text/html; charset=utf-8'>
+    <link rel='stylesheet' href='../../_common/css/style.css' type=text/css rel=stylesheet>
+    <script src='../../_common/js/jquery-3.6.0.min.js'></script>
+    <script src='../../_common/js/Parser.js'></script>
+    <script src='../../_common/js/sigcode.js'></script>
+    <script src='./str_table.json' type='application/json'></script>
+    <script src='../../_common/js/lang.js'></script>
+    <script src='../../_common/js/dst_setup.js'></script>
+    <script src='./setup.js'></script>
+    <script>
+        $(document).ready(init);
+    </script>
+</head>
+
+<body class='no-scroll'>
+<div>
+    <div id='contents'>
+            <span class='col0' name='ip_addr'></span>
+            <input class='col1' type='text' name='ip_addr' id='ip_addr_0' size='3'/>
+            .
+            <input class='col1' type='text' name='ip_addr' id='ip_addr_1' size='3'/>
+            .
+            <input class='col1' type='text' name='ip_addr' id='ip_addr_2' size='3'/>
+            .
+            <input class='col1' type='text' name='ip_addr' id='ip_addr_3' size='3'/>
+            <br>
+            <span class='col0' name='port'></span>
+            <input class='col1' type='text' id='port' size='5'/>
+            <br>
+            <span class='col0' name='sigcode_err'></span>
+            <input class='col1' type='text' id='sigcode_err' size='5'/>
+        </div>
+        <div id='guidebar'></div>
+</div>
+</body>
+</html>
+```
+
+<br>
+
+##### Adding Translation Behavior to Setup
+
+Now let's add translation functionality to the setup screen.
+
+<br>
+
+1) Initialization
+
+During initialization, add logic to load data from str_table.json and apply the lang_code read from ${cont_model} to the platform's localization system.
+
+setup.js
+
+```js
+function init()
+{
+    parseStrData();
+    setDomPath('/apps/argosx/svr_general');
+    setLangCode('/apps/argosx/svr_lang_code', updateAllStrByLang);
+    setUpdateData(updateData);
+    onReady();
+}
+```
+
+parseStrData loads the string data.
+
+setLangCode calls a Python function to read the lang_code configured in ${cont_model}, and sets updateAllStrByLang as the callback.
+
+To support setLangCode, add the get_lang_code function to main.py.
+
+It is added to main.py so that ubar and panel can share the same lang_code later.
+
+main.py
+
+```python
+def get_lang_code()->dict:
+    """ Get language code from remote
+
+    Returns: data: information of language code
+    """
+    data = {}
+    lang_code = xhost.lang_code()
+    print(lang_code)
+    data["lang_code"] = lang_code
+    return data
+```
+
+This function returns the lang_code using xhost.lang_code().
+
+<br>
+
+2) Apply Translation According to lang_code
+
+The callback function updateAllStrByLang calls updateElement and updateGuideBarMsg.  
+These functions translate elements and guidebar messages based on the lang_code.
+
+First, add the required elements and guidebar messages to str_table.json.
+
+```json
+{
+    "en":
+    {
+        "IDS_title" : "ArgosX Vision System",
+        "IDS_IpAddr" :"IP Address",
+        "IDS_Port" : "Port#",
+        "IDS_OUtSigcodeErr" : "Failure output signal",
+        "IDS_msg_ip_addr" : "Enter the IP address of ArgosX.",
+        "IDS_msg_port" : "Enter the port # of ArgosX.",
+        "IDS_msg_sigcode" :"Enter the number of the signal to assign.[0 - 4096]"
+    },
+    "ko":
+    {
+        "IDS_title" : "ArgosX Vision System",
+        "IDS_IpAddr" :"IP Address",
+        "IDS_Port" : "Port#",
+        "IDS_OUtSigcodeErr" : "Failure output signal",
+        "IDS_msg_ip_addr" : "Enter the IP address of ArgosX.",
+        "IDS_msg_port" : "Enter the port # of ArgosX.",
+        "IDS_msg_sigcode" :"Enter the number of the signal to assign.[0 - 4096]"
+    }
+}
+```
+
+Next, modify setup.js as follows.
+
+Remove the existing updateGuideBar function and use updateGuideBarMsg instead.
+
+```js
+/// @brief update all string by language code
+function updateAllStrByLang()
+{
+    updateElement();
+    updateGuideBarMsg();
+}
+
+/// @brief update all element by language code
+function updateElement()
+{
+    let se = setElemByLang;
+    se('ip_addr', 'IDS_IpAddr');
+    se('port', 'IDS_Port');
+    se('sigcode_err', 'IDS_OUtSigcodeErr');
+}
+
+/// @brief display guidebar message on clicking widget & update message by langcode
+function updateGuideBarMsg()
+{
+    let sg = setGuideMsgByLang;
+    sg('ip_addr', 'IDS_msg_ip_addr');
+    sg('port', 'IDS_msg_port');
+    sg('sigcode_err', 'IDS_msg_sigcode');
+}
+```
+
+Use setElemByLang and setGuideMsgByLang to assign string IDs to each element and guidebar message.
+
+After rebooting the virtual controller and TP, the translated setup screen should appear correctly.
+
+![](../../../_assets/image_87.png)
+
+[__SOURCE](3-practice-argosx/6-translation/1-update-setup/3-f-btn.md)
+#### 3.6.1.3 Translating the F Button UI
+
+Let's add translation support for the F button UI.
+
+<br>
+
+##### Add String Data
+
+Add string data for the F button labels to str_table.json for each language code.
+
+```json
+"en":
+{
+    "IDS_msg_lb_all" : "Initialize\nAll",
+    "IDS_msg_lb_one" : "Initialize\nOne"
+},
+"ko":
+{
+    "IDS_msg_lb_all" : "Initialize\nAll",
+    "IDS_msg_lb_one" : "Initialize\nOne"
+}
+```
+
+Each label text is registered with a string ID so it can be displayed according to the selected language.
+
+<br>
+
+##### F Button Behavior
+
+Modify the label values inside btn_infos, which is defined in the existing initButtonBar function, so that they use string IDs instead of fixed text.
+
+setup.js
+
+```js
+/// @return f-button infos array
+function initButtonBar()
+{
+    console.log('initButtonBar()');
+
+    var btn_infos = [
+        {
+            label: "IDS_msg_lb_all",
+            script: 'setAllValueAsDef();'
+        },
+        {
+            label: "IDS_msg_lb_one",
+            script: 'setSelectedValueAsDef();'
+        }
+    ];
+
+    return btn_infos;
+}
+```
+
+Replace the original hard-coded labels with the corresponding string IDs.
+
+After rebooting the virtual controller and TP, the F buttons will be displayed using the translated text based on the selected language.
+
+![](../../../_assets/image_88.png)
+
+[__SOURCE](3-practice-argosx/6-translation/2-update-panel.md)
+#### 3.6.2 Monitoring Panel UI Localization
+
+Next, let's proceed with the translation work for the monitoring panel.
+
+<br>
+
+##### 1. Menu Translation
+
+The panel UI also requires translation in the menu.
+
+To display the panel screen label in the monitoring panel menu, add an id.  
+Reuse the previously defined "IDS_title".
+
+menu.json
+
+Modify the existing menu.json as follows:
+
+```json
+{
+    "path": "panels",
+    "id": "argosx",
+    "icon": "argosx/ui/panel_argosx.png",
+    "label": "IDS_title",
+    "url": "argosx/ui/panel.html"
+}
+```
+
+Set the label value to "IDS_title" instead of the fixed text "ArgosX Vision System".
+
+If applied correctly, the translated label will appear in the monitoring panel menu.
+
+![](../../_assets/image_89.png)
+
+<br>
+
+##### 2. Changes in the Panel Layout
+
+To translate the monitoring screen UI, first review panel.html.
+
+As with the setup screen, add str_table.json and lang.js as script files.
+
+Because these files depend on each other, you must include them in the following order.
+
+```html
+<script src='./str_table.json' type='application/json'></script>
+<script src='../../_common/js/lang.js'></script>
+```
+
+Next, check the table defined in the body:
+
+```html
+<table>
+    <th id='name'></th>
+    <th id='value'></th>
+    <tr>
+        <td class='thd' id='lb_ip_addr'></td>
+        <td id='ip_addr'></td>
+    </tr>
+    <tr>
+        <td class='thd' id='lb_port'></td>
+        <td id='port'></td>
+    </tr>
+    <tr>
+        <td class='thd' id='lb_sigcode_err'></td>
+        <td id='sigcode_err'></td>
+    </tr>
+    <tr>
+        <td class='thd' id='lb_n_req'></td>
+        <td id='n_req'></td>
+    </tr>
+    <tr>
+        <td class='thd' id='lb_n_res'></td>
+        <td id='n_res'></td>
+    </tr>
+</table>
+```
+
+Steps:
+
+1) Assign an id to each table header (th) and cell (td) for translation.  
+2) You may remove any fixed text such as "IP address" because translated content will be inserted dynamically.
+
+After applying these changes, the html file should look like this:
+
+panel.html
+
+```html
+<!DOCTYPE html:5>
+<!--
+    @author: Jane Doe, BlueOcean Robot & Automation, Ltd.
+    @brief: ArgosX Vision System interface - panel
+    @create: 2021-12-07
+-->
+<html>
+
+<head>
+<title>ArgosX Vision System</title>
+<meta http-equiv=Content-Type content='text/html; charset=utf-8'>
+    <link rel='stylesheet' href='../../_common/css/style.css' type=text/css rel=stylesheet>
+    <script src='../../_common/js/jquery-3.6.0.min.js'></script>
+    <script src='./str_table.json' type='application/json'></script>
+    <script src='../../_common/js/lang.js'></script>
+    <script src='./panel.js'></script>
+    <script>
+        $(document).ready(init);
+    </script>
+</head>
+
+<body>
+<table>
+    <th id='name'></th>
+    <th id='value'></th>
+    <tr>
+        <td class='thd' id='lb_ip_addr'></td>
+        <td id='ip_addr'></td>
+    </tr>
+    <tr>
+        <td class='thd' id='lb_port'></td>
+        <td id='port'></td>
+    </tr>
+    <tr>
+        <td class='thd' id='lb_sigcode_err'></td>
+        <td id='sigcode_err'></td>
+    </tr>
+    <tr>
+        <td class='thd' id='lb_n_req'></td>
+        <td id='n_req'></td>
+    </tr>
+    <tr>
+        <td class='thd' id='lb_n_res'></td>
+        <td id='n_res'></td>
+    </tr>
+</table>
+</body>
+</html>
+```
+
+<br>
+
+##### 3. Add Panel Translation Behavior
+
+Now, let's add translation behavior to the panel screen.
+
+<br>
+
+1) Initialization
+
+During initialization, load string data from str_table.json and apply the lang_code from ${cont_model}.
+
+panel.js
+
+```js
+function init()
+{
+    parseStrData();
+    setLangCode('/apps/argosx/svr_lang_code', updateAllStrByLang);
+    updateData();
+    setInterval('updateData()', 500);
+}
+```
+
+As in setup.js, add parseStrData and setLangCode.
+
+<br>
+
+2) Apply Translation According to lang_code
+
+Keep the existing string data usage and add additional required elements to str_table.json.
+
+```json
+"en":
+{
+    "IDS_InSigcodeErr" : "sigcode for error",
+    "IDS_NReq" : "n.request",
+    "IDS_NRes" : "n.response",
+    "IDS_Name" : "name",
+    "IDS_Value" : "value"
+},
+"ko":
+{
+    "IDS_InSigcodeErr" : "error signal assignment number",
+    "IDS_NReq" : "request count",
+    "IDS_NRes" : "response count",
+    "IDS_Name" : "name",
+    "IDS_Value" : "value"
+}
+```
+
+Next, modify panel.js as follows:
+
+```js
+function updateAllStrByLang()
+{
+    let se = setElemByLang;
+    se('lb_ip_addr', 'IDS_IpAddr');
+    se('lb_port', 'IDS_Port');
+    se('lb_sigcode_err', 'IDS_InSigcodeErr');
+    se('lb_n_req', 'IDS_NReq');
+    se('lb_n_res', 'IDS_NRes');
+    se('name', 'IDS_Name');
+    se('value', 'IDS_Value');
+}
+```
+
+Since the panel only requires updating element names, simply assign string IDs using setElemByLang inside updateAllStrByLang.
+
+After rebooting the virtual controller and TP, the translated monitoring panel screen should be displayed correctly.
+
+![](../../_assets/image_90.png)
+
+[__SOURCE](3-practice-argosx/6-translation/3-update-userbar.md)
+#### 3.6.3 User-bar UI Localization
+
+##### 1. Changes in the User-bar Layout
+
+To translate the user-bar UI, first open and review ubar.html.
+
+As in the previous steps, add str_table.json and lang.js as script files as shown below.
+
+Because these files depend on each other, they must be included in the following order.
+
+Also, since we will define an initialization function named init in ubar.html (which did not exist previously), write it as follows.
+
+ubar.html
+
+```html
+<script src='./str_table.json' type='application/json'></script>
+<script src='../../_common/js/lang.js'></script>
+<script src='./ubar.js'></script>
+<script>
+    $(document).ready(init);
+</script>
+```
+
+Next, check the buttons declared inside the body:
+
+```html
+<button id='light-on' class='ubar-bt' onclick='light_onoff(true);'>light<br>on</button>
+<button id='light-off' class='ubar-bt' onclick='light_onoff(false);'>light<br>off</button>
+```
+
+You may remove the existing text such as "light on".  
+(The translated text will be inserted dynamically later.)
+
+After applying all the changes above, the html file should look like this:
+
+ubar.html
+
+```html
+<!DOCTYPE html:5>
+<!--
+    @author: Jane Doe, BlueOcean Robot & Automation, Ltd.
+    @brief: ArgosX Vision System interface - bar
+    @create: 2021-12-07
+-->
+<html>
+
+<head>
+    <title>ArgosX</title>
+    <link rel='stylesheet' href='../../_common/css/style.css' type=text/css rel=stylesheet>
+    <script src='../../_common/js/jquery-3.6.0.min.js'></script>
+    <script src='./str_table.json' type='application/json'></script>
+    <script src='../../_common/js/lang.js'></script>
+    <script src='./ubar.js'></script>
+    <script>
+        $(document).ready(init);
+    </script>
+</head>
+
+<body class='ubar'>
+    <div class='ubar-title'>argosx</div>
+    <button id='light-on' class='ubar-bt' onclick='light_onoff(true);'></button>
+    <button id='light-off' class='ubar-bt' onclick='light_onoff(false);'></button>
+</body>
+</html>
+```
+
+<br>
+
+##### 2. Add User-bar Translation Behavior
+
+Now let's add translation functionality to the user-bar screen.
+
+<br>
+
+1) Initialization
+
+During initialization, load string data from str_table.json and apply the lang_code read from ${cont_model} to the platform's localization system.
+
+ubar.js
+
+```js
+function init()
+{
+    parseStrData();
+    setLangCode('/apps/argosx/svr_lang_code', updateAllStrByLang);
+}
+```
+
+As before, add parseStrData and setLangCode.
+
+<br>
+
+2) Apply Translation According to lang_code
+
+Add the required elements to str_table.json.
+
+```json
+"en":
+{
+    "IDS_light_on" : "light on",
+    "IDS_light_off" : "light off"
+},
+"ko":
+{
+    "IDS_light_on" : "Light ON",
+    "IDS_light_off" : "Light OFF"
+}
+```
+
+Next, modify ubar.js as follows:
+
+```js
+function updateAllStrByLang()
+{
+    setElemByLang('light-on', 'IDS_light_on');
+    setElemByLang('light-off', 'IDS_light_off');
+}
+```
+
+Since the user-bar only needs to update element labels, simply assign string IDs using setElemByLang.
+
+After rebooting the virtual controller and TP, the translated user-bar screen should be displayed correctly.
+
+![](../../_assets/image_91.png)
+
 [__SOURCE](4-debug/README.md)
 # 4. Debugging
 
