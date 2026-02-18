@@ -1,4 +1,4 @@
-﻿#### 3.3.7 Operating the F buttons - Initializing to default values
+﻿### 3.3.7 Operating the F buttons - Initializing to default values
 
 
 

@@ -1,4 +1,4 @@
-﻿#### 3.3.6 Loading and saving the setup files
+﻿### 3.3.6 Loading and saving the setup files
 
 In the previous section, we practiced saving the setup values into the Python variables and loading them back.
 
