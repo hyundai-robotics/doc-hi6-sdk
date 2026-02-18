@@ -39,13 +39,13 @@ Click info.json to open it and input the following.
   </thead>
   <tbody>
     <tr>
-      <td>author</td>
+      <td>`author`</td>
       <td>
        Author
       </td>
     </tr>
    <tr>
-      <td>binding</td>
+      <td>`binding`</td>
       <td>
        The form of binding with the ${cont_model} host software<br>
        - Plug-in: Will be executed in bound form.<br>
@@ -53,19 +53,19 @@ Click info.json to open it and input the following.
       </td>
     </tr>
     <tr>
-      <td>copyright</td>
+      <td>`copyright`</td>
       <td>
        Copyright
       </td>
     </tr>
     <tr>
-      <td>description</td>
+      <td>`description`</td>
       <td>
        Description	
       </td>
     </tr>
     <tr>
-      <td>entry</td>
+      <td>`entry`</td>
       <td>
        The name of the file at the execution start location<br>
        The name should be unique in the apps/ folder. If possible, set it as one of the following names below<br>
@@ -74,13 +74,13 @@ Click info.json to open it and input the following.
       </td>
     </tr>
     <tr>
-      <td>menu</td>
+      <td>`menu`</td>
       <td>
        Menu structure of the user interface	
       </td>
     </tr>
      <tr>
-      <td>startup</td>
+      <td>`startup`</td>
       <td>
        Execution start mode
        - Manual: Manually start the execution
@@ -88,7 +88,7 @@ Click info.json to open it and input the following.
       </td>
     </tr>
      <tr>
-      <td>version</td>
+      <td>`version`</td>
       <td>
        Version string	
       </td>

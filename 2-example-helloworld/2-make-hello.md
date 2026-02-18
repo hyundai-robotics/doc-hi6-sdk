@@ -23,7 +23,7 @@ When starting, the ${cont_model} controller recognizes the installed apps by rea
 
 [service] - 10: Clicking the app will bring up a screen called 10: app - TP. 
 
-Clicking the [location] button twice will change the TP in the title to MAIN via USB. On this screen, hello_world created earlier can be found.
+Clicking the `[location]` button twice will change the TP in the title to MAIN via USB. On this screen, hello_world created earlier can be found.
 
 ![](../_assets/image_17.png)
 

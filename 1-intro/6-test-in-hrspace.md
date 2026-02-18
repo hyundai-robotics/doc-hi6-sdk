@@ -61,9 +61,9 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 2. Two Ways to Exit the Teaching Pendant
 
-   1. TP Home > `Service` > `9: Exit TP application`  
+   1. TP Home - `[F1: Service] - 9: Exit TP application`
     
-   2. Right-click on the keypad area > Click `close`
+   2. Right-click on the keypad area - Click `close`
 
 <br>
 
@@ -93,7 +93,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 
 
-4. Exit the Virtual Teaching Pendant > Restart > TP Home > `system` > `4: Application parameter` > Check `hello, world` plugin   
+4. Exit the Virtual Teaching Pendant > Restart > TP Home > `[F2: system] - 4: Application parameter` - Check `hello, world` plugin   
 
    <img src="../_assets/hrspace/08_hello_world_menu.PNG" height=500vw>  
 
