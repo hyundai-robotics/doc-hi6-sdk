@@ -140,13 +140,13 @@ ip_addr : str = gen_def['ip_addr']
 port : int = gen_def['port']
 sigcode_err = gen_def['sigcode_err']
 ```
-</br>
+<br>
 
 We added calling save_to_setup_file(body) as the last operation of the put_general( ) function for saving the values of the setup screen into the Python variables.
 
 In addition, we added calling setup.load_from_setup_file( ) into the function on_app_init( ) of main.py as follows. The moment the ArgosX plug-in is imported, setup.load_from_setup_file( ) will be called to load the settings.
 
-</br>
+<br>
 
 main.py
 ```python 
@@ -180,7 +180,7 @@ def on_app_init() -> int:
    xhost.io_assign_set_out_bit(setup.sigcode_err)
    return 0
 ```
-</br>
+<br>
 
 
 Here, let's repeat the test we performed in the previous section.
@@ -189,7 +189,7 @@ Open the ArgosX setup screen, change the setup values,   such as the IP address 
 
 Check whether an argosx.json file is created in the project/ folder of the virtual controller, as shown below.
 
-</br>
+<br>
 argosx.json (An example of changing the IP address to 192.168.1.172 and the output assigned signal for an error to fb3.4)
 
 ```json
@@ -201,7 +201,7 @@ argosx.json (An example of changing the IP address to 192.168.1.172 and the outp
 ```
 
 
-</br>
+<br>
 Run the main software again and open the ArgosX setup screen. Check whether the setup values saved in the file are loaded normally.
 
 ![](../../_assets/image_46.png)

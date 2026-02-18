@@ -273,7 +273,7 @@ Now let's check if the specifications were made as we desired. Execute the virtu
 If you execute argosx.req, then execute argosx.res( ) immediately after, the operation will not complete because the response did not come in yet. When you release the STEP FWD key, the step forward indicator will be turned off, allowing you to move the cursor. If you press the STEP FWD key, the waiting state will resume.
 
 If 20 seconds pass after the execution of req( ) while the STEP FWD key is pressed, reception will be completed.
-</br>
+<br>
 ![](../../_assets/image_33.png)
 
 

@@ -35,12 +35,12 @@ If you are unfamiliar with the technologies below, studying them first using the
       <td>Python tutorials or online/offline training programs</td>
     </tr>
     <tr>
-      <td>Web app programming</br>
+      <td>Web app programming<br>
       (HTML5/CSS/JavaScript, jQuery)</td>
       <td>
        Implementation of app UI	
       </td>
-      <td>Web development tutorials or online/offline training programs</br>
+      <td>Web development tutorials or online/offline training programs<br>
       (Not required when developing apps without UIs.)</)</td>
     </tr>
     <tr>

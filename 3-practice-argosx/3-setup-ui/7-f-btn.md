@@ -43,7 +43,7 @@ function initButtonBar()
 
 The InitButtonBar( ) function returns an array of objects that define the interfaces for the F buttons. Each object item consists of an attribute label that designates the button label and an attribute script that designates code in JavaScript to be executed when the button is clicked.
 
-</br>
+<br>
 
 InitButtonBar( ) function's return values
 
@@ -66,7 +66,7 @@ The scripts designated in the code above are for calling the setAllValueAsDef( )
 
 If you want other operations, you need to implment the relevant functions yourself.
 
-</br>
+<br>
 Let's test the operation. Run the virtual controller again and enter the ArgosX setup screen. After that, change the settings to values   different from the default values, then save them  by clicking the [OK] button.
 
 Enter the setup screen again and place the cursor on an arbitrary element. After that, click the Initialize One button and check whether the default values   are restored.

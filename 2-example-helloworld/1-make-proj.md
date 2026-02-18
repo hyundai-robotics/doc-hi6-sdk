@@ -29,7 +29,7 @@ Click info.json to open it and input the following.
 }
 ```
 
-</br>
+<br>
 <table>
   <thead>
     <tr>
@@ -47,8 +47,8 @@ Click info.json to open it and input the following.
    <tr>
       <td>binding</td>
       <td>
-       The form of binding with the ${cont_model} host software</br>
-       - Plug-in: Will be executed in bound form.</br>
+       The form of binding with the ${cont_model} host software<br>
+       - Plug-in: Will be executed in bound form.<br>
        - Standalone: Will be executed as an independent app (process.) 
       </td>
     </tr>
@@ -67,9 +67,9 @@ Click info.json to open it and input the following.
     <tr>
       <td>entry</td>
       <td>
-       The name of the file at the execution start location</br>
-       The name should be unique in the apps/ folder. If possible, set it as one of the following names below</br>
-       - {project name}.py</br>
+       The name of the file at the execution start location<br>
+       The name should be unique in the apps/ folder. If possible, set it as one of the following names below<br>
+       - {project name}.py<br>
        - {project name}_main.py
       </td>
     </tr>

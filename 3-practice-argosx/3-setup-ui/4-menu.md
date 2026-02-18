@@ -32,7 +32,7 @@ Bootstrap Icons (https://icons.getbootstrap.com/#icons): An open source icon lib
 
 EZGIFCOM (https://ezgif.com/svg-to-png): Performs online conversions of SVG files into PNG files with desired resolutions.
 
-</br></br>
+<br></br>
 ![](../../_assets/lm_argosx.png) Example of lm_argosx.png (You can download and use this picture.)
 
 
@@ -42,16 +42,16 @@ Now, we should run the virtual mainboard and virtual teach pendant again.
 
 
 When entering the System _ Application Parameter menu, you can find the newly added ArgosX Vision menu item, as shown below.
-</br>
+<br>
 ![](../../_assets/image_42.png)
-</br>
+<br>
 
 
 
 When you select the menu, the layout we wrote will appear shortly.
-</br>
+<br>
 ![](../../_assets/image_43.png)
-</br>
+<br>
 
 
 

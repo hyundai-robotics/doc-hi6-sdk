@@ -44,12 +44,12 @@ DDX functions
 |---|---|---|---|
 |ddx_edit(data, name, to_data)|```<input type='text'>```|string||
 |ddx_edit_i(data, name, to_data)|```<input type='text'>```|integer||
-|ddx_edit_sig(data, name, to_data)|```<input type='text'>```|integer|If the value of the element for setting the universal I/O signals is sigcode, it will be transmitted as is.</br>If the value is in the form of fb?.?, it will be converted to sigcode and transmitted.|
-|ddx_edit_ip(data, name, to_data)|```<input type='text'>``` x 4 (units)|string|This is for setting an IP address.</br>If the name is 'ip', each ID of the four elements should be 'ip_0', 'ip_1', 'ip_2', and 'ip_3'.</br>The data will be saved as "xxx.xxx.xxx.xxx."|
+|ddx_edit_sig(data, name, to_data)|```<input type='text'>```|integer|If the value of the element for setting the universal I/O signals is sigcode, it will be transmitted as is.<br>If the value is in the form of fb?.?, it will be converted to sigcode and transmitted.|
+|ddx_edit_ip(data, name, to_data)|```<input type='text'>``` x 4 (units)|string|This is for setting an IP address.<br>If the name is 'ip', each ID of the four elements should be 'ip_0', 'ip_1', 'ip_2', and 'ip_3'.<br>The data will be saved as "xxx.xxx.xxx.xxx."|
 |ddx_check(data, name, to_data)|```<input type='checkbox'>```|boolean||
 |ddx_radio(data, name, to_data)|```<input type='radio'>```x N (units)|integer|Each radio element should have a unique value attribute.|
 
-</br>
+<br>
 
 ##### javascript object ↔ python data
 
@@ -112,7 +112,7 @@ Add the setup.py file into the project folder argosx/.
     <tr>
       <td>dgetter</td>
       <td>get_general( )</td>
-      <td>When the setup screen is opened./td>
+      <td>When the setup screen is opened.</td>
       <td>Each default setup value that a Python plug-in has will be saved into an object as an attribute value, and all objects will be returned.</td>
     </tr>
     <tr>
@@ -125,7 +125,7 @@ Add the setup.py file into the project folder argosx/.
 </table>
 
 
-</br>
+<br>
 
 Now, let's implement individual functions. Each attribute's key should be the same name used in the DDX function.
 
@@ -214,16 +214,16 @@ sigcode_err = gen_def['sigcode_err']
 
 
 Now, let's restart the virtual controller, import ArgosX, then enter the ArgosX setup screen. The default setup values will be shown as follows.
-</br> ![](../../_assets/image_45.png) </br>
+<br> ![](../../_assets/image_45.png) <br>
 
 
 
 
 Change the IP address to 192.168.1.172, type 3.4 into Failure output signal, then press <Enter> to change its value to fb3.4. After that, press the [OK] button to exit the screen.
-</br>
+<br>
 
 When you enter the screen again, if the newly set values are displayed well, it means the operation is normal.
-</br> ![](../../_assets/image_46.png) </br>
+<br> ![](../../_assets/image_46.png) <br>
 
 
 

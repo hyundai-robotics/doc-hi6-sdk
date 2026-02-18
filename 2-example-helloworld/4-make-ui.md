@@ -63,7 +63,7 @@ The meaning of each item is as follows.
     <tr>
       <td>path</td>
       <td>
-       A menu path for injecting a menu item</br>(system/appl/ means "system/4: application parameter.")
+       A menu path for injecting a menu item<br>(system/appl/ means "system/4: application parameter.")
       </td>
     </tr>
    <tr>
@@ -97,7 +97,7 @@ The format of the icon should be a png file that contains the transparency infor
 
 ![](../_assets/lm_hello.png) Example of lm_hello.png (you can download and use this picture.)
 
-</br>
+<br>
 Creating a png file with a transparent background using Paint in Windows is impossible. We recommend the following software.
 
 For your information, we created the picture in the example with COOLTEXT within just one minute.

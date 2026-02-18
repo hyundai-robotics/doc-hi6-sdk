@@ -59,12 +59,12 @@ If you are unfamiliar with the technologies below, studying them first using the
       <td>Python tutorials or online/offline training programs</td>
     </tr>
     <tr>
-      <td>Web app programming</br>
+      <td>Web app programming<br>
       (HTML5/CSS/JavaScript, jQuery)</td>
       <td>
        Implementation of app UI	
       </td>
-      <td>Web development tutorials or online/offline training programs</br>
+      <td>Web development tutorials or online/offline training programs<br>
       (Not required when developing apps without UIs.)</)</td>
     </tr>
     <tr>
@@ -395,7 +395,7 @@ Click info.json to open it and input the following.
 }
 ```
 
-</br>
+<br>
 <table>
   <thead>
     <tr>
@@ -413,8 +413,8 @@ Click info.json to open it and input the following.
    <tr>
       <td>binding</td>
       <td>
-       The form of binding with the ${cont_model} host software</br>
-       - Plug-in: Will be executed in bound form.</br>
+       The form of binding with the ${cont_model} host software<br>
+       - Plug-in: Will be executed in bound form.<br>
        - Standalone: Will be executed as an independent app (process.) 
       </td>
     </tr>
@@ -433,9 +433,9 @@ Click info.json to open it and input the following.
     <tr>
       <td>entry</td>
       <td>
-       The name of the file at the execution start location</br>
-       The name should be unique in the apps/ folder. If possible, set it as one of the following names below</br>
-       - {project name}.py</br>
+       The name of the file at the execution start location<br>
+       The name should be unique in the apps/ folder. If possible, set it as one of the following names below<br>
+       - {project name}.py<br>
        - {project name}_main.py
       </td>
     </tr>
@@ -680,7 +680,7 @@ The meaning of each item is as follows.
     <tr>
       <td>path</td>
       <td>
-       A menu path for injecting a menu item</br>(system/appl/ means "system/4: application parameter.")
+       A menu path for injecting a menu item<br>(system/appl/ means "system/4: application parameter.")
       </td>
     </tr>
    <tr>
@@ -714,7 +714,7 @@ The format of the icon should be a png file that contains the transparency infor
 
 ![](../_assets/lm_hello.png) Example of lm_hello.png (you can download and use this picture.)
 
-</br>
+<br>
 Creating a png file with a transparent background using Paint in Windows is impossible. We recommend the following software.
 
 For your information, we created the picture in the example with COOLTEXT within just one minute.
@@ -752,15 +752,15 @@ Now let's practice with a more realistic example project.
 We will learn how to develop an app by developing plug-ins for a virtual vision system named ArgosX to be installed in a robot.
 
 
-- Specifications of ArgosX and interface plug-ins</br>
-- ArgosX stub</br>
-- Creating an ArgosX project</br>
-- Creating ip_addr and port attributes</br>
-- Creating functions for the ArgosX robot language</br>
-- Implementing functions for the ArgosX robot language</br>
-- Calling the xhost module methods</br>
-- Manual for referring to the xhost module methods</br>
-- Solving the robot language function-blocking problem</br>
+- Specifications of ArgosX and interface plug-ins<br>
+- ArgosX stub<br>
+- Creating an ArgosX project<br>
+- Creating ip_addr and port attributes<br>
+- Creating functions for the ArgosX robot language<br>
+- Implementing functions for the ArgosX robot language<br>
+- Calling the xhost module methods<br>
+- Manual for referring to the xhost module methods<br>
+- Solving the robot language function-blocking problem<br>
 
 [__SOURCE](3-practice-argosx/1-roblang/1-concept-interface.md)
 # 3.1.1 Specifications of ArgosX and interface plug-ins
@@ -780,16 +780,16 @@ We will learn how to develop an app by developing plug-ins for a virtual vision 
     <tr>
       <td>Function</td>
       <td>
-       - It contains an embedded LED light, which can be turned on and off via a communication request.</br>
+       - It contains an embedded LED light, which can be turned on and off via a communication request.<br>
        - It can simultaneously measure the shift values of up to 100 workpieces and report in response to a communication request.
       </td>
     </tr>
    <tr>
       <td>Communication interface</td>
       <td>
-       - The robot controller and ArgosX hardware communicate with each other through Ethernet UDP communications.</br>
-        - The IP address of the ArgosX hardware is 192.168.1.XX. As the last set of digits, XX, should be set using the dip switch, the robot side should send a UDP request accordingly.</br>
-        - The port number on the ArgosX hardware is fixed as 54321. However, it may change in future products.</br>
+       - The robot controller and ArgosX hardware communicate with each other through Ethernet UDP communications.<br>
+        - The IP address of the ArgosX hardware is 192.168.1.XX. As the last set of digits, XX, should be set using the dip switch, the robot side should send a UDP request accordingly.<br>
+        - The port number on the ArgosX hardware is fixed as 54321. However, it may change in future products.<br>
         - Upon receiving a UDP request, the ArgosX hardware will send a response to the sender's IP address.
       </td>
     </tr>
@@ -816,18 +816,18 @@ We will learn how to develop an app by developing plug-ins for a virtual vision 
     <tr>
       <td>robot → ArgosX</td>
       <td>54321</td>
-      <td>req {workpiece#}</br>
+      <td>req {workpiece#}<br>
         e.g. "req 39"</td>
-      <td>Request for the shift value of the workpiece #</br>The workpiece number (#) ranges from 1 to 100 </td>
+      <td>Request for the shift value of the workpiece #<br>The workpiece number (#) ranges from 1 to 100 </td>
     </tr>
    <tr>
       <td>robot ← ArgosX</td>
       <td></td>
-      <td>res ({x}, {y}, {z}, {rx}, {ry}, {rz})</br>
-            The string "fail" will be transferred if the measurement fails.</br>
-            e.g. "res (30, 25.7, 11.9, 31.6, 12.8, -54.6)"</br>
+      <td>res ({x}, {y}, {z}, {rx}, {ry}, {rz})<br>
+            The string "fail" will be transferred if the measurement fails.<br>
+            e.g. "res (30, 25.7, 11.9, 31.6, 12.8, -54.6)"<br>
             e.g. "fail"</td>
-      <td>Response regarding the shift value of the workpiece #</br>
+      <td>Response regarding the shift value of the workpiece #<br>
         The values of x-rz are real numbers, and their units are mm and deg.</td>
     </tr>
     <tr>
@@ -870,11 +870,11 @@ The interface plug-ins for ArgosX will be developed with the following specifica
    <tr>
       <td rowspan="2">attribute</td>
       <td>ip_addr</td>
-      <td>The IP address string of the ArgosX hardware (it can be set.)</br>e.g. "192.168.1.44"</td>
+      <td>The IP address string of the ArgosX hardware (it can be set.)<br>e.g. "192.168.1.44"</td>
     </tr>
     <tr>
       <td>port</td>
-      <td>The port number of the ArgosX hardware.</br>(setting it should be possible, as there may be changes in future products.)</br>e.g. 54321</td>
+      <td>The port number of the ArgosX hardware.<br>(setting it should be possible, as there may be changes in future products.)<br>e.g. 54321</td>
     </tr>
     <tr>
       <td rowspan="4">function</td>
@@ -887,7 +887,7 @@ The interface plug-ins for ArgosX will be developed with the following specifica
     </tr>
     <tr>
       <td>res( )</td>
-      <td>Receive a request while waiting for a response.</br>The return value is the shift array string based on the base coordinate system.</br>e.g. "[30, 25.7, 11.9, 31.6, 12.8, -54.6, \"base\"]"</td>
+      <td>Receive a request while waiting for a response.<br>The return value is the shift array string based on the base coordinate system.<br>e.g. "[30, 25.7, 11.9, 31.6, 12.8, -54.6, \"base\"]"</td>
     </tr>
     <tr>
       <td>close( )</td>
@@ -2462,7 +2462,7 @@ Now let's check if the specifications were made as we desired. Execute the virtu
 If you execute argosx.req, then execute argosx.res( ) immediately after, the operation will not complete because the response did not come in yet. When you release the STEP FWD key, the step forward indicator will be turned off, allowing you to move the cursor. If you press the STEP FWD key, the waiting state will resume.
 
 If 20 seconds pass after the execution of req( ) while the STEP FWD key is pressed, reception will be completed.
-</br>
+<br>
 ![](../../_assets/image_33.png)
 
 
@@ -2835,7 +2835,7 @@ LED light is ON
 If there are various settings in a plug-in, we need a setup screen that shows the setup values to the user and allows the user to change them to new values when necessary.
 
 In this section, let's practice implementing an ArgosX setup screen UI and deploy specific menu items to their locations.
-</br>
+<br>
 
 
 * Specifications of the ArgosX setup screen user interface
@@ -2877,24 +2877,24 @@ Change the startup item in the argosx/info.json file from "manual" to "boot". No
 Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 
 (This step is performed because the ArgosX user interface needs to refer to the files in apps/_common/. A folder containing all the files referred to by the Live server should be opened as a top-level folder in the workspace.)
-</br>
+<br>
 ![](../../_assets/image_35.png)
-</br>
+<br>
 
 
 
 Create a ui/ folder by clicking the New Folder button.
-</br>
+<br>
 ![](../../_assets/image_36.png)
-</br>
+<br>
 
 
 
 
 Create a ui/setup.html file.
-</br>
+<br>
 ![](../../_assets/image_37.png)
-</br>
+<br>
 
 
 
@@ -2942,25 +2942,25 @@ setup.html
 ```
 
 While setup.html is opened, click the Go Live button on the bottom right to run the Live server.
-</br>
+<br>
 ![](../../_assets/image_38.png)
-</br>
+<br>
 
 
 
 
 If a security warning about vscode appears, tick all items under Permit Communications and click the Allow Access button.
-</br>
+<br>
 ![](../../_assets/image_39.png)
-</br>
+<br>
 
 
 
 
 Alternatively, you should open a pop-up menu by right-clicking the mouse on setup.html, then select "Open with Live Server."
-</br>
+<br>
 ![](../../_assets/image_40.png)
-</br>
+<br>
 
 
 
@@ -2970,9 +2970,9 @@ When the Google Chrome browser opens, we can check the sketchy layout.
 
 
 Sketchy layout of setup.html
-</br>
+<br>
 ![](../../_assets/image_41.png)
-</br>
+<br>
 
 
 
@@ -3141,7 +3141,7 @@ Bootstrap Icons (https://icons.getbootstrap.com/#icons): An open source icon lib
 
 EZGIFCOM (https://ezgif.com/svg-to-png): Performs online conversions of SVG files into PNG files with desired resolutions.
 
-</br></br>
+<br></br>
 ![](../../_assets/lm_argosx.png) Example of lm_argosx.png (You can download and use this picture.)
 
 
@@ -3151,16 +3151,16 @@ Now, we should run the virtual mainboard and virtual teach pendant again.
 
 
 When entering the System _ Application Parameter menu, you can find the newly added ArgosX Vision menu item, as shown below.
-</br>
+<br>
 ![](../../_assets/image_42.png)
-</br>
+<br>
 
 
 
 When you select the menu, the layout we wrote will appear shortly.
-</br>
+<br>
 ![](../../_assets/image_43.png)
-</br>
+<br>
 
 
 
@@ -3215,12 +3215,12 @@ DDX functions
 |---|---|---|---|
 |ddx_edit(data, name, to_data)|```<input type='text'>```|string||
 |ddx_edit_i(data, name, to_data)|```<input type='text'>```|integer||
-|ddx_edit_sig(data, name, to_data)|```<input type='text'>```|integer|If the value of the element for setting the universal I/O signals is sigcode, it will be transmitted as is.</br>If the value is in the form of fb?.?, it will be converted to sigcode and transmitted.|
-|ddx_edit_ip(data, name, to_data)|```<input type='text'>``` x 4 (units)|string|This is for setting an IP address.</br>If the name is 'ip', each ID of the four elements should be 'ip_0', 'ip_1', 'ip_2', and 'ip_3'.</br>The data will be saved as "xxx.xxx.xxx.xxx."|
+|ddx_edit_sig(data, name, to_data)|```<input type='text'>```|integer|If the value of the element for setting the universal I/O signals is sigcode, it will be transmitted as is.<br>If the value is in the form of fb?.?, it will be converted to sigcode and transmitted.|
+|ddx_edit_ip(data, name, to_data)|```<input type='text'>``` x 4 (units)|string|This is for setting an IP address.<br>If the name is 'ip', each ID of the four elements should be 'ip_0', 'ip_1', 'ip_2', and 'ip_3'.<br>The data will be saved as "xxx.xxx.xxx.xxx."|
 |ddx_check(data, name, to_data)|```<input type='checkbox'>```|boolean||
 |ddx_radio(data, name, to_data)|```<input type='radio'>```x N (units)|integer|Each radio element should have a unique value attribute.|
 
-</br>
+<br>
 
 ##### javascript object ↔ python data
 
@@ -3283,7 +3283,7 @@ Add the setup.py file into the project folder argosx/.
     <tr>
       <td>dgetter</td>
       <td>get_general( )</td>
-      <td>When the setup screen is opened./td>
+      <td>When the setup screen is opened.</td>
       <td>Each default setup value that a Python plug-in has will be saved into an object as an attribute value, and all objects will be returned.</td>
     </tr>
     <tr>
@@ -3296,7 +3296,7 @@ Add the setup.py file into the project folder argosx/.
 </table>
 
 
-</br>
+<br>
 
 Now, let's implement individual functions. Each attribute's key should be the same name used in the DDX function.
 
@@ -3385,21 +3385,231 @@ sigcode_err = gen_def['sigcode_err']
 
 
 Now, let's restart the virtual controller, import ArgosX, then enter the ArgosX setup screen. The default setup values will be shown as follows.
-</br> ![](../../_assets/image_45.png) </br>
+<br> ![](../../_assets/image_45.png) <br>
 
 
 
 
 Change the IP address to 192.168.1.172, type 3.4 into Failure output signal, then press <Enter> to change its value to fb3.4. After that, press the [OK] button to exit the screen.
-</br>
+<br>
 
 When you enter the screen again, if the newly set values are displayed well, it means the operation is normal.
-</br> ![](../../_assets/image_46.png) </br>
+<br> ![](../../_assets/image_46.png) <br>
 
 
 
 
 
+
+
+[__SOURCE](3-practice-argosx/3-setup-ui/6-load-file.md)
+### 3.3.6 Loading and saving the setup files
+
+In the previous section, we practiced saving the setup values into the Python variables and loading them back.
+
+To keep this setting, even when we turn the controller off and on, it should be saved into a file.
+
+
+
+Add the save_to_setup_file( ) function, which is used for saving the settings to a file, and the load_from_setup_file( ) function, used for loading the settings from the file, to setup.py as follows.
+
+
+
+setup.py
+``` python 
+
+""" robot application - argosx - setup
+ 
+ 
+@author:    Jane Doe, BlueOcean Robot & Automation, Ltd.
+@created:   2021-12-06
+"""
+ 
+import xhost
+import json
+ 
+ 
+fname_setup = 'argosx.json'
+ 
+ 
+def get_general_def() -> dict:
+   """
+   Returns:
+      default value of setting
+   """
+   print('def_general_def()')
+ 
+   data_def = {
+      'ip_addr': '192.168.1.100',
+      'port' : 54321,
+      'sigcode_err': 5
+   }
+    
+   return data_def
+ 
+ 
+def get_general() -> dict:
+   """
+   Returns:
+      setting dict.
+   """
+ 
+   print('get_general()')
+    
+   ret = {}
+   ret["ip_addr"] = ip_addr
+   ret["port"] = port
+   ret["sigcode_err"] = sigcode_err
+    
+   return ret
+ 
+    
+def put_general(body: dict) -> int:
+   """
+   Args:
+      body  setting dict.
+    
+   Returns:
+      0
+   """
+   global ip_addr, port, sigcode_err
+   print('put_general()')
+ 
+   ip_addr = body["ip_addr"]
+   port = body["port"]
+   sigcode_err = body["sigcode_err"]
+ 
+   save_to_setup_file(body) # save to file
+    
+   return 0
+ 
+ 
+def load_from_setup_file() -> int:
+   """
+   load setup file
+   Returns:
+         0     ok
+         -1    error
+   """
+   global ip_addr, port, sigcode_err
+ 
+   pathname = xhost.abs_path('project') + fname_setup
+   try:
+      with open(pathname, 'r') as file:
+         data = json.load(file)
+         ip_addr = data['ip_addr']
+         port = data['port']
+         sigcode_err = data['sigcode_err']
+   except:
+      print('file not found: ', pathname)
+      return -1
+   return 0
+ 
+ 
+def save_to_setup_file(body: dict) -> int:
+   """
+   save to setup file
+   Returns:
+         0     ok
+         -1    error
+   """
+   pathname = xhost.abs_path('project') + fname_setup
+   try:
+      with open(pathname, 'w') as file:
+         json.dump(body, file, indent='\t')
+   except:
+      print('failed in file writing: ', pathname)
+      return -1
+   return 0
+ 
+ 
+ 
+# attributes getter/setter
+def get_ip_addr() -> str:
+   return ip_addr
+ 
+ 
+def set_ip_addr(addr: str):
+   global ip_addr
+   ip_addr = addr
+ 
+def get_port() -> int:
+   return port
+ 
+def set_port(_port: int):
+   global port
+   port = _port
+ 
+gen_def = get_general_def()
+ip_addr : str = gen_def['ip_addr']
+port : int = gen_def['port']
+sigcode_err = gen_def['sigcode_err']
+```
+<br>
+
+We added calling save_to_setup_file(body) as the last operation of the put_general( ) function for saving the values of the setup screen into the Python variables.
+
+In addition, we added calling setup.load_from_setup_file( ) into the function on_app_init( ) of main.py as follows. The moment the ArgosX plug-in is imported, setup.load_from_setup_file( ) will be called to load the settings.
+
+<br>
+
+main.py
+```python 
+""" ArgosX Vision System interface - main
+ 
+ 
+@author:    Jane Doe, BlueOcean Robot & Automation, Ltd.
+@created:   2021-12-06
+"""
+ 
+from . import setup
+from .roblang import *
+from .setup import *
+from .callback import *
+ 
+import xhost
+ 
+ 
+def attr_names() -> tuple:
+   """Returns the names of the attributes to be exposed."""
+   return ("ip_addr", "port")
+ 
+ 
+def on_app_init() -> int:
+   """(callback) called just after self-diagnosis
+   Returns:
+      0
+   """
+   print('[argosx] on_app_init();')
+   setup.load_from_setup_file()
+   xhost.io_assign_set_out_bit(setup.sigcode_err)
+   return 0
+```
+<br>
+
+
+Here, let's repeat the test we performed in the previous section.
+
+Open the ArgosX setup screen, change the setup values,   such as the IP address and output assigned signal, and save them by pressing the [OK] key.
+
+Check whether an argosx.json file is created in the project/ folder of the virtual controller, as shown below.
+
+<br>
+argosx.json (An example of changing the IP address to 192.168.1.172 and the output assigned signal for an error to fb3.4)
+
+```json
+{
+    "port": 54321,
+    "ip_addr": "192.168.1.172",
+    "sigcode_err": 30004
+}
+```
+
+
+<br>
+Run the main software again and open the ArgosX setup screen. Check whether the setup values saved in the file are loaded normally.
+
+![](../../_assets/image_46.png)
 
 
 [__SOURCE](3-practice-argosx/3-setup-ui/7-f-btn.md)
@@ -3448,7 +3658,7 @@ function initButtonBar()
 
 The InitButtonBar( ) function returns an array of objects that define the interfaces for the F buttons. Each object item consists of an attribute label that designates the button label and an attribute script that designates code in JavaScript to be executed when the button is clicked.
 
-</br>
+<br>
 
 InitButtonBar( ) function's return values
 
@@ -3471,7 +3681,7 @@ The scripts designated in the code above are for calling the setAllValueAsDef( )
 
 If you want other operations, you need to implment the relevant functions yourself.
 
-</br>
+<br>
 Let's test the operation. Run the virtual controller again and enter the ArgosX setup screen. After that, change the settings to values   different from the default values, then save them  by clicking the [OK] button.
 
 Enter the setup screen again and place the cursor on an arbitrary element. After that, click the Initialize One button and check whether the default values   are restored.

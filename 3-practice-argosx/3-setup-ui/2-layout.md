@@ -4,24 +4,24 @@
 Open vscode for the apps/ folder that is the parent of the ArgosX folder.
 
 (This step is performed because the ArgosX user interface needs to refer to the files in apps/_common/. A folder containing all the files referred to by the Live server should be opened as a top-level folder in the workspace.)
-</br>
+<br>
 ![](../../_assets/image_35.png)
-</br>
+<br>
 
 
 
 Create a ui/ folder by clicking the New Folder button.
-</br>
+<br>
 ![](../../_assets/image_36.png)
-</br>
+<br>
 
 
 
 
 Create a ui/setup.html file.
-</br>
+<br>
 ![](../../_assets/image_37.png)
-</br>
+<br>
 
 
 
@@ -69,25 +69,25 @@ setup.html
 ```
 
 While setup.html is opened, click the Go Live button on the bottom right to run the Live server.
-</br>
+<br>
 ![](../../_assets/image_38.png)
-</br>
+<br>
 
 
 
 
 If a security warning about vscode appears, tick all items under Permit Communications and click the Allow Access button.
-</br>
+<br>
 ![](../../_assets/image_39.png)
-</br>
+<br>
 
 
 
 
 Alternatively, you should open a pop-up menu by right-clicking the mouse on setup.html, then select "Open with Live Server."
-</br>
+<br>
 ![](../../_assets/image_40.png)
-</br>
+<br>
 
 
 
@@ -97,9 +97,9 @@ When the Google Chrome browser opens, we can check the sketchy layout.
 
 
 Sketchy layout of setup.html
-</br>
+<br>
 ![](../../_assets/image_41.png)
-</br>
+<br>
 
 
 

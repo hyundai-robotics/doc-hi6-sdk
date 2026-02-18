@@ -15,16 +15,16 @@
     <tr>
       <td>Function</td>
       <td>
-       - It contains an embedded LED light, which can be turned on and off via a communication request.</br>
+       - It contains an embedded LED light, which can be turned on and off via a communication request.<br>
        - It can simultaneously measure the shift values of up to 100 workpieces and report in response to a communication request.
       </td>
     </tr>
    <tr>
       <td>Communication interface</td>
       <td>
-       - The robot controller and ArgosX hardware communicate with each other through Ethernet UDP communications.</br>
-        - The IP address of the ArgosX hardware is 192.168.1.XX. As the last set of digits, XX, should be set using the dip switch, the robot side should send a UDP request accordingly.</br>
-        - The port number on the ArgosX hardware is fixed as 54321. However, it may change in future products.</br>
+       - The robot controller and ArgosX hardware communicate with each other through Ethernet UDP communications.<br>
+        - The IP address of the ArgosX hardware is 192.168.1.XX. As the last set of digits, XX, should be set using the dip switch, the robot side should send a UDP request accordingly.<br>
+        - The port number on the ArgosX hardware is fixed as 54321. However, it may change in future products.<br>
         - Upon receiving a UDP request, the ArgosX hardware will send a response to the sender's IP address.
       </td>
     </tr>
@@ -51,18 +51,18 @@
     <tr>
       <td>robot → ArgosX</td>
       <td>54321</td>
-      <td>req {workpiece#}</br>
+      <td>req {workpiece#}<br>
         e.g. "req 39"</td>
-      <td>Request for the shift value of the workpiece #</br>The workpiece number (#) ranges from 1 to 100 </td>
+      <td>Request for the shift value of the workpiece #<br>The workpiece number (#) ranges from 1 to 100 </td>
     </tr>
    <tr>
       <td>robot ← ArgosX</td>
       <td></td>
-      <td>res ({x}, {y}, {z}, {rx}, {ry}, {rz})</br>
-            The string "fail" will be transferred if the measurement fails.</br>
-            e.g. "res (30, 25.7, 11.9, 31.6, 12.8, -54.6)"</br>
+      <td>res ({x}, {y}, {z}, {rx}, {ry}, {rz})<br>
+            The string "fail" will be transferred if the measurement fails.<br>
+            e.g. "res (30, 25.7, 11.9, 31.6, 12.8, -54.6)"<br>
             e.g. "fail"</td>
-      <td>Response regarding the shift value of the workpiece #</br>
+      <td>Response regarding the shift value of the workpiece #<br>
         The values of x-rz are real numbers, and their units are mm and deg.</td>
     </tr>
     <tr>
@@ -105,11 +105,11 @@ The interface plug-ins for ArgosX will be developed with the following specifica
    <tr>
       <td rowspan="2">attribute</td>
       <td>ip_addr</td>
-      <td>The IP address string of the ArgosX hardware (it can be set.)</br>e.g. "192.168.1.44"</td>
+      <td>The IP address string of the ArgosX hardware (it can be set.)<br>e.g. "192.168.1.44"</td>
     </tr>
     <tr>
       <td>port</td>
-      <td>The port number of the ArgosX hardware.</br>(setting it should be possible, as there may be changes in future products.)</br>e.g. 54321</td>
+      <td>The port number of the ArgosX hardware.<br>(setting it should be possible, as there may be changes in future products.)<br>e.g. 54321</td>
     </tr>
     <tr>
       <td rowspan="4">function</td>
@@ -122,7 +122,7 @@ The interface plug-ins for ArgosX will be developed with the following specifica
     </tr>
     <tr>
       <td>res( )</td>
-      <td>Receive a request while waiting for a response.</br>The return value is the shift array string based on the base coordinate system.</br>e.g. "[30, 25.7, 11.9, 31.6, 12.8, -54.6, \"base\"]"</td>
+      <td>Receive a request while waiting for a response.<br>The return value is the shift array string based on the base coordinate system.<br>e.g. "[30, 25.7, 11.9, 31.6, 12.8, -54.6, \"base\"]"</td>
     </tr>
     <tr>
       <td>close( )</td>

@@ -3,7 +3,7 @@
 If there are various settings in a plug-in, we need a setup screen that shows the setup values to the user and allows the user to change them to new values when necessary.
 
 In this section, let's practice implementing an ArgosX setup screen UI and deploy specific menu items to their locations.
-</br>
+<br>
 
 
 * Specifications of the ArgosX setup screen user interface
