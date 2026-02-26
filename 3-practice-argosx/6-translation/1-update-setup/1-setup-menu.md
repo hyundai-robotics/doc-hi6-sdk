@@ -83,11 +83,11 @@ Set the label value to "IDS_title" instead of the fixed text "ArgosX Vision Syst
 In the virtual controller environment, you must modify the "lang_code" value in hi6tp_platform_cfg.json.
 
 ```json
-"lang_code": "ko"
+"lang_code": "en"
 ```
 
 After changing the lang_code, restart the controller and TP to verify the updated language and menu label.
 
 If applied correctly, the menu should now be displayed in Korean.
 
-    ![](../../../_assets/image_86.png)
+![](../../../_assets/image_86.png)
