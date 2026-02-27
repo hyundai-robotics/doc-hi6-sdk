@@ -1,60 +1,55 @@
-﻿# 1.3 Installing an ${cont_model} virtual controller 
+﻿# 1.3 安装 ${cont_model} 虚拟控制器
 
-(temporary)
+(临时)
 <br></br>
 
-## 1) Installing 
-Unzip the downloaded ${cont_model} controller zip file.
+## 1) 安装
+解压下载的 ${cont_model} 控制器压缩文件。
 
-### Installing the virtual robot controller (VRC) development environment 
-1. Copy and ensure that the path will be D:\util\hi6_vrc\.
-   (The folder path recorded in hi6main_platform_cfg.json and hi6tp_platform_cfg.json should be modified to change the folder path.)
-2. Install the Visual Studio 2013 redistributable package by executing the vcredist_x64.exe file in the install folder.
-3. Copy the contents of the System32 and SysWOW64 folders from the install folder to the relevant individual folders in C:\Windows\.
+### 安装虚拟机器人控制器 (VRC) 开发环境
+1. 复制并确保路径为 D:\util\hi6_vrc\。
+   (hi6main_platform_cfg.json 和 hi6tp_platform_cfg.json 中记录的文件夹路径应修改以更改文件夹路径。)
+2. 通过执行安装文件夹中的 vcredist_x64.exe 文件安装 Visual Studio 2013 Redistributable 包。
+3. 将安装文件夹中的 System32 和 SysWOW64 文件夹内容复制到 C:\Windows\ 中的相关单独文件夹。
 
-### Installing the Qt library
-1. Create the path C:\Qt\Qt5.7.1\5.7.
-2. Unzip msvc2013 under the path.
+### 安装 Qt 库
+1. 创建路径 C:\Qt\Qt5.7.1\5.7。
+2. 在该路径下解压 msvc2013。
 
-### Installing Python 
-Please refer to the contents of <u> 1.4 Installing the Python 3 development environment </u>.
+### 安装 Python
+请参考 <u> 1.4 安装 Python 3 开发环境 </u> 的内容。
 
-<span style = 'background-color:#ffdce0'> Caution: For successful installations, you must be connected to the Internet during execution.</span>
+<span style = 'background-color:#ffdce0'> 注意：为了成功安装，您在执行期间必须连接到互联网。</span>
 
-1. Execute the "python-3.8.0.exe" file in the install folder. 
-2. Tick only Add Python 3.8 to PATH, then click Customize installation.
-3. Tick the checkboxes for all items afterward and start the installation.
-4. End when the 'setup was successful' message is confirmed.
-5. Copy the "ucrtbased.dll" and "vcruntime140d.dll" files from the install folder into C:\Program Files (x86)\Python38-32\.
+1. 执行安装文件夹中的 "python-3.8.0.exe" 文件。
+2. 仅勾选将 Python 3.8 添加到 PATH，然后点击自定义安装。
+3. 之后勾选所有项目的复选框并开始安装。
+4. 当确认“安装成功”的消息时结束。
+5. 将 "ucrtbased.dll" 和 "vcruntime140d.dll" 文件从安装文件夹复制到 C:\Program Files (x86)\Python38-32\。
 
-
-## 2) Executing
-1. Execute hi6_main.exe in the debug folder.
-2. Run PowerShell in the debug folder, then run the teach pendant (TP) with the command as follows. 
+## 2) 执行
+1. 在调试文件夹中执行 hi6_main.exe。
+2. 在调试文件夹中运行 PowerShell，然后使用如下命令运行教学挂件 (TP)。
    ```
     ./hi6_tp -layout=k
    ```
 
-- If you execute hi6_tp right away, <U>TP600</U> will be executed.
+- 如果立即执行 hi6_tp，将会执行 <U>TP600</U>。
 
-- The <U>TP630</U> is the actual target model of ${cont_model} TP. Therefore, to properly execute this, you need to run TP630 by inputting '-layout=k' through commands. 
+- <U>TP630</U> 是 ${cont_model} TP 的实际目标模型。因此，为了正确执行此操作，您需要通过命令输入 '-layout=k' 来运行 TP630。
 
 <b>TP630</b>&nbsp;![](../_assets/image_81.png)  
 
 <b>TP600</b>&nbsp;![](../_assets/image_84.png)
 
-   ### When required to interlock with HRSpace
-    1. Download HRSpace from https://hd-hyundairobotics.com/biz/product/support/291 and install it.
-    2. Right-click the mouse on Workspace and load the robot using "Load Model."  
-    3. Right-click the mouse on Robot and select "ENetHi6" to connect the controller in "Robot Attributes."
-    4. Set the IP addresses of the PC and robot controller to "127.0.0.1."
-    5. Press the Start Simulation button.
+   ### 需要与 HRSpace 联锁时
+    1. 从 https://hd-hyundairobotics.com/biz/product/support/291 下载并安装 HRSpace。
+    2. 用鼠标右键点击工作区并使用“加载模型”加载机器人。
+    3. 用鼠标右键点击机器人并选择“ENetHi6”在“机器人属性”中连接控制器。
+    4. 将 PC 和机器人控制器的 IP 地址设置为“127.0.0.1。”
+5. 按下启动模拟按钮。
 
 
 
 <br></br>
-(Content related to controller installation will be improved later along with the installer-related content)
-
-
-
- 
+(与控制器安装相关的内容将在稍后与安装程序相关内容一起改善)

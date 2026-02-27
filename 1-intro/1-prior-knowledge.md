@@ -1,68 +1,55 @@
-﻿# 1.1 Required knowledge
+﻿# 1.1 所需知识
 
-Developing apps using an SDK requires more than basic proficiency in the following technologies.
+使用 SDK 开发应用程序不仅需要对以下技术有基本的了解。
 
-If you are unfamiliar with the technologies below, studying them first using the appropriate materials is recommended.
+如果您对以下技术不熟悉，建议先使用适当的材料进行学习。
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Required technology</th>
-      <th style="text-align:left">Usage</th>
-      <th style="text-align:left">Textbook</th>
+      <th style="text-align:left">所需技术</th>
+      <th style="text-align:left">用途</th>
+      <th style="text-align:left">教科书</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Basic method of using the ${cont_model} controller</td>
+      <td>使用 ${cont_model} 控制器的基本方法</td>
       <td>
-       Basic knowledge for operating robots
+       操作机器人所需的基本知识
       </td>
-      <td>${cont_model} Controller Operation Manual</td>
+      <td>${cont_model} 控制器操作手册</td>
     </tr>
    <tr>
-      <td>HRScript robot language programming</td>
+      <td>HRScript 机器人语言编程</td>
       <td>
-       Interlocking between HRScript and apps
+       HRScript 与应用程序之间的联动
       </td>
-      <td>${cont_model} Controller Function Manual - HRScript</td>
+      <td>${cont_model} 控制器功能手册 - HRScript</td>
     </tr>
     <tr>
-      <td>Python 3 programming</td>
+      <td>Python 3 编程</td>
       <td>
-       Implementation of app operations
+       应用程序操作的实现
       </td>
-      <td>Python tutorials or online/offline training programs</td>
+      <td>Python 教程或在线/离线培训项目</td>
     </tr>
     <tr>
-      <td>Web app programming<br>
+      <td>Web 应用编程<br>
       (HTML5/CSS/JavaScript, jQuery)</td>
       <td>
-       Implementation of app UI	
+       应用程序 UI 的实现	
       </td>
-      <td>Web development tutorials or online/offline training programs<br>
-      (Not required when developing apps without UIs.)</)</td>
+      <td>Web 开发教程或在线/离线培训项目<br>
+      (开发没有 UI 的应用程序时不需要。)</td>
     </tr>
     <tr>
-      <td>The basic concept of Ethernet user data protocol (UDP) communication</td>
+      <td>以太网用户数据协议 (UDP) 通信的基本概念</td>
       <td>
-       Understanding the ArgosX examples
+       理解 ArgosX 示例
       </td>
-      <td>Chapters for Ethernet socket communication in Python tutorials</td>
+      <td>Python 教程中以太网插座通信的章节</td>
     </tr>
 
   </tbody>
 </table>
-
-
-		
-		
-		
-
-
-
-
-
-
-
-		

@@ -1,12 +1,12 @@
-﻿# 3.6 Practical Project: ArgosX - Localization (Multi-language Support)
+﻿# 3.6 实践项目：ArgosX - 本地化（多语言支持）
 
-Up to now, the examples have focused on UI development based on English.  
-However, the ${cont_model} controller supports multiple languages in addition to English.
+到目前为止，示例主要集中在基于英语的用户界面开发。  
+然而，${cont_model} 控制器除了英语外，还支持多种语言。
 
-Therefore, plugin apps can also provide multiple languages through localization.
+因此，插件应用程序也可以通过本地化提供多种语言。
 
-Now, let's practice applying localization to the ArgosX project.
+现在，让我们练习将本地化应用到 ArgosX 项目中。
 
-* Localization of the Setup Screen UI  
-* Localization of the Monitoring Panel UI  
-* Localization of the User-bar UI
+* 设置屏幕 UI 的本地化  
+* 监控面板 UI 的本地化  
+* 用户栏 UI 的本地化

@@ -1,16 +1,16 @@
-﻿# 2.1 Creating a hello_world project - Folders and meta-information
+﻿# 2.1 创建 hello_world 项目 - 文件夹和元信息
 
-Create a folder named hello_world under the apps/ folder. The folder name should be the project name and must be unique in the apps/ folder.
+在 apps/ 文件夹下创建一个名为 hello_world 的文件夹。文件夹名称应为项目名称，并且在 apps/ 文件夹中必须是唯一的。
 
-Right-click the mouse on the hello_world/ folder in the explorer and click "Open using code" in the pop-up menu.
+在资源管理器中右键点击 hello_world/ 文件夹，然后在弹出菜单中点击“使用代码打开”。
 
 ![](../_assets/image_13.png)
 
-Afterward, vscode will open with the hello_world/ folder as the project. You can create a new file in the folder by clicking New File at the top left. The file name should be info.json.
+之后，vscode 将以 hello_world/ 文件夹作为项目打开。您可以通过点击左上角的“新建文件”来在文件夹中创建新文件。文件名应为 info.json。
 
 ![](../_assets/image_14.png)
 
-Click info.json to open it and input the following.
+点击 info.json 打开它并输入以下内容。
 
 ![](../_assets/image_15.png)
 
@@ -21,7 +21,7 @@ Click info.json to open it and input the following.
    "author" : "HD Hyundai Robotics",
    "binding" : "plug-in",
    "copyright" : "All right reserved",
-   "description" : "First example - hello_world",
+   "description" : "第一个示例 - hello_world",
    "entry" : "hello_world.py",
    "menu" : "ui/menu.json",
    "startup" : "manual",
@@ -33,65 +33,66 @@ Click info.json to open it and input the following.
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Key</th>
-      <th style="text-align:left">Meaning</th>
+      <th style="text-align:left">键</th>
+      <th style="text-align:left">含义</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>`author`</td>
+      <td>`作者 (author)`</td>
       <td>
-       Author
+       作者
       </td>
     </tr>
    <tr>
       <td>`binding`</td>
       <td>
-       The form of binding with the ${cont_model} host software<br>
-       - Plug-in: Will be executed in bound form.<br>
-       - Standalone: Will be executed as an independent app (process.) 
+       与 ${cont_model} 主机软件的绑定形式<br>
+<<<SOURCE_MARKDOWN_START>>>       - 插件：将以绑定形式执行。<br>
+       - 独立应用：将作为独立应用（进程）执行。 
       </td>
     </tr>
     <tr>
       <td>`copyright`</td>
       <td>
-       Copyright
+       版权
       </td>
     </tr>
     <tr>
-      <td>`description`</td>
+      <td>`描述 (description)`</td>
       <td>
-       Description	
+       描述	
       </td>
     </tr>
     <tr>
       <td>`entry`</td>
       <td>
-       The name of the file at the execution start location<br>
-       The name should be unique in the apps/ folder. If possible, set it as one of the following names below<br>
+       执行启动位置的文件名<br>
+       该名称在 apps/ 文件夹中应是唯一的。如果可能，请将其设置为以下名称之一<br>
        - {project name}.py<br>
        - {project name}_main.py
       </td>
     </tr>
     <tr>
-      <td>`menu`</td>
+      <td>`菜单 (menu)`</td>
       <td>
-       Menu structure of the user interface	
+       用户界面的菜单结构	
       </td>
     </tr>
      <tr>
-      <td>`startup`</td>
+      <td>`启动 (startup)`</td>
       <td>
-       Execution start mode
-       - Manual: Manually start the execution
-       - Boot: Automatically start the execution while booting	
+       执行启动模式
+       - 手动：手动启动执行
+       - 启动：在引导时自动启动执行	
       </td>
     </tr>
      <tr>
       <td>`version`</td>
       <td>
-       Version string	
+       版本字符串	
       </td>
     </tr>
   </tbody>
 </table>
+<<<SOURCE_MARKDOWN_END>>>

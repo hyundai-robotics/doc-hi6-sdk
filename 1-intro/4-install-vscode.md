@@ -1,50 +1,44 @@
-﻿# 1.4 Installing Visual Studio Code
+﻿# 1.4 安装 Visual Studio Code
 
-Microsoft Visual Studio Code (hereafter referred to as vscode) is a powerful text editor that is available for free. Through the installation of various extensions, vscode provides a development environment for numerous programming languages.
+Microsoft Visual Studio Code（以下简称 vscode）是一款强大的文本编辑器，免费提供。通过安装各种扩展，vscode 为多种编程语言提供了开发环境。
 
-You may use other familiar editors, such as Atom or SublimeText, but this manual provides explanations based on vscode.
+您可以使用其他熟悉的编辑器，如 Atom 或 SublimeText，但本手册提供的说明基于 vscode。
 
+#### 安装代码
+1) 访问以下链接，然后下载适用于 Windows 的稳定版本。
 
-
-#### Installing the code
-1) Access the link below then download the stable build version for Windows. 
-
-    For Windows: https://code.visualstudio.com/<br>
+    对于 Windows: https://code.visualstudio.com/<br>
     ![](../_assets/image_7.png)
 
-2) Execute the downloaded installation file and accept the license agreement.
+2) 执行下载的安装文件并接受许可协议。
 
     ![](../_assets/image_8.png)
 
-3) While keeping the default values, such as the installation path, continue pressing the Next button. When the screen for selecting additional jobs appears, tick as shown below, then click the Next button.
+3) 在保持默认值（如安装路径）的情况下，继续按 Next 按钮。当出现选择附加任务的屏幕时，如下所示勾选，然后点击 Next 按钮。
     
     ![](../_assets/image_9.png)
 
-4) Click the Install button. 
+4) 点击 Install 按钮。
 
-5) Upon finishing the installation, try running vscode.
+5) 安装完成后，尝试运行 vscode。
 
-#### Installing extensions
-This is the advantage vscode possesses that makes installing various extensions available in the marketplace possible.
+#### 安装扩展
+这是 vscode 的优势，使得可以在市场上安装各种扩展。
 
-The Activity Bar is a vertical bar on the far left of the vscode screen where icons are arranged. Among the icons, pressing the one marked in red will open the EXTENSIONS: MARKETPLACE screen, as shown in the figure. When you type the name of the desired extension in the filter window at the top, you can easily find the extension.
+活动栏是 vscode 界面最左侧的垂直栏，排列着图标。在这些图标中，按下红色标记的图标将打开 EXTENSIONS: MARKETPLACE 屏幕，如图所示。当您在顶部的过滤窗口中输入所需扩展的名称时，可以轻松找到该扩展。
 
 ![](../_assets/image_10.png)
 
-The extensions you need to install are as follows. Find each of them by using the filter, and install them using the Install button. 
+您需要安装的扩展如下。使用过滤器查找每个扩展，并使用 Install 按钮进行安装。
 
-
-
-- There may be multiple extensions with the same name. Select the correct extension by checking the author's name.
-- When Microsoft's Python is installed, additional extensions, such as Pylance, will be installed automatically. Pylance conflicts with Pyright, which is what we should use. Remove all other extensions except for Python.
-- When you edit a job file, it should be recognized as HRScript, not HR-BASIC. Leave HR-BASIC disabled.
+- 可能会有多个同名扩展。通过检查作者的姓名选择正确的扩展。
+- 当安装 Microsoft 的 Python 时，将自动安装附加扩展，如 Pylance。Pylance 与我们应该使用的 Pyright 冲突。除 Python 外，删除所有其他扩展。
+- 当您编辑作业文件时，它应被识别为 HRScript，而不是 HR-BASIC。将 HR-BASIC 保持禁用。
 
 ![](../_assets/image_11.png)
 
-During the development process, you will handle files with html, css, javascript, and json extensions, in addition to python. However, as the editing functions for these formats are embedded in vscode, you don't need to install the extensions separately.
+在开发过程中，您将处理 html、css、javascript 和 json 扩展的文件，除了 python。然而，因为这些格式的编辑功能嵌入在 vscode 中，所以您不需要单独安装扩展。
 
-
-
-Now, you are ready to use vscode. Learning about how to use it is recommended by referring to the vscode help menu or online lectures.
+现在，您已准备好使用 vscode。建议通过参考 vscode 帮助菜单或在线讲座学习如何使用它。
 
 ![](../_assets/image_12.png)

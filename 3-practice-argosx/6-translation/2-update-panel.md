@@ -1,19 +1,19 @@
-﻿#### 3.6.2 Monitoring Panel UI Localization
+#### 3.6.2 监控面板 UI 本地化
 
-Next, let's proceed with the translation work for the monitoring panel.
+接下来，我们将进行监控面板的翻译工作。
 
 <br>
 
-##### 1. Menu Translation
+##### 1. 菜单翻译
 
-The panel UI also requires translation in the menu.
+面板 UI 也需要对菜单进行翻译。
 
-To display the panel screen label in the monitoring panel menu, add an id.  
-Reuse the previously defined "IDS_title".
+要在监控面板菜单中显示面板屏幕标签，请添加 id。  
+重用之前定义的 "IDS_title"。
 
 menu.json
 
-Modify the existing menu.json as follows:
+根据以下内容修改现有的 menu.json：
 
 ```json
 {
@@ -25,29 +25,28 @@ Modify the existing menu.json as follows:
 }
 ```
 
-Set the label value to "IDS_title" instead of the fixed text "ArgosX Vision System".
+将标签值设置为 "IDS_title"，而不是固定文本 "ArgosX Vision System"。
 
-If applied correctly, the translated label will appear in the monitoring panel menu.
+如果正确应用，翻译后的标签将出现在监控面板菜单中。
 
 ![](../../_assets/image_89.png)
 
 <br>
 
-##### 2. Changes in the Panel Layout
+##### 2. 面板布局的更改
 
-To translate the monitoring screen UI, first review panel.html.
+要翻译监控屏幕 UI，首先查看 panel.html。
 
-As with the setup screen, add str_table.json and lang.js as script files.
+与设置屏幕一样，添加 str_table.json 和 lang.js 作为脚本文件。
 
-Because these files depend on each other, you must include them in the following order.
+因为这些文件彼此依赖，您必须按照以下顺序包含它们。
 
 ```html
 <script src='./str_table.json' type='application/json'></script>
 <script src='../../_common/js/lang.js'></script>
 ```
 
-Next, check the table defined in the body:
-
+接下来，检查在主体中定义的表格：
 ```html
 <table>
     <th id='name'></th>
@@ -74,78 +73,17 @@ Next, check the table defined in the body:
     </tr>
 </table>
 ```
+<br>
 
-Steps:
+##### 3. 添加面板翻译行为
 
-1) Assign an id to each table header (th) and cell (td) for translation.  
-2) You may remove any fixed text such as "IP address" because translated content will be inserted dynamically.
-
-After applying these changes, the html file should look like this:
-
-panel.html
-
-```html
-<!DOCTYPE html:5>
-<!--
-    @author: Jane Doe, BlueOcean Robot & Automation, Ltd.
-    @brief: ArgosX Vision System interface - panel
-    @create: 2021-12-07
--->
-<html>
-
-<head>
-<title>ArgosX Vision System</title>
-<meta http-equiv=Content-Type content='text/html; charset=utf-8'>
-    <link rel='stylesheet' href='../../_common/css/style.css' type=text/css rel=stylesheet>
-    <script src='../../_common/js/jquery-3.6.0.min.js'></script>
-    <script src='./str_table.json' type='application/json'></script>
-    <script src='../../_common/js/lang.js'></script>
-    <script src='./panel.js'></script>
-    <script>
-        $(document).ready(init);
-    </script>
-</head>
-
-<body>
-<table>
-    <th id='name'></th>
-    <th id='value'></th>
-    <tr>
-        <td class='thd' id='lb_ip_addr'></td>
-        <td id='ip_addr'></td>
-    </tr>
-    <tr>
-        <td class='thd' id='lb_port'></td>
-        <td id='port'></td>
-    </tr>
-    <tr>
-        <td class='thd' id='lb_sigcode_err'></td>
-        <td id='sigcode_err'></td>
-    </tr>
-    <tr>
-        <td class='thd' id='lb_n_req'></td>
-        <td id='n_req'></td>
-    </tr>
-    <tr>
-        <td class='thd' id='lb_n_res'></td>
-        <td id='n_res'></td>
-    </tr>
-</table>
-</body>
-</html>
-```
+现在，让我们为面板屏幕添加翻译行为。
 
 <br>
 
-##### 3. Add Panel Translation Behavior
+1) 初始化
 
-Now, let's add translation behavior to the panel screen.
-
-<br>
-
-1) Initialization
-
-During initialization, load string data from str_table.json and apply the lang_code from ${cont_model}.
+在初始化期间，从 str_table.json 加载字符串数据，并应用来自 ${cont_model} 的 lang_code。
 
 panel.js
 
@@ -159,13 +97,13 @@ function init()
 }
 ```
 
-As in setup.js, add parseStrData and setLangCode.
+与 setup.js 一样，添加 parseStrData 和 setLangCode。
 
 <br>
 
-2) Apply Translation According to lang_code
+2) 根据 lang_code 应用翻译
 
-Keep the existing string data usage and add additional required elements to str_table.json.
+保持现有字符串数据的使用，并向 str_table.json 添加所需的额外元素。
 
 ```json
 "en":
@@ -185,8 +123,7 @@ Keep the existing string data usage and add additional required elements to str_
     "IDS_Value" : "value"
 }
 ```
-
-Next, modify panel.js as follows:
+接下来，按如下方式修改 panel.js：
 
 ```js
 function updateAllStrByLang()
@@ -202,8 +139,8 @@ function updateAllStrByLang()
 }
 ```
 
-Since the panel only requires updating element names, simply assign string IDs using setElemByLang inside updateAllStrByLang.
+由于面板只需要更新元素名称，因此只需在 updateAllStrByLang 中使用 setElemByLang 分配字符串 ID。
 
-After rebooting the virtual controller and TP, the translated monitoring panel screen should be displayed correctly.
+重新启动虚拟控制器和 TP 后，翻译后的监控面板屏幕应正确显示。
 
 ![](../../_assets/image_90.png)

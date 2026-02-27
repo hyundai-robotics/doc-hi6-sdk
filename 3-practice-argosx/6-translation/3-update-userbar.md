@@ -1,14 +1,14 @@
-﻿#### 3.6.3 User-bar UI Localization
+#### 3.6.3 用户栏 UI 本地化
 
-##### 1. Changes in the User-bar Layout
+##### 1. 用户栏布局的变化
 
-To translate the user-bar UI, first open and review ubar.html.
+要翻译用户栏 UI，请先打开并查看 ubar.html。
 
-As in the previous steps, add str_table.json and lang.js as script files as shown below.
+与之前的步骤一样，将 str_table.json 和 lang.js 作为脚本文件添加，如下所示。
 
-Because these files depend on each other, they must be included in the following order.
+由于这些文件相互依赖，必须按照以下顺序包含它们。
 
-Also, since we will define an initialization function named init in ubar.html (which did not exist previously), write it as follows.
+此外，由于我们将在 ubar.html 中定义一个名为 init 的初始化函数（之前不存在），请按如下方式编写。
 
 ubar.html
 
@@ -21,17 +21,17 @@ ubar.html
 </script>
 ```
 
-Next, check the buttons declared inside the body:
+接下来，检查在 body 内声明的按钮：
 
 ```html
-<button id='light-on' class='ubar-bt' onclick='light_onoff(true);'>light<br>on</button>
-<button id='light-off' class='ubar-bt' onclick='light_onoff(false);'>light<br>off</button>
+<button id='light-on' class='ubar-bt' onclick='light_onoff(true);'>灯<br>开</button>
+<button id='light-off' class='ubar-bt' onclick='light_onoff(false);'>灯<br>关</button>
 ```
 
-You may remove the existing text such as "light on".  
-(The translated text will be inserted dynamically later.)
+您可以删除现有文本，例如 "灯开"。  
+（翻译后的文本稍后会动态插入。）
 
-After applying all the changes above, the html file should look like this:
+在应用上述所有更改后，html 文件应该如下所示：
 
 ubar.html
 
@@ -39,7 +39,7 @@ ubar.html
 <!DOCTYPE html:5>
 <!--
     @author: Jane Doe, BlueOcean Robot & Automation, Ltd.
-    @brief: ArgosX Vision System interface - bar
+    @brief: ArgosX 视觉系统接口 - 条
     @create: 2021-12-07
 -->
 <html>
@@ -63,18 +63,17 @@ ubar.html
 </body>
 </html>
 ```
+<br>
+
+##### 2. 添加用户栏翻译功能
+
+现在让我们为用户栏屏幕添加翻译功能。
 
 <br>
 
-##### 2. Add User-bar Translation Behavior
+1) 初始化
 
-Now let's add translation functionality to the user-bar screen.
-
-<br>
-
-1) Initialization
-
-During initialization, load string data from str_table.json and apply the lang_code read from ${cont_model} to the platform's localization system.
+在初始化期间，从 str_table.json 加载字符串数据，并将 ${cont_model} 中读取的 lang_code 应用到平台的本地化系统。
 
 ubar.js
 
@@ -86,13 +85,13 @@ function init()
 }
 ```
 
-As before, add parseStrData and setLangCode.
+照常，添加 parseStrData 和 setLangCode。
 
 <br>
 
-2) Apply Translation According to lang_code
+2) 根据 lang_code 应用翻译
 
-Add the required elements to str_table.json.
+向 str_table.json 添加所需元素。
 
 ```json
 "en":
@@ -102,12 +101,12 @@ Add the required elements to str_table.json.
 },
 "ko":
 {
-    "IDS_light_on" : "Light ON",
-    "IDS_light_off" : "Light OFF"
+    "IDS_light_on" : "灯打开",
+    "IDS_light_off" : "灯关闭"
 }
 ```
 
-Next, modify ubar.js as follows:
+接下来，按如下方式修改 ubar.js：
 
 ```js
 function updateAllStrByLang()
@@ -116,9 +115,8 @@ function updateAllStrByLang()
     setElemByLang('light-off', 'IDS_light_off');
 }
 ```
+由于用户栏仅需要更新元素标签，只需使用 setElemByLang 分配字符串 ID。
 
-Since the user-bar only needs to update element labels, simply assign string IDs using setElemByLang.
-
-After rebooting the virtual controller and TP, the translated user-bar screen should be displayed correctly.
+在重启虚拟控制器和 TP 后，翻译后的用户栏屏幕应该正确显示。
 
 ![](../../_assets/image_91.png)

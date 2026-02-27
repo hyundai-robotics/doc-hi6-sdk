@@ -1,16 +1,12 @@
-﻿#### 3.4.2 Layout of the monitoring panel
+#### 3.4.2 监控面板的布局
 
-Open vscode for the apps/ folder that is the parent of the ArgosX folder.
+打开 vscode，进入 ArgosX 文件夹的父文件夹 apps/。
 
-
-Create ui/panel.html and panel.js files.
+创建 ui/panel.html 和 panel.js 文件。
 
 ![](../../_assets/image_50.png)
 
-
-Write the content as follows, which is about a simple layout consisting of one table. The first column of the table is given a class called 'thd' (abbreviation for table header), and this class is defined in the common style.css with black characters on a gray background. If you want to change the style, you can define a class using a separate local css and apply it.
-
-
+写入内容如下，这是一个由一个表格组成的简单布局。表格的第一列被赋予一个名为 'thd' 的类（表示表头），该类在 common style.css 中定义，字符为黑色背景为灰色。如果您想更改样式，可以使用单独的本地 css 定义一个类并应用它。
 
 panel.html
 ``` html
@@ -23,7 +19,7 @@ panel.html
 <html>
   
 <head>
-   <title>ArgosX Vision System</title>
+   <title>ArgosX 视觉系统</title>
    <meta http-equiv=Content-Type content='text/html; charset=utf-8'>
    <link rel='stylesheet' href='../../_common/css/style.css' type=text/css rel=stylesheet>
    <script src='../../_common/js/jquery-3.6.0.min.js'></script>
@@ -35,40 +31,35 @@ panel.html
   
 <body>
    <table>
-      <th>name</th>
-      <th>value</th>
+      <th>名称</th>
+      <th>值</th>
       <tr>
-         <td class='thd'>IP address</td>
+         <td class='thd'>IP 地址</td>
          <td id='ip_addr'></td>
       </tr>
       <tr>
-         <td class='thd'>port#</td>
+         <td class='thd'>端口#</td>
          <td id='port'></td>
       </tr>
       <tr>
-         <td class='thd'>sigcode for error</td>
+         <td class='thd'>错误的 sigcode</td>
          <td id='sigcode_err'></td>
       </tr>
       <tr>
-         <td class='thd'>n.request</td>
+         <td class='thd'>请求数量</td>
          <td id='n_req'></td>
       </tr>
       <tr>
-         <td class='thd'>n.response</td>
+         <td class='thd'>响应数量</td>
          <td id='n_res'></td>
       </tr>
    </table>
 </body>
 </html>
 ```
-
-While panel.html is open, if you execute Live server by clicking the Go Live button at the bottom right, the Google Chrome browser will open.
+当 panel.html 打开时，如果您通过点击右下角的 Go Live 按钮执行 Live server，Google Chrome 浏览器将会打开。
 
 ![](../../_assets/image_51.png)
 <br></br>
-Even though there is no content in panel.js yet, we can check whether the layout is normal.
+尽管 panel.js 中还没有内容，我们仍然可以检查布局是否正常。
 ![](../../_assets/image_52.png)
-
-
-
-

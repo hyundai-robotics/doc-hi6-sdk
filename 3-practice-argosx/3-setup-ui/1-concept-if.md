@@ -1,22 +1,18 @@
-﻿### 3.3.1 Specifications of the ArgosX setup screen user interface
+### 3.3.1 ArgosX 设置屏幕用户界面的规格
 
-Let's create the setup screen user interface with the following specifications.
+让我们创建具有以下规格的设置屏幕用户界面。
 
-* In the Setup - Application Parameter menu, there is a menu to enter the ArgosX setup screen.
-* On the ArgosX setup screen, you can set the IP address and port number of the ArgosX system
-* The content of the setup will be saved into the argosx.json file as a json file.
-* An F button (Initialize All) that sets the entire screen to the default values is provided.
-* An F button (Initialize One) that sets only the currently selected items to default values is provided.
+* 在设置 - 应用程序参数菜单中，有一个进入ArgosX设置屏幕的菜单。
+* 在ArgosX设置屏幕上，您可以设置ArgosX系统的IP地址和端口号。
+* 设置的内容将保存到argosx.json文件中作为json文件。
+* 提供一个F按钮（初始化全部），将整个屏幕设置为默认值。
+* 提供一个F按钮（初始化单个），只将当前选择的项目设置为默认值。
 <br></br>
 
 ![](../../_assets/image_34.png)
 
+无论是否将ArgosX导入到作业程序中，我们希望能够打开设置屏幕并检查/更改设置值。
 
+将argosx/info.json文件中的启动项从“manual”更改为“boot”。现在，由于ArgosX将在控制器启动时被导入，因此您无需将ArgosX导入到作业程序中。
 
-
-
-Regardless of whether ArgosX is imported to the job program, we want to make opening the setup screen and checking/changing the setup values possible.
-
-Change the startup item in the argosx/info.json file from "manual" to "boot". Now, as ArgosX will be imported while the controller is booting, you do not need to import ArgosX to the job program.
-
-(You can still carry out the setups in HRScript.)
+（您仍然可以在HRScript中进行设置。）

@@ -1,8 +1,8 @@
-﻿### 3.3.3 Operating the setup screen
+### 3.3.3 操作设置屏幕
 
-As shown below, add the scripts into the head of setup.html.
+如下所示，将脚本添加到 setup.html 的头部。
 
-The setup.js file is a script file designed to implement operations that are to be applied only on this setup screen. Additional descriptions will be provided below.
+setup.js 文件是一个脚本文件，旨在实现仅在此设置屏幕上应用的操作。将提供以下附加描述。
 
 
 
@@ -33,7 +33,7 @@ ui/setup.html
 <body>
    <div>
       <div id='contents'>
-         <span class='col0' name='ip_addr'>IP address</span>
+         <span class='col0' name='ip_addr'>IP 地址</span>
          <input class='col1' type='text' name='ip_addr' id='ip_addr_0' size='3'/>
          .
          <input class='col1' type='text' name='ip_addr' id='ip_addr_1' size='3'/>
@@ -42,10 +42,10 @@ ui/setup.html
          .
          <input class='col1' type='text' name='ip_addr' id='ip_addr_3' size='3'/>
          <br>
-         <span class='col0' name='port'>Port#</span>
+         <span class='col0' name='port'>端口#</span>
          <input class='col1' type='text' id='port' size='5'/>
          <br>
-         <span class='col0' name='sigcode_err'>Failure output signal</span>
+         <span class='col0' name='sigcode_err'>故障输出信号</span>
          <input class='col1' type='text' id='sigcode_err' size='5'/>
       </div>
       <div id='guidebar'></div>
@@ -53,17 +53,11 @@ ui/setup.html
 </body>
 </html>
 ```
+将setup.js文件放入ui/文件夹并写入以下内容。
 
-
-
-Add the setup.js file into the ui/ folder and write the following content.
-
-
-
-ui/setup.js
 ``` js
 ///@author: Jane Doe, BlueOcean Robot & Automation, Ltd.
-///@brief: ArgosX Vision System interface - setup
+///@brief: ArgosX视觉系统接口 - 设置
 ///@create: 2021-12-06
  
  
@@ -77,7 +71,7 @@ function init()
 }
  
  
-///@return     f-button infos array
+///@return     f-button infos数组
 function initButtonBar()
 {
    console.log('initButtonBar()'); 
@@ -87,13 +81,13 @@ function initButtonBar()
 }
  
  
-///@brief      have guidebar display message on clicking widget
+///@brief      在点击小部件时，指南栏显示消息
 function updateGuideBar()
 {
    let sg = setGuideBarMsg;
-   let msg_ip_addr = 'Enter the IP address of ArgosX.'
-   let msg_port = 'Enter the port # of ArgosX.'
-   let msg_sigcode = 'Enter the number of the signal to assign.[0 - 4096]';
+   let msg_ip_addr = '输入ArgosX的IP地址。'
+   let msg_port = '输入ArgosX的端口号。'
+   let msg_sigcode = '输入要分配的信号的号码。[0 - 4096]';
     
    sg('ip_addr', msg_ip_addr);
    sg('port', msg_port);
@@ -110,18 +104,15 @@ function updateData(data, to_data)
    ddx_edit_sig(data, 'sigcode_err', to_data);
 }
 ```
+当光标位于输入元素上时，updateGuideBar( ) 函数将调用 setGuideBarMsg( ) 函数，然后指定要在指导框中显示的消息。
 
-When the cursor is located on the input element, the updateGuideBar( ) function will call the setGuideBarMsg( ) function, then it will designate the message to be displayed in the guidance frame.
-
-__setGuideBarMsg(The ID or name of the element and the message to be displayed)___
+__setGuideBarMsg(元素的 ID 或名称和要显示的消息)___
 <br></br>
 
-For example, sg('ip_addr', msg_ip_addr); in the example above refers to the setting that displays the msg_ip_addr string in the guidance frame when the cursor is located on the input element with the name 'ip_addr.'
+例如，sg('ip_addr', msg_ip_addr); 在上面的例子中指的是当光标位于名称为 'ip_addr' 的输入元素上时，将 msg_ip_addr 字符串显示在指导框中的设置。
 
+当初始打开设置屏幕时，需要加载当前设置值。在按下 [OK] 按钮时，值应被保存。
 
+与这些设置相关的操作通过调用 setDomPath("/apps/argosx/svr_setup"); 和定义 updateData() 函数来实现。
 
-When the setup screen is opened initially, the current setup value needs to be loaded. Upon pressing the [OK] button, the value should be saved.
-
-Operations related to these settings are to be implemented by calling setDomPath("/apps/argosx/svr_setup"); and defining the updateData() function.
-
-More detailed descriptions will be provided in the subsequent sections.
+更详细的描述将在后续部分中提供。

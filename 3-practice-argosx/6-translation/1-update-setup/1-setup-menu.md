@@ -1,15 +1,15 @@
-﻿#### 3.6.1.1 Translating the Setup Screen Menu
+#### 3.6.1.1 翻译设置屏幕菜单
 
-##### Registering the string table
+##### 注册字符串表
 
-To register resources for localization, you must create a string table.  
-It must be registered in JSON format and added as shown below.
+要注册本地化资源，您必须创建一个字符串表。  
+它必须以 JSON 格式注册，并按如下所示添加。
 
-1) Add the file str_table.json inside the ui folder of the argosx project.
+1) 在 argosx 项目的 ui 文件夹中添加文件 str_table.json。
 
     ![](../../../_assets/image_85.png)
 
-2) Content
+2) 内容
 
 ```json
 {
@@ -17,33 +17,33 @@ It must be registered in JSON format and added as shown below.
     {
         "IDS_title" : "ArgosX Vision System"
     },
-    "ko":
+    "zh":
     {
-        "IDS_title" : "ArgosX Vision System"
+        "IDS_title" : "ArgosX 视觉系统"
     }
 }
 ````
 
-"en" and "ko" are language codes (hereafter referred to as langcode) compatible with ${cont_model}.
-"en" means English, and "ko" means Korean.
+"en" 和 "zh" 是与 ${cont_model} 兼容的语言代码（以下简称 langcode）。
+"en" 代表英语，而 "zh" 代表中文。
 
-Each langcode contains members composed of a string id and its corresponding string value.
+每个 langcode 包含由字符串 id 和其对应字符串值组成的成员。
 
-To add a title in the menu, add string data with the same id "IDS_title" to both "en" and "ko" following the format above.
+要在菜单中添加标题，请按照上述格式将相同 id "IDS_title" 的字符串数据添加到 "en" 和 "zh" 中。
 
 <br>
 
-##### Translating the menu label
+##### 翻译菜单标签
 
-The label on the setup screen menu must also be translated.
+设置屏幕菜单上的标签也必须翻译。
 
-Follow the steps below:
+请遵循以下步骤：
 
 1. info.json
 
-Modify the existing info.json file.
+修改现有的 info.json 文件。
 
-Add the created str_table.json file as the value of the "strs" id.
+将创建的 str_table.json 文件作为 "strs" id 的值添加。
 
 ```json
 {
@@ -59,10 +59,9 @@ Add the created str_table.json file as the value of the "strs" id.
     "version" : "v0.9.0"
 }
 ```
-
 2. menu.json
 
-Modify the existing menu.json file.
+修改现有的 menu.json 文件。
 
 ```json
 {
@@ -74,20 +73,20 @@ Modify the existing menu.json file.
 }
 ```
 
-Set the label value to "IDS_title" instead of the fixed text "ArgosX Vision System".
+将标签值设置为 "IDS_title"，而不是固定文本 "ArgosX Vision System"。
 
 <br>
 
-3. Language selection
+3. 语言选择
 
-In the virtual controller environment, you must modify the "lang_code" value in hi6tp_platform_cfg.json.
+在虚拟控制器环境中，您必须修改 hi6tp_platform_cfg.json 中的 "lang_code" 值。
 
 ```json
 "lang_code": "en"
 ```
 
-After changing the lang_code, restart the controller and TP to verify the updated language and menu label.
+更改 lang_code 后，重新启动控制器和 TP，以验证更新的语言和菜单标签。
 
-If applied correctly, the menu should now be displayed in Korean.
+如果应用正确，菜单现在应该以韩语显示。
 
 ![](../../../_assets/image_86.png)

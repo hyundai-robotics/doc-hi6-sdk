@@ -1,106 +1,63 @@
-﻿# 4.2 Debugging a web-based UI
+﻿# 4.2 调试基于Web的用户界面
 
+在教导挂件上测试Web用户界面之前，我们可以通过Google Chrome网络浏览器预先测试屏幕。
 
-Before testing a web UI on the teach pendant, we could pretest the screen with the Google Chrome web browser.
+如果我们编写的Web用户界面在JavaScript中存在语法错误或实现主体中的逻辑错误，则应使用调试器追踪原因并进行补充。此外，Google Chrome网络浏览器中有一个内置的调试器，称为Chrome开发工具（缩写为Chrome DevTools），因此您可以使用它。在本节中，我们将学习如何调试Web用户界面。如果您已经熟悉使用Chrome DevTools，可以跳过此部分。
 
-If the web UI we have written has a grammatical error in JavaScript or a logical error in the implementation body, a debugger should be used to trace the cause and supplement it. Moreover, there is a built-in debugger called Chrome Development Tools (abbreviated as Chrome DevTools) in the Google Chrome web browser, so you can use it. In this section, we will learn how to debug a web UI. If you are already familiar with using Chrome DevTools, you can skip this section.
+#### 使用Live服务器执行Web用户界面
 
+在<u>设置屏幕的布局</u>部分中，我们曾经练习过使用Google Chrome网络浏览器执行ArgosX插件的setup.html。
 
+让我们再次执行它。
 
+虚拟控制器的ArgosX应处于正常导入状态。
 
-
-#### Executing a web UI with Live server
-
-
-In the <u>Layout of the setup screen</u> section, we have practiced executing the setup.html of the ArgosX plug-ins with the Google Chrome web browser before.
-
-Let's execute it again.
-
-
-
-The ArgosX of the virtual controller should be in its normally imported state.
-
-While setup.html is opened in vscode, you need to click the Go Live button on the bottom right to run the Live server.
+当setup.html在vscode中打开时，您需要点击右下角的Go Live按钮来运行Live服务器。
 
 ![](../_assets/image_70.png)
 
-
-
-
-Alternatively, you can open a pop-up menu by right-clicking the mouse on setup.html, then select "Open with Live Server".
+或者，您可以通过右键单击setup.html打开弹出菜单，然后选择“用Live Server打开”。
 
 ![](../_assets/image_71.png)
 
-
-
- As you can see below, setup.html is opened with the Chrome web browser.
+如您所见，setup.html已在Chrome网络浏览器中打开。
 
 ![](../_assets/image_72.png)
 
+#### Chrome开发工具
 
-
-
-
-
-#### Chrome DevTools
-
-
-When you press the F12 button, Chrome DevTools will open on the right side of the browser. In the picture below, Console, a menu at the top of the DevTools is selected. When a string is called with console.log() in JavaScript, the string will be printed on this console window. During this process, the source code location where log( ) was called is also displayed, allowing you to click to move to the source code location, which makes the debugger useful for debugging.
+当您按下F12按钮时，Chrome开发工具将在浏览器的右侧打开。在下面的图片中，DevTools顶部的菜单Console被选中。当在JavaScript中使用console.log()调用字符串时，该字符串将打印在此控制台窗口中。在此过程中，调用log( )的源代码位置也会显示，从而允许您单击以跳转到源代码位置，使调试器在调试时非常有用。
 
 ![](../_assets/image_73.png)
-
-
-
-Selecting Elements from the menu at the top of the DevTools enables you to see the hierarchy of an html file. When you select a specific element in the html file, the relevant element will be highlighted on the left rendering screen, while the CSS style will be displayed on the bottom right.
-
+选择顶部 DevTools 菜单中的元素可以让您看到 html 文件的层次结构。当您在 html 文件中选择特定元素时，相关元素将在左侧渲染屏幕上高亮显示，而 CSS 样式将在右下角显示。
 
 ![](../_assets/image_74.png)
 
-
-
-Selecting the Sources menu will make JavaScript source code files appear in a tree-like structure. You can select and open the desired file and check the source code. You can also toggle the breakpoint by clicking the line number on the left.
+选择 Sources 菜单时，JavaScript 源代码文件将以树状结构出现。您可以选择并打开所需的文件并检查源代码。您还可以通过单击左侧的行号来切换断点。
 
 ![](../_assets/image_75.png)
 
+单击左侧 html 渲染屏幕上的更新按钮或按 F5 键将更新网页 UI，并使 JavaScript 从头开始运行。您可以看到执行光标停在断点处。您还可以在图像底部看到断点和调用堆栈窗口，您可以通过单击相关项目转到源代码的位置。
 
+右下角的 Scope 菜单显示局部变量，如果您在 Scope 菜单右侧选择 Watch 菜单，您可以添加并观察所需的变量。
 
-Clicking the Update button on the html rendering screen on the left or pressing the F5 key will update the web UI and make JavaScript run from the beginning. You can see that the execution cursor stopped at the breakpoint. You can also see the Breakpoints and Call Stack windows at the bottom of the picture, and you can move to a source code's location by clicking the relevant item.
-
-The Scope menu at the bottom right shows local variables, and if you select the Watch menu on the right side of the Scope menu, you can add and observe the desired variables.
-
-This environment will be a very familiar debugging environment for the users of integrated development environments, such as Visual Studio or Eclipse.
-
-
+对于集成开发环境的用户，如 Visual Studio 或 Eclipse，该环境将是一个非常熟悉的调试环境。
 
 ![](../_assets/image_76.png)
 
 ![](../_assets/image_77.png)
 
-
-
-
-Tracing can be performed when a breakpoint is placed. You can perform the Resume (F8), Step over (F10), Step into (F11), and Step out (Shift+F11) operations with the operating button group above the Breakpoints window.
-
+当放置断点时，可以进行追踪。您可以使用断点窗口上方的操作按钮组执行 Resume (F8)、Step over (F10)、Step into (F11) 和 Step out (Shift+F11) 操作。
 
 ![](../_assets/image_78.png)
 
+#### 修改和重新执行源代码
 
-#### Modifying and re-executing source code
+在修改 html、CSS 和 JavaScript 的源代码后，如果您在网页浏览器中单击更新按钮或按 F5 键，执行将基于修改后的内容进行。
 
-
-After modifying the source codes of html, CSS, and JavaScript, if you click the Update button in the web browser or press the F5 key, the execution will occur based on the modified content.
-
-Moreover, because web browsers have caches, the modifications may not be reflected even if the source code is modified and re-executed. In this case, you can solve the problem by right-clicking the mouse on the Update button and opening a pop-up menu, then selecting the 'Clear Cash and Hard Refresh' menu (This pop-up menu is only available when DevTools is open).
-
+此外，由于网页浏览器具有缓存，即使源代码已修改并重新执行，修改可能不会反映到网页中。在这种情况下，您可以通过右键单击更新按钮并打开弹出菜单，然后选择“清除缓存并强制刷新”菜单来解决问题（此弹出菜单仅在 DevTools 打开时可用）。
 
 ![](../_assets/image_79.png)
 
-
-Refreshing can also be performed from a virtual teach pendant rather than on a web browser. Right-clicking the mouse on the web U/I screen will open a pop-up window. If you select the Reload menu here, the modifications made in the source code will be reflected immediately.
-
-
+刷新也可以通过虚拟教学挂件而不是在网页浏览器中进行。在网页 U/I 屏幕上右键单击将打开弹出窗口。如果您在这里选择重新加载菜单，源代码中所做的修改将立即反映出来。
 ![](../_assets/image_80.png)
-
-
-
-

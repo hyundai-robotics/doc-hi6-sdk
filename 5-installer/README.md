@@ -1,3 +1,3 @@
-﻿# 5. Installer
+﻿# 5. 安装程序
 
-(to be written in the future)
+(将来撰写)

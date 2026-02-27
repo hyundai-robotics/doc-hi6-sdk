@@ -1,7 +1,7 @@
-﻿### 3.6.1 Localization of the Settings Screen UI
+### 3.6.1 设置屏幕UI的本地化
 
-First, let's begin the translation work for the Settings screen UI.
+首先，让我们开始设置屏幕UI的翻译工作。
 
-* Translation of the Settings screen menu
-* Translation of the Settings screen UI
-* Translation of the F-button UI
+* 设置屏幕菜单的翻译
+* 设置屏幕UI的翻译
+* F按钮UI的翻译

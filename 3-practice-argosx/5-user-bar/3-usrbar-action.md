@@ -1,41 +1,34 @@
-﻿#### 3.5.3 Operating the user bar
+#### 3.5.3 操作用户条
 
-##### Client side (teach pendant)
+##### 客户端（教学挂件）
 
+将以下内容写入 ui/ubar.js 文件。每次按钮被按下时，教学挂件将会向主板发送一个 HTTP POST 消息，名为 "light_onoff"。该消息是否开启或关闭将包含在一个具有 onoff 属性的对象中，并将加载在 POST 消息的主体中并发送。
 
-
-Write the following content in the ui/ubar.js file. Every time the button is pressed, the teach pendant will transmit an HTTP post message called "light_onoff" to the main board. Whether it is on or off will be contained in an object that has the onoff attribute, and it will be loaded in the body of the post message and sent. 
-
-- Body in light-on state: { onoff: true }
-- Body in light-off sate: { onoff: false }
-
+- 开启灯光状态的主体：{ onoff: true }
+- 关闭灯光状态的主体：{ onoff: false }
 
 ui/ubar.js
-``` js
 ///@author: Jane Doe, BlueOcean Robot & Automation, Ltd.
-///@brief: ArgosX Vision System interface - setup general
+///@brief: ArgosX Vision System 界面 - 设置通用
 ///@create: 2021-12-07
- 
- 
- 
-///@return     e.g. "http://192.168.1.150:8888"
+
+///@return     例如 "http://192.168.1.150:8888"
 function domainMb()
 {
    var domain = "http://" + window.location.hostname + ":8888";
    console.log(domain);
    return domain;
 }
- 
- 
-///@param[in]  onoff    true or false
+
+///@param[in]  onoff    true 或 false
 ///@return
 ///      -  0     ok
-///@brief      request light-on/off
+///@brief      请求灯光开启/关闭
 function light_onoff(onoff)
 {
    var url = domainMb()+"/apps/argosx/svr_light_onoff";
    var args = { onoff: onoff };
- 
+
    args = JSON.stringify(args);
    $.ajax({
       url: url,
@@ -44,29 +37,22 @@ function light_onoff(onoff)
       contentType : "application/json; charset=utf-8",
       data: args,
       success: function(res) {
-         console.log('success' + res);
+         console.log('成功' + res);
       },
       error : function(res) {
-         console.log('error' + res);
+         console.log('错误' + res);
       }
    });
- 
+
    return 0;
 }
-```
+##### 服务器端 (主板)
 
+现在，主板的 ArgosX 插件需要接收此消息并向实际的 ArgosX 设备发送“light-on”和“light-off”消息（使用存根进行测试）。
 
-
-##### Server side (mainboard)
-
-
-Now, the ArgosX plug-in of the mainboard needs to receive this message and send the "light-on" and "light-off" messages to the actual ArgosX device (testing with a stub).
-
-
-
-Write the ubar.py file into the argosx/ folder as follows. Regarding its implementation, the comm_ex module will be utilized similarly to how we performed the callback implementations in a previous chapter.
+将 ubar.py 文件写入 argosx/ 文件夹，具体如下。关于其实现，comm_ex 模块将类似于我们在前一章中执行回调实现的方式来使用。
 ``` python
-""" ArgosX Vision System interface - main
+""" ArgosX 视觉系统接口 - main
  
  
 @author:    Jane Doe, BlueOcean Robot & Automation, Ltd.
@@ -92,13 +78,11 @@ def post_light_onoff(body: dict) -> int:
    return comm_ex.send_msg_once(msg)
 ```
 
-As the final step, import all functions of ubar.py to main.py.
-
-
+作为最后一步，将 ubar.py 的所有函数导入到 main.py。
 
 main.py
 ``` python
-""" ArgosX Vision System interface - main
+""" ArgosX 视觉系统接口 - main
  
  
 @author:    Jane Doe, BlueOcean Robot & Automation, Ltd.
@@ -114,24 +98,14 @@ from .ubar import *
 import xhost
  
  
-Subsequent steps skipped...
+后续步骤已跳过...
 ```
+重新启动虚拟控制器，然后运行作业文件直到 argosx.init( )。再次执行 Go Live 以在网页浏览器上显示用户栏界面。
 
-Reboot the virtual controller, then run the job file up to argosx.init( ). Execute Go Live again to bring up the user bar screen on the web browser.
-
-Execute an ArgosX stub then operate the buttons on the web browser. If the stub's output on the console is displayed as "light-on" and "light-off", it means the operation is normal.
+执行 ArgosX 存根，然后在网页浏览器上操作按钮。如果存根在控制台上的输出显示为 "light-on" 和 "light-off"，则表示操作正常。
 <br>
 ![](../../_assets/image_60.png)
 
-
-
-
-ArgosX stub's output on the console
+控制台上的 ArgosX 存根输出
 <br>
 ![](../../_assets/image_61.png)
-
-
-
-
-
-

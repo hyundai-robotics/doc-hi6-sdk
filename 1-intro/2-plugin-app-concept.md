@@ -1,20 +1,20 @@
-﻿# 1.2 Concept of ${cont_model} plug-in apps
-An ${cont_model} app consists of Python 3 scripts that operate in the main module and JavaScript-based web software that execute UI operations in the teach pendant.
+﻿# 1.2 ${cont_model} 插件应用的概念
+一个 ${cont_model} 应用由在主模块中运行的 Python 3 脚本和在教导挂件中执行 UI 操作的基于 JavaScript 的网页软件组成。
 
-For apps without UIs, they may consist of only Python scripts.
+对于没有用户界面的应用，它们可能仅由 Python 脚本组成。
 
-Multiple Python files and web app files will be installed under one folder in the main module.
+多个 Python 文件和网页应用文件将安装在主模块的一个文件夹下。
 
-#### Python scripts
-The scripts can be called through specific robot controller events or periodically. In addition, the designated Python functions can be called using the robot language commands in the .job file.
+#### Python 脚本
+这些脚本可以通过特定的机器人控制器事件或定期调用。此外，可以使用 .job 文件中的机器人语言命令调用指定的 Python 函数。
 
-Through a module called xhost, the robot controller's software objects can be controlled or monitored, and xhost interacts with software objects through a Python interface or OpenAPI.
+通过一个名为 xhost 的模块，可以控制或监控机器人控制器的软件对象，xhost 通过 Python 接口或 OpenAPI 与软件对象进行交互。
 
-#### Teach pendant UI web apps
-This web app is identical to normal web apps used in a PC or mobile environment. It consists of HyperText Markup Language (HTML)/Cascading Style Sheets (CSS)/JavaScript and resource files, such as various images.
+#### 教导挂件 UI 网页应用
+此网页应用与在 PC 或移动环境中使用的普通网页应用相同。它由超文本标记语言（HTML）/层叠样式表（CSS）/JavaScript 和各种图片等资源文件组成。
 
-This web app is stored in the main module, which will be transferred to the teach pendant to be executed on a web browser engine.
+此网页应用存储在主模块中，将被转移到教导挂件上，在网页浏览器引擎中执行。
 
-By calling the OpenAPI, the teach pendant web app can call the Python functions and send and receive data.
+通过调用 OpenAPI，教导挂件网页应用可以调用 Python 函数并发送和接收数据。
 
 ![](../_assets/image_1.png)

@@ -1,50 +1,50 @@
-﻿# 1.3 Installing the Python 3 development environment
-#### Installing Python 3 
-Install Python v3.8 according to the following procedures.
+﻿# 1.3 安装 Python 3 开发环境
+#### 安装 Python 3 
+按照以下程序安装 Python v3.8。
 
 <br></br>
-1) The link below will lead to a Python v3.8.0. installation screen. Install x86 32bit.
+1) 下面的链接将带您到 Python v3.8.0 的安装界面。安装 x86 32bit。
 
-    <span style='background-color:#ffdce0'>(caution: As the ${cont_model} virtual controller is a 32bit app, the python runtime should be made to match it. Do not install x86-64) </span>
+    <span style='background-color:#ffdce0'>(注意: 因为 ${cont_model} 虚拟控制器是一个 32bit 应用，所以 Python 运行时应与之匹配。请勿安装 x86-64)</span>
 
     https://www.python.org/downloads/release/python-380/
 
     ![](../_assets/image_2.png)
 
-2) Tick Add Python 3.8 to PATH, then select Customize installation.
+2) 勾选将 Python 3.8 添加到 PATH，然后选择自定义安装。
     ![](../_assets/image_3.png)
 
-3) Tick all and click Next.
+3) 勾选全部并点击下一步。
     ![](../_assets/image_4.png)
-4) Tick all. Leave the installation path as C:\Program Files (x86)\Python38-32 as is and click Install.
+4) 勾选全部。保持安装路径为 C:\Program Files (x86)\Python38-32 不变，然后点击安装。
     ![](../_assets/image_5.png)
-5) You do not need to press Disable path length limit. Click Close.
+5) 您不需要按禁用路径长度限制。点击关闭。
     ![](../_assets/image_6.png)
 
-6) Open the Windows Command Prompt (press Windows + R, type in cmd, then press the enter key.)
+6) 打开 Windows 命令提示符（按 Windows + R，输入 cmd，然后按回车键。）
 
-    Type in ```python --version``` then press the enter key to check whether the version shown below is printed.
+    输入 ```python --version``` 然后按回车键检查是否打印出下面的版本。
 
     ```
     Python 3.8.0
     ```
 
-#### Adding a python import search path
-1) Create a .pth file and designate the path where the _common/ folder is located. 
-    Open the .pth file in the SDK and designate the path below to match the HOME path of the ${cont_model} virtual controller.
+#### 添加 Python 导入搜索路径
+1) 创建一个 .pth 文件并指定 _common/ 文件夹所在的路径。 
+    在 SDK 中打开 .pth 文件，并指定下面的路径以匹配 ${cont_model} 虚拟控制器的 HOME 路径。
  
 
-    Example of file contents:    
+    文件内容示例：    
     ```
     D:\${cont_model}\home_main\apps
     ```
 
-2) Deploy the edited .pth file into the python installation path/Lib/site-packages/.
+2) 将编辑后的 .pth 文件部署到 Python 安装路径/Lib/site-packages/。
     
-    Example: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
+    示例: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
 
 
-#### Deploying dynamic libraries
-Deploy ucrtbased.dll and vcruntime140d.dll in the SDK to the python installation path.
+#### 部署动态库
+将 ucrtbased.dll 和 vcruntime140d.dll 从 SDK 部署到 Python 安装路径。
 
-Example: Copy to C:\Program Files (x86)\Python38-32\.
+示例: 复制到 C:\Program Files (x86)\Python38-32\.

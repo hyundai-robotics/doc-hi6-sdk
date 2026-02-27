@@ -1,32 +1,29 @@
-﻿#### 3.2.2 Implementing a callback function
-Because we ensured that the callback functions are called well, let's implement the actual operations.
+#### 3.2.2 实现回调函数
+因为我们确保了回调函数能够正常调用，接下来让我们实现实际操作。
 
-As you can see by checking <U>3.1.1 Specifications of ArgosX and interface plug-ins</U>, you just need to send the "light-on" and "light-off" messages to the ArgosX hardware.
+如通过检查 <U>3.1.1 ArgosX 的规格和接口插件</U> 所示，您只需向 ArgosX 硬件发送“light-on”和“light-off”消息。
 
-
-
-Because the comm module already has a function implemented to send an Ethernet string, you only need to call one as follows.
+因为通信模块已经实现了发送以太网字符串的功能，您只需调用一个，如下所示。
 ```
 comm.send_msg("light-on")
 comm.send_msg("light-off")
 ```
 <br></br>
 
-However, there is one problem with this implementation. If the comm.open( ) function is called through argosx.init, a robot language command, the string will be transmitted normally. However, if the function is not called, the string will not be transmitted.
+然而，这个实现存在一个问题。如果通过 argosx.init 调用 comm.open( ) 函数，一个机器人语言命令，字符串将正常传输。然而，如果未调用此函数，字符串将不会被传输。
 
-In addition, transmissions will not occur even when communications are closed because of comm.close( ).
+此外，即使关闭通信因为 comm.close( )，也不会发生传输。
 
-Therefore, it is necessary to define a string transmission function that makes it possible to open communications, if it is in closed state, and carry out transmissions and close communications.
+因此，有必要定义一个字符串传输函数，使其能够在通信处于关闭状态时打开通信，并执行传输及关闭通信。
 
 <br></br>
-Create a comm_ex.py file, as shown below, in the same folder where comm.py exists.
+在与 comm.py 存在相同文件夹中创建一个 comm_ex.py 文件，如下所示。
 <br></br>
-
 
 comm_ex.py
 
 ``` python
-""" ArgosX Vision System interface - main
+""" ArgosX 视觉系统接口 - 主程序
  
  
 @author:    Jane Doe, BlueOcean Robot & Automation, Ltd.
@@ -47,14 +44,11 @@ def send_msg_once(msg: str) -> int:
 
 ```
 
-Now, we can simply implement the callback functions, as shown below, by importing the comm_ex module.
-
-
-
+现在，我们可以简单地通过导入 comm_ex 模块来实现回调函数，如下所示。
 callback.py
 
 ``` python
-""" ArgosX Vision System interface - callback functions
+""" ArgosX 视觉系统接口 - 回调函数
  
  
 @author:    Jane Doe, BlueOcean Robot & Automation, Ltd.
@@ -65,34 +59,34 @@ from . import comm_ex
  
  
 def on_motor_on() -> int:
-   """(callback) on motor-on
-   Returns: 0
+   """(回调) 电机开启
+   返回: 0
    """
    print('on_motor_on')
    return comm_ex.send_msg_once("light-on")
  
  
 def on_motor_off() -> int:
-   """(callback) on motor-off
-   Returns: 0
+   """(回调) 电机关闭
+   返回: 0
    """
    print('on_motor_off')
    return comm_ex.send_msg_once("light-off")
 ```
 
-First, execute argosx_stub from the command prompt or vscode.
+首先，从命令提示符或 vscode 执行 argosx_stub。
 
-Reboot the virtual controller, then run the job file up to argosx.init( ). If the operation was performed as follows in this state, it means the normal lighting function's operation was checked.
+重启虚拟控制器，然后运行作业文件，直到 argosx.init( )。如果在此状态下执行了如下操作，则意味着正常照明功能的操作已被检查。
 
 
 <br></br>
-<U>__argosx_stub side (server playing the role of ArgosX)__</U>
+<U>__argosx_stub 侧 (充当 ArgosX 的服务器)__</U>
 
-Every time the motor OFF and motor ON functions occur, the following strings will be printed on the console.
+每当电机关闭和电机开启功能发生时，控制台将打印以下字符串。
 ```
 request : light-off
-LED light is OFF
+LED 灯已关闭
 
 request : light-on
-LED light is ON
+LED 灯已开启
 ```

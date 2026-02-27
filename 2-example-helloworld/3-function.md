@@ -1,7 +1,6 @@
-﻿# 2.3 Transferring parameters to a Python function and receiving a return value
+﻿# 2.3 将参数传递给 Python 函数并接收返回值
 
-
-Now, let's apply two parameters, name and age, to a Python function. Add the introduce( ) function by modifying the code as follows.
+现在，让我们将两个参数，name 和 age，应用到一个 Python 函数中。通过以下修改代码添加 introduce( ) 函数。
 
 ```python
 import xhost
@@ -12,14 +11,13 @@ def hello():
  
  
 def introduce(name: str, age: int) -> str:
-    msg = f"Hello, {name}! You are {age} years old."
+    msg = f"你好，{name}! 你 {age} 岁了。"
     return msg
 ```
 
-- :str, :int, and -> str in the introduce functions are elements of grammar called type hint, introduced with Python 3.5. Omitting type hint will not affect the operation. Even though type hint does not play any role while executing scripts, it provides information for vscode extensions, such as Pyright, to check its grammar. Therefore, type hint helps prevent grammar errors when coding in Python (https://docs.python.org/3.8/library/typing.html.)
+- :str, :int 和 -> str 在 introduce 函数中是称为类型提示的语法元素，自 Python 3.5 以来引入。省略类型提示不会影响操作。尽管类型提示在执行脚本时不发挥任何作用，它为 vscode 扩展（例如 Pyright）提供信息，以检查其语法。因此，类型提示有助于在 Python 编码时防止语法错误 (https://docs.python.org/3.8/library/typing.html。)
 
-
-In a job program, you need to teach it additionally to call introduce( ).
+在工作程序中，您需要额外教它调用 introduce( )。
 
 ```
 import hello_world
@@ -29,10 +27,10 @@ print msg
 end
 ```
 
-If the following string is printed on the guidance frame of the teach pendant, it means the operation is normal.
+如果在教学挂件的指导框架上打印以下字符串，则表示操作正常。
 ![](../_assets/image_18.png)
 
-As seen in the example, the string values and integer values of HRScript are naturally transferred as the string values and integer values of Python. Conversely, the string return values of Python are also naturally returned as the string values of HRScript. The values of both languages are automatically converted mutually like this. The table below is a data type map of the two languages.
+如示例所示，HRScript 的字符串值和整数值自然地作为 Python 的字符串值和整数值传递。相反，Python 的字符串返回值也自然地作为 HRScript 的字符串值返回。两种语言的值以这种方式相互自动转换。下表是两种语言的数据类型映射。
 
 <table>
   <thead>
@@ -48,40 +46,40 @@ As seen in the example, the string values and integer values of HRScript are nat
        bool
       </td>
     </tr>
-   <tr>
-      <td>number - integer</td>
+<tr>
+      <td>数字 - 整数</td>
       <td>
-       long 
+       长整数
       </td>
     </tr>
     <tr>
-      <td>number - real</td>
+      <td>数字 - 实数</td>
       <td>
-       float
+       浮点数
       </td>
     </tr>
     <tr>
-      <td>string</td>
+      <td>字符串</td>
       <td>
-       str
+       字符串
       </td>
     </tr>
     <tr>
-      <td>array</td>
-      <td>tuple</td>
+      <td>数组</td>
+      <td>元组</td>
     </tr>
     <tr>
-      <td>object</td>
+      <td>对象</td>
       <td>
-       dictionary	
+       字典	
       </td>
     </tr>
      <tr>
-      <td>xpy-object</td>
-      <td>object</td>
+      <td>xpy-对象</td>
+      <td>对象</td>
     </tr>
   </tbody>
 </table>
 
--  When an object created in Python is transferred to HRScript, it is specifically called as xpy-object. When it comes to xpy-objects, it is possible to read attribute values and call methods. We will cover them in more detail later.
-- For Python grammar, multiple return values can be transferred from a function to the outside, but they cannot be transferred to HRScript.
+- 当在 Python 中创建的对象转移到 HRScript 时，特别称为 xpy-对象。关于 xpy-对象，可以读取属性值和调用方法。我们会在后面详细讨论。
+- 对于 Python 语法，多个返回值可以从函数转移到外部，但不能转移到 HRScript。

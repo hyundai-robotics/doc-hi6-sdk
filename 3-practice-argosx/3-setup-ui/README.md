@@ -1,15 +1,14 @@
-﻿## 3.3 Practical project: Developing an ArgosX setup screen UI
+## 3.3 实际项目：开发ArgosX设置屏幕用户界面
 
-If there are various settings in a plug-in, we need a setup screen that shows the setup values to the user and allows the user to change them to new values when necessary.
+如果插件中有各种设置，我们需要一个设置屏幕，向用户显示设置值，并在必要时允许用户将其更改为新值。
 
-In this section, let's practice implementing an ArgosX setup screen UI and deploy specific menu items to their locations.
+在本节中，让我们练习实现ArgosX设置屏幕用户界面并将特定菜单项部署到它们的位置。
 <br>
 
-
-* Specifications of the ArgosX setup screen user interface
-* Layout of the setup screen
-* Operating the setup screen
-* Injecting a menu into the description screen
-* Loading and saving the values of the setup screen
-* Loading and saving the setup files
-* Operating the F buttons - Initializing to default values
+* ArgosX设置屏幕用户界面的规格
+* 设置屏幕的布局
+* 操作设置屏幕
+* 将菜单注入描述屏幕
+* 加载和保存设置屏幕的值
+* 加载和保存设置文件
+* 操作F按钮 - 初始化为默认值

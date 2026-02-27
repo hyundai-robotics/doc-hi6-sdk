@@ -1,12 +1,12 @@
-﻿# 3.5 Practical project: Developing an ArgosX user bar UI
+﻿# 3.5 实践项目：开发 ArgosX 用户栏 UI
 
-In the previous chapters, we learned how to perform the functions implemented in the plug-ins using a robot language.
+在前面的章节中，我们学习了如何使用机器人语言执行插件中实现的功能。
 
-However, in some cases, it may be necessary to provide a function for the user to directly operate the UI to call the functions of a plug-in. These operating buttons can be provided on the setup window or monitoring window. However, a user bar would be suitable for quick operations on the teaching screen.
+然而，在某些情况下，可能需要提供一种功能，让用户直接操作 UI 以调用插件的功能。这些操作按钮可以在设置窗口或监控窗口中提供。但是，用户栏在教学屏幕上进行快速操作是合适的。
 <br></br>
-In this chapter, let's practice developing a web-based ArgosX user bar UI.
+在本章中，让我们练习开发一个基于网络的 ArgosX 用户栏 UI。
 
-* Specifications of the ArgosX user bar user interface
-* Layout of the user bar
-* Operating the user bar
-* Injecting a user bar
+* ArgosX 用户栏用户界面的规格
+* 用户栏的布局
+* 操作用户栏
+* 注入用户栏

@@ -1,4 +1,4 @@
-﻿# 4. Debugging
+﻿# 4. 调试
 
-* Debugging Python code
-* Debugging a web-baesd UI
+* 调试 Python 代码
+* 调试基于网络的 UI

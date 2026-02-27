@@ -1,12 +1,12 @@
-﻿#### 3.6.1.3 Translating the F Button UI
+#### 3.6.1.3 翻译 F 按钮 UI
 
-Let's add translation support for the F button UI.
+让我们为 F 按钮 UI 添加翻译支持。
 
 <br>
 
-##### Add String Data
+##### 添加字符串数据
 
-Add string data for the F button labels to str_table.json for each language code.
+为每种语言代码将 F 按钮标签的字符串数据添加到 str_table.json 中。
 
 ```json
 "en":
@@ -18,16 +18,21 @@ Add string data for the F button labels to str_table.json for each language code
 {
     "IDS_msg_lb_all" : "Initialize\nAll",
     "IDS_msg_lb_one" : "Initialize\nOne"
+},
+"zh":
+{
+    "IDS_msg_lb_all" : "初始化\n全部",
+    "IDS_msg_lb_one" : "初始化\n一个"
 }
 ```
 
-Each label text is registered with a string ID so it can be displayed according to the selected language.
+每个标签文本都通过字符串 ID 注册，以便根据所选语言显示。
 
 <br>
 
-##### F Button Behavior
+##### F 按钮行为
 
-Modify the label values inside btn_infos, which is defined in the existing initButtonBar function, so that they use string IDs instead of fixed text.
+修改 btn_infos 内的标签值，该值在现有 initButtonBar 函数中定义，使其使用字符串 ID 而不是固定文本。
 
 setup.js
 
@@ -51,9 +56,8 @@ function initButtonBar()
     return btn_infos;
 }
 ```
+将原始硬编码标签替换为相应的字符串 ID。
 
-Replace the original hard-coded labels with the corresponding string IDs.
-
-After rebooting the virtual controller and TP, the F buttons will be displayed using the translated text based on the selected language.
+重新启动虚拟控制器和 TP 后，F 按钮将根据所选语言显示翻译后的文本。
 
 ![](../../../_assets/image_88.png)

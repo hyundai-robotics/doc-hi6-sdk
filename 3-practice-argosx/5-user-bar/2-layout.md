@@ -1,11 +1,11 @@
-﻿#### 3.5.2 Layout of the user bar
+#### 3.5.2 用户栏布局
 
-Open vscode for the apps/ folder that is the parent of the ArgosX folder.
+打开 vscode，定位到 ArgosX 文件夹的父级 apps/ 文件夹。
 
-Create ui/ubar.html and ui/ubar.js files.
+创建 ui/ubar.html 和 ui/ubar.js 文件。
 <br>![](../../_assets/image_57.png)
 
-Write the content below, which is about a simple layout consisting of two buttons. The first column of the table is given a class called 'ubar-bt', which is defined in the common style.css. It automatically recognizes TP600 and TP630 and gives the button's sizes and colors similar to the default UI. If you want to change the style, you can define a class using a separate local css and apply it.
+编写以下内容，关于由两个按钮组成的简单布局。表格的第一列被赋予一个名为 'ubar-bt' 的类，该类在 common style.css 中定义。它会自动识别 TP600 和 TP630，并使按钮的大小和颜色类似于默认 UI。如果您想更改样式，可以使用单独的本地 css 定义一个类并应用它。
 
 ubar.html
 ``` html
@@ -31,11 +31,8 @@ ubar.html
 </html>
 ```
 
-While ubar.html is open, if you execute Live server by clicking the Go Live button at the bottom right, the Google Chrome browser will open.
+当 ubar.html 打开时，如果您通过点击右下角的 Go Live 按钮执行 Live server，Google Chrome 浏览器将打开。
 <br>![](../../_assets/image_58.png)
 
-
-
-
-Even though there is no content in ubar.js yet, we can check whether the layout is normal.
+尽管 ubar.js 目前没有内容，但我们可以检查布局是否正常。
 <br>![](../../_assets/image_59.png)

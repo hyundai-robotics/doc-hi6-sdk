@@ -1,76 +1,74 @@
-﻿### 3.2.3 Manual for referring to the callback functions
+### 3.2.3 参考回调函数的手册
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Python callback functions</th>
-      <th style="text-align:left">Point in time when calling occurs inside the main software</th>
+      <th style="text-align:left">Python 回调函数</th>
+      <th style="text-align:left">主软件中调用发生的时间点</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>on_app_init()</td>
       <td>
-       After self-diagnosis
+       自我诊断后
       </td>
     </tr>
    <tr>
       <td>on_before_self_diagnosis_proc()</td>
       <td>
-       Before self-diagnosis
+       自我诊断之前
       </td>
     </tr>
     <tr>
       <td>on_mot_servoerror_detect()</td>
       <td>
-       When detecting a servo error
+       检测到伺服错误时
       </td>
     </tr>
      <tr>
       <td>on_system_status_chk_proc()</td>
-      <td>When checking the system for any abnormalities (10 ms)</td>
+      <td>检查系统是否有异常时 (10 ms)</td>
     </tr>
     <tr>
       <td>on_period_low()</td>
       <td>
-       When calling based on the lowest priority cycle (5 ms)
+       基于最低优先级周期调用时 (5 ms)
       </td>
     </tr>
    <tr>
       <td>on_motor_on()</td>
       <td>
-       Motor on
+       电机开启
       </td>
     </tr>
     <tr>
       <td>on_motor_off()</td>
       <td>
-       Motor off
+       电机关闭
       </td>
     </tr>
-    <tr>
+<tr>
       <td>on_stop(task_no:int)</td>
       <td>
-       When stopping
+       停止时
       </td>
     </tr>
     <tr>
       <td>on_restart(task_no:int)</td>
-      <td>When starting</td>
+      <td>启动时</td>
     </tr>
      <tr>
       <td>on_cur_job_selected_by_tp(task_no:int)</td>
-      <td>When the TP selects the job program.</td>
+      <td>当TP选择工作程序时。</td>
     </tr>
     <tr>
       <td>init_signal_output_status()</td>
-      <td>When initializing the application signal output</td>
+      <td>初始化应用程序信号输出时</td>
     </tr>
     <tr>
       <td>set_ext_io_sig_proc()</td>
       <td>
-       When handling assigned signals
+       处理分配的信号时
       </td>
     </tr>
-  </tbody>
-</table>

@@ -1,45 +1,36 @@
-﻿#### 3.1.7 Calling the xhost module methods
+#### 3.1.7 调用 xhost 模块方法
 
-xhost is a module containing various methods to call the functions of the host (robot controller).
+xhost 是一个包含各种方法的模块，用于调用主机（机器人控制器）的功能。
 
-The virtual controller, which is the main module, will create xhost and inject it into the Python runtime. You can use xhost by importing it, and there is no need to write a xhost.py file for yourself.
+虚拟控制器是主要模块，将创建 xhost 并将其注入到 Python 运行时中。您可以通过导入 xhost 来使用它，无需自己编写 xhost.py 文件。
 
+请参阅<U>3.1.8 手动参考 xhost 模块的方法</U>。
 
+在<U>3.1.1 ArgosX 规格及接口插件</U>中也有关于错误处理的内容。
 
-Refer to <U>3.1.8 Manual for referring to the methods of the xhost module</U>.
+- 当从 ArgosX 收到“fail”时，相应于预设号码的机器人控制器的通用 I/O 输出信号将被打开。
 
-
-
-There is also an item regarding error handling in <U>3.1.1 Specifications of ArgosX and interface plug-ins</U>.
-
-- When "fail" is received from ArgosX, the universal I/O output signal of the robot controller corresponding to the preset number will be switched on.
-
-
-The universal I/O output signals of the robot controller can be switched on/off using the method below.
+可以使用下面的方法开/关机器人控制器的通用 I/O 输出信号。
 ``` python 
 def io_set_out_bit(sigcode: int, val: int) -> int
 ```
 
-sigcode is a code that combines the block number and index of the I/O into one number, as shown below.
+sigcode 是一个将块号码和 I/O 索引合并为一个数字的代码，如下所示。
 
-sigcode = block number x 10000 + index
+sigcode = 块号码 x 10000 + 索引
 <br></br>
 
-For example, the sigcode of fb3.do72 is as follows.
+例如，fb3.do72 的 sigcode 如下所示。
 
 3 x 10000 + 72 = 30072
 <br></br>
 
-
-
-1 if val is on and 0 if it is off.
+如果 val 为 1，则表示打开，如果为 0，则表示关闭。
 <br></br>
 
-Add the output signal-assigned number for the ArgosX error as a module variable named sigcode_err, and set its default value to 5 (i.e. fb0.do5.)
+将用于 ArgosX 错误的输出信号分配号码添加为名为 sigcode_err 的模块变量，并将其默认值设置为 5（即 fb0.do5.）
 
-(We can also declare it as an attribute to make a change possible in HRScript. However, it will be skipped in this example.)
-
-
+（我们也可以将其声明为属性，以便在 HRScript 中进行更改。然而，在本示例中将跳过此步骤。）
 
 setup.py
 ```python 
@@ -48,10 +39,8 @@ ip_addr : str = "192.168.1.100"
 port : int = 54321
 sigcode_err = 5
 ```
-
- The msg value received in the res( ) function will be compared with "res fail", and an output signal will be transmitted according to the result.
+收到的 msg 值将在 res( ) 函数中与 "res fail" 进行比较，并根据结果传输输出信号。
 <br></br>
-
 
 roblang.py
 ```python
@@ -66,11 +55,11 @@ import xhost
  
 def res() -> str:
    """
-   wait response from ArgosX
-   Returns:
-      response string from ArgosX
-      "" if failed.
-      e.g. "[30, 25.7, 11.9, 31.6, 12.8, -54.6]"
+   等待来自 ArgosX 的响应
+   返回：
+      来自 ArgosX 的响应字符串
+      失败时返回 ""。
+      例如 "[30, 25.7, 11.9, 31.6, 12.8, -54.6]"
    """
    val = 0
    msg = comm.recv_msg()
@@ -84,58 +73,48 @@ def res() -> str:
    return msg
 ```
 
-Execute the virtual controller, and, while leaving the universal output panel of the teach pendant open, execute the job program.
+执行虚拟控制器，并在保持教学挂件的通用输出面板打开的同时，执行作业程序。
 
-Because there is no failure, the operation will be the same as before, and the fb0.do5 print signal will not be switched on.
+由于没有失败，操作将与之前相同，并且 fb0.do5 打印信号将不会开启。
 
-argosx_stub.py is designed to unconditionally respond with failures when work #98 is requested. Modify the job so that req(98) can be performed, as shown below, then perform the implementation again.
+argosx_stub.py 被设计为在请求工作 #98 时无条件地响应失败。修改作业，以便可以执行 req(98)，如下所示，然后再次执行实施。
 
-
-
-job
+作业
 ```
 ...Previous steps skipped
  
  
-     iret=argosx.req(98) # transmitting the request
+     iret=argosx.req(98) # 发送请求
      if iret<0
        print "req error"
        stop
      endif
       
-     var str=argosx.res() # waiting for a response
+     var str=argosx.res() # 等待响应
      print str
      if str==""
        print "req error"
        stop
      else
-       var sft=Shift(str) # converting the shift array string into shift data
+       var sft=Shift(str) # 将移动数组字符串转换为移动数据
        print sft.x, sft.y, sft.z, sft.rx, sft.ry, sft.rz
      endif
  
-     argosx.close() # closing the socket
+     argosx.close() # 关闭套接字
      end
 ```
-
-If the fb0.do5 print signal is switched on when res( ) is executed, it means the error signal has been printed normally.
+如果在执行 res( ) 时 fb0.do5 打印信号被打开，这意味着错误信号已正常打印。
 
 ![](../../_assets/image_27.png)
 
+信号 #5 应仅用于 ArgosX 错误。因此，它不能用于其他需要被分配信号的应用。
 
-
-
-Signal #5 should be used only for ArgosX errors. Therefore, it cannot be used for other applications that require it to be an assigned signal.
-
-
-
-Using the xhost method below, you can designate a specific sigcode as assigned.
+使用以下 xhost 方法，您可以指定一个特定的 sigcode 作为分配。
 ```python 
 def io_assign_set_out_bit(sigcode: int) -> int
 ```
 
-When you define an on_app_init( ) function in the main.py, then input a routine that designates an assignment, as shown below, the execution will occur at the moment ArgosX is imported.
-
-
+当您在 main.py 中定义 on_app_init( ) 函数时，然后输入一个指定分配的例程，如下所示，执行将在导入 ArgosX 的时候发生。
 
 main.py
 ```python 
@@ -149,8 +128,8 @@ import xhost
  
  
 def on_app_init() -> int:
-   """(callback) called just after self-diagnosis
-   Returns:
+   """(callback) 自我诊断后调用
+   返回:
       0
    """
    print('[argosx] on_app_init();')
@@ -158,8 +137,8 @@ def on_app_init() -> int:
    return 0
 ```
 
-Execute the virtual controller again. Then, when import argosx is executed in the job, reopen the universal output panel.
+再次执行虚拟控制器。然后，当在任务中执行 import argosx 时，重新打开通用输出面板。
 
-The designated signal will be displayed as assigned (bold).
+指定的信号将显示为已分配（加粗）。
 
 ![](../../_assets/image_28.png)

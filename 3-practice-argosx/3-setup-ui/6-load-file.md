@@ -1,19 +1,15 @@
-﻿### 3.3.6 Loading and saving the setup files
+### 3.3.6 加载和保存设置文件
 
-In the previous section, we practiced saving the setup values into the Python variables and loading them back.
+在上一节中，我们练习了将设置值保存到Python变量中并重新加载。
 
-To keep this setting, even when we turn the controller off and on, it should be saved into a file.
+为了在关闭和打开控制器时保持此设置，它应该保存在一个文件中。
 
-
-
-Add the save_to_setup_file( ) function, which is used for saving the settings to a file, and the load_from_setup_file( ) function, used for loading the settings from the file, to setup.py as follows.
-
-
+添加 `save_to_setup_file( )` 函数，该函数用于将设置保存到文件中，以及 `load_from_setup_file( )` 函数，该函数用于从文件中加载设置，按如下方式添加到setup.py中。
 
 setup.py
 ``` python 
 
-""" robot application - argosx - setup
+""" 机器人应用 - argosx - 设置
  
  
 @author:    Jane Doe, BlueOcean Robot & Automation, Ltd.
@@ -29,8 +25,8 @@ fname_setup = 'argosx.json'
  
 def get_general_def() -> dict:
    """
-   Returns:
-      default value of setting
+   返回:
+      设置的默认值
    """
    print('def_general_def()')
  
@@ -45,8 +41,8 @@ def get_general_def() -> dict:
  
 def get_general() -> dict:
    """
-   Returns:
-      setting dict.
+   返回:
+      设置字典。
    """
  
    print('get_general()')
@@ -61,10 +57,10 @@ def get_general() -> dict:
     
 def put_general(body: dict) -> int:
    """
-   Args:
-      body  setting dict.
+   参数:
+      body  设置字典。
     
-   Returns:
+   返回:
       0
    """
    global ip_addr, port, sigcode_err
@@ -74,17 +70,17 @@ def put_general(body: dict) -> int:
    port = body["port"]
    sigcode_err = body["sigcode_err"]
  
-   save_to_setup_file(body) # save to file
+   save_to_setup_file(body) # 保存到文件
     
    return 0
  
  
 def load_from_setup_file() -> int:
    """
-   load setup file
-   Returns:
-         0     ok
-         -1    error
+   加载设置文件
+   返回:
+         0     成功
+         -1    错误
    """
    global ip_addr, port, sigcode_err
  
@@ -96,30 +92,30 @@ def load_from_setup_file() -> int:
          port = data['port']
          sigcode_err = data['sigcode_err']
    except:
-      print('file not found: ', pathname)
+      print('未找到文件: ', pathname)
       return -1
    return 0
  
  
 def save_to_setup_file(body: dict) -> int:
    """
-   save to setup file
-   Returns:
-         0     ok
-         -1    error
+   保存到设置文件
+   返回:
+         0     成功
+         -1    错误
    """
    pathname = xhost.abs_path('project') + fname_setup
    try:
       with open(pathname, 'w') as file:
          json.dump(body, file, indent='\t')
    except:
-      print('failed in file writing: ', pathname)
+      print('文件写入失败: ', pathname)
       return -1
    return 0
  
  
  
-# attributes getter/setter
+# 属性 getter/setter
 def get_ip_addr() -> str:
    return ip_addr
  
@@ -140,11 +136,9 @@ ip_addr : str = gen_def['ip_addr']
 port : int = gen_def['port']
 sigcode_err = gen_def['sigcode_err']
 ```
-<br>
+我们将调用 save_to_setup_file(body) 作为 put_general( ) 函数的最后一个操作，以将设置屏幕的值保存到 Python 变量中。
 
-We added calling save_to_setup_file(body) as the last operation of the put_general( ) function for saving the values of the setup screen into the Python variables.
-
-In addition, we added calling setup.load_from_setup_file( ) into the function on_app_init( ) of main.py as follows. The moment the ArgosX plug-in is imported, setup.load_from_setup_file( ) will be called to load the settings.
+此外，我们还在 main.py 的 on_app_init( ) 函数中添加了调用 setup.load_from_setup_file( )，如下所示。当 ArgosX 插件被导入时，setup.load_from_setup_file( ) 将被调用以加载设置。
 
 <br>
 
@@ -182,15 +176,14 @@ def on_app_init() -> int:
 ```
 <br>
 
+在这里，让我们重复在上一节中进行的测试。
 
-Here, let's repeat the test we performed in the previous section.
+打开 ArgosX 设置屏幕，修改设置值，例如 IP 地址和输出分配信号，然后通过按 [OK] 键保存它们。
 
-Open the ArgosX setup screen, change the setup values,   such as the IP address and output assigned signal, and save them by pressing the [OK] key.
-
-Check whether an argosx.json file is created in the project/ folder of the virtual controller, as shown below.
+检查项目/ 文件夹中是否创建了 argosx.json 文件，如下所示。
 
 <br>
-argosx.json (An example of changing the IP address to 192.168.1.172 and the output assigned signal for an error to fb3.4)
+argosx.json (更改IP地址为192.168.1.172和将错误的输出分配信号设置为fb3.4的示例)
 
 ```json
 {
@@ -202,7 +195,6 @@ argosx.json (An example of changing the IP address to 192.168.1.172 and the outp
 
 
 <br>
-Run the main software again and open the ArgosX setup screen. Check whether the setup values saved in the file are loaded normally.
+再次运行主软件，打开ArgosX设置屏幕。检查文件中保存的设置值是否正常加载。
 
 ![](../../_assets/image_46.png)
-
