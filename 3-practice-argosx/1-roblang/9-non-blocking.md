@@ -37,7 +37,7 @@ If a timeout occurs after 10 seconds in the wait-di6 state, branching to *tout w
 
 
 
-## Execution mode and continue mode
+#### Execution mode and continue mode
 
 
 Let's take a look at the flow chart below. There are two modes where the ${cont_model} host calls the robot language commands: execution mode and continue mode. In continue mode, the host calls the command again.

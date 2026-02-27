@@ -297,9 +297,9 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 2. Two Ways to Exit the Teaching Pendant
 
-   1. TP Home > `Service` > `9: Exit TP application`  
+   1. TP Home - `[F1: Service] - 9: Exit TP application`
     
-   2. Right-click on the keypad area > Click `close`
+   2. Right-click on the keypad area - Click `close`
 
 <br>
 
@@ -329,7 +329,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 
 
-4. Exit the Virtual Teaching Pendant > Restart > TP Home > `system` > `4: Application parameter` > Check `hello, world` plugin   
+4. Exit the Virtual Teaching Pendant > Restart > TP Home > `[F2: system] - 4: Application parameter` - Check `hello, world` plugin   
 
    <img src="../_assets/hrspace/08_hello_world_menu.PNG" height=500vw>  
 
@@ -405,13 +405,13 @@ Click info.json to open it and input the following.
   </thead>
   <tbody>
     <tr>
-      <td>author</td>
+      <td>`author`</td>
       <td>
        Author
       </td>
     </tr>
    <tr>
-      <td>binding</td>
+      <td>`binding`</td>
       <td>
        The form of binding with the ${cont_model} host software<br>
        - Plug-in: Will be executed in bound form.<br>
@@ -419,19 +419,19 @@ Click info.json to open it and input the following.
       </td>
     </tr>
     <tr>
-      <td>copyright</td>
+      <td>`copyright`</td>
       <td>
        Copyright
       </td>
     </tr>
     <tr>
-      <td>description</td>
+      <td>`description`</td>
       <td>
        Description	
       </td>
     </tr>
     <tr>
-      <td>entry</td>
+      <td>`entry`</td>
       <td>
        The name of the file at the execution start location<br>
        The name should be unique in the apps/ folder. If possible, set it as one of the following names below<br>
@@ -440,13 +440,13 @@ Click info.json to open it and input the following.
       </td>
     </tr>
     <tr>
-      <td>menu</td>
+      <td>`menu`</td>
       <td>
        Menu structure of the user interface	
       </td>
     </tr>
      <tr>
-      <td>startup</td>
+      <td>`startup`</td>
       <td>
        Execution start mode
        - Manual: Manually start the execution
@@ -454,7 +454,7 @@ Click info.json to open it and input the following.
       </td>
     </tr>
      <tr>
-      <td>version</td>
+      <td>`version`</td>
       <td>
        Version string	
       </td>
@@ -488,7 +488,7 @@ When starting, the ${cont_model} controller recognizes the installed apps by rea
 
 [service] - 10: Clicking the app will bring up a screen called 10: app - TP. 
 
-Clicking the [location] button twice will change the TP in the title to MAIN via USB. On this screen, hello_world created earlier can be found.
+Clicking the `[location]` button twice will change the TP in the title to MAIN via USB. On this screen, hello_world created earlier can be found.
 
 ![](../_assets/image_17.png)
 
@@ -2226,7 +2226,7 @@ If a timeout occurs after 10 seconds in the wait-di6 state, branching to *tout w
 
 
 
-## Execution mode and continue mode
+#### Execution mode and continue mode
 
 
 Let's take a look at the flow chart below. There are two modes where the ${cont_model} host calls the robot language commands: execution mode and continue mode. In continue mode, the host calls the command again.
@@ -4274,6 +4274,15 @@ Now, let's practice applying localization to the ArgosX project.
 * Localization of the Setup Screen UI  
 * Localization of the Monitoring Panel UI  
 * Localization of the User-bar UI
+
+[__SOURCE](3-practice-argosx/6-translation/1-update-setup/README.md)
+### 3.6.1 Localization of the Settings Screen UI
+
+First, let's begin the translation work for the Settings screen UI.
+
+* Translation of the Settings screen menu
+* Translation of the Settings screen UI
+* Translation of the F-button UI
 
 [__SOURCE](3-practice-argosx/6-translation/1-update-setup/1-setup-menu.md)
 #### 3.6.1.1 Translating the Setup Screen Menu
