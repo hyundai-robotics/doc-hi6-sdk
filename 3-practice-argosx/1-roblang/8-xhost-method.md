@@ -4,8 +4,9 @@
 ##### get(url, query)
 * Description:
   OpenAPI GET method.
-* Args:
-  url: str. OpenAPI URL.
+* Args:  
+  url (str): The API endpoint path. ex. "project/rgen"  
+             **Do not include** the base URL (http://192.168.1.150:8888/). Only provide the path following it.
   query: str. OpenAPI query.
 * Returns:
   str. responded value.
@@ -16,7 +17,8 @@
 * Description:
   OpenAPI PUT method.
 * Args:
-  url: str. OpenAPI URL.
+  url (str): The API endpoint path. ex. "project/rgen"  
+             **Do not include** the base URL (http://192.168.1.150:8888/). Only provide the path following it.
   body: str. body of the request.
 * Returns:
   str. body of the response.
@@ -27,7 +29,8 @@
 * Description:
   OpenAPI POST method.
 * Args:
-  url: str. OpenAPI URL.
+  url (str): The API endpoint path. ex. "project/rgen"  
+             **Do not include** the base URL (http://192.168.1.150:8888/). Only provide the path following it.
   body: str. body of the request.
 * Returns:
   str. body of the response.
