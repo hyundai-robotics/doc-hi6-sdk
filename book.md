@@ -5,7 +5,7 @@
 [__SOURCE](0-about-this-manual/precautions.md)
 # 사전 주의사항
 
-{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/ko/precautions.md" %}
+{% include file="ko/precautions.md" %}
 
 [__SOURCE](1-intro/README.md)
 # 1. ${cont_model} SDK 개요
@@ -126,14 +126,14 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
 
     ![](../_assets/image_2.png)
 
-2) Add Python 3.8 to PATH 체크 후, Curtomize installation 선택합니다.
+2) Add Python 3.8 to PATH 체크 후, Customize installation 선택합니다.  
     ![](../_assets/image_3.png)
 
-3) 모두 check 하고 Next 클릭합니다.
+3) 모두 check 하고 Next 클릭합니다.  
     ![](../_assets/image_4.png)
-4) 모두 check. 설치 경로는 주어진 대로, C:\Program Files (x86)\Python38-32 로 두고 Install 클릭합니다.
+4) 모두 check. 설치 경로는 주어진 대로, C:\Program Files (x86)\Python38-32 로 두고 Install 클릭합니다.  
     ![](../_assets/image_5.png)
-5) Disable path length limit는 안 눌러도 됩니다. Close 클릭합니다.
+5) Disable path length limit는 안 눌러도 됩니다. Close 클릭합니다.  
     ![](../_assets/image_6.png)
 
 6) 윈도우 명령 프롬프트를 엽니다. (Windows + R 누른 후 cmd 타이핑하고, enter키) 
@@ -437,7 +437,7 @@ info.json을 클릭해 열고 아래와 같이 입력합니다.
 [__SOURCE](2-example-helloworld/2-make-hello.md)
 # 2.2 python 함수 hello( ) 구현
 
-New File 버튼으로 새로운 파일을 만들고 이름을 hello_world.py로 정합니다.
+New File 버튼으로 새로운 파일을 만들고 이름을 hello_world.py로 정합니다.  
 ![](../_assets/image_16.png)
 
 hello_world.py는 아래와 같이 작성합니다.
@@ -529,7 +529,7 @@ print msg
 end
 ```
 
-티치펜던트의 안내프레임에 아래와 같은 문자열이 출력되면 정상 동작한 것입니다.
+티치펜던트의 안내프레임에 아래와 같은 문자열이 출력되면 정상 동작한 것입니다.  
 ![](../_assets/image_18.png)
 
 예제에서 본 바와 같이 HRScript의 문자열 값, 정수 값은 python의 문자열 값, 정수 값으로 자연스럽게 전달되며, 반대로 python의 문자열 리턴값도 HRScript의 문자열 값으로 자연스럽게 리턴됩니다. 두 언어의 값은 이와 같이 자동으로 상호 변환됩니다.  아래 표는 두 언어간 data type 맵입니다.
@@ -625,7 +625,7 @@ setup.html에 아래 코드를 작성합니다.
 
 이제, 이 화면을 열기 위한 메뉴항목을 티치펜던트의 시스템 - 응용파라미터 메뉴 밑에 주입해 봅시다.
 
-ui/ 폴더 밑에 menu.json 파일을 생성합니다.
+ui/ 폴더 밑에 menu.json 파일을 생성합니다.  
 ![](../_assets/image_21.png)
 
 ``` json
@@ -703,7 +703,7 @@ COOLTEXT (https://cooltext.com/) : text를 로고 그림파일로 생성해주�
 이제 가상 메인보드과 가상 티치펜던트를 재실행 합니다.
 
 
-[시스템] - [응용 파라미터] 메뉴로 진입하면 아래와 같이 새로 추가된 hello, world 메뉴 항목이 보입니다.
+[시스템] - [응용 파라미터] 메뉴로 진입하면 아래와 같이 새로 추가된 hello, world 메뉴 항목이 보입니다.  
 ![](../_assets/image_22.png)
 
 메뉴를 누르면 아래와 같이 setup.html 의 화면이 티치펜던트에 나타납니다.
@@ -2541,10 +2541,10 @@ argosx 폴더 안에 cmds.json을 추가하여 해당 파일 안에 명령어의
 
 
 <br></br>
-추가된 명령어는 TP의 하단의 [명령입력] 버튼을 눌러 확인할 수 있습니다.
+추가된 명령어는 TP의 하단의 [명령입력] 버튼을 눌러 확인할 수 있습니다.  
 ![](../../_assets/image_82.png)
 
-[명령입력]-[argosx]
+[명령입력]-[argosx]  
 ![](../../_assets/image_83.png)
 
 [__SOURCE](3-practice-argosx/2-callback/README.md)
@@ -3758,7 +3758,7 @@ panel.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Li
 
 ![](../../_assets/image_51.png)
 <br></br>
-아직 panel.js의 내용은 없지만, 레이아웃이 정상적인지는 확인할 수 있습니다.
+아직 panel.js의 내용은 없지만, 레이아웃이 정상적인지는 확인할 수 있습니다.  
 ![](../../_assets/image_52.png)
 
 
@@ -3965,7 +3965,7 @@ panel_argosx.png의 예 (이 그림을 다운받아 사용해도 됩니다.)
 이제 가상 메인보드과 가상 티치펜던트를 재실행 합니다.
 
 
-새로운 panel을 추가하기 위해 panel 메뉴를 열면, 맨 아래에 새로 추가된 ArgosX Vision 메뉴 항목이 보입니다.
+새로운 panel을 추가하기 위해 panel 메뉴를 열면, 맨 아래에 새로 추가된 ArgosX Vision 메뉴 항목이 보입니다.  
 ![](../../_assets/image_54.png)
 
 
