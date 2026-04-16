@@ -1,6 +1,6 @@
 ﻿# 2.2 python 함수 hello( ) 구현
 
-New File 버튼으로 새로운 파일을 만들고 이름을 hello_world.py로 정합니다.
+New File 버튼으로 새로운 파일을 만들고 이름을 hello_world.py로 정합니다.  
 ![](../_assets/image_16.png)
 
 hello_world.py는 아래와 같이 작성합니다.

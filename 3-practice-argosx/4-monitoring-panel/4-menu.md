@@ -37,7 +37,7 @@ panel_argosx.png의 예 (이 그림을 다운받아 사용해도 됩니다.)
 이제 가상 메인보드과 가상 티치펜던트를 재실행 합니다.
 
 
-새로운 panel을 추가하기 위해 panel 메뉴를 열면, 맨 아래에 새로 추가된 ArgosX Vision 메뉴 항목이 보입니다.
+새로운 panel을 추가하기 위해 panel 메뉴를 열면, 맨 아래에 새로 추가된 ArgosX Vision 메뉴 항목이 보입니다.  
 ![](../../_assets/image_54.png)
 
 

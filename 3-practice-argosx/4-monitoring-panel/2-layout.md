@@ -66,7 +66,7 @@ panel.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Li
 
 ![](../../_assets/image_51.png)
 <br></br>
-아직 panel.js의 내용은 없지만, 레이아웃이 정상적인지는 확인할 수 있습니다.
+아직 panel.js의 내용은 없지만, 레이아웃이 정상적인지는 확인할 수 있습니다.  
 ![](../../_assets/image_52.png)
 
 
