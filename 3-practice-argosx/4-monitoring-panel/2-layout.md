@@ -66,7 +66,7 @@ While panel.html is open, if you execute Live server by clicking the Go Live but
 
 ![](../../_assets/image_51.png)
 <br></br>
-Even though there is no content in panel.js yet, we can check whether the layout is normal.
+Even though there is no content in panel.js yet, we can check whether the layout is normal.  
 ![](../../_assets/image_52.png)
 
 

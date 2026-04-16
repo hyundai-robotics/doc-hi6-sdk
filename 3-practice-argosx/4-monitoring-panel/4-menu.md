@@ -37,7 +37,7 @@ Example of panel_argosx.png (you can download and use this picture.)
 Now, let's run the virtual mainboard and virtual teach pendant.
 
 
-When you open the panel menu to add a new panel item, you can see the newly added ArogsX Vision menu item.
+When you open the panel menu to add a new panel item, you can see the newly added ArogsX Vision menu item.  
 ![](../../_assets/image_54.png)
 
 

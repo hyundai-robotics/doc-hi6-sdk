@@ -68,5 +68,5 @@ The meaning of each item is as follows in the table above. If there are many inp
 For an added command, you can check it by pressing the [Command Inputting] button at the bottom of the teach pendant.
 ![](../../_assets/image_82.png)
 
-[Command Inputting]-[argosx]
+[Command Inputting]-[argosx]  
 ![](../../_assets/image_83.png)

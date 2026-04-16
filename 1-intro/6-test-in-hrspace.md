@@ -54,7 +54,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 #### c. Running the Virtual Teaching Pendant
 
-1. Right-click on the robot model created in the left workspace panel > Click Virtual Teaching Pendant.
+1. Right-click on the robot model created in the left workspace panel > Click Virtual Teaching Pendant.  
    <img src="../_assets/hrspace/05_start_virtual_tp.PNG" height=500vw>
 
    <img src="../_assets/hrspace/06_tp_imp.PNG" height=500vw>
@@ -105,7 +105,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 1. If you modify HTML, CSS, or JavaScript code, just return to the TP Home screen and re-enter the plugin for the changes to take effect.
 2. <p style="background-color:darkslategrey; color:white;width:max-content">If you modify Python code while the plugin is running, you must reboot the virtual controller for the changes to apply.</p>  
    → Right-click on the robot in the Workspace panel > Click `VRC Tools...` > Click `Reboot`   
-   
+   <br>
    <img src="../_assets/hrspace/10_vrc_tools.PNG" height=150vw>
    <img src="../_assets/hrspace/11_vrc_tools_complete.PNG" height=150vw>  
 

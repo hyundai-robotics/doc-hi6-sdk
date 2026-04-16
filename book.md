@@ -5,7 +5,7 @@
 [__SOURCE](0-about-this-manual/precautions.md)
 # Precautions
 
-{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/en/precautions.md" %}
+{% include file="en/precautions.md" %}
 
 [__SOURCE](1-intro/README.md)
 # 1. Overview of ${cont_model} SDK
@@ -127,14 +127,14 @@ Install Python v3.8 according to the following procedures.
 
     ![](../_assets/image_2.png)
 
-2) Tick Add Python 3.8 to PATH, then select Customize installation.
+2) Tick Add Python 3.8 to PATH, then select Customize installation.  
     ![](../_assets/image_3.png)
 
-3) Tick all and click Next.
+3) Tick all and click Next.  
     ![](../_assets/image_4.png)
-4) Tick all. Leave the installation path as C:\Program Files (x86)\Python38-32 as is and click Install.
+4) Tick all. Leave the installation path as C:\Program Files (x86)\Python38-32 as is and click Install.  
     ![](../_assets/image_5.png)
-5) You do not need to press Disable path length limit. Click Close.
+5) You do not need to press Disable path length limit. Click Close.  
     ![](../_assets/image_6.png)
 
 6) Open the Windows Command Prompt (press Windows + R, type in cmd, then press the enter key.)
@@ -290,7 +290,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
 #### c. Running the Virtual Teaching Pendant
 
-1. Right-click on the robot model created in the left workspace panel > Click Virtual Teaching Pendant.
+1. Right-click on the robot model created in the left workspace panel > Click Virtual Teaching Pendant.  
    <img src="../_assets/hrspace/05_start_virtual_tp.PNG" height=500vw>
 
    <img src="../_assets/hrspace/06_tp_imp.PNG" height=500vw>
@@ -341,7 +341,7 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 1. If you modify HTML, CSS, or JavaScript code, just return to the TP Home screen and re-enter the plugin for the changes to take effect.
 2. <p style="background-color:darkslategrey; color:white;width:max-content">If you modify Python code while the plugin is running, you must reboot the virtual controller for the changes to apply.</p>  
    → Right-click on the robot in the Workspace panel > Click `VRC Tools...` > Click `Reboot`   
-   
+   <br>
    <img src="../_assets/hrspace/10_vrc_tools.PNG" height=150vw>
    <img src="../_assets/hrspace/11_vrc_tools_complete.PNG" height=150vw>  
 
@@ -465,7 +465,7 @@ Click info.json to open it and input the following.
 [__SOURCE](2-example-helloworld/2-make-hello.md)
 # 2.2 Implementing the python function hello( )
 
-Create a new file using the New File button and name it hello_world.py.
+Create a new file using the New File button and name it hello_world.py.  
 ![](../_assets/image_16.png)
 
 You can write hello_world.py as follows.
@@ -557,7 +557,7 @@ print msg
 end
 ```
 
-If the following string is printed on the guidance frame of the teach pendant, it means the operation is normal.
+If the following string is printed on the guidance frame of the teach pendant, it means the operation is normal.  
 ![](../_assets/image_18.png)
 
 As seen in the example, the string values and integer values of HRScript are naturally transferred as the string values and integer values of Python. Conversely, the string return values of Python are also naturally returned as the string values of HRScript. The values of both languages are automatically converted mutually like this. The table below is a data type map of the two languages.
@@ -653,7 +653,7 @@ Write the code below into setup.html.
 
 Now, inject the menu item, which is designed to open this screen, under the System - Application Parameter menu of the teach pendant.
 
-Create a menu.json file under the ui/ folder.
+Create a menu.json file under the ui/ folder.  
 ![](../_assets/image_21.png)
 
 ``` json
@@ -732,7 +732,7 @@ COOLTEXT (https://cooltext.com/): A website for creating a text-into-logo image 
 Execute the virtual main board and virtual teach pendant again.
 
 
-When entering the [System] - [Application parameter] menu, you can see the newly added hello, world menu item, as shown below.
+When entering the [System] - [Application parameter] menu, you can see the newly added hello, world menu item, as shown below.  
 ![](../_assets/image_22.png)
 
 When you press the menu, the teach pendant will show the setup.html screen, as shown below.
@@ -2573,7 +2573,7 @@ The meaning of each item is as follows in the table above. If there are many inp
 For an added command, you can check it by pressing the [Command Inputting] button at the bottom of the teach pendant.
 ![](../../_assets/image_82.png)
 
-[Command Inputting]-[argosx]
+[Command Inputting]-[argosx]  
 ![](../../_assets/image_83.png)
 
 [__SOURCE](3-practice-argosx/2-callback/README.md)
@@ -3787,7 +3787,7 @@ While panel.html is open, if you execute Live server by clicking the Go Live but
 
 ![](../../_assets/image_51.png)
 <br></br>
-Even though there is no content in panel.js yet, we can check whether the layout is normal.
+Even though there is no content in panel.js yet, we can check whether the layout is normal.  
 ![](../../_assets/image_52.png)
 
 
@@ -3994,7 +3994,7 @@ Example of panel_argosx.png (you can download and use this picture.)
 Now, let's run the virtual mainboard and virtual teach pendant.
 
 
-When you open the panel menu to add a new panel item, you can see the newly added ArogsX Vision menu item.
+When you open the panel menu to add a new panel item, you can see the newly added ArogsX Vision menu item.  
 ![](../../_assets/image_54.png)
 
 

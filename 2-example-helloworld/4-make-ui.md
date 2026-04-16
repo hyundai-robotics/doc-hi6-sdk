@@ -36,7 +36,7 @@ Write the code below into setup.html.
 
 Now, inject the menu item, which is designed to open this screen, under the System - Application Parameter menu of the teach pendant.
 
-Create a menu.json file under the ui/ folder.
+Create a menu.json file under the ui/ folder.  
 ![](../_assets/image_21.png)
 
 ``` json
@@ -115,7 +115,7 @@ COOLTEXT (https://cooltext.com/): A website for creating a text-into-logo image 
 Execute the virtual main board and virtual teach pendant again.
 
 
-When entering the [System] - [Application parameter] menu, you can see the newly added hello, world menu item, as shown below.
+When entering the [System] - [Application parameter] menu, you can see the newly added hello, world menu item, as shown below.  
 ![](../_assets/image_22.png)
 
 When you press the menu, the teach pendant will show the setup.html screen, as shown below.

@@ -1,6 +1,6 @@
 ﻿# 2.2 Implementing the python function hello( )
 
-Create a new file using the New File button and name it hello_world.py.
+Create a new file using the New File button and name it hello_world.py.  
 ![](../_assets/image_16.png)
 
 You can write hello_world.py as follows.
