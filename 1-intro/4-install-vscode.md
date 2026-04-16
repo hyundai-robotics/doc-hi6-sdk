@@ -6,7 +6,7 @@ Microsot Visual Studio Code (이하 vscode로 지칭)는 무료로 사용가능�
 
 <br>
 
-## Code의 설치
+#### Code의 설치
 1) 아래 링크에 접속한 후 윈도우용 stable build 버전을 다운로드 합니다. 
 
     윈도우용  https://code.visualstudio.com/<br>
@@ -26,7 +26,7 @@ Microsot Visual Studio Code (이하 vscode로 지칭)는 무료로 사용가능�
 
 <br>
 
-# EXTENSION의 설치
+#### EXTENSION의 설치
 마켓플레이스에 있는 다양한 확장(EXTENSION)을 설치할 수 있다는 것이 vscode의 강력한 장점입니다.
 
 vscode 화면에서 가장 왼쪽에 아이콘들이 배치된 수직막대가 Activity Bar입니다. 이 중  빨간 표시된 아이콘을 누르면 그림과 같이 EXTENSIONS: MARKETPLACE가 열립니다. 상단의 필터 창에 이름을 타이핑하면 원하는 확장을 쉽게 찾을 수 있습니다.

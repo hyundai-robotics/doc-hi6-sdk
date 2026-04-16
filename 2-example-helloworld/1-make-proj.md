@@ -14,7 +14,7 @@ info.json을 클릭해 열고 아래와 같이 입력합니다.
 
 ![](../_assets/image_15.png)
 
-## info.json
+#### info.json
 
 ``` json
 {

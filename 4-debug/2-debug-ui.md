@@ -9,7 +9,7 @@
 
 
 
-## Live server 로 web UI 실행
+#### Live server 로 web UI 실행
 
 
 <u>설정화면의 레이아웃</u> 절에서 argosx 플러그인의 setup.html을 Chrome 웹 브라우저로 실행해본 바 있습니다.
@@ -42,7 +42,7 @@ vscode에 setup.html이 열린 상태에서 우하단의 Go Live 버튼을 클�
 
 
 
-## Chrome DevTools
+#### Chrome DevTools
 
 
 F12 버튼을 누르면 브라우저 우측에 Chrome DevTools가 열립니다. 아래 그림에서는 DevTools의 상단 메뉴 Console이 선택되어 있습니다. javascript에서 console.log( )로 문자열을 호출하면, 이 console 창에 문자열이 출력됩니다. 이 때, log( )가 호출된 소스코드 위치도 함께 표시되고, 클릭하여 해당 소스코드 위치로 이동할 수 있기 때문에, 디버깅 용도로 유용합니다.
@@ -85,7 +85,7 @@ breakpoint에 걸린 상태에서는 trace가 가능합니다. Breakpoints 창 �
 ![](../_assets/image_78.png)
 
 
-## 소스코드의 수정과 재실행
+#### 소스코드의 수정과 재실행
 
 
 html이나 css, javascript 소스코드를 수정한 후, 웹 브라우저에서 update 버튼을 클릭하거나 F5 키를 누르면, 수정된 내용으로 재실행됩니다.

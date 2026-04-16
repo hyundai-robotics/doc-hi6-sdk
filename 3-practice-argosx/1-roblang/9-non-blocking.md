@@ -1,5 +1,5 @@
-﻿# 3.1.9 로봇언어 함수 blocking 문제 해결
-## blocking 문제
+﻿#### 3.1.9 로봇언어 함수 blocking 문제 해결
+#### blocking 문제
 
 
 앞 절에서 구현한 recv_msg( ) 함수는 한 가지 문제점이 있습니다.
@@ -37,7 +37,7 @@ di6을 10초 대기. timeout 시, *tout으로 분기.
 
 
 
-## 실행모드와 계속모드
+#### 실행모드와 계속모드
 
 
 아래 순서도를 봅시다. ${cont_model} 호스트(HOST)가 로봇언어 명령문을 호출할 때는 실행모드(execution-mode)와 계속모드(continue-mode)의 2가지 상태가 있습니다. 계속모드라면, 호스트는 해당 명령문을 다시 호출해줍니다.
@@ -66,7 +66,7 @@ di6을 10초 대기. timeout 시, *tout으로 분기.
 
 
 
-## comm 모듈을 non-blocking으로 만들기
+#### comm 모듈을 non-blocking으로 만들기
 
 
 이더넷 송수신을 위해 구현했던 comm 모듈은 내부적으로 socket 모듈을 활용합니다. socket은 기본적으로 blocking 모드입니다. 즉, UDP 수신 함수인 socket.recvfrom( ) 함수는 데이터가 수신될 때까지 리턴하지 않는다는 뜻입니다.
@@ -133,7 +133,7 @@ def recv_msg():
 ```
 
 
-## res( ) 함수의 대기동작 구현
+#### res( ) 함수의 대기동작 구현
 
 
 아래와 같이 res( ) 함수에 timeout과 addr_on_timeout(퇴피주소)의 2가지 인수를 추가합니다.
@@ -265,7 +265,7 @@ def _check_timeout_and_branch(addr_on_timeout: int_or_str) -> bool:
 
 
 
-## non-blocking 동작 시험
+#### non-blocking 동작 시험
 
 
 이제 원하는 사양이 되었는지 확인해봅시다. 가상 제어기를 재실행한 후, 티치펜던트의 STEP FWD키로 job 프로그램을 한 행씩 실행해봅시다.

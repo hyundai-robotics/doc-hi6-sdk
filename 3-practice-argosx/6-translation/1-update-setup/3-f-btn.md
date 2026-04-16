@@ -1,7 +1,7 @@
-﻿# 3.6.1.3 F 버튼 U/I의 번역 
+﻿#### 3.6.1.3 F 버튼 U/I의 번역 
 F 버튼의 U/I의 내용을 번역하는 동작을 추가해봅시다.
 
-## string data 추가
+##### string data 추가
 str_table.json 파일에 각 lang_code 별로 F 버튼 번역을 위한 string data를 추가해줍니다. 
 
 ``` json
@@ -18,7 +18,7 @@ str_table.json 파일에 각 lang_code 별로 F 버튼 번역을 위한 string d
 
 ```
 
-## F버튼의 동작
+##### F버튼의 동작
 기존에 구현되어 있는 initButtonBar 함수 내에 정의한 btn_infos의 내용에서 label의 값을 string id 로 수정해줍니다.
 
 setup.js 

@@ -7,7 +7,7 @@
 
 <br>
 
-## 디버깅용 xhost
+#### 디버깅용 xhost
 xhost는 플러그인에서 ${cont_model} 호스트의 기능을 호출할 때 사용되는 모듈로서, 호스트에 의해 플러그인에 생성/주입됩니다. 아래 그림은 호스트와 플러그인의 일반적인 동작 흐름입니다.
 <br> ![](../_assets/image_63.png)
 
@@ -57,7 +57,7 @@ remote_ip="192.168.1.150"
 
 
 
-## Visual Studio Code와 test.py에 의한 디버깅
+#### Visual Studio Code와 test.py에 의한 디버깅
 <u>VisualStudio Code의 설치</u>에d서 microsoft Python 확장을 제대로 설치했다면,  python 디버깅 환경을 사용할 수 있습니다. vscode에서의 python 디버깅에 이미 익숙하다면 이 절은 건너뛰어도 됩니다.
 
 

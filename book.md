@@ -1,27 +1,12 @@
 ﻿
 [__SOURCE](README.md)
-# ${cont_model} SDK 설명서
+# ${cont_model} 제어기 기능설명서 - SDK
 
-{% hint style="warning" %}
-본 제품 설명서에서 제공되는 정보는 HD현대로보틱스의 자산입니다.
+[__SOURCE](0-about-this-manual/precautions.md)
+# 사전 주의사항
 
-HD현대로보틱스의 서면에 의한 동의 없이 전부 또는 일부를 무단 전재 및 재배포할 수 없으며, 제3자에게 제공되거나 다른 목적에 사용할 수 없습니다.
+{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/ko/precautions.md" %}
 
-
-
-본 설명서는 사전 예고 없이 변경될 수 있습니다.
-
-
-
-**Copyright ⓒ 2020 by HD Hyundai Robotics**
-{% endhint %}
-
-{% hint style="warning" %}
-${cont_model} SDK는 공식 릴리즈 전이며 내부 검증 시험 및 보완 진행 중입니다.
-
-향후 인터페이스 사양이 예고 없이 크게 변경될 수 있으므로, 공식 시험 요원이 아니라면 이를 활용한 소프트웨어 개발에 주의해 주시기 바랍니다.
-
-{% endhint %}
 [__SOURCE](1-intro/README.md)
 # 1. ${cont_model} SDK 개요
 
@@ -113,12 +98,12 @@ ${cont_model} 앱은 main module 내에서 동작하는 python 3 스크립트와
 
 여러 개의 python 파일들과 웹 앱(webapp) 파일들은 main module 내의 하나의 폴더 밑에 설치됩니다.
 
-## python 스크립트
+#### python 스크립트
 로봇 제어기의 특정한 이벤트에 의해 혹은 주기적으로 호출될 수도 있습니다. 또한 지정한 python 함수가 .job 파일 내의 로봇언어 명령문으로서 호출될 수도 있습니다.
 
 xhost라는 모듈을 통해 로봇 제어기의 소프트웨어 객체들(Objects)을 제어하거나 모니터링할 수 있습니다. xhost는 python interface 혹은 OpenAPI를 통해 소프트웨어 객체들과 상호작용합니다.
 
-## 티치펜던트 U/I 웹 앱
+#### 티치펜던트 U/I 웹 앱
 PC나 모바일 환경에서 사용되는 통상적인 웹 앱과 동일합니다. HTML/CSS/JavaScript 및 각종 이미지 등 리소스 파일들로 구성됩니다.
 
 main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 브라우저 엔진 상에서 실행됩니다.
@@ -126,9 +111,10 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
 티치펜던트 웹 앱은 OpenAPI 호출을 통해서 python 함수를 호출하고 데이터를 주고 받을 수 있습니다.
 
 ![](../_assets/image_1.png)
+
 [__SOURCE](1-intro/3-install-python.md)
 # 1.3 python3 개발환경 설치
-## python3 설치
+#### python3 설치
 아래의 절차에 따라 python v3.8을 설치합니다.
 
 <br></br>
@@ -158,7 +144,7 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
     Python 3.8.0
     ```
 
-## python import 검색 경로 추가
+#### python import 검색 경로 추가
 1) .pth 라는 파일을 만들고 안에 _common/ 폴더가 위치한 경로를 지정해준다. 
     SDK 내의 .pth 파일을 열어, ${cont_model} 가상제어기의 HOME 경로에 맞게 아래 경로를 지정해줍니다.
  
@@ -173,10 +159,11 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
     예: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
 
 
-## 동적 라이브러리 배치
+#### 동적 라이브러리 배치
 SDK 내의 ucrtbased.dll와 vcruntime140d.dll를 python 설치 경로에 배치합니다.
 
 예: C:\Program Files (x86)\Python38-32\ 에 복사.
+
 [__SOURCE](1-intro/4-install-vscode.md)
 # 1.4 VisualStudio Code의 설치
 
@@ -186,7 +173,7 @@ Microsot Visual Studio Code (이하 vscode로 지칭)는 무료로 사용가능�
 
 <br>
 
-## Code의 설치
+#### Code의 설치
 1) 아래 링크에 접속한 후 윈도우용 stable build 버전을 다운로드 합니다. 
 
     윈도우용  https://code.visualstudio.com/<br>
@@ -206,7 +193,7 @@ Microsot Visual Studio Code (이하 vscode로 지칭)는 무료로 사용가능�
 
 <br>
 
-# EXTENSION의 설치
+#### EXTENSION의 설치
 마켓플레이스에 있는 다양한 확장(EXTENSION)을 설치할 수 있다는 것이 vscode의 강력한 장점입니다.
 
 vscode 화면에서 가장 왼쪽에 아이콘들이 배치된 수직막대가 Activity Bar입니다. 이 중  빨간 표시된 아이콘을 누르면 그림과 같이 EXTENSIONS: MARKETPLACE가 열립니다. 상단의 필터 창에 이름을 타이핑하면 원하는 확장을 쉽게 찾을 수 있습니다.
@@ -228,6 +215,7 @@ vscode 화면에서 가장 왼쪽에 아이콘들이 배치된 수직막대가 A
 
 
 이제 vscode를 사용할 준비가 끝났습니다. 상세한 사용방법은 vscode의 Help 메뉴 혹은 인터넷 강좌를 참고하여 습득하시기 바랍니다.
+
 [__SOURCE](1-intro/5-install-web-ui.md)
 # 1.5 웹기반 U/I 개발환경 설치
 
@@ -235,7 +223,7 @@ vscode 화면에서 가장 왼쪽에 아이콘들이 배치된 수직막대가 A
 
 <br>
 
-## Google Chrome 웹브라우저 설치  
+#### Google Chrome 웹브라우저 설치  
 
 Google Chrome 웹 브라우저는 웹 앱의 구동 및 디버깅 환경을 제공합니다. 아직 설치되어 있지 않다면 아래 링크를 클릭하여 설치하십시오.
 
@@ -253,12 +241,12 @@ https://www.google.com/intl/ko/chrome/
 
 <br>
 
-## 1.6.1 HRSpace 설치 환경
+#### 1.6.1 HRSpace 설치 환경
 1) 운영 체제 : Windows 64bit
 
 <br>
 
-## 1.6.2 HRSpace 설치 과정
+#### 1.6.2 HRSpace 설치 과정
 1) HD현대로보틱스 홈페이지에 접속 후 회원가입 미진행 시 진행
 2) [HRSpace 다운로드 페이지](https://www.hd-hyundairobotics.com/biz/product/support/291) 진입
 3) 최신 버전 설치 (문서 작성일 기준: v3.95b10)
@@ -267,8 +255,8 @@ https://www.google.com/intl/ko/chrome/
 
 <br>
 
-## 1.6.3 HRSpace 실행하기
-### a. 로봇 불러오기
+#### 1.6.3 HRSpace 실행하기
+##### a. 로봇 불러오기
 1) `윈도우 키` 입력 > `HRSpace3_kor` 입력 > 클릭 > 프로그램 실행
 2) 좌측 workspace 의 workspace 컴포넌트 우클릭 > '모델 불러오기' 클릭 > 'Robot' 클릭 > 원하는 모델 클릭  
    <img src="../_assets/hrspace/00_select_robot_model.png" height=360vw></img><p style="background-color:orange; color:black; width:max-content"><b>단,  ${HRSpace 설치 경로}\VRC_${cont_model}\fbrr 에 있는 모델만 불러와야 에러가 발생하지 않습니다.</b></p> 
@@ -276,14 +264,14 @@ https://www.google.com/intl/ko/chrome/
 3) `로봇제어기(RC) 타입 선택 팝업 창` > VRC_${cont_model} 클릭 > 확인 > 로봇 로드  
    <img src="../_assets/hrspace/01_selected_robot.png" height=360vw></img>
 
-### b. workspace 저장하기
+##### b. workspace 저장하기
 1) 작업 표시줄의 `저장` 클릭&nbsp;&nbsp;<img src="../_assets/hrspace/02_save_btn.png" height=40vw></img>
 2) 원하는 위치에 새로운 폴더 생성 후, 파일 저장  
    예시) 폴더 경로 중 " HRSpace3" 클릭하여 이동 > 빈공간 우클릭 > 새로만들기 > 폴더 > temp 폴더 생성 > temp.hrs 로 모델 생성 > 저장 완료되면, 제목 표시줄에 저장한 파일명이 확인됨  
 
    <img src="../_assets/hrspace/03_temp_hrs.PNG" height=360vw>
 
-### c. 가상 티칭펜던트 실행하기
+##### c. 가상 티칭펜던트 실행하기
 1) 좌측 workspace 창에 생성된 robot 모델 우클릭 > 가상 티칭펜던트 클릭  
    
    <img src="../_assets/hrspace/04_vtp_imp.PNG" height=360wv>
@@ -294,7 +282,7 @@ https://www.google.com/intl/ko/chrome/
 
 <br>
 
-## 1.6.4 가상 티칭펜던트에서 플러그인 실행하기
+#### 1.6.4 가상 티칭펜던트에서 플러그인 실행하기
 1) 본 문서는 [HRBook 메뉴얼](../2-example-helloworld/README.md)을 참조하여 hello-world 플러그인 개발하여 hrspace 에 주입하는 방법을 안내합니다.
    ```text
    hello_world
@@ -326,12 +314,13 @@ https://www.google.com/intl/ko/chrome/
       
 <br>
 
-## 1.6.5 참고사항
+#### 1.6.5 참고사항
 1. html & css, js 코드를 수정하는 경우, `4:응용 파라미터` 선택 창으로 돌아갔다가 플러그인에 재진입하면 해당 내용이 반영이 됩니다.  
 2. <p style="background-color:darkslategrey; color:white;width:max-content">플러그인을 실행한 상태에서 python 코드를 수정한 경우, 반영을 위해선 가상제어기를 재부팅하셔야 합니다.</p>&rightarrow; workspace 창의 robot 우클릭 > `가상제어기 도구` 클릭 > `재부팅` 클릭  <br>
    <img src="../_assets/hrspace/08_reboot_vrc.PNG" height=160vw>
    <img src="../_assets/hrspace/08_reboot_vrc_success.PNG" height=160vw>
 3. `1.6.4 가상 티칭펜던트에서 플러그인 실행하기` 재진행
+
 [__SOURCE](2-example-helloworld/README.md)
 # 2. 초간단 프로젝트 : hello_world
 
@@ -363,7 +352,7 @@ info.json을 클릭해 열고 아래와 같이 입력합니다.
 
 ![](../_assets/image_15.png)
 
-## info.json
+#### info.json
 
 ``` json
 {
@@ -444,6 +433,7 @@ info.json을 클릭해 열고 아래와 같이 입력합니다.
     </tr>
   </tbody>
 </table>
+
 [__SOURCE](2-example-helloworld/2-make-hello.md)
 # 2.2 python 함수 hello( ) 구현
 
@@ -744,12 +734,12 @@ COOLTEXT (https://cooltext.com/) : text를 로고 그림파일로 생성해주�
 - 로봇언어 함수 blocking 문제 해결</br>
 
 [__SOURCE](3-practice-argosx/1-roblang/1-concept-interface.md)
-# 3.1.1 ArgosX와 interface plug-in의 사양
+#### 3.1.1 ArgosX와 interface plug-in의 사양
 
-## ArgosX 비전시스템의 사양
+#### ArgosX 비전시스템의 사양
 
 
-### 기본 사양
+##### 기본 사양
 <table>
   <thead>
     <tr>
@@ -783,7 +773,7 @@ COOLTEXT (https://cooltext.com/) : text를 로고 그림파일로 생성해주�
   </tbody>
 </table>
 
-### 프로토콜
+##### 프로토콜
 <table>
   <thead>
     <tr>
@@ -826,14 +816,14 @@ COOLTEXT (https://cooltext.com/) : text를 로고 그림파일로 생성해주�
   </tbody>
 </table>
 
-## ArgosX 인터페이스 플러그인의 사양
+#### ArgosX 인터페이스 플러그인의 사양
 
 
 ArgosX를 인터페이스하기 위한 플러그인은 아래와 같은 사양으로 개발하겠습니다.
 
 
 
-### 로봇언어
+##### 로봇언어
 <table>
   <thead>
     <tr>
@@ -877,15 +867,15 @@ ArgosX를 인터페이스하기 위한 플러그인은 아래와 같은 사양�
   </tbody>
 </table>
 
-### 조명 기능
+##### 조명 기능
 - 로봇이 motor ON 되면, ArgosX의 LED 조명도 같이 켜진다.
 - 로봇이 motor OFF 되면, ArgosX의 LED 조명도 같이 꺼진다.
 
-### 에러 처리
+##### 에러 처리
 - ArgosX로부터 "fail"이 수신되면, 미리 설정해 둔 번호의 로봇제어기 범용 I/O 출력신호를 켠다.
 
 
-### 모니터링
+##### 모니터링
 티치펜던트의 ArgosX용 모니터링 panel을 열어, 아래 정보들을 관측 할 수 있다.
 
 - IP주소
@@ -895,13 +885,14 @@ ArgosX를 인터페이스하기 위한 플러그인은 아래와 같은 사양�
 - 응답 횟수
 
 
-### 사용자 막대 (user-bar)
+##### 사용자 막대 (user-bar)
 티치펜던트의 ArgosX용 사용자 막대를 열면, 아래와 같은 U/I가 제공된다.
 
 - light-on 버튼 : ArgosX의 LED 조명을 켠다.
 - light-off 버튼 : ArgosX의 LED 조명을 끈다.
+
 [__SOURCE](3-practice-argosx/1-roblang/2-argosx-stub.md)
-# 3.1.2 ArgosX stub
+#### 3.1.2 ArgosX stub
 
 ArgosX 비전 시스템은 실제로 존재하는 장치가 아닙니다. 따라서 우리가 인터페이스 플러그인을 시험하려면, ArgosX의 역할을 대신해줄 시험용 소프트웨어, 즉 stub가 필요합니다.
 
@@ -1084,8 +1075,9 @@ python argosx_stub.py
 출력은 하단의 TERMINAL 창으로 나옵니다. 우상단의 ![](../../_assets/image_25.png) 버튼을 조작해 디버깅을 일시정지, 재실행, 정지할 수 있습니다.
 
 ![](../../_assets/image_26.png)
+
 [__SOURCE](3-practice-argosx/1-roblang/3-make-proj-argosx.md)
-# 3.1.3 argosx 프로젝트 생성
+#### 3.1.3 argosx 프로젝트 생성
 
 apps/ 폴더 밑에 argosx 라는 이름의 폴더를 생성합니다.
 
@@ -1129,7 +1121,7 @@ end
 ```
 
 [__SOURCE](3-practice-argosx/1-roblang/4-make-attribute.md)
-# 3.1.4 ip_addr, port attribute 생성
+#### 3.1.4 ip_addr, port attribute 생성
 
 <u>ArgosX와 interface plug-in의 사양</u>을 보면 우선 ip_addr를 지정하는 문자열 속성(attribute)이 있습니다.
 
@@ -1236,7 +1228,7 @@ end
 ```
 
 [__SOURCE](3-practice-argosx/1-roblang/5-make-roblang.md)
-# 3.1.5 ArgosX의 로봇언어용 함수 생성
+#### 3.1.5 ArgosX의 로봇언어용 함수 생성
 
 
 다음 구현할 사양은 init( ), req( ), res( ), close( ) 함수입니다.
@@ -1353,7 +1345,7 @@ close()
 ```
 
 [__SOURCE](3-practice-argosx/1-roblang/6-roblang_func.md)
-# 3.1.6 ArgosX의 로봇언어용 함수 구현
+#### 3.1.6 ArgosX의 로봇언어용 함수 구현
 
 이제 각 함수의 실제 동작을 구현해봅시다.
 
@@ -1604,8 +1596,9 @@ response: res (9, 15.5, 10.3, 11.2, 19.2, 1.3)
 ```
 9.000000 15.500000 10.300000 11.200000, 19.200000 1.300000
 ```
+
 [__SOURCE](3-practice-argosx/1-roblang/7-xhost-call.md)
-# 3.1.7 xhost 모듈의 method 호출
+#### 3.1.7 xhost 모듈의 method 호출
 
 xhost는 호스트(로봇제어기)의 기능을 호출하기 위한 다양한 method를 포함하는 모듈입니다.
 
@@ -1770,490 +1763,403 @@ def on_app_init() -> int:
 지정한 신호가 할당(bold체)으로 표시됩니다.
 
 ![](../../_assets/image_28.png)
+
 [__SOURCE](3-practice-argosx/1-roblang/8-xhost-method.md)
-# 3.1.8 xhost 모듈의 method 참조설명서
-
-<html>
-<body>
-<h2>get(url, query)</h2>
-
-<h3>Description:</h3>
-OpenAPI GET method.<br><br>
-<h3>Args:</h3>
-<b>url</b>: str. OpenAPI URL.<br>
-<b>query</b>: str. OpenAPI query.<br>
-
-<h3>Returns:</h3>
-str. responded value.<br>
-<br>
+#### 3.1.8 xhost 모듈 method 참조설명서
 
 <hr>
-<h2>put(url, body)</h2>
 
-<h3>Description:</h3>
-OpenAPI PUT method.<br><br>
-<h3>Args:</h3>
-<b>url</b>: str. OpenAPI URL.<br>
-<b>body</b>: str. body of the request.<br>
-
-<h3>Returns:</h3>
-str. body of the response.<br>
-<br>
+##### get(url, query)
+* Description:
+  OpenAPI GET method.
+* Args:
+  url: str. OpenAPI URL.
+  query: str. OpenAPI query.
+* Returns:
+  str. responded value.
 
 <hr>
-<h2>post(url, body)</h2>
 
-<h3>Description:</h3>
-OpenAPI POST method.<br><br>
-<h3>Args:</h3>
-<b>url</b>: str. OpenAPI URL.<br>
-<b>body</b>: str. body of the request.<br>
-
-<h3>Returns:</h3>
-str. body of the response.<br>
-<br>
+##### put(url, body)
+* Description:
+  OpenAPI PUT method.
+* Args:
+  url: str. OpenAPI URL.
+  body: str. body of the request.
+* Returns:
+  str. body of the response.
 
 <hr>
-<h2>hist_print(msg)</h2>
 
-<h3>Description:</h3>
-Same as printh() except user-param/hist_print_level setting is applied.<br><br>
-<h3>Args:</h3>
-<b>msg</b>: str. message.<br>
-
-<h3>Returns:</h3>
-	
-<br>
-
-<hr>
-<h2>printh(msg)</h2>
-
-<h3>Description:</h3>
-print to history log.<br><br>
-<h3>Args:</h3>
-<b>msg</b>: str. message.<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### post(url, body)
+* Description:
+  OpenAPI POST method.
+* Args:
+  url: str. OpenAPI URL.
+  body: str. body of the request.
+* Returns:
+  str. body of the response.
 
 <hr>
-<h2>issue_alarm(task_no, type, code)</h2>
 
-<h3>Description:</h3>
-issue error or warning event.<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>type</b>: <br>
-&nbsp&nbsp <b>'E'</b>: error<br>
-&nbsp&nbsp <b>'W'</b>: warning<br>
-<b>code</b>: alarm code number.<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### hist_print(msg)
+* Description:
+  Same as printh() except user-param/hist_print_level setting is applied.
+* Args:
+  msg: str. message.
+* Returns:
+  None
 
 <hr>
-<h2>issue_notice(task_no, code, msg, delay_sec)</h2>
 
-<h3>Description:</h3>
-issue notice event.<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>code</b>: int. alarm code number.<br>
-<b>msg</b>: str. notice message.<br>
-<b>delay_sec</b>: float. time to delay before hide (sec).<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### printh(msg)
+* Description:
+  print to history log.
+* Args:
+  msg: str. message.
+* Returns:
+  None
 
 <hr>
-<h2>set_job_state_msg(task_no, msg)</h2>
 
-<h3>Description:</h3>
-set job state message on teach pendant.<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>msg</b>: str. state message to show.<br>
-
-<h3>Returns:</h3>
-	
-<br>
-
-<hr>
-<h2>io_set_so(sig_no, val)</h2>
-
-<h3>Description:</h3>
-set system i/o output bit.<br><br>
-<h3>Args:</h3>
-<b>sig_no</b>: int. signal number (0~959).<br>
-<b>val</b>: int. value to set. (1 or 0)<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: ok<br>
-&nbsp&nbsp <b>-1</b>: index-range exceeded.<br>
-
-<br>
+##### issue_alarm(task_no, type, code)
+* Description:
+  issue error or warning event.
+* Args:
+  task_no: int. task number (0~7)
+  type:
+    'E': error
+    'W': warning
+  code: int. alarm code number
+* Returns:
+  None
 
 <hr>
-<h2>io_get_in_bit(sigcode)</h2>
 
-<h3>Description:</h3>
-get user i/o input bit by sigcode.<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.di17)<br>
-
-<h3>Returns:</h3>
-signal value, 0 or 1.<br>
-<br>
-
-<hr>
-<h2>io_set_out_bit(sigcode, val)</h2>
-
-<h3>Description:</h3>
-get user i/o output bit by sigcode.<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.do17)<br>
-<b>val</b>: int. value to set. (1 or 0)<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: ok<br>
-&nbsp&nbsp <b>-1</b>: index-range exceeded.<br>
-
-<br>
+##### issue_notice(task_no, code, msg, delay_sec)
+* Description:
+  issue notice event.
+* Args:
+  task_no: int. task number (0~7)
+  code: int. alarm code number
+  msg: str. notice message
+  delay_sec: float. time to delay before hide (sec)
+* Returns:
+  None
 
 <hr>
-<h2>io_set_pulse_by_sigcode(sigcode, onoff, count, on_ms, off_ms, lag_ms, non_update)</h2>
 
-<h3>Description:</h3>
-make i/o pulse output<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.do17)<br>
-<b>onoff</b>: <br>
-&nbsp&nbsp <b>1</b>: on-pulse<br>
-&nbsp&nbsp <b>0</b>: non-pulsed off (lagged-off)<br>
-&nbsp&nbsp <b>-1</b>: off-pulse<br>
-<b>count</b>: int. pulse count.<br>
-<b>on_ms</b>: int. width of on (msec).<br>
-<b>off_ms</b>: int. width of off (msec).<br>
-<b>lag_ms</b>: int. width of lag (msec).<br>
-<b>non_update</b>: <br>
-&nbsp&nbsp <b>1</b>: don't update, if the pulse is already registered.<br>
-&nbsp&nbsp <b>0</b>: re-register the pulse, if the pulse is already registered.<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: ok<br>
-&nbsp&nbsp <b>-2</b>: already registered (when non_update==2).<br>
-
-<br>
+#### set_job_state_msg(task_no, msg)
+* Description:
+  set job state message on teach pendant.
+* Args:
+  task_no: int. task number (0~7)
+  msg: str. state message to show
+* Returns:
+  None
 
 <hr>
-<h2>io_assign_set_in_bit(sigcode)</h2>
 
-<h3>Description:</h3>
-set sigcode as assigned input i/o<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.di17)<br>
-
-<h3>Returns:</h3>
-0               ok -1              invalid sigcode<br>
-<br>
-
-<hr>
-<h2>io_assign_set_out_bit(sigcode)</h2>
-
-<h3>Description:</h3>
-set sigcode as assigned output i/o<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017 for fb3.do17)<br>
-
-<h3>Returns:</h3>
-	0               ok -1              invalid sigcode<br>
-<br>
+#### io_set_so(sig_no, val)
+* Description:
+  set system i/o output bit.
+* Args:
+  sig_no: int. signal number (0~959)
+  val: int. (1 or 0)
+* Returns:
+  0: ok
+  -1: index-range exceeded
 
 <hr>
-<h2>io_set_triggout(task_no, fbname, val, ofs, ax_no, type)</h2>
 
-<h3>Description:</h3>
-trigger-out output i/o<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>fbname</b>: str. output variable name (e.g. fb3.do17, dob3)<br>
-<b>val</b>: int. output value.<br>
-<b>ofs</b>: int. offset-time (msec), or offset-distance (mm)<br>
-<b>ax_no</b>: int. 0(TCP), 1~(axis-number) ; axis which observe when the type is OD<br>
-<b>type</b>: <br>
-&nbsp&nbsp <b>0x01</b>: OT (time-based)<br>
-&nbsp&nbsp <b>0x02</b>: OD (distance-based) ; relative distance from previous position<br>
-&nbsp&nbsp <b>0x04</b>: output even if it is an assigned i/o<br>
-&nbsp&nbsp <b>0x10</b>: OX (absolute position of X)<br>
-&nbsp&nbsp <b>0x20</b>: OY (absolute position of Y)<br>
-&nbsp&nbsp <b>0x30</b>: OZ (absolute position of Z)<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>1</b>: buffer full<br>
-&nbsp&nbsp <b>2</b>: complete<br>
-&nbsp&nbsp <b>0</b>: ok<br>
-&nbsp&nbsp <b>-1</b>: robot axis is locked. (when, ax_no==0)<br>
-&nbsp&nbsp <b>-2</b>: Nth robot axis is locked<br>
-&nbsp&nbsp <b>-3</b>: unsupported coordinate system<br>
-&nbsp&nbsp <b>-4</b>: user coordinate system number is unmatched<br>
-
-<br>
+#### io_get_in_bit(sigcode)
+* Description:
+  get user i/o input bit by sigcode.
+* Args:
+  sigcode: int. signal-code (e.g. 30017 for fb3.di17)
+* Returns:
+  0 or 1
 
 <hr>
-<h2>io_n_blocks()</h2>
 
-<h3>Description:</h3>
-	
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-int. The number of i/o blocks<br>
-<br>
-
-<hr>
-<h2>io_size_block_addr()</h2>
-
-<h3>Description:</h3>
-	
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-int. The number of bits (address-space) in a block.<br>
-<br>
+##### io_set_out_bit(sigcode, val)
+* Description:
+  set user i/o output bit by sigcode.
+* Args:
+  sigcode: int. signal-code
+  val: int. (1 or 0)
+* Returns:
+  0: ok
+  -1: index-range exceeded
 
 <hr>
-<h2>io_fbname_from_sigcode(sigcode, is_out)</h2>
 
-<h3>Description:</h3>
-get fbname from sigcode.<br><br>
-<h3>Args:</h3>
-<b>sigcode</b>: int. signal-code (e.g. 30017)<br>
-<b>is_out</b>: 1               output 0               input<br>
-
-<h3>Returns:</h3>
-fbname of the sigcode (e.g. fb3.di17)<br>
-<br>
-
-<hr>
-<h2>solve_expr_as_string(task_no, expr)</h2>
-
-<h3>Description:</h3>
-solve the expression and return the result value.<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>expr</b>: str. expression of robot language.<br>
-
-<h3>Returns:</h3>
-str. the result value of the expression.<br>
-<br>
+##### io_set_pulse_by_sigcode(sigcode, onoff, count, on_ms, off_ms, lag_ms, non_update)
+* Description:
+  make i/o pulse output
+* Args:
+  sigcode: int
+  onoff:
+    1: on-pulse
+    0: non-pulsed off (lagged-off)
+    -1: off-pulse
+  count: int. pulse count
+  on_ms: int. width of on (msec)
+  off_ms: int. width of off (msec)
+  lag_ms: int. width of lag (msec)
+  non_update:
+    1: don't update if already registered
+    0: re-register pulse
+* Returns:
+  0: ok
+  -2: already registered
 
 <hr>
-<h2>solve_expr_as_int(task_no, expr)</h2>
 
-<h3>Description:</h3>
-solve the expression and return the result value as integer.<br><br>
-<h3>Args:</h3>
-<b>task_no</b>: int. task number (0~7).<br>
-<b>expr</b>: str. expression of robot language.<br>
-
-<h3>Returns:</h3>
-int. the result integer value of the expression.<br>
-<br>
+##### io_assign_set_in_bit(sigcode)
+* Description:
+  set sigcode as assigned input i/o
+* Args:
+  sigcode: int
+* Returns:
+  0: ok
+  -1: invalid sigcode
 
 <hr>
-<h2>exec_mode()</h2>
 
-<h3>Description:</h3>
-check whether the mode is execute-mode or not.<br>
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-&nbsp&nbsp <b>True</b>: exec-mode.<br>
-&nbsp&nbsp <b>False</b>: not exec-mode.<br>
-
-<br>
+##### io_assign_set_out_bit(sigcode)
+* Description:
+  set sigcode as assigned output i/o
+* Args:
+  sigcode: int
+* Returns:
+  0: ok
+  -1: invalid sigcode
 
 <hr>
-<h2>cont_mode()</h2>
-<h3>Description:</h3>
-check whether the mode is continue-mode or not.<br>
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-&nbsp&nbsp <b>True</b>: cont-mode.<br>
-&nbsp&nbsp <b>False</b>: not cont-mode.<br>
 
-<br>
-
-<hr>
-<h2>req_to_continue()</h2>
-
-<h3>Description:</h3>
-request host to be continue-mode
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-	
-<br>
-
-<hr>
-<h2>set_err_code(code)</h2>
-
-<h3>Description:</h3>
-set error code.<br><br>
-<h3>Args:</h3>
-<b>code</b>: int. error code.<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### io_set_triggout(task_no, fbname, val, ofs, ax_no, type)
+* Description:
+  trigger-out output i/o
+* Args:
+  task_no: int
+  fbname: str. (e.g. fb3.do17, dob3)
+  val: int
+  ofs: int. offset-time (msec) or offset-distance (mm)
+  ax_no: int. 0(TCP), 1~ axis number
+  type:
+    0x01: OT (time-based)
+    0x02: OD (distance-based)
+    0x04: force output
+    0x10: OX
+    0x20: OY
+    0x30: OZ
+* Returns:
+  1: buffer full
+  2: complete
+  0: ok
+  -1 ~ -4: error
 
 <hr>
-<h2>lang_timer()</h2>
 
-<h3>Description:</h3>
-	
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-int. current value of language-timer.<br>
-<br>
+##### io_n_blocks()
+* Description:
+  get number of i/o blocks
+* Returns:
+  int
 
 <hr>
-<h2>set_lang_timer(timeout)</h2>
 
-<h3>Description:</h3>
-	set value to language-timer.<br><br>
-<h3>Args:</h3>
-<b>timeout</b>: int. initial value (msec)<br>
-
-<h3>Returns:</h3>
-	
-<br>
+##### io_size_block_addr()
+* Description:
+  get bits (address-space) in a block
+* Returns:
+  int
 
 <hr>
-<h2>branch_to_addr(addr)</h2>
 
-<h3>Description:</h3>
-branch to the address.<br><br>
-<h3>Args:</h3>
-<b>addr</b>: str. address to branch.<br>
-
-<h3>Returns:</h3>
-	
-<br>
-
-<hr>
-<h2>abs_path(name)</h2>
-
-<h3>Description:</h3>
-get absolute-path in the file-system.<br><br>
-<h3>Args:</h3>
-<b>name</b>: str. 'home', 'project', 'log', 'jobs', 'vars', 'backup', 'fbrr', 'module', 'apps_main', or 'help'<br>
-
-<h3>Returns:</h3>
-absolute-path<br>
-<br>
+##### io_fbname_from_sigcode(sigcode, is_out)
+* Description:
+  get fbname from sigcode
+* Args:
+  sigcode: int
+  is_out: 1 output / 0 input
+* Returns:
+  fbname string
 
 <hr>
-<h2>sci_open(port)</h2>
 
-<h3>Description:</h3>
-serial port open<br>        Args:<br>        port (int): serial port number<br><br>
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: OK<br>
-&nbsp&nbsp <b>-1</b>: Not OK<br>
-
-<br>
+##### solve_expr_as_string(task_no, expr)
+* Description:
+  solve expression and return string result
+* Args:
+  task_no: int
+  expr: str
+* Returns:
+  str
 
 <hr>
-<h2>sci_close(port)</h2>
 
-<h3>Description:</h3>
-serial port close<br>        Args:<br>        port (int): serial port number<br>        <br>
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: OK<br>
-&nbsp&nbsp <b>-1</b>: already closed.<br>
-
-<br>
+##### solve_expr_as_int(task_no, expr)
+* Description:
+  solve expression and return integer result
+* Args:
+  task_no: int
+  expr: str
+* Returns:
+  int
 
 <hr>
-<h2>sci_send_bytes(port, data)</h2>
 
-<h3>Description:</h3>
-serial communication send bytes type data<br>xhost dbg not supporteds<br>
-<h3>Args:</h3>
-<b>port (int)</b>: serial port number<br>
-<b>data (bytes)</b>: input data<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: OK<br>
-&nbsp&nbsp <b>-1</b>: Not OK<br>
-
-<br>
+##### exec_mode()
+* Description:
+  check execute-mode
+* Returns:
+  True or False
 
 <hr>
-<h2>sci_recv_bytes(port, len)</h2>
 
-<h3>Description:</h3>
-	serial communication recv bytes type data<br>xhost dbg not supported<br><br>
-<h3>Args:</h3>
-<b>port (int)</b>: serial port number<br>
-<b>len (int)</b>: length of data<br>	
-<h3>Returns:</h3>
-	recieved data (bytes)<br>
-<br>
+##### cont_mode()
+* Description:
+  check continue-mode
+* Returns:
+  True or False
 
 <hr>
-<h2>sci_clear_buf(port)</h2>
 
-<h3>Description:</h3>
-	clear serial buffer<br><br>
-<h3>Args:</h3>
-<b>port (int)</b>: serial port number<br>	
-<h3>Returns:</h3>
-	
-<br>
+##### req_to_continue()
+* Description:
+  request host to be continue-mode
+* Returns:
+  None
 
 <hr>
-<h2>sci_send(port, data)</h2>
 
-<h3>Description:</h3>
-serial communication send string type data<br><br>
-<h3>Args:</h3>
-	
-<h3>Returns:</h3>
-&nbsp&nbsp <b>0</b>: OK<br>
-&nbsp&nbsp <b>-1</b>: Not OK<br>
-
-<br>
+##### set_err_code(code)
+* Description:
+  set error code
+* Args:
+  code: int
+* Returns:
+  None
 
 <hr>
-<h2>sci_recv(port)</h2>
 
-<h3>Description:</h3>
-serial communication receive string type data<br><br>
-<h3>Args:</h3>
-<b>port (int)</b>: serial port number<br>
-
-<h3>Returns:</h3>
-&nbsp&nbsp <b>'str'</b>: receive string data<br>
-
-<br>
+##### lang_timer()
+* Description:
+  get language timer value
+* Returns:
+  int (msec)
 
 <hr>
-</body>
-</html>
+
+##### set_lang_timer(timeout)
+* Description:
+  set value to language-timer
+* Args:
+  timeout: int (msec)
+* Returns:
+  None
+
+<hr>
+
+##### branch_to_addr(addr)
+* Description:
+  branch to the address
+* Args:
+  addr: str
+* Returns:
+  None
+
+<hr>
+
+##### abs_path(name)
+* Description:
+  get absolute-path in the file-system
+* Args:
+  name: home, project, log, jobs, vars, backup, fbrr, module, apps_main, help
+* Returns:
+  absolute-path string
+
+<hr>
+
+##### sci_open(port)
+* Description:
+  serial port open
+* Args:
+  port: int
+* Returns:
+  0: OK
+  -1: Not OK
+
+<hr>
+
+##### sci_close(port)
+* Description:
+  serial port close
+* Args:
+  port: int
+* Returns:
+  0: OK
+  -1: already closed
+
+<hr>
+
+##### sci_send_bytes(port, data)
+* Description:
+  serial send bytes data
+* Args:
+  port: int
+  data: bytes
+* Returns:
+  0: OK
+  -1: Not OK
+
+<hr>
+
+##### sci_recv_bytes(port, len)
+* Description:
+  serial receive bytes data
+* Args:
+  port: int
+  len: int
+* Returns:
+  bytes
+
+<hr>
+
+##### sci_clear_buf(port)
+* Description:
+  clear serial buffer
+* Args:
+  port: int
+* Returns:
+  None
+
+<hr>
+
+##### sci_send(port, data)
+* Description:
+  serial send string data
+* Returns:
+  0: OK
+  -1: Not OK
+
+<hr>
+
+##### sci_recv(port)
+* Description:
+  serial receive string data
+* Args:
+  port: int
+* Returns:
+  str
+
+<hr>
+
 [__SOURCE](3-practice-argosx/1-roblang/9-non-blocking.md)
-# 3.1.9 로봇언어 함수 blocking 문제 해결
-## blocking 문제
+#### 3.1.9 로봇언어 함수 blocking 문제 해결
+#### blocking 문제
 
 
 앞 절에서 구현한 recv_msg( ) 함수는 한 가지 문제점이 있습니다.
@@ -2291,7 +2197,7 @@ di6을 10초 대기. timeout 시, *tout으로 분기.
 
 
 
-## 실행모드와 계속모드
+#### 실행모드와 계속모드
 
 
 아래 순서도를 봅시다. ${cont_model} 호스트(HOST)가 로봇언어 명령문을 호출할 때는 실행모드(execution-mode)와 계속모드(continue-mode)의 2가지 상태가 있습니다. 계속모드라면, 호스트는 해당 명령문을 다시 호출해줍니다.
@@ -2320,7 +2226,7 @@ di6을 10초 대기. timeout 시, *tout으로 분기.
 
 
 
-## comm 모듈을 non-blocking으로 만들기
+#### comm 모듈을 non-blocking으로 만들기
 
 
 이더넷 송수신을 위해 구현했던 comm 모듈은 내부적으로 socket 모듈을 활용합니다. socket은 기본적으로 blocking 모드입니다. 즉, UDP 수신 함수인 socket.recvfrom( ) 함수는 데이터가 수신될 때까지 리턴하지 않는다는 뜻입니다.
@@ -2387,7 +2293,7 @@ def recv_msg():
 ```
 
 
-## res( ) 함수의 대기동작 구현
+#### res( ) 함수의 대기동작 구현
 
 
 아래와 같이 res( ) 함수에 timeout과 addr_on_timeout(퇴피주소)의 2가지 인수를 추가합니다.
@@ -2519,7 +2425,7 @@ def _check_timeout_and_branch(addr_on_timeout: int_or_str) -> bool:
 
 
 
-## non-blocking 동작 시험
+#### non-blocking 동작 시험
 
 
 이제 원하는 사양이 되었는지 확인해봅시다. 가상 제어기를 재실행한 후, 티치펜던트의 STEP FWD키로 job 프로그램을 한 행씩 실행해봅시다.
@@ -2568,7 +2474,7 @@ job
 
 
 [__SOURCE](3-practice-argosx/1-roblang/10-regi-cmds.md)
-# 3.1.10 로봇언어 명령입력 등록
+#### 3.1.10 로봇언어 명령입력 등록
 
 실제 TP를 사용하다보면 로봇언어를 직접 입력하는 것은 번거로운 일입니다.
 
@@ -2640,6 +2546,7 @@ argosx 폴더 안에 cmds.json을 추가하여 해당 파일 안에 명령어의
 
 [명령입력]-[argosx]
 ![](../../_assets/image_83.png)
+
 [__SOURCE](3-practice-argosx/2-callback/README.md)
 # 3.2 실전 프로젝트 : ArgosX - callback
 
@@ -2654,7 +2561,7 @@ ${cont_model} 제어기의 동작에는 모드 변경, 모터ON, 리셋, 기동,
 * callback 함수 구현
 * callback 함수 참조설명서
 [__SOURCE](3-practice-argosx/2-callback/1-register-callback.md)
-# 3.2.1 callback 함수 등록
+#### 3.2.1 callback 함수 등록
 
 
 callback 함수를 등록하는 방법은 아주 간단합니다. 각 이벤트 별로 callback 함수명이 정해져 있으며, plug-in 코드에 이 함수명으로 함수를 정의해놓기만 하면, plug-in이 import 될 때 자동으로 등록됩니다.
@@ -2816,7 +2723,7 @@ LED light is ON
 ```
 
 [__SOURCE](3-practice-argosx/2-callback/3-ref-callback.md)
-# 3.2.3 callback 함수 참조설명서
+#### 3.2.3 callback 함수 참조설명서
 
 <table>
   <thead>
@@ -2892,8 +2799,9 @@ LED light is ON
     </tr>
   </tbody>
 </table>
+
 [__SOURCE](3-practice-argosx/3-setup-ui/README.md)
-# 3.3.1 실전 프로젝트 : ArgosX - 설정화면 U/I 개발
+#### 3.3.1 실전 프로젝트 : ArgosX - 설정화면 U/I 개발
 
 플러그인에 각종 설정이 있다면, 사용자에게 설정값을 보여주고 새로운 값으로 변경할 수 있도록 해주는 설정화면이 필요합니다.
 
@@ -2910,7 +2818,7 @@ LED light is ON
 * F 버튼 동작 - default 값으로 초기화
 
 [__SOURCE](3-practice-argosx/3-setup-ui/1-concept-if.md)
-# 3.3.1 ArgosX의 설정화면 사용자 인터페이스의 사양
+#### 3.3.1 ArgosX의 설정화면 사용자 인터페이스의 사양
 
 아래와 같은 사양으로 설정화면 사용자 인터페이스를 만들어 봅시다.
 
@@ -2932,8 +2840,9 @@ job 프로그램에서의 import argosx 의 수행 여부와 무관하게, 설�
 argosx/info.json 파일의 startup 항목을 "manual"에서 "boot"로 바꿉니다. 이제, 제어기 booting 시에 argosx가 import 되므로, job 프로그램에서 import argosx 를 수행할 필요가 없습니다.
 
 (여전히, HRScript에서 설정할 수도 있습니다.)
+
 [__SOURCE](3-practice-argosx/3-setup-ui/2-layout.md)
-# 3.3.2 설정화면의 레이아웃
+#### 3.3.2 설정화면의 레이아웃
 
 
 argosx 의 부모인 apps/ 폴더에 대해 vscode를 여십시오.
@@ -3040,7 +2949,7 @@ setup.html의 대략적인 레이아웃
 
 
 [__SOURCE](3-practice-argosx/3-setup-ui/3-setup-action.md)
-# 3.3.3 설정화면의 동작
+#### 3.3.3 설정화면의 동작
 
 setup.html의 head 안에 아래와 같이 script를 추가합니다.
 
@@ -3167,8 +3076,9 @@ __setGuideBarMsg(element의 id 혹은 name, 표시할 message)___
 이러한 설정값과 관련된 동작은 setDomPath("/apps/argosx/svr_setup");의 호출과 updateData( ) 함수의 정의로 구현됩니다.
 
 자세한 내용은 이 후의 절에서 다시 설명하겠습니다.
+
 [__SOURCE](3-practice-argosx/3-setup-ui/4-menu.md)
-# 3.3.4 설명화면 메뉴의 주입
+#### 3.3.4 설명화면 메뉴의 주입
 
 hello_world 예제에서 이미 메뉴 주입을 실습해 본 바 있습니다.
 
@@ -3230,7 +3140,7 @@ EZGIFCOM (https://ezgif.com/svg-to-png) : SVG 파일을 원하는 해상도의 P
 
 
 [__SOURCE](3-practice-argosx/3-setup-ui/5-load-param.md)
-# 3.3.5 설정화면의 값 불러오기와 저장하기
+#### 3.3.5 설정화면의 값 불러오기와 저장하기
 
 
 
@@ -3246,7 +3156,7 @@ EZGIFCOM (https://ezgif.com/svg-to-png) : SVG 파일을 원하는 해상도의 P
 ![](../../_assets/image_44.png)
 
 
-## element ↔ javascript object
+##### element ↔ javascript object
 
 
 setup.js
@@ -3283,7 +3193,7 @@ ddx 함수들
 
 </br>
 
-## javascript 객체 ↔ python data
+##### javascript 객체 ↔ python data
 
 
 setup.js
@@ -3443,7 +3353,7 @@ sigcode_err = gen_def['sigcode_err']
 
 
 
-## 동작 시험
+##### 동작 시험
 
 
 이제, 가상제어기를 재시작하고, import argosx를 수행한 후, ArgosX의 설정화면으로 진입해봅시다. 아래와 같이 기본 설정값들이 표시됩니다.
@@ -3465,7 +3375,7 @@ IP address를 192.168.1.172로 변경하고, Failure output signal에 3.4 <enter
 
 
 [__SOURCE](3-practice-argosx/3-setup-ui/6-load-file.md)
-# 3.3.6 설정 파일 불러오기와 저장하기
+#### 3.3.6 설정 파일 불러오기와 저장하기
 
 앞 절에서는 설정 값을 python 변수에 저장하고, 다시 불러오는 실습을 했습니다.
 
@@ -3675,7 +3585,7 @@ main S/W를 재실행 한 후 ArgosX 설정화면을 열어봅니다. 파일에 
 
 
 [__SOURCE](3-practice-argosx/3-setup-ui/7-f-btn.md)
-# 3.3.7 F버튼 동작 - default 값으로 초기화
+#### 3.3.7 F버튼 동작 - default 값으로 초기화
 
 
 
@@ -3750,6 +3660,7 @@ InitButtonBar( ) 함수의 리턴값
 또한 Initialize All 버튼을 클릭하여 화면 전체의 값이 default 값으로 복원되는지 확인합니다.
 
 ![](../../_assets/image_48.png)
+
 [__SOURCE](3-practice-argosx/4-monitoring-panel/README.md)
 # 3.4 실전 프로젝트 : ArgosX - 모니터링 panel U/I 개발
 
@@ -3763,7 +3674,7 @@ InitButtonBar( ) 함수의 리턴값
 * 모니터링 panel의 동작
 * panel 메뉴의 주입
 [__SOURCE](3-practice-argosx/4-monitoring-panel/1-concept-if.md)
-# 3.4.1 ArgosX의 모니터링 panel 사용자 인터페이스의 사양
+#### 3.4.1 ArgosX의 모니터링 panel 사용자 인터페이스의 사양
 
 아래와 같은 정보들을 관측할 수 있는 모니터링 panel 사용자 인터페이스를 만들어 봅시다.
 
@@ -3779,7 +3690,7 @@ InitButtonBar( ) 함수의 리턴값
 
 
 [__SOURCE](3-practice-argosx/4-monitoring-panel/2-layout.md)
-# 3.4.2 모니터링 panel의 레이아웃
+#### 3.4.2 모니터링 panel의 레이아웃
 
 argosx 의 부모인 apps/ 폴더에 대해 vscode를 여십시오.
 
@@ -3855,7 +3766,7 @@ panel.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Li
 
 
 [__SOURCE](3-practice-argosx/4-monitoring-panel/3-panel-action.md)
-# 3.4.3 모니터링 panel의 동작
+#### 3.4.3 모니터링 panel의 동작
 
 
 python 코드에서 IP주소, port번호, 에러 할당입력 번호의 변수는 이미 존재합니다.
@@ -4015,7 +3926,7 @@ ArgosX stub를 실행하고 가상 티치펜던트로 job 프로그램을 실행
 
 
 [__SOURCE](3-practice-argosx/4-monitoring-panel/4-menu.md)
-# 3.4.4 panel 메뉴의 주입
+#### 3.4.4 panel 메뉴의 주입
 
 ArgosX의 모니터링 기능을, panel 메뉴에 주입해봅시다.
 
@@ -4085,7 +3996,7 @@ panel_argosx.png의 예 (이 그림을 다운받아 사용해도 됩니다.)
 * 사용자 막대의 주입
 
 [__SOURCE](3-practice-argosx/5-user-bar/1-concept-if.md)
-# 3.5.1 ArgosX의 user-bar 사용자 인터페이스의 사양
+#### 3.5.1 ArgosX의 user-bar 사용자 인터페이스의 사양
 
 사용자키 버튼을 여러 번 누르면 사용자 막대가 전환됩니다.
 
@@ -4096,8 +4007,9 @@ panel_argosx.png의 예 (이 그림을 다운받아 사용해도 됩니다.)
 <br></br>
 
 ![](../../_assets/image_56.png)
+
 [__SOURCE](3-practice-argosx/5-user-bar/2-layout.md)
-# 3.5.2 사용자 막대의 레이아웃
+#### 3.5.2 사용자 막대의 레이아웃
 
 argosx 의 부모인 apps/ 폴더에 대해 vscode를 여십시오.
 
@@ -4138,10 +4050,11 @@ ubar.html이 열린 상태에서 우하단의 Go Live 버튼을 클릭하여 Liv
 
 아직 ubar.js의 내용은 없지만, 레이아웃이 정상적인지는 확인할 수 있습니다.
 <br>![](../../_assets/image_59.png)
-[__SOURCE](3-practice-argosx/5-user-bar/3-usrbar-action.md)
-# 3.5.3 사용자 막대의 동작
 
-## 클라이언트단 (티치펜던트)
+[__SOURCE](3-practice-argosx/5-user-bar/3-usrbar-action.md)
+#### 3.5.3 사용자 막대의 동작
+
+##### 클라이언트단 (티치펜던트)
 
 
 ui/ubar.js 파일에 아래와 같이 작성합니다. 버튼을 누를 때마다 티치펜던트는 "light_onoff"라는 HTTP post 메시지를 메인보드로 송신합니다. on인지 off인지는 onoff라는 속성을 가진 객체에 담아, post 메시지의 body에 실어 보냅니다.
@@ -4197,7 +4110,7 @@ function light_onoff(onoff)
 
 
 
-## 서버단 (메인보드)
+##### 서버단 (메인보드)
 
 
 이제 메인보드의 argosx 플러그인에서 이 메시지를 받아 실제 ArgosX 장치(stub로 실험)로 "light-on", "light-off" 메시지를 보내주면 됩니다.
@@ -4277,7 +4190,7 @@ ArgosX stub 콘솔 출력
 
 
 [__SOURCE](3-practice-argosx/5-user-bar/4-inset-usrbar.md)
-# 3.5.4 사용자 막대의 주입
+#### 3.5.4 사용자 막대의 주입
 
 ArgosX의 사용자 막대를, 실제 티치펜던트에 주입해봅시다.
 
@@ -4333,7 +4246,7 @@ menu.json
 * 모니터링 panel U/I 다국어화 
 * user-bar U/I 다국어화
 [__SOURCE](3-practice-argosx/6-translation/1-update-setup/README.md)
-# 3.6.1 설정 화면 U/I 다국어화
+#### 3.6.1 설정 화면 U/I 다국어화
 
 먼저, 설정 화면의 U/I의 대하여 번역 작업을 시작해봅시다. 
 
@@ -4342,9 +4255,9 @@ menu.json
 * F버튼의 U/I의 번역
 
 [__SOURCE](3-practice-argosx/6-translation/1-update-setup/1-setup-menu.md)
-# 3.6.1.1 설정화면 메뉴의 번역 
+#### 3.6.1.1 설정화면 메뉴의 번역 
 
-## string table의 등록
+##### string table의 등록
 다국어화의 리소스 등록을 위하여 string table을 등록해야합니다.
 이는 json 형태로 등록을 해야하며 하기의 형식으로 추가가 되어야합니다.
 
@@ -4372,7 +4285,7 @@ menu.json
 
     menu에서 제목을 추가하기 위해여 "IDS_title"이라는 동일한 id를 가진 string data들을 각각 "en"과 "ko"에 형식에 맞춰 추가해줍니다.
 
-## 메뉴 라벨 번역
+##### 메뉴 라벨 번역
 메뉴에서 설정화면의 라벨 역시 번역을 해야합니다.
 
 아래의 내용을 따라해봅시다.
@@ -4427,9 +4340,9 @@ menu.json
 
 
 [__SOURCE](3-practice-argosx/6-translation/1-update-setup/2-setup-ui.md)
-# 3.6.1.2 설정화면 U/I의 번역 
+#### 3.6.1.2 설정화면 U/I의 번역 
 
-## setup layout에서의 변경
+##### setup layout에서의 변경
 
 설정화면의 U/I의 번역을 위해 먼저 setup.html을 살펴봅시다.
 
@@ -4503,10 +4416,10 @@ setup.html
 ````
 
 
-## setup의 번역 동작 추가
+##### setup의 번역 동작 추가
 이제 setup 화면에 번역 동작을 추가해봅시다.
 
-### 1) 초기화 
+1) 초기화 
 
 먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 ${cont_model}에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
 
@@ -4554,7 +4467,7 @@ def get_lang_code()->dict:
 위의 함수는 xhost의 lang_code 함수를 이용하여 읽어온 lang_code를 반환합니다.
 
 
-### 2) lang_code에 따른 번역 지정
+2) lang_code에 따른 번역 지정
 
 callback 함수로 지정한 updateAllStrByLang는 updateElement 과 updateGuideBarMsg를 호출하는 함수 이며, 각각 lang_code에 따라서 각 element들과 guidebar의 메세지들을 번역하는 동작을 합니다.
 
@@ -4628,10 +4541,10 @@ setElemByLang과 setGuideMsgByLang 을 통해서 각 element들과 guidebar 메�
 
 
 [__SOURCE](3-practice-argosx/6-translation/1-update-setup/3-f-btn.md)
-# 3.6.1.3 F 버튼 U/I의 번역 
+#### 3.6.1.3 F 버튼 U/I의 번역 
 F 버튼의 U/I의 내용을 번역하는 동작을 추가해봅시다.
 
-## string data 추가
+##### string data 추가
 str_table.json 파일에 각 lang_code 별로 F 버튼 번역을 위한 string data를 추가해줍니다. 
 
 ``` json
@@ -4648,7 +4561,7 @@ str_table.json 파일에 각 lang_code 별로 F 버튼 번역을 위한 string d
 
 ```
 
-## F버튼의 동작
+##### F버튼의 동작
 기존에 구현되어 있는 initButtonBar 함수 내에 정의한 btn_infos의 내용에서 label의 값을 string id 로 수정해줍니다.
 
 setup.js 
@@ -4679,10 +4592,10 @@ function initButtonBar()
 
 
 [__SOURCE](3-practice-argosx/6-translation/2-update-panel.md)
-# 3.6.2 모니터링 panel U/I 다국어화
+#### 3.6.2 모니터링 panel U/I 다국어화
 다음으로는 모니터링 panel에서의 번역 작업을 따라해봅시다.
 
-## 1. menu 번역
+##### 1. menu 번역
 panel U/I 역시 menu에서 번역이 필요합니다.
 
 모니터링 panel 메뉴에서 해당 panel 화면의 라벨을 확인하기 위해서 id를 추가해줍니다.
@@ -4709,7 +4622,7 @@ label의 값을 기존의 "ArgosX Vision System"이 아닌 "IDS_title"로 작성
 ![](../../_assets/image_89.png)
 
 
-## 2. panel layout에서의 변경
+##### 2. panel layout에서의 변경
 
 모니터링 화면의 U/I의 번역을 위해 먼저 panel.html을 살펴봅시다.
 
@@ -4810,11 +4723,11 @@ setup에서의 작업과 마찬가지로 str_table.json과 lang.js를 아래와 
     </html>
     ```
 
-## 3. panel 번역 동작 추가
+##### 3. panel 번역 동작 추가
  
 이제 panel 화면에 번역 동작을 추가해봅시다.
 
-### 1) 초기화 
+1) 초기화 
 
 먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 ${cont_model}에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
 
@@ -4834,7 +4747,8 @@ setup.js에서와 동일하게 parseStrData, setLangcode를 추가하여 위와 
 
 
 
-### 2) lang_code에 따른 번역 지정
+2) lang_code에 따른 번역 지정
+
 기존에 작성된 string data를 활용하는 부분은 그대로 두고, 추가적으로 필요한 elements들에 대한 내용을 str_table.json에 추가해줍니다.
 
 str_table.json
@@ -4878,9 +4792,10 @@ panel의 경우 elements들의 명칭만 변경해주면 되기 때문에 update
 가상 제어기와 TP를 재부팅한 뒤, 정상 동작이 된다면 아래와 같은 모니터링 panel 화면을 확인하실 수 있습니다.
 
 ![](../../_assets/image_90.png)
+
 [__SOURCE](3-practice-argosx/6-translation/3-update-userbar.md)
-# 3.6.3 user-bar U/I 다국어화
-## 1. user-bar layout에서의 변경
+#### 3.6.3 user-bar U/I 다국어화
+##### 1. user-bar layout에서의 변경
 
 User-bar U/I의 번역을 위해 먼저 ubar.html을 살펴봅시다.
 이전의 작업과 마찬가지로 str_table.json과 lang.js를 아래와 같이 script로 추가해 줍니다.
@@ -4943,11 +4858,11 @@ ubar.html
 </html>
 ```
 
-## 2. user-bar 번역 동작 추가
+##### 2. user-bar 번역 동작 추가
  
 이제 user-bar 화면에 번역 동작을 추가해봅시다.
 
-### 1) 초기화 
+1) 초기화 
 
 먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 ${cont_model}에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
 
@@ -4964,7 +4879,8 @@ function init()
 이전과 동일하게 parseStrData, setLangcode를 추가하여 위와 같이 작성해줍니다.
 
 
-### 2) lang_code에 따른 번역 지정
+2) lang_code에 따른 번역 지정
+
 추가적으로 필요한 elements들에 대한 내용을 str_table.json에 추가해줍니다.
 
 str_table.json
@@ -4997,6 +4913,7 @@ ubar의 경우 elements들의 명칭만 변경해주면 되기 때문에 setElem
 가상 제어기와 TP를 재부팅한 뒤, 정상 동작이 된다면 아래와 같은 user-bar 화면을 확인하실 수 있습니다.
 
 ![](../../_assets/image_91.png)
+
 [__SOURCE](4-debug/README.md)
 # 4. 디버깅
 
@@ -5013,7 +4930,7 @@ ubar의 경우 elements들의 명칭만 변경해주면 되기 때문에 setElem
 
 <br>
 
-## 디버깅용 xhost
+#### 디버깅용 xhost
 xhost는 플러그인에서 ${cont_model} 호스트의 기능을 호출할 때 사용되는 모듈로서, 호스트에 의해 플러그인에 생성/주입됩니다. 아래 그림은 호스트와 플러그인의 일반적인 동작 흐름입니다.
 <br> ![](../_assets/image_63.png)
 
@@ -5063,7 +4980,7 @@ remote_ip="192.168.1.150"
 
 
 
-## Visual Studio Code와 test.py에 의한 디버깅
+#### Visual Studio Code와 test.py에 의한 디버깅
 <u>VisualStudio Code의 설치</u>에d서 microsoft Python 확장을 제대로 설치했다면,  python 디버깅 환경을 사용할 수 있습니다. vscode에서의 python 디버깅에 이미 익숙하다면 이 절은 건너뛰어도 됩니다.
 
 
@@ -5123,7 +5040,7 @@ test.py의 동작은 xhost_dbg에 의해 제어기 호스트와 연동되기 때
 
 
 
-## Live server 로 web UI 실행
+#### Live server 로 web UI 실행
 
 
 <u>설정화면의 레이아웃</u> 절에서 argosx 플러그인의 setup.html을 Chrome 웹 브라우저로 실행해본 바 있습니다.
@@ -5156,7 +5073,7 @@ vscode에 setup.html이 열린 상태에서 우하단의 Go Live 버튼을 클�
 
 
 
-## Chrome DevTools
+#### Chrome DevTools
 
 
 F12 버튼을 누르면 브라우저 우측에 Chrome DevTools가 열립니다. 아래 그림에서는 DevTools의 상단 메뉴 Console이 선택되어 있습니다. javascript에서 console.log( )로 문자열을 호출하면, 이 console 창에 문자열이 출력됩니다. 이 때, log( )가 호출된 소스코드 위치도 함께 표시되고, 클릭하여 해당 소스코드 위치로 이동할 수 있기 때문에, 디버깅 용도로 유용합니다.
@@ -5199,7 +5116,7 @@ breakpoint에 걸린 상태에서는 trace가 가능합니다. Breakpoints 창 �
 ![](../_assets/image_78.png)
 
 
-## 소스코드의 수정과 재실행
+#### 소스코드의 수정과 재실행
 
 
 html이나 css, javascript 소스코드를 수정한 후, 웹 브라우저에서 update 버튼을 클릭하거나 F5 키를 누르면, 수정된 내용으로 재실행됩니다.

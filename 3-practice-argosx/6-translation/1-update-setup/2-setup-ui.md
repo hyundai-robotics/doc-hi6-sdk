@@ -1,6 +1,6 @@
-﻿# 3.6.1.2 설정화면 U/I의 번역 
+﻿#### 3.6.1.2 설정화면 U/I의 번역 
 
-## setup layout에서의 변경
+##### setup layout에서의 변경
 
 설정화면의 U/I의 번역을 위해 먼저 setup.html을 살펴봅시다.
 
@@ -74,10 +74,10 @@ setup.html
 ````
 
 
-## setup의 번역 동작 추가
+##### setup의 번역 동작 추가
 이제 setup 화면에 번역 동작을 추가해봅시다.
 
-### 1) 초기화 
+1) 초기화 
 
 먼저 초기화 단계에서 str_table.json의 데이터를 로드해오는 동작과 ${cont_model}에서 읽어온 lang_code를 개방화 플랫폼 다국어화에 반영시켜 주는 동작을 추가 해줍니다.
 
@@ -125,7 +125,7 @@ def get_lang_code()->dict:
 위의 함수는 xhost의 lang_code 함수를 이용하여 읽어온 lang_code를 반환합니다.
 
 
-### 2) lang_code에 따른 번역 지정
+2) lang_code에 따른 번역 지정
 
 callback 함수로 지정한 updateAllStrByLang는 updateElement 과 updateGuideBarMsg를 호출하는 함수 이며, 각각 lang_code에 따라서 각 element들과 guidebar의 메세지들을 번역하는 동작을 합니다.
 
