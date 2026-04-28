@@ -329,6 +329,8 @@ Example: Click on "HRSpace3" in the File Explorer address bar to navigate > Righ
 
    <img src="../_assets/hrspace/08_hello_world_menu.PNG" height=500vw>  
 
+5. Execute the `hello, world` plugin.
+
    <img src="../_assets/hrspace/09_hello_world_menu_success.PNG" height=500vw>
 
 <br>
