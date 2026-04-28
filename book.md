@@ -252,7 +252,7 @@ You can test your own plugin app on HRSpace's virtual controller and virtual tea
 #### 1.6.2 HRSpace Installation Process
 
 1. Access the HD Hyundai Robotics website and sign up if not already registered.
-2. Open the HRSpace download page.
+2. Open the [HRSpace download page](https://www.hd-hyundairobotics.com/biz/product/support/291).
 3. Install the latest version (as of the document date: v3.95b10).
 4. Extract the downloaded zip file.
 5. Run the installer (HRSpace3.msi) → Select language → Choose installation location → Complete installation and exit.
@@ -270,11 +270,7 @@ You can test your own plugin app on HRSpace's virtual controller and virtual tea
 
    <p style="background-color: orange; color: black; width:max-content"><b>To avoid errors, only models located in ${HRSpace installation folder}\VRC_${cont_model}\fbrr should be loaded.</b></p>
 
-3. Robot Controller (RC) Type Selection Popup > Click VRC_${cont_model} > Confirm > Load Robot.  
-   
-   <img src="../_assets/hrspace/02_rc_type_popup.PNG" height=250hw>
-
-4. Robot Loaded  
+3. `Robot Controller (RC) Type Selection Popup` > Click VRC_${cont_model} > Confirm > Load Robot.  
 
    <img src="../_assets/hrspace/03_robot_loaded.PNG" height=350hw>
 
@@ -1801,8 +1797,9 @@ The designated signal will be displayed as assigned (bold).
 ##### get(url, query)
 * Description:
   OpenAPI GET method.
-* Args:
-  url: str. OpenAPI URL.
+* Args:  
+  url (str): The API endpoint path. ex. "project/rgen"  
+             **Do not include** the base URL (http://192.168.1.150:8888/). Only provide the path following it.
   query: str. OpenAPI query.
 * Returns:
   str. responded value.
@@ -1813,7 +1810,8 @@ The designated signal will be displayed as assigned (bold).
 * Description:
   OpenAPI PUT method.
 * Args:
-  url: str. OpenAPI URL.
+  url (str): The API endpoint path. ex. "project/rgen"  
+             **Do not include** the base URL (http://192.168.1.150:8888/). Only provide the path following it.
   body: str. body of the request.
 * Returns:
   str. body of the response.
@@ -1824,7 +1822,8 @@ The designated signal will be displayed as assigned (bold).
 * Description:
   OpenAPI POST method.
 * Args:
-  url: str. OpenAPI URL.
+  url (str): The API endpoint path. ex. "project/rgen"  
+             **Do not include** the base URL (http://192.168.1.150:8888/). Only provide the path following it.
   body: str. body of the request.
 * Returns:
   str. body of the response.
