@@ -29,7 +29,7 @@ print msg
 end
 ```
 
-If the following string is printed on the guidance frame of the teach pendant, it means the operation is normal.
+If the following string is printed on the guidance frame of the teach pendant, it means the operation is normal.  
 ![](../_assets/image_18.png)
 
 As seen in the example, the string values and integer values of HRScript are naturally transferred as the string values and integer values of Python. Conversely, the string return values of Python are also naturally returned as the string values of HRScript. The values of both languages are automatically converted mutually like this. The table below is a data type map of the two languages.

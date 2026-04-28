@@ -11,14 +11,14 @@ Install Python v3.8 according to the following procedures.
 
     ![](../_assets/image_2.png)
 
-2) Tick Add Python 3.8 to PATH, then select Customize installation.
+2) Tick Add Python 3.8 to PATH, then select Customize installation.  
     ![](../_assets/image_3.png)
 
-3) Tick all and click Next.
+3) Tick all and click Next.  
     ![](../_assets/image_4.png)
-4) Tick all. Leave the installation path as C:\Program Files (x86)\Python38-32 as is and click Install.
+4) Tick all. Leave the installation path as C:\Program Files (x86)\Python38-32 as is and click Install.  
     ![](../_assets/image_5.png)
-5) You do not need to press Disable path length limit. Click Close.
+5) You do not need to press Disable path length limit. Click Close.  
     ![](../_assets/image_6.png)
 
 6) Open the Windows Command Prompt (press Windows + R, type in cmd, then press the enter key.)
