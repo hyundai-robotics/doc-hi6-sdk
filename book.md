@@ -2801,7 +2801,7 @@ LED light is ON
 </table>
 
 [__SOURCE](3-practice-argosx/3-setup-ui/README.md)
-#### 3.3.1 실전 프로젝트 : ArgosX - 설정화면 U/I 개발
+## 3.3 실전 프로젝트 : ArgosX - 설정화면 U/I 개발
 
 플러그인에 각종 설정이 있다면, 사용자에게 설정값을 보여주고 새로운 값으로 변경할 수 있도록 해주는 설정화면이 필요합니다.
 
