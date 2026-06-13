@@ -1,7 +1,9 @@
 ﻿# Table of contents
 
 * [${cont_model} 控制器功能手册 - 软件开发工具包 (SDK)](README.md)
-* [注意事项](0-about-this-manual/precautions.md)
+* [关于手册](0-about-this-manual/README.md)
+  * [注意事项](0-about-this-manual/precautions.md)
+  * [安全注意事项](0-about-this-manual/safety-notice.md)
 * [1. ${cont_model} SDK 概述](1-intro/README.md)
   * [1.1 所需知识](1-intro/1-prior-knowledge.md)
   * [1.2 ${cont_model} 插件应用的概念](1-intro/2-plugin-app-concept.md)
