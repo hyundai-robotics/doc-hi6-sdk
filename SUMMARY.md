@@ -1,7 +1,9 @@
 ﻿# Table of contents
 
 * [${cont_model} Controller Function Manual - Software Development Kit (SDK)](README.md)
-* [Precautions](0-about-this-manual/precautions.md)
+* [About the Manual](0-about-this-manual/README.md)
+  * [Precautions](0-about-this-manual/precautions.md)
+  * [Safety Cautions](0-about-this-manual/safety-notice.md)
 * [1. Overview of ${cont_model} SDK](1-intro/README.md)
   * [1.1 Required knowledge](1-intro/1-prior-knowledge.md)
   * [1.2 Concept of ${cont_model} plug-in apps](1-intro/2-plugin-app-concept.md)
