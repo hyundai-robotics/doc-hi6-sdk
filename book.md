@@ -241,7 +241,7 @@ Google Chrome 웹 브라우저는 웹 앱의 구동 및 디버깅 환경을 제�
 https://www.google.com/intl/ko/chrome/
 
 
-[__SOURCE](1-intro/6-install-hrspace.md)
+[__SOURCE](1-intro/6-test-in-hrspace.md)
 # 1.6 HRSpace 로 플러그인 테스트 하기  
 
 본인이 작성한 플러그인 앱을 HRSpace 의 가상제어기 및 가상 티칭펜던트에서 테스트 할 수 있습니다.  
