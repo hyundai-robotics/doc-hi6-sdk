@@ -1,11 +1,11 @@
-﻿#### 3.5.2 Layout of the user bar
+#### 3.5.2 用户栏的布局
 
-Open vscode for the apps/ folder that is the parent of the ArgosX folder.
+打开 vscode，选择 ArgosX 文件夹的父文件夹 apps/ 。
 
-Create ui/ubar.html and ui/ubar.js files.
+创建 ui/ubar.html 和 ui/ubar.js 文件。
 <br>![](../../_assets/image_57.png)
 
-Write the content below, which is about a simple layout consisting of two buttons. The first column of the table is given a class called 'ubar-bt', which is defined in the common style.css. It automatically recognizes TP600 and TP630 and gives the button's sizes and colors similar to the default UI. If you want to change the style, you can define a class using a separate local css and apply it.
+在下面写入内容，它是由两个按钮组成的简单布局。表的第一列被赋予了一个名为 'ubar-bt' 的类，该类在 common style.css 中定义。它会自动识别 TP600 和 TP630，并为按钮的大小和颜色提供类似于默认 UI 的样式。如果你想更改样式，可以使用单独的本地 css 定义一个类并应用它。
 
 ubar.html
 ``` html
@@ -25,17 +25,14 @@ ubar.html
 </head>
   
 <body class='ubar'>
-   <button id='light-on' class='ubar-bt' onclick='light_onoff(true);'>light<br>on</button>
-   <button id='light-off' class='ubar-bt' onclick='light_onoff(false);'>light<br>off</button>
+   <button id='light-on' class='ubar-bt' onclick='light_onoff(true);'>light<br>打开</button>
+   <button id='light-off' class='ubar-bt' onclick='light_onoff(false);'>light<br>关闭</button>
 </body>
 </html>
 ```
 
-While ubar.html is open, if you execute Live server by clicking the Go Live button at the bottom right, the Google Chrome browser will open.
+当 ubar.html 打开时，如果你点击右下角的 Go Live 按钮执行实时服务器，Google Chrome 浏览器将打开。
 <br>![](../../_assets/image_58.png)
 
-
-
-
-Even though there is no content in ubar.js yet, we can check whether the layout is normal.
+尽管 ubar.js 中尚无内容，但我们可以检查布局是否正常。
 <br>![](../../_assets/image_59.png)

@@ -1,14 +1,11 @@
-﻿#### 3.5.3 Operating the user bar
+#### 3.5.3 操作用户工具条
 
-##### Client side (teach pendant)
+##### 客户端 (教学挂件)
 
+在 ui/ubar.js 文件中写入以下内容。每次按下按钮时，教学挂件将会向主板发送一个名为 "light_onoff" 的 HTTP post 消息。开或关的状态将包含在一个具有 onoff 属性的对象中，并将加载到 post 消息的主体中发送。
 
-
-Write the following content in the ui/ubar.js file. Every time the button is pressed, the teach pendant will transmit an HTTP post message called "light_onoff" to the main board. Whether it is on or off will be contained in an object that has the onoff attribute, and it will be loaded in the body of the post message and sent. 
-
-- Body in light-on state: { onoff: true }
-- Body in light-off sate: { onoff: false }
-
+- 灯光开启状态的主体: { onoff: true }
+- 灯光关闭状态的主体: { onoff: false }
 
 ui/ubar.js
 ``` js
@@ -30,7 +27,7 @@ function domainMb()
 ///@param[in]  onoff    true or false
 ///@return
 ///      -  0     ok
-///@brief      request light-on/off
+///@brief      请求灯光开/关
 function light_onoff(onoff)
 {
    var url = domainMb()+"/apps/argosx/svr_light_onoff";
@@ -55,16 +52,11 @@ function light_onoff(onoff)
 }
 ```
 
+##### 服务器端 (主板)
 
+现在，主板的 ArgosX 插件需要接收此消息并向实际的 ArgosX 设备发送 "light-on" 和 "light-off" 消息（使用桩进行测试）。
 
-##### Server side (mainboard)
-
-
-Now, the ArgosX plug-in of the mainboard needs to receive this message and send the "light-on" and "light-off" messages to the actual ArgosX device (testing with a stub).
-
-
-
-Write the ubar.py file into the argosx/ folder as follows. Regarding its implementation, the comm_ex module will be utilized similarly to how we performed the callback implementations in a previous chapter.
+将 ubar.py 文件写入 argosx/ 文件夹，如下所示。关于其实现，将使用 comm_ex 模块，类似于我们在先前章节中执行的回调实现。
 ``` python
 """ ArgosX Vision System interface - main
  
@@ -79,10 +71,10 @@ from . import comm_ex
  
 def post_light_onoff(body: dict) -> int:
    """
-   Args:
+   参数:
       onoff
     
-   Returns:
+   返回:
       0
    """
    onoff = body['onoff']
@@ -92,9 +84,7 @@ def post_light_onoff(body: dict) -> int:
    return comm_ex.send_msg_once(msg)
 ```
 
-As the final step, import all functions of ubar.py to main.py.
-
-
+最后一步，将 ubar.py 的所有函数导入 main.py。
 
 main.py
 ``` python
@@ -114,24 +104,15 @@ from .ubar import *
 import xhost
  
  
-Subsequent steps skipped...
+后续步骤略去...
 ```
 
-Reboot the virtual controller, then run the job file up to argosx.init( ). Execute Go Live again to bring up the user bar screen on the web browser.
+重启虚拟控制器，然后运行作业文件直到 argosx.init( )。再次执行 Go Live 以在网络浏览器上调出用户工具条屏幕。
 
-Execute an ArgosX stub then operate the buttons on the web browser. If the stub's output on the console is displayed as "light-on" and "light-off", it means the operation is normal.
+执行 ArgosX 桩，然后在网络浏览器上操作按钮。如果桩的控制台输出显示为 "light-on" 和 "light-off"，则意味着操作正常。
 <br>
 ![](../../_assets/image_60.png)
 
-
-
-
-ArgosX stub's output on the console
+ArgosX 桩的控制台输出
 <br>
 ![](../../_assets/image_61.png)
-
-
-
-
-
-

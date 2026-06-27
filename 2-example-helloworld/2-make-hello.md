@@ -1,9 +1,9 @@
-﻿# 2.2 Implementing the python function hello( )
+# 2.2 实现 python 函数 hello( )
 
-Create a new file using the New File button and name it hello_world.py.  
+使用新建文件按钮创建一个新文件，并将其命名为 hello_world.py。  
 ![](../_assets/image_16.png)
 
-You can write hello_world.py as follows.
+您可以如下编写 hello_world.py。
 
 ```python
 import xhost
@@ -13,23 +13,23 @@ def hello():
     xhost.printh("Hello, world!")
 ```
 
-- As you might know if you are familiar with python programming, a line below def should be indented with the tab character.
-- xhost is a module that calls the functions of the host (robot controller). You do not have to write an xhost.py file yourself. The subsequent sections will provide detailed explanations, so this is all you need to understand for now.
+- 如果您熟悉 python 编程，您可能知道 def 下面的行应该用制表符缩进。
+- xhost 是一个调用主机（机器人控制器）函数的模块。您不必自己编写 xhost.py 文件。后面的部分将提供详细的说明，因此现在您只需要了解这些即可。
 <br></br>
 
-Now, execute the ${cont_model} virtual controller, which is the main module, and the TP in order.
+现在，依次执行 ${cont_model} 虚拟控制器和 TP。
 
-When starting, the ${cont_model} controller recognizes the installed apps by reading the info.json from all folders under the apps/ folder.
+在启动时，${cont_model} 控制器通过读取 apps/ 文件夹下所有文件夹中的 info.json 来识别已安装的应用程序。
 
-[service] - 10: Clicking the app will bring up a screen called 10: app - TP. 
+[service] - 10: 点击应用程序将出现一个名为 10: app - TP 的屏幕。
 
-Clicking the `[location]` button twice will change the TP in the title to MAIN via USB. On this screen, hello_world created earlier can be found.
+双击 `[location]` 按钮将通过 USB 将标题中的 TP 更改为 MAIN。在此屏幕上，可以找到之前创建的 hello_world。
 
 ![](../_assets/image_17.png)
 
-We will execute hello_world in the robot language, so press the ESC key to exit the screen.
+我们将在机器人语言中执行 hello_world，因此请按 ESC 键退出屏幕。
 
-Now, create a job program using HRScript. Carry out the teaching process as follows.
+现在，使用 HRScript 创建一个作业程序。按如下方式进行教学过程。
 
 ```
 import hello_world
@@ -37,7 +37,7 @@ hello_world.hello()
 end
 ```
 
-While leaving the previous screen pane open and turning on the motor, if you perform an execution with the Step FWD or START button, Hello, World! will be printed.
+在保持先前屏幕面板打开并开启电机的同时，如果您使用 Step FWD 或 START 按钮执行，则将打印 Hello, World!
 
 ```
 15:05:20.894 ( 968) .import hello_world
@@ -58,5 +58,5 @@ While leaving the previous screen pane open and turning on the motor, if you per
 ```
 
 <span style='background-color:#ffdce0'>
-Caution: If you modify the Python program, you should run the virtual controller to reflect the modification.
+注意：如果您修改 Python 程序，则应运行虚拟控制器以反映修改。
 </span>

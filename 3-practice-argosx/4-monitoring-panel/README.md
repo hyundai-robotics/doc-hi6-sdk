@@ -1,11 +1,11 @@
-﻿# 3.4 Practical project: Developing an ArgosX monitoring panel UI
+﻿# 3.4 实用项目：开发 ArgosX 监控面板 UI
 
-There should be a monitoring panel to show the current state of the plug-ins to the user through a split screen.
+应该有一个监控面板，通过分屏向用户显示插件的当前状态。
 
-In this section, let's practice developing a web-based ArgosX monitoring panel.
+在这一部分，我们来练习开发一个基于网络的 ArgosX 监控面板。
 <br></br>
 
-* Specifications of the ArgosX monitoring panel user interface
-* Layout of the monitoring panel
-* Operating the monitoring panel
-* Injecting a panel item into the panel menu 
+* ArgosX 监控面板用户界面的规格
+* 监控面板的布局
+* 操作监控面板
+* 将面板项注入到面板菜单

@@ -1,12 +1,12 @@
-﻿#### 3.6.1.2 Translating the Setup Screen UI
+#### 3.6.1.2 翻译设置屏幕用户界面
 
-##### Changes in the Setup Layout
+##### 设置布局的更改
 
-To translate the UI of the setup screen, first open and review setup.html.
+要翻译设置屏幕的用户界面，首先打开并查看 setup.html。
 
-Add str_table.json and lang.js as script files as shown below.
+添加 str_table.json 和 lang.js 作为脚本文件，如下所示。
 
-Because these files depend on each other, you must include them in the following order.
+因为这些文件彼此依赖，所以必须按以下顺序包含它们。
 
 ```html
 <script src='./str_table.json' type='application/json'></script>
@@ -14,16 +14,16 @@ Because these files depend on each other, you must include them in the following
 <script src='../../_common/js/dst_setup.js'></script>
 ```
 
-Also, check the contents declared inside the body:
+此外，检查在 body 内声明的内容：
 
 ```html
-<span class='col0' name='ip_addr'>IP address</span>
+<span class='col0' name='ip_addr'>IP 地址</span>
 ```
 
-You may remove the text "IP address".  
-(The translated text will be inserted later.)
+您可以移除文本 "IP 地址"。  
+（翻译后的文本将在稍后插入。）
 
-After applying all the changes above, the html file should look like this:
+在应用上述所有更改后，html 文件应如下所示：
 
 setup.html
 
@@ -78,15 +78,15 @@ setup.html
 
 <br>
 
-##### Adding Translation Behavior to Setup
+##### 为设置添加翻译功能
 
-Now let's add translation functionality to the setup screen.
+现在让我们为设置屏幕添加翻译功能。
 
 <br>
 
-1) Initialization
+1) 初始化
 
-During initialization, add logic to load data from str_table.json and apply the lang_code read from ${cont_model} to the platform's localization system.
+在初始化期间，添加加载来自 str_table.json 的数据的逻辑，并将从 ${cont_model} 读取的 lang_code 应用到平台的本地化系统。
 
 setup.js
 
@@ -101,21 +101,21 @@ function init()
 }
 ```
 
-parseStrData loads the string data.
+parseStrData 加载字符串数据。
 
-setLangCode calls a Python function to read the lang_code configured in ${cont_model}, and sets updateAllStrByLang as the callback.
+setLangCode 调用 Python 函数以读取在 ${cont_model} 中配置的 lang_code，并将 updateAllStrByLang 设置为回调。
 
-To support setLangCode, add the get_lang_code function to main.py.
+为了支持 setLangCode，在 main.py 中添加 get_lang_code 函数。
 
-It is added to main.py so that ubar and panel can share the same lang_code later.
+它被添加到 main.py，以便 ubar 和面板可以共享同样的 lang_code。
 
 main.py
 
 ```python
 def get_lang_code()->dict:
-    """ Get language code from remote
+    """ 从远程获取语言代码
 
-    Returns: data: information of language code
+    返回: data: 语言代码信息
     """
     data = {}
     lang_code = xhost.lang_code()
@@ -124,16 +124,16 @@ def get_lang_code()->dict:
     return data
 ```
 
-This function returns the lang_code using xhost.lang_code().
+此函数使用 xhost.lang_code() 返回 lang_code。
 
 <br>
 
-2) Apply Translation According to lang_code
+2) 根据 lang_code 应用翻译
 
-The callback function updateAllStrByLang calls updateElement and updateGuideBarMsg.  
-These functions translate elements and guidebar messages based on the lang_code.
+回调函数 updateAllStrByLang 调用 updateElement 和 updateGuideBarMsg。  
+这些函数根据 lang_code 翻译元素和导引栏消息。
 
-First, add the required elements and guidebar messages to str_table.json.
+首先，将所需的元素和导引栏消息添加到 str_table.json。
 
 ```json
 {
@@ -160,9 +160,9 @@ First, add the required elements and guidebar messages to str_table.json.
 }
 ```
 
-Next, modify setup.js as follows.
+接下来，按如下方式修改 setup.js。
 
-Remove the existing updateGuideBar function and use updateGuideBarMsg instead.
+删除现有的 updateGuideBar 函数，改为使用 updateGuideBarMsg。
 
 ```js
 /// @brief update all string by language code
@@ -191,8 +191,8 @@ function updateGuideBarMsg()
 }
 ```
 
-Use setElemByLang and setGuideMsgByLang to assign string IDs to each element and guidebar message.
+使用 setElemByLang 和 setGuideMsgByLang 为每个元素和导引栏消息分配字符串 ID。
 
-After rebooting the virtual controller and TP, the translated setup screen should appear correctly.
+在重新启动虚拟控制器和 TP 后，翻译后的设置屏幕应正确显示。
 
 ![](../../../_assets/image_87.png)

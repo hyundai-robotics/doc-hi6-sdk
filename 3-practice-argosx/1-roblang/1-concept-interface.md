@@ -1,157 +1,157 @@
-﻿# 3.1.1 Specifications of ArgosX and interface plug-ins
+# 3.1.1 ArgosX 规格和接口插件
 
-#### Specifications of the ArgosX vision system
+#### ArgosX 视觉系统的规格
 
 
-##### Basic specifications
+##### 基本规格
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Item</th>
-      <th style="text-align:left">Description</th>
+      <th style="text-align:left">项目</th>
+      <th style="text-align:left">描述</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Function</td>
+      <td>功能</td>
       <td>
-       - It contains an embedded LED light, which can be turned on and off via a communication request.<br>
-       - It can simultaneously measure the shift values of up to 100 workpieces and report in response to a communication request.
+       - 它包含一个嵌入式LED灯，可以通过通信请求打开和关闭。<br>
+       - 它可以同时测量最多100个工件的位移值，并在响应通信请求时报告。
       </td>
     </tr>
    <tr>
-      <td>Communication interface</td>
+      <td>通信接口</td>
       <td>
-       - The robot controller and ArgosX hardware communicate with each other through Ethernet UDP communications.<br>
-        - The IP address of the ArgosX hardware is 192.168.1.XX. As the last set of digits, XX, should be set using the dip switch, the robot side should send a UDP request accordingly.<br>
-        - The port number on the ArgosX hardware is fixed as 54321. However, it may change in future products.<br>
-        - Upon receiving a UDP request, the ArgosX hardware will send a response to the sender's IP address.
+       - 机器人控制器和ArgosX硬件通过以太网UDP通信相互通信。<br>
+        - ArgosX硬件的IP地址是192.168.1.XX。最后一组数字XX应使用拨码开关设置，机器人一侧应相应地发送UDP请求。<br>
+        - ArgosX硬件的端口号固定为54321。然而，在未来的产品中可能会发生更改。<br>
+        - 在接收到UDP请求后，ArgosX硬件将向发送者的IP地址发送响应。
       </td>
     </tr>
     <tr>
-      <td>Number of the systems that can be installed</td>
+      <td>可以安装的系统数量</td>
       <td>
-       - Only one ArgosX system can be installed in the robot controller. In other words, the ArgosX system is a single instance in terms of software.
+       - 在机器人控制器中只能安装一个ArgosX系统。换句话说，ArgosX系统在软件上是唯一实例。
       </td>
     </tr>
   </tbody>
 </table>
 
-##### Protocol
+##### 协议
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Direction of transmission</th>
-      <th style="text-align:left">Port#</th>
-      <th style="text-align:left">Grammar and example</th>
-      <th style="text-align:left">Meaning</th>
+      <th style="text-align:left">传输方向</th>
+      <th style="text-align:left">端口#</th>
+      <th style="text-align:left">语法和示例</th>
+      <th style="text-align:left">含义</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>robot → ArgosX</td>
+      <td>机器人 → ArgosX</td>
       <td>54321</td>
       <td>req {workpiece#}<br>
-        e.g. "req 39"</td>
-      <td>Request for the shift value of the workpiece #<br>The workpiece number (#) ranges from 1 to 100 </td>
+        例如 "req 39"</td>
+      <td>请求工件#的位移值<br>工件编号（#）范围从1到100</td>
     </tr>
    <tr>
-      <td>robot ← ArgosX</td>
+      <td>机器人 ← ArgosX</td>
       <td></td>
       <td>res ({x}, {y}, {z}, {rx}, {ry}, {rz})<br>
-            The string "fail" will be transferred if the measurement fails.<br>
-            e.g. "res (30, 25.7, 11.9, 31.6, 12.8, -54.6)"<br>
-            e.g. "fail"</td>
-      <td>Response regarding the shift value of the workpiece #<br>
-        The values of x-rz are real numbers, and their units are mm and deg.</td>
+            如果测量失败，字符串“fail”将被传送。<br>
+            例如 "res (30, 25.7, 11.9, 31.6, 12.8, -54.6)"<br>
+            例如 "fail"</td>
+      <td>关于工件#的位移值的响应<br>
+        x-rz的值是真实数，单位为mm和deg。</td>
     </tr>
     <tr>
-      <td>robot → ArgosX</td>
+      <td>机器人 → ArgosX</td>
       <td>54321</td>
       <td>light-on</td>
-      <td>Turns the LED light on.</td>
+      <td>打开LED灯。</td>
     </tr>
     <tr>
-      <td>robot → ArgosX</td>
+      <td>机器人 → ArgosX</td>
       <td>54321</td>
       <td>light-off</td>
-      <td>Turns the LED light off.</td>
+      <td>关闭LED灯。</td>
     </tr>
   </tbody>
 </table>
 
-#### Specifications of the interface plug-ins for ArgosX
+#### ArgosX 接口插件的规格
 
 
-The interface plug-ins for ArgosX will be developed with the following specifications.
+ArgosX的接口插件将按照以下规格开发。
 
 
 
-##### Robot language
+##### 机器人语言
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Item</th>
-      <th style="text-align:left">Grammar</th>
-      <th style="text-align:left">Description</th>
+      <th style="text-align:left">项目</th>
+      <th style="text-align:left">语法</th>
+      <th style="text-align:left">描述</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>module</td>
+      <td>模块</td>
       <td>argosx</td>
       <td></td>
     </tr>
    <tr>
-      <td rowspan="2">attribute</td>
+      <td rowspan="2">属性</td>
       <td>ip_addr</td>
-      <td>The IP address string of the ArgosX hardware (it can be set.)<br>e.g. "192.168.1.44"</td>
+      <td>ArgosX硬件的IP地址字符串（可以设置。）<br>例如 "192.168.1.44"</td>
     </tr>
     <tr>
       <td>port</td>
-      <td>The port number of the ArgosX hardware.<br>(setting it should be possible, as there may be changes in future products.)<br>e.g. 54321</td>
+      <td>ArgosX硬件的端口号。<br>（设置应该是可能的，因为未来的产品可能会有更改。）<br>例如 54321</td>
     </tr>
     <tr>
-      <td rowspan="4">function</td>
+      <td rowspan="4">功能</td>
       <td>init( )</td>
-      <td>Initialize the socket for UDP communication.</td>
+      <td>初始化UDP通信的套接字。</td>
     </tr>
     <tr>
       <td>req({workpiece#})</td>
-      <td>Request the result shift value of the workpiece #</td>
+      <td>请求工件#的结果位移值</td>
     </tr>
     <tr>
       <td>res( )</td>
-      <td>Receive a request while waiting for a response.<br>The return value is the shift array string based on the base coordinate system.<br>e.g. "[30, 25.7, 11.9, 31.6, 12.8, -54.6, \"base\"]"</td>
+      <td>在等待响应时接收请求。<br>返回值是基于基坐标系统的位移数组字符串。<br>例如 "[30, 25.7, 11.9, 31.6, 12.8, -54.6, \"base\"]"</td>
     </tr>
     <tr>
       <td>close( )</td>
-      <td>Close the socket for UDP communication.</td>
+      <td>关闭UDP通信的套接字。</td>
     </tr>
   </tbody>
 </table>
 
-##### Lighting function
-- When the robot is placed in the motor On state, the ArgosX LED light will also be switched on.
-- When the robot is placed in the motor Off state, the ArgosX LED light will also be switched off.
+##### 照明功能
+- 当机器人处于电机开启状态时，ArgosX LED灯也会亮起。
+- 当机器人处于电机关闭状态时，ArgosX LED灯也会熄灭。
 
-##### Error handling
-- When "fail" is received from ArgosX, the universal I/O output signal of the robot controller corresponding to the preset number will be switched on.
-
-
-##### Monitoring
-By opening the ArgosX monitoring panel on the teaching pendant, you can see the following information.
-
-- IP address
-- Port #
-- Error input assigned number
-- Request count
-- Response count
+##### 错误处理
+- 当从ArgosX接收到“fail”时，机器人控制器对应于预设编号的通用I/O输出信号将被打开。
 
 
+##### 监控
+通过在教学挂架上打开ArgosX监控面板，可以看到以下信息。
 
-##### User bar
-When you open the ArgosX user bar on the teach pendant, a UI, as shown below, will be provided.
+- IP地址
+- 端口#
+- 错误输入分配号
+- 请求计数
+- 响应计数
 
-- Light-on button: Turns the ArgosX LED light on.
-- Light-off button: Turns the ArgosX LED light off.
+
+
+##### 用户栏
+当您在教学挂架上打开ArgosX用户栏时，将提供如下所示的UI。
+
+- 开灯按钮：打开ArgosX LED灯。
+- 关灯按钮：关闭ArgosX LED灯。

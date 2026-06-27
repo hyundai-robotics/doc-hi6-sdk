@@ -1,12 +1,8 @@
-﻿#### 3.5.4 Injecting a user bar
+#### 3.5.4 注入用户工具条
 
-Let's inject the ArgosX user bar into the actual teach pendant.
+让我们将 ArgosX 用户工具条注入到实际的教学挂件中。
 
-
-
-Add the "ubars" path item into the ui/menu.json file, as shown below. 
-
-
+将 "ubars" 路径项添加到 ui/menu.json 文件中，如下所示。
 
 menu.json
 ``` json
@@ -15,14 +11,14 @@ menu.json
          "path": "system/appl/",
          "id": "argosx",
          "icon": "argosx/ui/lm_argosx.png",
-         "label": "ArgosX Vision",
+         "label": "ArgosX 视觉",
          "url": "argosx/ui/setup.html"
     },
     {
         "path": "panels",
         "id": "argosx",
         "icon": "argosx/ui/panel_argosx.png",
-        "label": "ArgosX Vision",
+        "label": "ArgosX 视觉",
         "url": "argosx/ui/panel.html"
     },
     {
@@ -33,8 +29,6 @@ menu.json
 ]
 ```
 
-Pressing the User Key button on the right side of the virtual teach pendant will bring up the user bars of the installed applications in sequence. Now you can also see the user bar we created for ArgosX. Operate the buttons to check whether the ArgosX stub responds normally.
+按下虚拟教学挂件右侧的用户键按钮将依次显示安装的应用程序的用户工具条。现在你也可以看到我们为 ArgosX 创建的用户工具条。操作按钮以检查 ArgosX 桩是否正常响应。
 
 ![](../../_assets/image_62.png)
-
-

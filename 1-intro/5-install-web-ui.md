@@ -1,14 +1,12 @@
-﻿# 1.5 Installing a web-based UI development environment
+﻿# 1.5 安装基于网络的 UI 开发环境
 
-The customized UI for the teach pendant should be developed as a web app form of HTML5/CSS/jQuery.
+教导挂件的定制 UI 应作为 HTML5/CSS/jQuery 的网络应用程序形式进行开发。
 
 
+#### 安装 Google Chrome 网络浏览器
 
-#### Installing the Google Chrome web browser
+Google Chrome 网络浏览器提供运行和调试网络应用程序的环境。如果您尚未安装该浏览器，请通过单击以下链接进行安装。
 
-The Google Chrome web browser provides an environment for running and debugging web apps. If you have not installed the browser yet, install it by clicking the link below.
-
-(Microsoft Edge or Mozilla Firefox also provides almost the same functions. However, this manual will provide explanations based on Google Chrome.)
+(Microsoft Edge 或 Mozilla Firefox 也提供几乎相同的功能。然而，本手册将基于 Google Chrome 提供说明。)
 
 https://www.google.com/intl/ko/chrome/
-

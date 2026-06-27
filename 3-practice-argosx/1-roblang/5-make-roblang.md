@@ -1,21 +1,16 @@
-﻿#### 3.1.5 Creating functions for the ArgosX robot language
+#### 3.1.5 为 ArgosX 机器人语言创建函数
 
+接下来要实现的规格是 init( )、req( )、res( ) 和 close( ) 函数。
 
-The specifications to be implemented next are the init( ), req( ), res( ), and close( ) functions.
+(请参阅 <u>3.1.1 ArgosX 及接口插件的规格</u> 中的协议和机器人语言的函数。)
 
-(Refer to the functions of the Protocol and Robot Language of <u>3.1.1 Specifications of ArgosX and interface plug-ins</u>.)
+现在，让我们为每个函数执行一个打印操作。
 
+在 argosx/ 文件夹下创建 roblang.py 文件，如下所示。
 
-
-For now, let's perform a print operation for each function.
-
-Create a roblang.py file under the argosx/ folder as follows.
-
-
-
-roblang.py (for testing)
+roblang.py (用于测试)
 ``` python 
-""" ArgosX Vision System interface - robot language
+""" ArgosX 视觉系统接口 - 机器人语言
  
  
 @author:    Jane Doe, BlueOcean Robot & Automation, Ltd.
@@ -23,7 +18,7 @@ roblang.py (for testing)
 """
  
  
-# functions
+# 函数
 def init() -> int:
    print("init()")
    return 0
@@ -44,14 +39,12 @@ def res():
    return "data"
 ```
 
-Import all names from roblang.py into the main.py.
-
-
+将 roblang.py 中的所有名称导入到 main.py 中。
 
 main.py
 ```python
 
-""" ArgosX Vision System interface - main
+""" ArgosX 视觉系统接口 - 主
  
  
 @author:    Jane Doe, BlueOcean Robot & Automation, Ltd.
@@ -64,42 +57,41 @@ from .setup import *
  
  
 def attr_names() -> tuple:
-   """Returns the names of the attributes to be exposed."""
+   """返回要暴露的属性名称。"""
    return ("ip_addr", "port")
 
 ```
 
-
-job file
+作业文件
 ```
 var iret
 import argosx
  
 print argosx.ip_addr
 print argosx.port
-argosx.ip_addr="192.168.1.172" # your own PC's name
-print argosx.ip_addr # re-checking
+argosx.ip_addr="192.168.1.172" # 您自己的计算机名称
+print argosx.ip_addr # 重新检查
  
-iret=argosx.init() # initializing the socket
+iret=argosx.init() # 初始化套接字
 if iret<0
   print "init error"
   stop
 endif
  
-iret=argosx.req(39) # transmitting the request
+iret=argosx.req(39) # 传输请求
 if iret<0
   print "req error"
   stop
 endif
  
-var str=argosx.res() # waiting for a response
+var str=argosx.res() # 等待响应
 print str
  
-argosx.close() # closing the socket
+argosx.close() # 关闭套接字
 end
 ```
 
-Reboot the virtual controller and execute the job file. If the file was created normally, the following result will be printed on the virtual controller console. This is a Python function called from HRScript.
+重启虚拟控制器并执行作业文件。如果文件创建正常，则将在虚拟控制器控制台打印以下结果。这是从 HRScript 调用的 Python 函数。
 ```
 192.168.1.172
 

@@ -1,12 +1,12 @@
-﻿# 3.2 Practical project: ArgosX - callback
+# 3.2 实际项目：ArgosX - 回调
 
 
-While operating the ${cont_model} controller, there are main events, such as Mode Change, Motor On, Reset, Start and Accuracy OK. We can register functions into a plug-in for it to perform unique operations for an event.
+在操作 ${cont_model} 控制器时，有一些主要事件，例如模式变化、电动机开启、重置、启动和精度正常。我们可以注册函数到插件中，以便它为某个事件执行独特的操作。
 
-These functions are callback functions. They are referred to as such because they are called by other parts (${cont_model} host) and not actively called within the Python code.
+这些函数是回调函数。之所以称之为回调函数，是因为它们是由其他部分（${cont_model} 主机）调用的，而不是在 Python 代码中主动调用的。
 
 
 
-* Registering a callback function
-* Implementing a callback function
-* Manual for referring to the callback functions
+* 注册回调函数
+* 实现回调函数
+* 参考回调函数的手册

@@ -1,9 +1,9 @@
-﻿#### 3.4.3 Operating the monitoring panel
+#### 3.4.3 操作监控面板
 
 
-The Python code already contains the variables for the IP address, port number, and error-assigned input number.
+Python 代码已经包含了 IP 地址、端口号和错误分配输入号码的变量。
 
-Because it is necessary to manage the request count and response count, we need to add the n_req and n_res variables, as shown below, and connect them to ensure that they can be returned together in the get_general( ) function.
+因为需要管理请求计数和响应计数，我们需要添加 n_req 和 n_res 变量，如下所示，并将它们连接，以确保它们可以在 get_general( ) 函数中一起返回。
 
 
 
@@ -14,8 +14,8 @@ Previous steps skipped...
  
 def get_general() -> dict:
    """
-   Returns:
-      setting dict.
+   返回:
+      设置字典。
    """
  
    print('get_general()')
@@ -37,11 +37,11 @@ gen_def = get_general_def()
 ip_addr : str = gen_def['ip_addr']
 port : int = gen_def['port']
 sigcode_err = gen_def['sigcode_err']
-n_req = 0   # request count
-n_res = 0   # response count
+n_req = 0   # 请求计数
+n_res = 0   # 响应计数
 ```
 
-Add the count-up operations of n_requ and n_res to the implementation of the robot language commands.
+将 n_req 和 n_res 的计数操作添加到机器人语言命令的实现中。
 
 
 
@@ -52,18 +52,18 @@ Previous steps skipped...
  
 def req(work_no: int) -> int:
    """
-   send request command to ArgosX
-   e.g. "req 39"
-   Args:
-      work_no     work#    1~100
+   发送请求命令到 ArgosX
+   例如："req 39"
+   参数:
+      work_no     工作#    1~100
  
  
-   Returns:
-         >=0   the number of bytes sent
-         -1    no socket. init() should be called.
+   返回:
+         >=0   发送的字节数
+         -1    无套接字。应该调用 init()。
    """
    msg = "req " + str(work_no)
-   setup.n_req += 1                           # <---------- add
+   setup.n_req += 1                           # <---------- 添加
    return comm.send_msg(msg)
  
  
@@ -71,7 +71,7 @@ Skipped...
  
  
 def _res_cont(addr_on_timeout: int_or_str) -> str:
-   """res() implementation for cont-mode"""
+   """res() 在持续模式下的实现"""
    val = 0
    msg = ""
    timeout = _check_timeout_and_branch(addr_on_timeout)
@@ -87,12 +87,12 @@ def _res_cont(addr_on_timeout: int_or_str) -> str:
          xhost.req_to_continue()
       else:
          msg = get_base_shift_array_from_res(msg)
-         setup.n_res += 1                    # <---------- add
+         setup.n_res += 1                    # <---------- 添加
    xhost.io_set_out_bit(setup.sigcode_err, val)
    return msg
 ```
 
-Write the following content into the ui/panel.js file. The content is about calling the updateData( ) function every 500 msec, getting all the general data from the main board, and injecting them into the html screen through the display( ) function.
+将以下内容写入 ui/panel.js 文件。内容是关于每 500 毫秒调用一次 updateData( ) 函数，从主板获取所有的通用数据，并通过 display( ) 函数将它们注入到 html 屏幕中。
 
 
 
@@ -100,7 +100,7 @@ ui/panel.js
 ``` js
 
 ///@author: Jane Doe, BlueOcean Robot & Automation, Ltd.
-///@brief: ArgosX Vision System interface - panel
+///@brief: ArgosX 视觉系统接口 - 面板
 ///@create: 2021-12-07
  
  
@@ -123,7 +123,7 @@ function updateData()
 }
  
  
-///@return     e.g. "http://192.168.1.150:8888"
+///@return     例如 "http://192.168.1.150:8888"
 function domainMb()
 {
    var domain = "http://" + window.location.hostname + ":8888";
@@ -133,7 +133,7 @@ function domainMb()
  
  
 ///@param[in]  data
-///@brief      (callback function) form <- data
+///@brief      （回调函数）表单 <- 数据
 function display(data)
 {
    console.log(data);
@@ -146,13 +146,8 @@ function display(data)
 }
 ```
 
-Run the virtual controller again, then execute Go Live on vscode again. Now, you can see the value printed on the web browser's screen as follows.
+再次运行虚拟控制器，然后再次在 vscode 中执行 Go Live。现在，您可以看到在网页浏览器的屏幕上打印的值如下。
 
-Let's execute requests and responses by executing an ArgosX stub and running the job program with the virtual teach pendant. If the n.request and n.response values increase, it means the operation is normal.
+让我们通过执行 ArgosX stub 和运行带虚拟教鞭的作业程序来执行请求和响应。如果 n.request 和 n.response 的值增加，这意味着操作正常。
 <br></br>
 ![](../../_assets/image_53.png)
-
-
-
-
-

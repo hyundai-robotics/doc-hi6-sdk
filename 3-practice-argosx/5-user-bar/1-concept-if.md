@@ -1,11 +1,11 @@
-﻿#### 3.5.1 Specifications of the ArgosX user bar user interface
+#### 3.5.1 ArgosX 用户条用户界面的规格
 
-Pressing the User Key button multiple times will switch the user bar.
+多次按下用户键按钮将切换用户条。
 
-Let's create a user bar UI to provide a UI as follows.
+让我们创建一个用户条 UI，以提供如下的 UI。
 
-- Light-on button: Turns ArgosX's LED light on.
-- Light-off button: Turns ArgosX's LED light off.
+- 开灯按钮：打开 ArgosX 的 LED 灯。
+- 关灯按钮：关闭 ArgosX 的 LED 灯。
 <br></br>
 
 ![](../../_assets/image_56.png)

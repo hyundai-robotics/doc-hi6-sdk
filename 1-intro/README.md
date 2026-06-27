@@ -1,12 +1,10 @@
-﻿# 1. Overview of ${cont_model} SDK
+# 1. ${cont_model} SDK 概述
 
-This manual describes how to use the SDK for developing plug-in apps to develop the additional functions of the ${cont_model} controller.
+本手册描述了如何使用 SDK 开发插件应用程序，以开发 ${cont_model} 控制器的附加功能。
 
-The functions of apps that can be developed with the SDK are as follows.
+可以使用 SDK 开发的应用程序的功能如下。
 
-
-
-You can add new commands or object types to the robot language.
-You can add operations that can be performed in various events, such as power on, motor on/off, and start/stop.
-You can add operations that can be performed periodically.
-You can add user-defined user interfaces (UIs), such as a setup screen for the teach pendant.
+您可以向机器人语言添加新的命令或对象类型。
+您可以添加可以在各种事件中执行的操作，例如开机、电机开/关和开始/停止。
+您可以添加可以定期执行的操作。
+您可以添加用户定义的用户界面（UI），例如教导挂件的设置屏幕。

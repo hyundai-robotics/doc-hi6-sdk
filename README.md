@@ -1,1 +1,1 @@
-﻿# ${cont_model} Controller Function Manual - Software Development Kit (SDK)
+# ${cont_model} 控制器功能手册 - 软件开发工具包 (SDK)

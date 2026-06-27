@@ -1,16 +1,12 @@
-﻿#### 3.4.2 Layout of the monitoring panel
+#### 3.4.2 监控面板的布局
 
-Open vscode for the apps/ folder that is the parent of the ArgosX folder.
+打开vscode，进入ArgosX文件夹的父文件夹apps/。
 
-
-Create ui/panel.html and panel.js files.
+创建ui/panel.html和panel.js文件。
 
 ![](../../_assets/image_50.png)
 
-
-Write the content as follows, which is about a simple layout consisting of one table. The first column of the table is given a class called 'thd' (abbreviation for table header), and this class is defined in the common style.css with black characters on a gray background. If you want to change the style, you can define a class using a separate local css and apply it.
-
-
+编写如下内容，这是由一个表格组成的简单布局。表格的第一列被赋予了一个名为'thd'（表头的缩写）的类，该类在common style.css中定义，采用黑色字符和灰色背景。如果您想更改样式，可以使用单独的本地css定义一个类并应用。
 
 panel.html
 ``` html
@@ -35,26 +31,26 @@ panel.html
   
 <body>
    <table>
-      <th>name</th>
-      <th>value</th>
+      <th>名称</th>
+      <th>值</th>
       <tr>
-         <td class='thd'>IP address</td>
+         <td class='thd'>IP地址</td>
          <td id='ip_addr'></td>
       </tr>
       <tr>
-         <td class='thd'>port#</td>
+         <td class='thd'>端口#</td>
          <td id='port'></td>
       </tr>
       <tr>
-         <td class='thd'>sigcode for error</td>
+         <td class='thd'>错误代码</td>
          <td id='sigcode_err'></td>
       </tr>
       <tr>
-         <td class='thd'>n.request</td>
+         <td class='thd'>请求数</td>
          <td id='n_req'></td>
       </tr>
       <tr>
-         <td class='thd'>n.response</td>
+         <td class='thd'>响应数</td>
          <td id='n_res'></td>
       </tr>
    </table>
@@ -62,13 +58,9 @@ panel.html
 </html>
 ```
 
-While panel.html is open, if you execute Live server by clicking the Go Live button at the bottom right, the Google Chrome browser will open.
+当panel.html处于打开状态时，如果通过点击右下角的“Go Live”按钮执行Live server，谷歌浏览器将打开。
 
 ![](../../_assets/image_51.png)
 <br></br>
-Even though there is no content in panel.js yet, we can check whether the layout is normal.  
+尽管panel.js中尚无内容，但我们可以检查布局是否正常。  
 ![](../../_assets/image_52.png)
-
-
-
-

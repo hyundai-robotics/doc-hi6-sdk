@@ -1,7 +1,7 @@
-﻿# 1.7 Installing an SDK in a virtual controller environment
+# 1.7 在虚拟控制器环境中安装SDK
 
-The apps/ folder of the SDK should be copied under the ${cont_model} home_main folder of the virtual controller.
+SDK的apps/文件夹应该被复制到虚拟控制器的${cont_model} home_main文件夹下。
 
-The _common/ folder under the apps/ folder contains the libraries all apps commonly use.
+apps/文件夹下的_common/文件夹包含所有应用程序共同使用的库。
 
-Apps that will be developed in the future need to be deployed as subfolders of the apps/ folder as follows.
+未来要开发的应用程序需要以以下方式作为apps/文件夹的子文件夹进行部署。

@@ -1,14 +1,13 @@
-﻿#### 3.4.1 Specifications of the ArgosX monitoring panel user interface
+#### 3.4.1 ArgosX 监控面板用户界面的规格
 
-Let's create a monitoring panel user interface to monitor information, as shown below.
+让我们创建一个监控面板用户界面，以监控信息，如下所示。
 
-* IP address
-* Port number
-* Error input assigned number
-* Request count
-* Response count
+* IP 地址
+* 端口号
+* 分配的错误输入号码
+* 请求计数
+* 响应计数
 
-The update cycle should be set to 500 msec.
+更新周期应设置为 500 毫秒。
 <br></br>
 ![](../../_assets/image_49.png)
-

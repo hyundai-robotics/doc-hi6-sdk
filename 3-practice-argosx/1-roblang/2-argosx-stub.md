@@ -1,13 +1,13 @@
-﻿#### 3.1.2 ArgosX stub
+#### 3.1.2 ArgosX stub
 
-The ArgosX vision system is not real. Therefore, if we want to test the interface plug-ins, we need the test software, namely the stub, to take ArgosX's place.
+ArgosX 视觉系统并不真实。因此，如果我们想要测试接口插件，我们需要测试软件，也就是 stub，来代替 ArgosX。
 
-The Python code below is an ArgosX stub. You do not need to understand the details of its implementation.
+下面的 Python 代码是 ArgosX stub。您无需理解其实现的细节。
 
 argosx_stub.py
 ``` python
 """ArgosX stub
-Test double for ArgosX interface plug-in
+ArgosX 接口插件的测试替代品
  
  
 @author:    Jane Doe, BlueOcean Robot & Automation, Ltd.
@@ -21,9 +21,9 @@ import socket
  
  
 # const
-buf_size = 0x8000    # 32kb ; permitted packet length
-port_no = 54321      # port for ArgosX command
-sleep_sec = 0        # delay before response
+buf_size = 0x8000    # 32kb ; 允许的包长度
+port_no = 54321      # ArgosX 命令的端口
+sleep_sec = 0        # 响应前的延迟
  
 # global variables
 inaddr_any : str = ""
@@ -42,21 +42,21 @@ test_shifts : Dict[str, str]= {
 # functions
 def init():
    """
-   init server
+   初始化服务器
    """
    global sock
    try:
       sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
       sock.bind((inaddr_any, port_no))
    except socket.error as e:
-      print("socket creation or binding error :", e)
+      print("套接字创建或绑定错误 :", e)
       return -1
    return 0
  
  
 def close():
    """
-   close server
+   关闭服务器
    """
    if sock is None: return
    sock.close()
@@ -64,7 +64,7 @@ def close():
  
 def do_service():
    """
-   do service loop
+   执行服务循环
    """
    state = 0
     
@@ -78,10 +78,10 @@ def do_service():
  
 def recv_msg() -> str:
    """
-   receive UDP message (blocking)
-   IP address and port of sender is stored in ip_port_of_req
+   接收 UDP 消息 (阻塞)
+   发送者的 IP 地址和端口存储在 ip_port_of_req
    Returns:
-         received message     e.g. "req 39"
+         接收到的消息     例如 "req 39"
    """
    global ip_port_of_req
    if sock is None: return ""
@@ -93,16 +93,16 @@ def recv_msg() -> str:
  
 def do_service_sub(msg: str) -> int:
    """
-   do service subroutine
+   执行服务子程序
    Args:
-         msg   e.g. "req 39"
+         msg   例如 "req 39"
    Returns:
-         1     quit the service
-         0     continue the service
-         -1    invalid command  
+         1     退出服务
+         0     继续服务
+         -1    无效命令  
    """
    print('')
-   print('request : ', msg)
+   print('请求 : ', msg)
    strs = msg.split()
        
    n_str = len(strs)
@@ -118,26 +118,26 @@ def do_service_sub(msg: str) -> int:
       time.sleep(sleep_sec)
       do_service_req(param)
    elif cmd=="light-on":
-      print('LED light is ON')
+      print('LED 灯已开启')
    elif cmd=="light-off":
-      print('LED light is OFF')
+      print('LED 灯已关闭')
    elif cmd=="quit":
       return 1
    else:
-      print('invalid command')
+      print('无效命令')
       return -1
    return 0
  
  
 def do_service_req(param: str) -> int:
    """
-   do service for req
+   执行 req 服务
    Args:
       param    work#    "1"~"100"
  
    Returns:
-         -1    no socket
-         >=0   the number of bytes sent
+         -1    无套接字
+         >=0   发送的字节数
    """
    if sock is None: return -1
    res_value = ""
@@ -146,7 +146,7 @@ def do_service_req(param: str) -> int:
    except:
       res_value = test_shifts["else"]
    msg = "res " + res_value
-   print('response: ', msg)
+   print('响应: ', msg)
    bts = bytearray(str.encode(msg))
    return sock.sendto(bts, ip_port_of_req)
     
@@ -158,26 +158,26 @@ iret = init()
 if iret < 0:
    quit()
 print('inaddr_any, port_no=%d' % port_no)
-print('server started...')
+print('服务器已启动...')
 do_service()
-print('closing...')
+print('关闭中...')
 close()
-print('...server ended')
+print('...服务器已结束')
 ```
 
-Copy the content above and create an argosx_stub.py file under the hello_world/ folder. Next, go to the hello_world/ folder using Windows PowerShell or Command Prompt, then execute it using the command below.
+复制上述内容，并在 hello_world/ 文件夹中创建一个 argosx_stub.py 文件。接下来，使用 Windows PowerShell 或命令提示符进入 hello_world/ 文件夹，然后使用以下命令执行它。
 
 ```
 python argosx_stub.py
 ```
 
-Alternatively, if you open vscode and press F5, the execution will be performed in debug mode.
+或者，如果您打开 vscode 并按 F5，执行将在调试模式下进行。
 
-- Rather than opening the argosx/ project in the opened vscode, you need to open the project by executing another vscode session.
-- While the debug configuration list may open initially, as shown below, you only need to select the Python File item.
+- 而不是在打开的 vscode 中打开 argosx/ 项目，您需要通过执行另一个 vscode 会话来打开该项目。
+- 虽然调试配置列表可能会先打开，如下所示，您只需选择 Python File 项目。
 
 ![](../../_assets/image_24.png)
 
-The result will be printed on the TERMINAL window at the bottom. You can hold, resume, or stop debugging by operating the ![](../../_assets/image_25.png) button on the top right.
+结果将在底部的 TERMINAL 窗口中打印。您可以通过操作右上角的 ![](../../_assets/image_25.png) 按钮来暂停、恢复或停止调试。
 
 ![](../../_assets/image_26.png)

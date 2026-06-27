@@ -1,23 +1,23 @@
-﻿#### 3.2.1 Registering a callback function
+#### 3.2.1 注册回调函数
 
 
-The method of registering a callback function is very simple. The callback function name is determined already for each event, so, by defining a callback function in the plug-in code using the relevant callback function name, the callback function will be registered automatically when the plug-in is imported.
+注册回调函数的方法非常简单。每个事件的回调函数名称已经确定，因此通过在插件代码中使用相关的回调函数名称定义回调函数，回调函数将在插件导入时自动注册。
 
 
-We need to refer to the other functions of <U>3.1.1 Specifications of ArgosX and interface plug-ins</U> again.
+我们需要再次参考<U>3.1.1 ArgosX及接口插件的规格</U>中的其他功能。
 
-Depending on whether the robot is in the motor ON or motor OFF state, ArgosX's LED light should also be switched on or off accordingly. Specifically, the commands "light-on" or "light-off" should be transmitted to ArgosX.
-
-
-
-Let's create the callback functions in a separate file (Python module) as follows. For now, we will just print the strings for testing without performing specific operations.
+根据机器人是否处于电机开启或关闭状态，ArgosX的LED灯也应相应地打开或关闭。具体而言，命令"light-on"或"light-off"应发送到ArgosX。
 
 
 
-callback.py (for testing)
+让我们在一个单独的文件（Python模块）中创建回调函数，如下所示。现在，我们将只打印字符串进行测试，而不执行特定操作。
+
+
+
+callback.py (用于测试)
 ```python
 def on_motor_on() -> int:
-   """(callback) on motor-on
+   """(callback) 在电机开启时
    Returns: 0
    """
    print('on_motor_on')
@@ -25,20 +25,20 @@ def on_motor_on() -> int:
  
  
 def on_motor_off() -> int:
-   """(callback) on motor-off
+   """(callback) 在电机关闭时
    Returns: 0
    """
    print('on_motor_off')
    return 0
 ```
 
-Import the callback module from the entry file.
+从入口文件导入回调模块。
 
 
 
 main.py
 ```python
-Previous steps skipped...
+跳过之前的步骤...
  
 from . import setup
 from .roblang import *
@@ -47,12 +47,12 @@ from .callback import *
  
 import xhost
  
-Subsequent steps skipped...
+跳过后续步骤...
 
 ```
-Reboot the controller, turn on the motor, and import ArgosX using the Step FWD button.
+重启控制器，开启电机，并使用Step FWD按钮导入ArgosX。
 
-In this state, if the result is printed on the console window as follows every time the motor is turned on or off, it means the callback function is well defined.
+在这个状态下，如果每次电机开启或关闭时在控制台窗口中打印的结果如下，这意味着回调函数定义良好。
 ```
 on_motor_on
 

@@ -1,14 +1,14 @@
-﻿# 2. Very simple project: hello_world
-Skip to the end of the metadata
-Created by Wonhyeok Choi, last modified on December 24, 2021
-Go to the start of the metadata
-Let's start by creating an app as a very simple project.
+﻿# 2. 非常简单的项目：hello_world
+跳到元数据的结尾
+由 Wonhyeok Choi 创建，最后修改于 2021 年 12 月 24 日
+跳到元数据的开始
+让我们开始创建一个应用程序，作为一个非常简单的项目。
 
-What this app, named hello_world, does is print a Hello, world! string onto the history screen and setup screen.
+这个名为 hello_world 的应用程序的功能是在历史屏幕和设置屏幕上打印字符串 Hello, world!。
 
 
 
-Creating a hello_world project - Folders and meta-information
-Implementing the Python function hello( )
-Transferring parameters to a Python function and receiving a return value
-Creating a simple web-based UI
+创建 hello_world 项目 - 文件夹和元信息
+实现 Python 函数 hello( )
+将参数传递给 Python 函数并接收返回值
+创建一个简单的基于网页的 UI

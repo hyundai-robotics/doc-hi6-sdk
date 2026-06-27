@@ -1,14 +1,12 @@
-﻿### 3.3.7 Operating the F buttons - Initializing to default values
+### 3.3.7 操作 F 按钮 - 初始化为默认值
 
+如在 <U>3.3.1 ArgosX 设置屏幕用户界面的规格</U> 中所述，实现用于将屏幕设置初始化为默认值的 F 按钮。
 
-
-As described in <U>3.3.1 Specifications of the user interface of the ArgosX setup screen </U>,  implement the F buttons used for initializing the settings of the screen to default values.
-
-Add the InitButtonBar( ) function to setup.js as follows.
+将 InitButtonBar( ) 函数添加到 setup.js，如下所示。
 
 setup.js
 ``` js
-...Previous steps skipped
+...前面的步骤省略
  
  
 function init()
@@ -20,17 +18,17 @@ function init()
 }
  
  
-///@return     f-button infos array
+///@return     f-button infos 数组
 function initButtonBar()
 {
    console.log('initButtonBar()'); 
    var btn_infos = [
       {
-         label: 'Initialize All',
+         label: '初始化所有',
          script: 'setAllValueAsDef();'
       },
       {
-         label: 'Initialize One',
+         label: '初始化一个',
          script: 'setSelectedValueAsDef();'
       }
    ]
@@ -38,39 +36,38 @@ function initButtonBar()
 }
  
  
-..Subsequent steps skipped
+..后续步骤省略
 ```
 
-The InitButtonBar( ) function returns an array of objects that define the interfaces for the F buttons. Each object item consists of an attribute label that designates the button label and an attribute script that designates code in JavaScript to be executed when the button is clicked.
+InitButtonBar( ) 函数返回一个对象数组，定义了 F 按钮的接口。每个对象项由一个属性 label 组成，表示按钮标签，以及一个属性 script，表示在单击按钮时要执行的 JavaScript 代码。
 
 <br>
 
-InitButtonBar( ) function's return values
+InitButtonBar( ) 函数的返回值
 
 ``` js
 [
    {
-      label: {label of button-F1},
-      script: {script to execute on button-F1 clicked}
+      label: {button-F1 的标签},
+      script: {button-F1 单击时执行的脚本}
    },
    {
-      label: {label of button-F2},
-      script: {script to execute on button-F2 clicked}
+      label: {button-F2 的标签},
+      script: {button-F2 单击时执行的脚本}
    },
    ....
 ]
 ```
 
-The scripts designated in the code above are for calling the setAllValueAsDef( ) function and setSelectedValueAsDef( ) function, respectively. These functions are provided by dst_setup.js by default.
+上述代码中指定的脚本分别用于调用 setAllValueAsDef( ) 函数和 setSelectedValueAsDef( ) 函数。这些函数是默认由 dst_setup.js 提供的。
 
-
-If you want other operations, you need to implment the relevant functions yourself.
+如果你想要其他操作，你需要自己实现相关函数。
 
 <br>
-Let's test the operation. Run the virtual controller again and enter the ArgosX setup screen. After that, change the settings to values   different from the default values, then save them  by clicking the [OK] button.
+让我们测试操作。再次运行虚拟控制器并进入 ArgosX 设置屏幕。之后，改变设置为与默认值不同的值，然后通过单击 [OK] 按钮保存它们。
 
-Enter the setup screen again and place the cursor on an arbitrary element. After that, click the Initialize One button and check whether the default values   are restored.
+再次进入设置屏幕，并将光标放在任意元素上。之后，单击初始化一个按钮，检查默认值是否恢复。
 
-In addition, click the Initialize All button and check whether all values of the screen are restored to the default values.
+此外，单击初始化所有按钮，检查屏幕上的所有值是否恢复为默认值。
 
 ![](../../_assets/image_48.png)

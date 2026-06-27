@@ -1,393 +1,393 @@
-﻿#### 3.1.8 Manual for referring to the xhost module methods
+#### 3.1.8 手动引用 xhost 模块方法
 <hr>
 
 ##### get(url, query)
-* Description:
-  OpenAPI GET method.
-* Args:  
-  url (str): The API endpoint path. ex. "project/rgen"  
-             **Do not include** the base URL (http://192.168.1.150:8888/). Only provide the path following it.
-  query: str. OpenAPI query.
-* Returns:
-  str. responded value.
+* 描述:
+  OpenAPI GET 方法。
+* 参数:  
+  url (str): API 端点路径。ex. "project/rgen"  
+             **不包括** 基本 URL (http://192.168.1.150:8888/)。仅提供后面的路径。
+  query: str. OpenAPI 查询。
+* 返回:
+  str. 响应值。
 
 <hr>
 
 ##### put(url, body)
-* Description:
-  OpenAPI PUT method.
-* Args:
-  url (str): The API endpoint path. ex. "project/rgen"  
-             **Do not include** the base URL (http://192.168.1.150:8888/). Only provide the path following it.
-  body: str. body of the request.
-* Returns:
-  str. body of the response.
+* 描述:
+  OpenAPI PUT 方法。
+* 参数:
+  url (str): API 端点路径。ex. "project/rgen"  
+             **不包括** 基本 URL (http://192.168.1.150:8888/)。仅提供后面的路径。
+  body: str. 请求体。
+* 返回:
+  str. 响应体。
 
 <hr>
 
 ##### post(url, body)
-* Description:
-  OpenAPI POST method.
-* Args:
-  url (str): The API endpoint path. ex. "project/rgen"  
-             **Do not include** the base URL (http://192.168.1.150:8888/). Only provide the path following it.
-  body: str. body of the request.
-* Returns:
-  str. body of the response.
+* 描述:
+  OpenAPI POST 方法。
+* 参数:
+  url (str): API 端点路径。ex. "project/rgen"  
+             **不包括** 基本 URL (http://192.168.1.150:8888/)。仅提供后面的路径。
+  body: str. 请求体。
+* 返回:
+  str. 响应体。
 
 <hr>
 
 ##### hist_print(msg)
-* Description:
-  Same as printh() except user-param/hist_print_level setting is applied.
-* Args:
-  msg: str. message.
-* Returns:
+* 描述:
+  同 printh()，只应用用户参数/hist_print_level 设置。
+* 参数:
+  msg: str. 消息。
+* 返回:
   None
 
 <hr>
 
 ##### printh(msg)
-* Description:
-  print to history log.
-* Args:
-  msg: str. message.
-* Returns:
+* 描述:
+  打印到历史日志。
+* 参数:
+  msg: str. 消息。
+* 返回:
   None
 
 <hr>
 
 ##### issue_alarm(task_no, type, code)
-* Description:
-  issue error or warning event.
-* Args:
-  task_no: int. task number (0~7)
+* 描述:
+  发布错误或警告事件。
+* 参数:
+  task_no: int. 任务编号 (0~7)
   type:
-    'E': error
-    'W': warning
-  code: int. alarm code number
-* Returns:
+    'E': 错误
+    'W': 警告
+  code: int. 警报代码编号
+* 返回:
   None
 
 <hr>
 
 ##### issue_notice(task_no, code, msg, delay_sec)
-* Description:
-  issue notice event.
-* Args:
-  task_no: int. task number (0~7)
-  code: int. alarm code number
-  msg: str. notice message
-  delay_sec: float. time to delay before hide (sec)
-* Returns:
+* 描述:
+  发布通知事件。
+* 参数:
+  task_no: int. 任务编号 (0~7)
+  code: int. 警报代码编号
+  msg: str. 通知消息
+  delay_sec: float. 隐藏前的延迟时间 (秒)
+* 返回:
   None
 
 <hr>
 
 ##### set_job_state_msg(task_no, msg)
-* Description:
-  set job state message on teach pendant.
-* Args:
-  task_no: int. task number (0~7)
-  msg: str. state message to show
-* Returns:
+* 描述:
+  在教学显示器上设置作业状态消息。
+* 参数:
+  task_no: int. 任务编号 (0~7)
+  msg: str. 要显示的状态消息
+* 返回:
   None
 
 <hr>
 
 ##### io_set_so(sig_no, val)
-* Description:
-  set system i/o output bit.
-* Args:
-  sig_no: int. signal number (0~959)
-  val: int. (1 or 0)
-* Returns:
+* 描述:
+  设置系统 I/O 输出位。
+* 参数:
+  sig_no: int. 信号编号 (0~959)
+  val: int. (1 或 0)
+* 返回:
   0: ok
-  -1: index-range exceeded
+  -1: 索引范围超出
 
 <hr>
 
 ##### io_get_in_bit(sigcode)
-* Description:
-  get user i/o input bit by sigcode.
-* Args:
-  sigcode: int. signal-code (e.g. 30017 for fb3.di17)
-* Returns:
-  0 or 1
+* 描述:
+  根据信号代码获取用户 I/O 输入位。
+* 参数:
+  sigcode: int. 信号代码 (例如 30017 对 fb3.di17)
+* 返回:
+  0 或 1
 
 <hr>
 
 ##### io_set_out_bit(sigcode, val)
-* Description:
-  set user i/o output bit by sigcode.
-* Args:
-  sigcode: int. signal-code
-  val: int. (1 or 0)
-* Returns:
+* 描述:
+  根据信号代码设置用户 I/O 输出位。
+* 参数:
+  sigcode: int. 信号代码
+  val: int. (1 或 0)
+* 返回:
   0: ok
-  -1: index-range exceeded
+  -1: 索引范围超出
 
 <hr>
 
 ##### io_set_pulse_by_sigcode(sigcode, onoff, count, on_ms, off_ms, lag_ms, non_update)
-* Description:
-  make i/o pulse output
-* Args:
+* 描述:
+  生成 I/O 脉冲输出
+* 参数:
   sigcode: int
   onoff:
-    1: on-pulse
-    0: non-pulsed off (lagged-off)
-    -1: off-pulse
-  count: int. pulse count
-  on_ms: int. width of on (msec)
-  off_ms: int. width of off (msec)
-  lag_ms: int. width of lag (msec)
+    1: 开脉冲
+    0: 非脉冲关 (延迟关)
+    -1: 关脉冲
+  count: int. 脉冲计数
+  on_ms: int. 开的宽度 (毫秒)
+  off_ms: int. 关的宽度 (毫秒)
+  lag_ms: int. 延迟的宽度 (毫秒)
   non_update:
-    1: don't update if already registered
-    0: re-register pulse
-* Returns:
+    1: 如果已经注册，则不更新
+    0: 重新注册脉冲
+* 返回:
   0: ok
-  -2: already registered
+  -2: 已经注册
 
 <hr>
 
 ##### io_assign_set_in_bit(sigcode)
-* Description:
-  set sigcode as assigned input i/o
-* Args:
+* 描述:
+  设置信号代码为分配的输入 I/O
+* 参数:
   sigcode: int
-* Returns:
+* 返回:
   0: ok
-  -1: invalid sigcode
+  -1: 无效的信号代码
 
 <hr>
 
 ##### io_assign_set_out_bit(sigcode)
-* Description:
-  set sigcode as assigned output i/o
-* Args:
+* 描述:
+  设置信号代码为分配的输出 I/O
+* 参数:
   sigcode: int
-* Returns:
+* 返回:
   0: ok
-  -1: invalid sigcode
+  -1: 无效的信号代码
 
 <hr>
 
 ##### io_set_triggout(task_no, fbname, val, ofs, ax_no, type)
-* Description:
-  trigger-out output i/o
-* Args:
+* 描述:
+  触发输出 I/O
+* 参数:
   task_no: int
-  fbname: str. (e.g. fb3.do17, dob3)
+  fbname: str. (例如 fb3.do17, dob3)
   val: int
-  ofs: int. offset-time (msec) or offset-distance (mm)
-  ax_no: int. 0(TCP), 1~ axis number
+  ofs: int. 偏移时间 (毫秒) 或 偏移距离 (毫米)
+  ax_no: int. 0(TCP), 1~ 轴编号
   type:
-    0x01: OT (time-based)
-    0x02: OD (distance-based)
-    0x04: force output
+    0x01: OT (基于时间)
+    0x02: OD (基于距离)
+    0x04: 强制输出
     0x10: OX
     0x20: OY
     0x30: OZ
-* Returns:
-  1: buffer full
-  2: complete
+* 返回:
+  1: 缓存满
+  2: 完成
   0: ok
-  -1 ~ -4: error
+  -1 ~ -4: 错误
 
 <hr>
 
 ##### io_n_blocks()
-* Description:
-  get number of i/o blocks
-* Returns:
+* 描述:
+  获取 I/O 块的数量
+* 返回:
   int
 
 <hr>
 
 ##### io_size_block_addr()
-* Description:
-  get bits (address-space) in a block
-* Returns:
+* 描述:
+  获取块中的位 (地址空间)
+* 返回:
   int
 
 <hr>
 
 ##### io_fbname_from_sigcode(sigcode, is_out)
-* Description:
-  get fbname from sigcode
-* Args:
+* 描述:
+  从信号代码获取 fbname
+* 参数:
   sigcode: int
-  is_out: 1 output / 0 input
-* Returns:
-  fbname string
+  is_out: 1 输出 / 0 输入
+* 返回:
+  fbname 字符串
 
 <hr>
 
 ##### solve_expr_as_string(task_no, expr)
-* Description:
-  solve expression and return string result
-* Args:
+* 描述:
+  求解表达式并返回字符串结果
+* 参数:
   task_no: int
   expr: str
-* Returns:
+* 返回:
   str
 
 <hr>
 
 ##### solve_expr_as_int(task_no, expr)
-* Description:
-  solve expression and return integer result
-* Args:
+* 描述:
+  求解表达式并返回整数结果
+* 参数:
   task_no: int
   expr: str
-* Returns:
+* 返回:
   int
 
 <hr>
 
 ##### exec_mode()
-* Description:
-  check execute-mode
-* Returns:
-  True or False
+* 描述:
+  检查执行模式
+* 返回:
+  True 或 False
 
 <hr>
 
 ##### cont_mode()
-* Description:
-  check continue-mode
-* Returns:
-  True or False
+* 描述:
+  检查连续模式
+* 返回:
+  True 或 False
 
 <hr>
 
 ##### req_to_continue()
-* Description:
-  request host to be continue-mode
-* Returns:
+* 描述:
+  请求主机进入连续模式
+* 返回:
   None
 
 <hr>
 
 ##### set_err_code(code)
-* Description:
-  set error code
-* Args:
+* 描述:
+  设置错误代码
+* 参数:
   code: int
-* Returns:
+* 返回:
   None
 
 <hr>
 
 ##### lang_timer()
-* Description:
-  get language timer value
-* Returns:
-  int (msec)
+* 描述:
+  获取语言计时器值
+* 返回:
+  int (毫秒)
 
 <hr>
 
 ##### set_lang_timer(timeout)
-* Description:
-  set value to language-timer
-* Args:
-  timeout: int (msec)
-* Returns:
+* 描述:
+  设置语言计时器值
+* 参数:
+  timeout: int (毫秒)
+* 返回:
   None
 
 <hr>
 
 ##### branch_to_addr(addr)
-* Description:
-  branch to the address
-* Args:
+* 描述:
+  跳转到地址
+* 参数:
   addr: str
-* Returns:
+* 返回:
   None
 
 <hr>
 
 ##### abs_path(name)
-* Description:
-  get absolute-path in the file-system
-* Args:
+* 描述:
+  获取文件系统中的绝对路径
+* 参数:
   name: home, project, log, jobs, vars, backup, fbrr, module, apps_main, help
-* Returns:
-  absolute-path string
+* 返回:
+  绝对路径字符串
 
 <hr>
 
 ##### sci_open(port)
-* Description:
-  serial port open
-* Args:
+* 描述:
+  打开串口
+* 参数:
   port: int
-* Returns:
+* 返回:
   0: OK
-  -1: Not OK
+  -1: 不 OK
 
 <hr>
 
 ##### sci_close(port)
-* Description:
-  serial port close
-* Args:
+* 描述:
+  关闭串口
+* 参数:
   port: int
-* Returns:
+* 返回:
   0: OK
-  -1: already closed
+  -1: 已经关闭
 
 <hr>
 
 ##### sci_send_bytes(port, data)
-* Description:
-  serial send bytes data
-* Args:
+* 描述:
+  串口发送字节数据
+* 参数:
   port: int
   data: bytes
-* Returns:
+* 返回:
   0: OK
-  -1: Not OK
+  -1: 不 OK
 
 <hr>
 
 ##### sci_recv_bytes(port, len)
-* Description:
-  serial receive bytes data
-* Args:
+* 描述:
+  串口接收字节数据
+* 参数:
   port: int
   len: int
-* Returns:
+* 返回:
   bytes
 
 <hr>
 
 ##### sci_clear_buf(port)
-* Description:
-  clear serial buffer
-* Args:
+* 描述:
+  清除串口缓冲区
+* 参数:
   port: int
-* Returns:
+* 返回:
   None
 
 <hr>
 
 ##### sci_send(port, data)
-* Description:
-  serial send string data
-* Returns:
+* 描述:
+  串口发送字符串数据
+* 返回:
   0: OK
-  -1: Not OK
+  -1: 不 OK
 
 <hr>
 
 ##### sci_recv(port)
-* Description:
-  serial receive string data
-* Args:
+* 描述:
+  串口接收字符串数据
+* 参数:
   port: int
-* Returns:
+* 返回:
   str
 
 <hr>
