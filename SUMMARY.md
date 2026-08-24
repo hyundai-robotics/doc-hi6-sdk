@@ -69,5 +69,3 @@
 * [4. 디버깅](4-debug/README.md)
   * [4.1 python 코드의 디버깅](4-debug/1-debug-python.md)
   * [4.2 web 기반 U/I의 디버깅](4-debug/2-debug-ui.md)
-  
-* [5. 인스톨러](5-installer/README.md)        

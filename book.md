@@ -153,26 +153,6 @@ main module 내에 저장되어 있다가 티치펜던트로 전송되어 웹 �
     Python 3.8.0
     ```
 
-#### python import 검색 경로 추가
-1) .pth 라는 파일을 만들고 안에 _common/ 폴더가 위치한 경로를 지정해준다. 
-    SDK 내의 .pth 파일을 열어, ${cont_model} 가상제어기의 HOME 경로에 맞게 아래 경로를 지정해줍니다.
- 
-
-    파일내용 예:    
-    ```
-    D:\${cont_model}\home_main\apps
-    ```
-
-2) 편집한 .pth 파일을 python 설치 경로/Lib/site-packages/ 에 배치합니다.
-    
-    예: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
-
-
-#### 동적 라이브러리 배치
-SDK 내의 ucrtbased.dll와 vcruntime140d.dll를 python 설치 경로에 배치합니다.
-
-예: C:\Program Files (x86)\Python38-32\ 에 복사.
-
 [__SOURCE](1-intro/4-install-vscode.md)
 # 1.4 VisualStudio Code의 설치
 
@@ -5144,8 +5124,3 @@ html이나 css, javascript 소스코드를 수정한 후, 웹 브라우저에서
 
 
 
-
-[__SOURCE](5-installer/README.md)
-# 5. 인스톨러
-
-(추후 작성 필요)
