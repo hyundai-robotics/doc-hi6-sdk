@@ -69,5 +69,3 @@
 * [4. Debugging](4-debug/README.md)
   * [4.1 Debugging Python code](4-debug/1-debug-python.md)
   * [4.2 Debugging a web-based UI](4-debug/2-debug-ui.md)
-  
-* [5. Installer](5-installer/README.md)        

@@ -153,26 +153,6 @@ Install Python v3.8 according to the following procedures.
     Python 3.8.0
     ```
 
-#### Adding a python import search path
-1) Create a .pth file and designate the path where the _common/ folder is located. 
-    Open the .pth file in the SDK and designate the path below to match the HOME path of the ${cont_model} virtual controller.
- 
-
-    Example of file contents:    
-    ```
-    D:\${cont_model}\home_main\apps
-    ```
-
-2) Deploy the edited .pth file into the python installation path/Lib/site-packages/.
-    
-    Example: C:\Program Files (x86)\Python38-32\Lib\site-packages\.pth
-
-
-#### Deploying dynamic libraries
-Deploy ucrtbased.dll and vcruntime140d.dll in the SDK to the python installation path.
-
-Example: Copy to C:\Program Files (x86)\Python38-32\.
-
 [__SOURCE](1-intro/4-install-vscode.md)
 # 1.4 Installing Visual Studio Code
 
@@ -5208,8 +5188,3 @@ Refreshing can also be performed from a virtual teach pendant rather than on a w
 
 
 
-
-[__SOURCE](5-installer/README.md)
-# 5. Installer
-
-(to be written in the future)
